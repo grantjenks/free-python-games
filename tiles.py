@@ -50,11 +50,11 @@ left, right = (-tile_size, 0), (tile_size, 0)
 tiles = []
 for x_pos in range(width / tile_size):
     for y_pos in range(height / tile_size):
-        area = (x_pos * tile_size, y_pos * tile_size,
-                tile_size, tile_size)
+        area = pygame.Rect(x_pos * tile_size, y_pos * tile_size,
+                           tile_size, tile_size)
         tile = pygame.Surface((tile_size, tile_size))
         tile.blit(image, (0, 0), area)
-        tiles.append([(area[0], area[1]), tile])
+        tiles.append([area, tile])
 
 # Replace last tile with black square.
 
@@ -63,10 +63,12 @@ black_tile = tiles[-1]
 
 # Mix up tile locations.
 
-for rpt in range(9):
-    tile_one = random.choice(tiles)
-    tile_two = random.choice(tiles)
-    tile_one[0], tile_two[0] = tile_two[0], tile_one[0]
+for rpt in range(81):
+    # Swap black tile with random adjacent tile.
+    areas = map(black_tile[0].move, (above, below, left, right))
+    adjacent_tiles = [tile for tile in tiles if tile[0] in areas]
+    tile = random.choice(adjacent_tiles)
+    tile[0], black_tile[0] = black_tile[0], tile[0]
 
 while True:
 
@@ -87,7 +89,7 @@ while True:
         place = ((event.pos[0] / tile_size) * tile_size,
                  (event.pos[1] / tile_size) * tile_size)
 
-        tile = filter(lambda tile: tile[0] == place, tiles)[0]
+        tile = [tile for tile in tiles if tile[0].topleft == place][0]
 
         diff = (tile[0][0] - black_tile[0][0],
                 tile[0][1] - black_tile[0][1])
