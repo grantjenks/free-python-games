@@ -63,7 +63,7 @@ black_tile = tiles[-1]
 
 # Mix up tile locations.
 
-for rpt in range(81):
+for rpt in range(1000):
     # Swap black tile with random adjacent tile.
     areas = map(black_tile[0].move, (above, below, left, right))
     adjacent_tiles = [tile for tile in tiles if tile[0] in areas]
