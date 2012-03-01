@@ -1,0 +1,21 @@
+* Nibbles
+  - aka Snake.
+* Tiles
+  - Re-arrange image divided into tiles.
+* Guess the Number
+* Hangman
+* Pac Man
+* Maze
+  - Maze should be randomly generated.
+  - Monster should chase user.
+* Tic Tac Toe
+* Connect Four
+* Tron
+  - http://www.classicgamesarcade.com/game/21670/tron-game.html
+* Paint Tool
+* Memory
+  - Flip over pairs of tiles with numbers behind them
+* Go Kart
+  - Steer left/right through twisting track.
+  - aka Spy Hunter
+* Space Invaders
