@@ -1,9 +1,3 @@
-* Nibbles
-  - aka Snake.
-* Tiles
-  - Re-arrange image divided into tiles.
-* Guess the Number
-* Hangman
 * Pac Man
 * Maze
   - Maze should be randomly generated.
