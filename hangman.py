@@ -174,7 +174,7 @@ while True:
     draw_man(wrong_guesses)
     print ''.join(guess)
 
-    if wrong_guesses == 15:
+    if wrong_guesses == 10:
 
         print 'Your DEAD!'
         break
