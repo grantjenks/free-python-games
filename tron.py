@@ -29,30 +29,44 @@ from pygame.locals import *
 pygame.init()
 
 black, red, blue, white = (0, 0, 0), (255, 0, 0), (0, 0, 255), (255, 255, 255)
-up, right, down, left = (0, -2), (2, 0), (0, 2), (-2, 0)
-width, height = size = 720, 720
+tiles, width = 120, 4
+up, right, down, left = -tiles, 1, tiles, -1
 
 clock = pygame.time.Clock()
-screen = pygame.display.set_mode(size)
+screen = pygame.display.set_mode((tiles * width, tiles * width))
 
-class Player:
-    def __init__(self, head, direction, color):
-        self.direction = direction
-        self.body = {}
-        self.head = head
-        self.color = color
-        self.dead = False
-    def move(self):
-        next = self.head.move(self.direction)
-        if next.left < 0: next.left = width - 10
-        if next.left >= width: next.left = 0
-        if next.top < 0: next.top = height - 10
-        if next.top >= height: next.top = 0
-        self.head = next
-        self.body[tuple(self.head)] = self.head
+def restart():
+    global board, player1, player2
+    board = [black] * (tiles * tiles)
+    player1 = dict(direction=left,
+                   position=(tiles * 3 / 4) + (tiles * tiles / 2),
+                   dead=False,
+                   color=red)
+    player2 = dict(direction=right,
+                   position=(tiles / 4) + (tiles * tiles / 2),
+                   dead=False,
+                   color=blue)
+    screen.fill(black)
+    pygame.display.flip()
 
-player1 = Player(pygame.Rect(540, 360, 2, 2), left, red)
-player2 = Player(pygame.Rect(180, 360, 2, 2), right, blue)
+restart()
+
+def move(player):
+    curr = player['position']
+    next = curr + player['direction']
+    if next < 0 or next >= (tiles ** 2):
+        player['dead'] = True
+    elif abs((next % tiles) - (curr % tiles)) > 1:
+        player['dead'] = True
+    elif board[next] != black:
+        player['dead'] = True
+    else:
+        board[next] = player['color']
+    player['position'] = next
+
+def draw_rect(player):
+    left, top = player['position'] % tiles, player['position'] / tiles
+    return (left * width, top * width, width, width)
 
 while True:
     event = pygame.event.poll()
@@ -61,51 +75,38 @@ while True:
         pygame.quit()
         sys.exit()
     elif event.type == KEYDOWN:
-        if event.key == K_UP and player1.direction != down:
-            player1.direction = up
-        elif event.key == K_RIGHT and player1.direction != left:
-            player1.direction = right
-        elif event.key == K_DOWN and player1.direction != up:
-            player1.direction = down
-        elif event.key == K_LEFT and player1.direction != right:
-            player1.direction = left
-        elif event.key == K_w and player2.direction != down:
-            player2.direction = up
-        elif event.key == K_d and player2.direction != left:
-            player2.direction = right
-        elif event.key == K_s and player2.direction != up:
-            player2.direction = down
-        elif event.key == K_a and player2.direction != right:
-            player2.direction = left
+        if event.key == K_UP and player1['direction'] != down:
+            player1['direction'] = up
+        elif event.key == K_RIGHT and player1['direction'] != left:
+            player1['direction'] = right
+        elif event.key == K_DOWN and player1['direction'] != up:
+            player1['direction'] = down
+        elif event.key == K_LEFT and player1['direction'] != right:
+            player1['direction'] = left
+        elif event.key == K_w and player2['direction'] != down:
+            player2['direction'] = up
+        elif event.key == K_d and player2['direction'] != left:
+            player2['direction'] = right
+        elif event.key == K_s and player2['direction'] != up:
+            player2['direction'] = down
+        elif event.key == K_a and player2['direction'] != right:
+            player2['direction'] = left
         elif event.key == K_r:
-            player1 = Player(pygame.Rect(540, 360, 2, 2), left, red)
-            player2 = Player(pygame.Rect(180, 360, 2, 2), right, blue)
+            restart()
         elif event.key == K_q:
             pygame.event.post(pygame.event.Event(QUIT))
 
-    if player1.dead or player2.dead:
+    if player1['dead'] or player2['dead']:
         continue
 
-    player1.move()
-    player2.move()
+    move(player1)
+    move(player2)
 
-    if tuple(player1.head) in player2.body:
-        player1.dead = True
-    if tuple(player2.head) in player1.body:
-        player2.dead = True
+    rect1 = draw_rect(player1)
+    rect2 = draw_rect(player2)
 
-    if player1.dead == True or player2.dead == True:
-        screen.fill(white)
-    else:
-        screen.fill(black)
+    pygame.draw.rect(screen, player1['color'], rect1)
+    pygame.draw.rect(screen, player2['color'], rect2)
 
-    pygame.draw.rect(screen, player1.color, player1.head)
-    pygame.draw.rect(screen, player2.color, player2.head)
-
-    for rect in player1.body.itervalues():
-        pygame.draw.rect(screen, player1.color, rect)
-    for rect in player2.body.itervalues():
-        pygame.draw.rect(screen, player2.color, rect)
-
-    pygame.display.flip()
-    clock.tick(24)
+    pygame.display.update((rect1, rect2))
+    clock.tick(36)
