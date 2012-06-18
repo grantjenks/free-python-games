@@ -3,10 +3,5 @@
   - Monster should chase user.
 * Tic Tac Toe
 * Connect Four
-* Paint Tool
 * Memory
   - Flip over pairs of tiles with numbers behind them
-* Go Kart
-  - Steer left/right through twisting track.
-  - aka Spy Hunter
-* Space Invaders
