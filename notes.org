@@ -1,3 +1,7 @@
+* Todos
+  - Embellish with comments
+  - Add notes for curriculum: exercises for kids
+  - Publish for free as "Playto" or "free_games"
 * Maze
   - Maze should be randomly generated.
   - Monster should chase user.
