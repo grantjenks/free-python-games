@@ -1,5 +1,5 @@
 """
-Maze, a trek from corner to corner.
+A-maze-ing Race
 
 Written by Grant Jenks
 http://www.grantjenks.com/
@@ -26,62 +26,98 @@ San Francisco, California, 94105, USA
 import sys, pygame
 import random
 from pygame.locals import *
-from itertools import Counter
 
 pygame.init()
 
-size = width, height = 720, 730
-tiles = 72
-dirs = (-1, 1, tiles, -tiles)
+tiles, block = 24, 20
+size = width, height = (tiles * block), (tiles * block + 10)
+dirs = up, right, down, left = (-tiles, 1, tiles, -1)
+start = tiles + 1
+extra, boundary, wall, hall = 3, 2, 1, 0
 font = pygame.font.Font(None, 14)
-up, right, down, left = (0, -10), (10, 0), (0, 10), (-10, 0)
-foreground, background = (255, 255, 255), (0, 0, 0)
-
-def make_maze():
-    square = tiles * tiles
-    maze = [0] * square
-    def helper(pos):
-        if pos == 0:
-            maze[pos] = 1
-            return True
-        elif pos >= square:
-            return False
-        else:
-            moves = list(dirs)
-            random.shuffle(moves)
-            for move in moves:
-                new_pos = pos + move
-                if helper(new_pos):
-                    maze[new_pos] = 1
-                    return True
-            else:
-                return False
-                
-
-        
-    helper(tiles * tiles - 1)
-    pos = last
-    while pos != 0:
-        maze[pos] = 1
-        move = random.choice(dirs)
-        if pos + move > last: continue
-        pos += move
-    def bfs(pos):
-        
-    path = [last]
-    pos = last
-    while pos != 0:
-        
-
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
 
-player = pygame.Rect(0, 0, 10, 10)
-monster = pygame.Rect(710, 710, 10, 10)
-maze = make_maze()
-dead = False
+def make_maze():
+    global maze, end, player, moves
 
-for counter in count():
+    # Create the initial, empty maze.
+
+    maze = [boundary] * tiles
+    maze += ([boundary] + [wall] * (tiles - 2) + [boundary]) * (tiles - 2)
+    maze += [boundary] * tiles
+
+    # Make the maze. This is a randomized version of Prim's algorithm
+    # to build a minimum spanning tree.
+
+    maze[start] = 0
+    frontier = [tiles + 2, 2 * tiles + 1]
+    while len(frontier) > 0:
+        pos = random.randrange(len(frontier))
+        frontier[pos], frontier[-1] = frontier[-1], frontier[pos]
+        spot = frontier.pop()
+
+        if maze[spot] != wall: continue
+
+        if map(lambda diff: maze[spot + diff], dirs).count(0) != 1:
+            continue
+
+        maze[spot] = hall
+
+        frontier.extend(map(lambda diff: spot + diff, dirs))
+
+    # End goal should be farthest reachable hall.
+
+    frontier = [start]
+    while True:
+        next = []
+        for front in frontier:
+            maze[front] = extra
+            next.extend(filter(lambda pos: maze[pos] == hall,
+                               map(lambda diff: front + diff, dirs)))
+        if next:
+            frontier = next
+        else:
+            last = random.choice(frontier)
+            break
+
+    for pos, val in enumerate(maze):
+        if val == extra: maze[pos] = hall
+
+    moves = 0
+    player = start
+    end = last
+
+def draw_maze():
+    for pos, val in enumerate(maze):
+        left = (pos % tiles) * block
+        top = (pos / tiles) * block
+        color = {hall: (255, 255, 255),
+                 wall: (0, 0, 0),
+                 boundary: (0, 0, 0)}[val]
+        pygame.draw.rect(screen, color, (left, top, block, block))
+
+    left = (player % tiles) * block
+    top = (player / tiles) * block
+    pygame.draw.rect(screen, (0, 0, 255), (left, top, block, block))
+
+    left = (end % tiles) * block
+    top = (end / tiles) * block
+    pygame.draw.rect(screen, (0, 255, 0), (left, top, block, block))
+
+    pygame.draw.rect(screen, (0, 0, 0), (0, width, width, 10))
+    surface = font.render(str(moves), True, (255, 255, 255))
+    screen.blit(surface, (5, tiles * block))
+
+    pygame.display.flip()
+
+def restart():
+    make_maze()
+    draw_maze()
+
+restart()
+
+while True:
     event = pygame.event.poll()
 
     move_dir = None
@@ -99,47 +135,18 @@ for counter in count():
         elif event.key == K_LEFT:
             move_dir = left
         elif event.key == K_r:
-            player = pygame.Rect(0, 0, 10, 10)
-            monster = pygame.Rect(710, 710, 10, 10)
-            maze = make_maze()
-            dead = False
+            restart()
         elif event.key == K_q:
             pygame.event.post(pygame.event.Event(QUIT))
 
-    if dead:
-        continue
+    if move_dir is None: continue
+    if player == end: continue
 
-    
+    if maze[player + move_dir] == hall:
+        player += move_dir
+        moves += 1
 
-
-    next = snake[-1].move(snake_dir)
-    if next.left < 0: next.left = width - 10
-    if next.left >= width: next.left = 0
-    if next.top < 0: next.top = height - 10
-    if next.top >= height: next.top = 0
-
-    if next in snake:
-        dead = True
-        foreground, background = background, foreground
-    else:
-        snake.append(next)
-
-        if food and next == food:
-            food = None
-            snake_len += 1
-        else:
-            snake.popleft()
-
-    if food is None and counter % 50 == 0:
-        food = pygame.Rect(randrange(48) * 10, randrange(48) * 10, 10, 10)
-
-    screen.fill(background)
-    for rect in snake:
-        pygame.draw.rect(screen, foreground, rect)
-    if food:
-        pygame.draw.rect(screen, foreground, food)
-    surface = font.render(str(snake_len), True, foreground)
-    screen.blit(surface, (0, 0))
+    draw_maze()
 
     pygame.display.flip()
     clock.tick(12)
