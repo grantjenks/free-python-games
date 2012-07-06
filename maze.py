@@ -1,5 +1,5 @@
 """
-A-maze-ing Race
+Maze game.
 
 Written by Grant Jenks
 http://www.grantjenks.com/
@@ -31,15 +31,21 @@ pygame.init()
 
 tiles, block = 24, 20
 size = width, height = (tiles * block), (tiles * block + 10)
+
 dirs = up, right, down, left = (-tiles, 1, tiles, -1)
-start = tiles + 1
-extra, boundary, wall, hall = 3, 2, 1, 0
+view = (up, right, down, left, up - 1, up + 1, down - 1, down + 1)
+
+hall, wall, boundary, extra = 0, 1, 2, 3
+
+red, green, blue = (255, 0, 0), (0, 255, 0), (0, 0, 255)
+white, grey, black = (255, 255, 255), (100, 100, 100), (0, 0, 0)
+
 font = pygame.font.Font(None, 14)
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
 
 def make_maze():
-    global maze, end, player, moves
+    global maze, player, end, moves
 
     # Create the initial, empty maze.
 
@@ -50,7 +56,8 @@ def make_maze():
     # Make the maze. This is a randomized version of Prim's algorithm
     # to build a minimum spanning tree.
 
-    maze[start] = 0
+    player = tiles + 1
+    maze[player] = 0
     frontier = [tiles + 2, 2 * tiles + 1]
     while len(frontier) > 0:
         pos = random.randrange(len(frontier))
@@ -68,7 +75,7 @@ def make_maze():
 
     # End goal should be farthest reachable hall.
 
-    frontier = [start]
+    frontier = [player]
     while True:
         next = []
         for front in frontier:
@@ -85,25 +92,27 @@ def make_maze():
         if val == extra: maze[pos] = hall
 
     moves = 0
-    player = start
     end = last
+
+def draw_tile(func, color, pos):
+    left = (pos % tiles) * block
+    top = (pos / tiles) * block
+    func(screen, color, (left, top, block, block))
 
 def draw_maze():
     for pos, val in enumerate(maze):
-        left = (pos % tiles) * block
-        top = (pos / tiles) * block
-        color = {hall: (255, 255, 255),
-                 wall: (0, 0, 0),
-                 boundary: (0, 0, 0)}[val]
-        pygame.draw.rect(screen, color, (left, top, block, block))
+        color = white if val == hall else black
+        draw_tile(pygame.draw.rect, color, pos)
 
-    left = (player % tiles) * block
-    top = (player / tiles) * block
-    pygame.draw.rect(screen, (0, 0, 255), (left, top, block, block))
+def draw_view():
+    for diff in view:
+        pos = player + diff
+        color = white if maze[pos] == hall else black
+        draw_tile(pygame.draw.rect, color, pos)
 
-    left = (end % tiles) * block
-    top = (end / tiles) * block
-    pygame.draw.rect(screen, (0, 255, 0), (left, top, block, block))
+    draw_tile(pygame.draw.rect, white, player)
+    draw_tile(pygame.draw.rect, green, end)
+    draw_tile(pygame.draw.ellipse, blue, player)
 
     pygame.draw.rect(screen, (0, 0, 0), (0, width, width, 10))
     surface = font.render(str(moves), True, (255, 255, 255))
@@ -113,7 +122,8 @@ def draw_maze():
 
 def restart():
     make_maze()
-    draw_maze()
+    pygame.draw.rect(screen, grey, (0, 0, width, height))
+    draw_view()
 
 restart()
 
@@ -136,17 +146,19 @@ while True:
             move_dir = left
         elif event.key == K_r:
             restart()
+        elif event.key == K_s:
+            draw_maze()
+            draw_view()
         elif event.key == K_q:
             pygame.event.post(pygame.event.Event(QUIT))
 
-    if move_dir is None: continue
     if player == end: continue
 
-    if maze[player + move_dir] == hall:
-        player += move_dir
-        moves += 1
-
-    draw_maze()
+    if move_dir is not None:
+        if maze[player + move_dir] == hall:
+            player += move_dir
+            moves += 1
+        draw_view()
 
     pygame.display.flip()
     clock.tick(12)
