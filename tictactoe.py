@@ -63,24 +63,26 @@ def draw_game():
                 assert val == empty
                 continue
 
+    pygame.display.flip()
+
 def is_won():
     for val in range(3):
         # Check matching row.
 
-        if board[0][val] == board[1][val] == board[2][val]:
+        if board[0][val] == board[1][val] == board[2][val] != empty:
             return board[0][val]
 
         # Check matching column.
 
-        if board[val][0] == board[val][1] == board[val][2]:
+        if board[val][0] == board[val][1] == board[val][2] != empty:
             return board[val][0]
 
     # Check matching diagonal.
 
-    if board[0][0] == board[1][1] == board[2][2]:
+    if board[0][0] == board[1][1] == board[2][2] != empty:
         return board[1][1]
 
-    if board[0][2] == board[1][1] == board[2][0]:
+    if board[0][2] == board[1][1] == board[2][0] != empty:
         return board[1][1]
 
     return empty
@@ -98,8 +100,6 @@ def best_move(player):
     """
     Return (outcome, (row, col)) indicating this player's best move.
     """
-    if is_won() == player * -1: return (lose, None)
-
     best = None
     for row, line in enumerate(board):
         for col, val in enumerate(line):
@@ -107,6 +107,10 @@ def best_move(player):
                 # Simulate this move.
 
                 board[row][col] = player
+
+                if is_won() == player:
+                    board[row][col] = empty
+                    return (win, (row, col))
 
                 # Compute the best counter-move result.
 
@@ -136,6 +140,7 @@ def restart():
 restart()
 
 while True:
+    clock.tick(12)
     event = pygame.event.poll()
 
     pos = None
@@ -156,11 +161,11 @@ while True:
     if human != turn:
         pos = calc_move(turn)[1]
 
-    if pos is not None and not is_won():
-        row, col = pos
+    if pos is None or is_won(): continue
+
+    row, col = pos
+
+    if board[row][col] == empty:
         board[row][col] = turn
         turn *= -1
         draw_game()
-
-    pygame.display.flip()
-    clock.tick(12)
