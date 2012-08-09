@@ -67,8 +67,9 @@ def restart():
 restart()
 
 while True:
-    event = pygame.event.poll()
+    clock.tick(12)
 
+    event = pygame.event.poll()
     col = None
 
     if event.type == pygame.QUIT:
@@ -93,5 +94,3 @@ while True:
     draw_game()
 
     turn = yellow if turn == red else red
-
-    clock.tick(12)
