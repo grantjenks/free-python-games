@@ -69,6 +69,7 @@ def draw_rect(player):
     return (left * width, top * width, width, width)
 
 while True:
+    clock.tick(36)
     event = pygame.event.poll()
 
     if event.type == pygame.QUIT:
@@ -109,4 +110,3 @@ while True:
     pygame.draw.rect(screen, player2['color'], rect2)
 
     pygame.display.update((rect1, rect2))
-    clock.tick(36)

@@ -44,6 +44,7 @@ snake = deque(pygame.Rect(10, 10 + cnt * 10, 10, 10)
 foreground, background = (255, 255, 255), (0, 0, 0)
 
 for counter in count():
+    clock.tick(min(5 + (snake_len / 4), 30))
 
     event = pygame.event.poll()
 
@@ -100,4 +101,3 @@ for counter in count():
     screen.blit(surface, (0, 0))
 
     pygame.display.flip()
-    clock.tick(min(5 + (snake_len / 4), 30))
