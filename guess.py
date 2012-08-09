@@ -35,7 +35,11 @@ guess = None
 
 while guess != value:
 
-    guess = input('Guess the number:')
+    try:
+        guess = int(raw_input('Guess the number: '))
+    except Exception:
+        print 'Whoops! Be sure the number contains only digits.'
+        continue
 
     if guess < value:
 
@@ -45,4 +49,4 @@ while guess != value:
 
         print 'Lower.'
 
-print 'Congratulations! You guessed the right answer,', value
+print 'Congratulations! You guessed the right answer:', value
