@@ -1,6 +1,0 @@
-* Todos
-  - Embellish with comments
-  - Add notes for curriculum: exercises for kids
-  - Publish for free as "Playto" or "free_games"
-* Memory
-  - Flip over pairs of tiles with numbers behind them
