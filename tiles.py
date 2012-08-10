@@ -21,6 +21,11 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Track a score by the number of tile moves.
+2. Permit diagonal squares as adjacent.
+3. Respond to arrow keys instead of mouse clicks.
 """
 
 import sys, pygame

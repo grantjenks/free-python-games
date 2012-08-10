@@ -21,6 +21,14 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Change the pacman board.
+2. Change the number of monsters.
+3. Change the starting position of pacman.
+4. Make the monsters faster/slower.
+5. Allow pacman to move diagonally.
+6. Make the monsters smarter.
 """
 
 import sys

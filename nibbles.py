@@ -21,6 +21,14 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Change the colors.
+2. Increase the size of the playing area.
+2. Make the snake faster.
+3. Make food appear more frequently.
+4. Make the food move randomly (before the snake eats it).
+5. Allow for multiple food pieces.
 """
 
 import sys, pygame

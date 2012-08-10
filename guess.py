@@ -21,13 +21,18 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Change the range to be from 0 to 1,000,000.
+2. Can you still guess the number?
+3. Print out the number of required guesses for the right answer.
 """
 
 import random
 
 start = 0
 end = 100
-value = random.randint(0, 100)
+value = random.randint(start, end)
 
 print "I'm thinking of a number between", start, 'and', end
 

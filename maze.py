@@ -21,6 +21,11 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Change where the end is placed.
+2. Change where the player starts.
+3. Display only the player's immediate surroundings (no history).
 """
 
 import sys, pygame

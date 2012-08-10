@@ -21,6 +21,11 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Make the tron players faster/slower.
+2. Allow a tron player to run into itself.
+3. Allow the tron players to go around the edge of the screen.
 """
 
 import sys, pygame

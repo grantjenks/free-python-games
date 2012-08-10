@@ -21,6 +21,12 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Change the colors.
+2. Draw squares instead of circles for open spaces.
+3. Add logic to detect a full board.
+4. Add logic to detect a winner.
 """
 
 import sys, pygame
@@ -84,6 +90,8 @@ while True:
         col = event.pos[0] / 80
 
     if col is None: continue
+
+    # Search for an open row in this column.
 
     for val in reversed(range(6)):
         if board[val][col] == white: break

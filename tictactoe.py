@@ -21,6 +21,11 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises
+1. Why does the computer player try to win two ways?
+2. Draw an X as a square instead.
+3. Make the computer play itself.
 """
 
 import sys, pygame, random

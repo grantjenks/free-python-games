@@ -21,6 +21,11 @@ To view a copy of this license, visit
 http://creativecommons.org/licenses/by-nc-nd/3.0/
 or send a letter to Creative Commons, 171 Second Street, Suite 300,
 San Francisco, California, 94105, USA
+
+Exercises:
+1. Change the image.
+2. Change the background color to white and the foreground color to black.
+3. Increase the number of tiles to an 8x8 grid.
 """
 
 import sys, pygame, random, time
