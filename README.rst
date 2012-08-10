@@ -21,17 +21,53 @@ Each game is entirely independent from the others and includes comments along wi
 Screenshots
 -----------
 
-<p align="center"><img alt="Nibbles" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/nibbles.png" title="Nibbles Free Computer Game"></p>
+Nibbles
+.......
 
-<p align="center"><img alt="Memory" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/memory.png" title="Memory Free Computer Game"></p>
+Nibbles -- like Snake on the old Nokia phones.
 
-<p align="center"><img alt="Tiles" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/tiles.png" title="Tiles Free Computer Game"></p>
+.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/nibbles.png?raw=true
+   :alt: Nibbles Free Computer Game
 
-<p align="center"><img alt="Pacman" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/pacman.png" title="Pacman Free Computer Game"></p>
+Memory
+......
 
-<p align="center"><img alt="Maze" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/maze.png" title="Maze Free Computer Game"></p>
+Memory -- match tile pairs of numbers to uncover the hidden image.
 
-<p align="center"><img alt="Tic Tac Toe" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/tictactoe.png" title="Tic Tac Toe Free Computer Game"></p>
+.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/memory.png?raw=true
+   :alt: Memory Free Computer Game
+
+Tiles
+.....
+
+Tiles -- shuffle image tiles to solve the puzzle.
+
+.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/tiles.png?raw=true
+   :alt: Tiles Free Computer Game
+
+Pacman
+......
+
+Pacman -- simplified version of the classic.
+
+.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/pacman.png?raw=true
+   :alt: Pacman Free Computer Game
+
+Maze
+....
+
+Maze -- solve a randomly generated maze.
+
+.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/maze.png?raw=true
+   :alt: Maze Free Computer Game
+
+Tic Tac Toe
+...........
+
+Tic Tac Toe -- the classic.
+
+.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/tictactoe.png?raw=true
+   :alt: Tic Tac Toe Free Computer Game
 
 Requirements
 ------------
