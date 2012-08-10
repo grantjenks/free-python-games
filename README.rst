@@ -18,6 +18,21 @@ Each game is entirely independent from the others and includes comments along wi
 * Maze
 * Tic Tac Toe
 
+Screenshots
+-----------
+
+![Nibbles](https://github.com/grantjenks/free_python_games/blob/master/screenshots/nibbles.png "Nibbles Free Computer Game")
+
+![Memory](https://github.com/grantjenks/free_python_games/blob/master/screenshots/memory.png "Memory Free Computer Game")
+
+![Tiles](https://github.com/grantjenks/free_python_games/blob/master/screenshots/tiles.png "Tiles Free Computer Game")
+
+![Pacman](https://github.com/grantjenks/free_python_games/blob/master/screenshots/pacman.png "Pacman Free Computer Game")
+
+![Maze](https://github.com/grantjenks/free_python_games/blob/master/screenshots/maze.png "Maze Free Computer Game")
+
+![Tic Tac Toe](https://github.com/grantjenks/free_python_games/blob/master/screenshots/tictactoe.png "Tic Tac Toe Free Computer Game")
+
 Requirements
 ------------
 
