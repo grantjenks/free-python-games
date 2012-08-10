@@ -21,17 +21,17 @@ Each game is entirely independent from the others and includes comments along wi
 Screenshots
 -----------
 
-![Nibbles](https://github.com/grantjenks/free_python_games/blob/master/screenshots/nibbles.png "Nibbles Free Computer Game")
+<p align="center"><img alt="Nibbles" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/nibbles.png" title="Nibbles Free Computer Game"></p>
 
-![Memory](https://github.com/grantjenks/free_python_games/blob/master/screenshots/memory.png "Memory Free Computer Game")
+<p align="center"><img alt="Memory" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/memory.png" title="Memory Free Computer Game"></p>
 
-![Tiles](https://github.com/grantjenks/free_python_games/blob/master/screenshots/tiles.png "Tiles Free Computer Game")
+<p align="center"><img alt="Tiles" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/tiles.png" title="Tiles Free Computer Game"></p>
 
-![Pacman](https://github.com/grantjenks/free_python_games/blob/master/screenshots/pacman.png "Pacman Free Computer Game")
+<p align="center"><img alt="Pacman" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/pacman.png" title="Pacman Free Computer Game"></p>
 
-![Maze](https://github.com/grantjenks/free_python_games/blob/master/screenshots/maze.png "Maze Free Computer Game")
+<p align="center"><img alt="Maze" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/maze.png" title="Maze Free Computer Game"></p>
 
-![Tic Tac Toe](https://github.com/grantjenks/free_python_games/blob/master/screenshots/tictactoe.png "Tic Tac Toe Free Computer Game")
+<p align="center"><img alt="Tic Tac Toe" src="https://github.com/grantjenks/free_python_games/blob/master/screenshots/tictactoe.png" title="Tic Tac Toe Free Computer Game"></p>
 
 Requirements
 ------------
