@@ -27,10 +27,11 @@ IN THE SOFTWARE.
 Exercises
 1. Change the colors.
 2. Increase the size of the playing area.
-2. Make the snake faster.
-3. Make food appear more frequently.
-4. Make the food move randomly (before the snake eats it).
-5. Allow for multiple food pieces.
+3. Make the snake faster.
+4. Make food appear more frequently.
+5. Make the food move randomly (before the snake eats it).
+6. Allow for multiple food pieces.
+7. Add barriers.
 """
 
 import sys, pygame
