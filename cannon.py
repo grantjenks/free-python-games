@@ -52,8 +52,8 @@ def reset():
 
 def redraw():
     """Redraw screen and settings."""
-    global ball, xforce, yforce
-    ball, xforce, yforce = None, 1.5, -6.0
+    global ball, xspeed, yspeed
+    ball, xspeed, yspeed = None, 1.5, -6.0
 
     screen.fill(black)
     pygame.draw.line(screen, white, (0, 475), (480, 475), 11)
@@ -82,15 +82,15 @@ for counter in count():
         # Handle user input.
 
         if event.key == K_SPACE:
-            ball = (30.0, 460.0, xforce, yforce)
+            ball = (30.0, 460.0, xspeed, yspeed)
         elif event.key == K_UP:
-            yforce -= 0.1
+            yspeed -= 0.1
         elif event.key == K_DOWN:
-            yforce += 0.1
+            yspeed += 0.1
         elif event.key == K_RIGHT:
-            xforce += 0.1
+            xspeed += 0.1
         elif event.key == K_LEFT:
-            xforce -= 0.1
+            xspeed -= 0.1
         elif event.key == K_r:
             redraw();
         elif event.key == K_q:
@@ -102,9 +102,9 @@ for counter in count():
 
         east, south, right, down = ball
 
-        down += 0.05
-        east += right
-        south += down
+        down += 0.1   # gravity
+        east += right # xf = v * t + xi
+        south += down # south_final = down_pixels/frame * 1_frame + south_initial
 
         ball = (east, south, right, down)
 
@@ -131,8 +131,8 @@ for counter in count():
 
     pygame.draw.rect(screen, black, (0, 0, 120, 30))
     scoredisplay = font.render('score: ' + str(score), True, white)
-    xdisplay = font.render('xforce: ' + str(xforce), True, white)
-    ydisplay = font.render('yforce: ' + str(yforce), True, white)
+    xdisplay = font.render('xspeed: ' + str(xspeed), True, white)
+    ydisplay = font.render('yspeed: ' + str(-yspeed), True, white)
     screen.blit(scoredisplay, (0, 0))
     screen.blit(xdisplay, (0, 10))
     screen.blit(ydisplay, (0, 20))
