@@ -53,7 +53,7 @@ def reset():
 def redraw():
     """Redraw screen and settings."""
     global ball, xspeed, yspeed
-    ball, xspeed, yspeed = None, 1.5, -6.0
+    ball, xspeed, yspeed = None, 6.0, -6.0
 
     screen.fill(black)
     pygame.draw.line(screen, white, (0, 475), (480, 475), 11)
@@ -63,6 +63,7 @@ def redraw():
 
 # Initialize start of game play.
 
+drag = False
 reset()
 redraw()
 
@@ -91,6 +92,8 @@ for counter in count():
             xspeed += 0.1
         elif event.key == K_LEFT:
             xspeed -= 0.1
+        elif event.key == K_d:
+            drag = (not drag)
         elif event.key == K_r:
             redraw();
         elif event.key == K_q:
@@ -102,7 +105,20 @@ for counter in count():
 
         east, south, right, down = ball
 
+        if drag:
+            # Calculate the effect of air resistance (sort of).
+
+            velocity = (right ** 2 + down ** 2) ** 0.5
+            dragf = 0.005 * velocity ** 2
+            down += (-down / velocity) * dragf
+            right -= (right / velocity) * dragf
+
+        # Update the velocity down due to gravity.
+
         down += 0.1   # gravity
+
+        # Calculate the new position of the ball.
+
         east += right # xf = v * t + xi
         south += down # south_final = down_pixels/frame * 1_frame + south_initial
 
