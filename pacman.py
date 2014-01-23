@@ -1,6 +1,25 @@
 """
 Simplified Pacman.
 
+# Getting Started
+
+1. Open Google Chrome
+2. Visit http://github.com/grantjenks/free_python_games
+3. Click on pacman.py
+4. Click on "Raw"
+5. Ctrl-s to save the file.
+6. Go Back twice.
+7. Click on pacmang.jpg
+8. Click on "Raw"
+9. Ctrl-s to save the file.
+10. Go Back twice.
+11. Click on ghost.jpg
+12. Click on "Raw"
+13. Ctrl-s to save the file.
+14. Open IDLE
+15. In IDLE open pacman.py
+16. Press F5
+
 Written by Grant Jenks
 http://www.grantjenks.com/
 
@@ -126,11 +145,28 @@ class Game:
 
     def move_ghosts(self):
         """Move ghost characters."""
+        def dist_pacman(rect):
+            return ((rect.top - self.pacman[0].top) ** 2
+                    + (rect.left - self.pacman[0].left) ** 2) ** 0.5
+
+        def test_dir(new_dir, curr_dir, rect):
+            next_tup = self.move_rect(new_dir, curr_dir, rect)
+            return dist_pacman(next_tup[0])
+
         for tup in self.ghosts:
             rect = tup[0]
             curr_dir = next_dir = tup[1]
             if rect.top % 20 == 0 and rect.left % 20 == 0:
+
+                # Uncomment for Ghost AI
+                #
+                # dist = [(test_dir(val, curr_dir, rect), val)
+                #         for val in (0, 1, 2, 3)]
+                # min_dist = min(dist)
+                # next_dir = min_dist[1]
+
                 next_dir = (curr_dir + random.choice((1, 3))) % 4
+
             tup[0], tup[1] = self.move_rect(next_dir, curr_dir, rect)
 
     def update(self):
@@ -155,12 +191,15 @@ class Game:
             left = (idx % self.tiles_width) * 20
             top = (idx / self.tiles_width) * 20
             if val == 0:
+                # Draws a blue square.
                 color = (0, 0, 128)
                 pygame.draw.rect(screen, color, (left, top, 20, 20))
             else:
+                # Draw a black square.
                 color = (0, 0, 0)
                 pygame.draw.rect(screen, color, (left, top, 20, 20))
             if val == 2:
+                # Draw a white dot.
                 color = (255, 255, 255)
                 pygame.draw.circle(screen, color, (left + 10, top + 10), 2)
 
