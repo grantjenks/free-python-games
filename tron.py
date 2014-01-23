@@ -60,15 +60,29 @@ restart()
 
 def move(player):
     curr = player['position']
-    next = curr + player['direction']
-    if next < 0 or next >= (tiles ** 2):
-        player['dead'] = True
-    elif abs((next % tiles) - (curr % tiles)) > 1:
-        player['dead'] = True
-    elif board[next] != black:
+
+    curr_x = curr % tiles
+    curr_y = curr / tiles
+
+    if player['direction'] == left:
+        curr_x -= 1
+    elif player['direction'] == right:
+        curr_x += 1
+    elif player['direction'] == up:
+        curr_y -= 1
+    elif player['direction'] == down:
+        curr_y += 1
+
+    curr_x %= tiles
+    curr_y %= tiles
+
+    next = curr_x + tiles * curr_y
+
+    if board[next] != black:
         player['dead'] = True
     else:
         board[next] = player['color']
+
     player['position'] = next
 
 def draw_rect(player):
