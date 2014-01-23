@@ -48,8 +48,7 @@ Exercises
 2. Change the number of monsters.
 3. Change the starting position of pacman.
 4. Make the monsters faster/slower.
-5. Allow pacman to move diagonally.
-6. Make the monsters smarter.
+5. Make the monsters smarter.
 """
 
 import sys
@@ -77,25 +76,28 @@ class Game:
         self.score = 0
 
         self.tiles_width = 17
-        self.tiles = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0,
-                      0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0,
-                      0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0,
-                      0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 2, 0,
-                      0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0,
-                      0, 0, 2, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0,
-                      0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.level = 0
+        self.levels = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0,
+             0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0,
+             0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0,
+             0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 2, 0,
+             0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0,
+             0, 0, 2, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0,
+             0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ]
 
         self.next_dir = 0
         self.pacman = [pygame.Rect(160, 260, 20, 20), 0]
@@ -118,8 +120,8 @@ class Game:
 
     def valid_pos(self, rect):
         """Return True iff character rectangle is valid on tiles."""
-        prev_tile = self.tiles[self.rect_idx(rect)]
-        next_tile = self.tiles[self.rect_idx(rect.move(19, 19))]
+        prev_tile = self.levels[self.level][self.rect_idx(rect)]
+        next_tile = self.levels[self.level][self.rect_idx(rect.move(19, 19))]
         on_track = rect.left % 20 == 0 or rect.top % 20 == 0
         return prev_tile != 0 and next_tile != 0 and on_track
 
@@ -174,11 +176,11 @@ class Game:
         self.next_dir = self.pacman[1]
 
         idx = self.rect_idx(self.pacman[0])
-        if self.tiles[idx] == 2:
+        if self.levels[self.level][idx] == 2:
             self.score += 1
-            self.tiles[idx] = 1
+            self.levels[self.level][idx] = 1
 
-        has_food = any(val == 2 for val in self.tiles)
+        has_food = any(val == 2 for val in self.levels[self.level])
         ghost_rects = [tup[0] for tup in self.ghosts]
         is_eaten = self.pacman[0].collidelist(ghost_rects) >= 0
         self.running = has_food and not is_eaten
@@ -187,7 +189,7 @@ class Game:
         """Draw game on screen."""
         # Draw tiles
 
-        for idx, val in enumerate(self.tiles):
+        for idx, val in enumerate(self.levels[self.level]):
             left = (idx % self.tiles_width) * 20
             top = (idx / self.tiles_width) * 20
             if val == 0:
