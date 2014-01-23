@@ -68,15 +68,7 @@ class Game:
     """Track pacman game state."""
     def __init__(self):
         """Initialize game."""
-        self.reset()
-
-    def reset(self):
-        """Reset game to initial game state."""
-        self.running = True
-        self.score = 0
-
         self.tiles_width = 17
-        self.level = 0
         self.levels = [
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
              0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
@@ -98,7 +90,13 @@ class Game:
              0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ]
+        self.reset()
 
+    def reset(self):
+        """Reset game to initial game state."""
+        self.running = True
+        self.score = 0
+        self.level = 0
         self.next_dir = 0
         self.pacman = [pygame.Rect(160, 260, 20, 20), 0]
         self.ghosts = [[pygame.Rect(20, 20, 20, 20), 0],
