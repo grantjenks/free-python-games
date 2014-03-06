@@ -1,6 +1,25 @@
 """
 Simplified Pacman.
 
+# Getting Started
+
+1. Open Google Chrome
+2. Visit http://github.com/grantjenks/free_python_games
+3. Click on pacman.py
+4. Click on "Raw"
+5. Ctrl-s to save the file.
+6. Go Back twice.
+7. Click on pacmang.jpg
+8. Click on "Raw"
+9. Ctrl-s to save the file.
+10. Go Back twice.
+11. Click on ghost.jpg
+12. Click on "Raw"
+13. Ctrl-s to save the file.
+14. Open IDLE
+15. In IDLE open pacman.py
+16. Press F5
+
 Written by Grant Jenks
 http://www.grantjenks.com/
 
@@ -29,8 +48,7 @@ Exercises
 2. Change the number of monsters.
 3. Change the starting position of pacman.
 4. Make the monsters faster/slower.
-5. Allow pacman to move diagonally.
-6. Make the monsters smarter.
+5. Make the monsters smarter.
 """
 
 import sys
@@ -50,34 +68,35 @@ class Game:
     """Track pacman game state."""
     def __init__(self):
         """Initialize game."""
+        self.tiles_width = 17
+        self.levels = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0,
+             0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0,
+             0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0,
+             0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 2, 0,
+             0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
+             0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0,
+             0, 0, 2, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0,
+             0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
+             0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 2, 0,
+             0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        ]
         self.reset()
 
     def reset(self):
         """Reset game to initial game state."""
         self.running = True
         self.score = 0
-
-        self.tiles_width = 17
-        self.tiles = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 0, 0,
-                      0, 2, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 0, 0,
-                      0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0,
-                      0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 2, 0, 2, 0, 0, 2, 0,
-                      0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 2, 0, 0, 2, 0, 2, 0, 0, 2, 0, 0, 2, 0,
-                      0, 2, 2, 0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 0,
-                      0, 0, 2, 0, 2, 0, 2, 0, 0, 0, 2, 0, 2, 0, 2, 0, 0,
-                      0, 2, 2, 2, 2, 0, 2, 2, 0, 2, 2, 0, 2, 2, 2, 2, 0,
-                      0, 2, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 2, 0,
-                      0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-
+        self.level = 0
         self.next_dir = 0
         self.pacman = [pygame.Rect(160, 260, 20, 20), 0]
         self.ghosts = [[pygame.Rect(20, 20, 20, 20), 0],
@@ -99,8 +118,8 @@ class Game:
 
     def valid_pos(self, rect):
         """Return True iff character rectangle is valid on tiles."""
-        prev_tile = self.tiles[self.rect_idx(rect)]
-        next_tile = self.tiles[self.rect_idx(rect.move(19, 19))]
+        prev_tile = self.levels[self.level][self.rect_idx(rect)]
+        next_tile = self.levels[self.level][self.rect_idx(rect.move(19, 19))]
         on_track = rect.left % 20 == 0 or rect.top % 20 == 0
         return prev_tile != 0 and next_tile != 0 and on_track
 
@@ -126,11 +145,28 @@ class Game:
 
     def move_ghosts(self):
         """Move ghost characters."""
+        def dist_pacman(rect):
+            return ((rect.top - self.pacman[0].top) ** 2
+                    + (rect.left - self.pacman[0].left) ** 2) ** 0.5
+
+        def test_dir(new_dir, curr_dir, rect):
+            next_tup = self.move_rect(new_dir, curr_dir, rect)
+            return dist_pacman(next_tup[0])
+
         for tup in self.ghosts:
             rect = tup[0]
             curr_dir = next_dir = tup[1]
             if rect.top % 20 == 0 and rect.left % 20 == 0:
+
+                # Uncomment for Ghost AI
+                #
+                # dist = [(test_dir(val, curr_dir, rect), val)
+                #         for val in (0, 1, 2, 3)]
+                # min_dist = min(dist)
+                # next_dir = min_dist[1]
+
                 next_dir = (curr_dir + random.choice((1, 3))) % 4
+
             tup[0], tup[1] = self.move_rect(next_dir, curr_dir, rect)
 
     def update(self):
@@ -138,11 +174,11 @@ class Game:
         self.next_dir = self.pacman[1]
 
         idx = self.rect_idx(self.pacman[0])
-        if self.tiles[idx] == 2:
+        if self.levels[self.level][idx] == 2:
             self.score += 1
-            self.tiles[idx] = 1
+            self.levels[self.level][idx] = 1
 
-        has_food = any(val == 2 for val in self.tiles)
+        has_food = any(val == 2 for val in self.levels[self.level])
         ghost_rects = [tup[0] for tup in self.ghosts]
         is_eaten = self.pacman[0].collidelist(ghost_rects) >= 0
         self.running = has_food and not is_eaten
@@ -151,16 +187,19 @@ class Game:
         """Draw game on screen."""
         # Draw tiles
 
-        for idx, val in enumerate(self.tiles):
+        for idx, val in enumerate(self.levels[self.level]):
             left = (idx % self.tiles_width) * 20
             top = (idx / self.tiles_width) * 20
             if val == 0:
+                # Draws a blue square.
                 color = (0, 0, 128)
                 pygame.draw.rect(screen, color, (left, top, 20, 20))
             else:
+                # Draw a black square.
                 color = (0, 0, 0)
                 pygame.draw.rect(screen, color, (left, top, 20, 20))
             if val == 2:
+                # Draw a white dot.
                 color = (255, 255, 255)
                 pygame.draw.circle(screen, color, (left + 10, top + 10), 2)
 
