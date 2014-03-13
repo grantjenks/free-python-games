@@ -2,9 +2,6 @@
 Bagels.
 
 Copied from: http://inventwithpython.com/chapter11.html
-
-Exercises
-1. 
 """
 
 import random
