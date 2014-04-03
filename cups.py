@@ -29,7 +29,8 @@ Exercises
 2. Increase the frame rate.
 3. Increase the cup rotation speed.
 4. Increase the number of swaps.
-5. How could you allow multiple pairs of cups to rotate at the same time?
+5. Change the circles to squares.
+6. How could you allow multiple pairs of cups to rotate at the same time?
 """
 
 import sys, pygame, random
@@ -38,7 +39,7 @@ from math import pi, sin, cos
 
 pygame.init()
 
-cup_count, cup_width, margin, fps = 10, 80, 20, 20
+cup_count, cup_width, margin, fps = 3, 80, 20, 20
 block = cup_width + margin
 width = block * cup_count
 
@@ -112,22 +113,20 @@ while True:
         elif event.key == K_q:
             pygame.event.post(pygame.event.Event(QUIT))
 
-    try:
-        if animation is not None:
-            animation.next()
-    except StopIteration:
-        animation = None
-
     if animation is None:
         if swaps > 0:
             start = random.randrange(cup_count - 1)
-            offset = random.randrange(1, cup_count - start)
-            animation = animate_swap(start, start + offset)
+            other = random.randrange(1, cup_count - start)
+            animation = animate_swap(start, start + other)
         elif swaps > -(fps * 5):
             draw_cups()
         else:
             animation = animate_start()
-
         swaps -= 1
+    else:
+        try:
+            animation.next()
+        except:
+            animation = None
 
     pygame.display.flip()
