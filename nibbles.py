@@ -18,25 +18,22 @@ Exercises
 import sys, pygame
 from random import randrange
 from pygame.locals import *
-from collections import deque
 from itertools import count
 
-pygame.init()
-
 size = width, height = 480, 480
-font = pygame.font.Font(None, 14)
 up, right, down, left = (0, -10), (10, 0), (0, 10), (-10, 0)
 
+pygame.init()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
+font = pygame.font.Font(None, 14)
 
-snake_len, snake_dir, food, dead = 20, down, None, False
-snake = deque(pygame.Rect(10, 10 + cnt * 10, 10, 10)
-              for cnt in range(snake_len))
+snake_dir, food, dead = down, None, False
+snake = [pygame.Rect(10, 10 + value * 10, 10, 10) for value in range(20)]
 foreground, background = (255, 255, 255), (0, 0, 0)
 
 for counter in count():
-    clock.tick(min(5 + (snake_len / 4), 30))
+    clock.tick(min(5 + (len(snake) / 4), 30))
 
     event = pygame.event.poll()
 
@@ -53,9 +50,9 @@ for counter in count():
         elif event.key == K_LEFT and snake_dir != right:
             snake_dir = left
         elif event.key == K_r:
-            snake_len, snake_dir, food, dead = 20, down, None, False
-            snake = deque(pygame.Rect(10, 10 + cnt * 10, 10, 10)
-                          for cnt in range(snake_len))
+            snake_dir, food, dead = down, None, False
+            snake = [pygame.Rect(10, 10 + value * 10, 10, 10)
+                     for value in range(20)]
             foreground, background = (255, 255, 255), (0, 0, 0)
         elif event.key == K_q:
             pygame.event.post(pygame.event.Event(QUIT))
@@ -75,11 +72,10 @@ for counter in count():
     else:
         snake.append(next)
 
-        if food and next == food:
+        if next == food:
             food = None
-            snake_len += 1
         else:
-            snake.popleft()
+            del snake[0]
 
     if food is None and counter % 50 == 0:
         food = pygame.Rect(randrange(48) * 10, randrange(48) * 10, 10, 10)
@@ -89,7 +85,7 @@ for counter in count():
         pygame.draw.rect(screen, foreground, rect)
     if food:
         pygame.draw.rect(screen, foreground, food)
-    surface = font.render(str(snake_len), True, foreground)
+    surface = font.render(str(len(snake)), True, foreground)
     screen.blit(surface, (0, 0))
 
     pygame.display.flip()
