@@ -34,7 +34,7 @@ def reset():
 def redraw():
     """Redraw screen and settings."""
     global ball, xspeed, yspeed
-    ball, xspeed, yspeed = None, 6.0, -6.0
+    ball, xspeed, yspeed = None, 3.0, -6.0
 
     screen.fill(black)
     pygame.draw.line(screen, white, (0, 475), (480, 475), 11)
