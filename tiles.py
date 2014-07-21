@@ -23,7 +23,7 @@ size = width, height = 480, 480
 font = pygame.font.Font(None, 14)
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
-image = pygame.image.load(sys.argv[1])
+image = pygame.image.load('car.jpg')
 #TODO: Track 'score' by number of tile moves.
 
 # These are the valid adjacent squares.

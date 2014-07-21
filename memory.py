@@ -22,7 +22,7 @@ size = width, height = 480, 480
 font = pygame.font.Font(None, 14)
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
-image = pygame.image.load(sys.argv[1])
+image = pygame.image.load('car.jpg')
 font = pygame.font.Font(None, 60)
 black, white = (0, 0, 0), (255, 255, 255)
 
