@@ -164,7 +164,7 @@ while True:
 
     if wrong_guesses == 10:
 
-        print 'Your DEAD!'
+        print "You're DEAD!"
         break
 
     if '_' not in guess:
