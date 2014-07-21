@@ -59,7 +59,7 @@ for rpt in range(1000):
 
 while True:
 
-    event = pygame.event.poll()
+    event = pygame.event.wait()
 
     if event.type == pygame.QUIT:
         pygame.quit()

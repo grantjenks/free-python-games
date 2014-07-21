@@ -63,7 +63,7 @@ reset()
 
 while True:
     clock.tick(12)
-    event = pygame.event.poll()
+    event = pygame.event.wait()
 
     if event.type == pygame.QUIT:
         pygame.quit()
