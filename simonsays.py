@@ -8,9 +8,10 @@ Exercises
 1. Add more rectangles.
 """
 
-import sys, pygame, random
+import sys, pygame
 from pygame.locals import *
 from pygame import Rect
+from random import randrange
 
 pygame.init()
 
@@ -26,7 +27,7 @@ rects = ((Rect(  5,   5, 230, 230), (200, 200,   0), (255, 255,   0)),
 
 def reset():
     global guess, pattern
-    guess, pattern = [], [random.randrange(len(rects))]
+    guess, pattern = [], [randrange(len(rects))]
     draw_pattern()
 
 def draw_pattern():
@@ -55,9 +56,7 @@ reset()
 
 while True:
     clock.tick(12)
-    event = pygame.event.poll()
-
-    draw_screen()
+    event = pygame.event.wait()
 
     if event.type == pygame.QUIT:
         pygame.quit()
@@ -70,21 +69,19 @@ while True:
     elif event.type == MOUSEBUTTONDOWN and event.button == 1:
         for index, rect in enumerate(rects):
             if rect[0].collidepoint(event.pos):
-                pygame.draw.rect(screen, rect[2], rect[0])
                 guess.append(index)
-
-    draw_message('Pattern length: ' + str(len(pattern)))
 
     if len(guess) > 0:
         if all(lhs == rhs for lhs, rhs in zip(pattern, guess)):
             if len(pattern) == len(guess):
-                pygame.display.flip()
-                pattern.append(random.randrange(len(rects)))
+                pattern.append(randrange(len(rects)))
                 guess = []
                 draw_pattern()
         else:
             pygame.draw.rect(screen, white, (0, 0, 480, 480))
-            draw_message('Max pattern length: ' + str(len(pattern) - 1))
+            draw_message("Simon didn't say that!")
             pygame.display.flip()
     else:
+        draw_screen()
+        draw_message('Pattern length: ' + str(len(pattern)))
         pygame.display.flip()
