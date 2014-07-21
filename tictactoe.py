@@ -8,6 +8,7 @@ Exercises
 1. Why does the computer player try to win two ways?
 2. Draw an X as a square instead.
 3. Make the computer play itself.
+4. Make the computer player dumber.
 """
 
 import sys, pygame, random

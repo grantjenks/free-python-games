@@ -5,6 +5,7 @@ Copyright (c) 2014 Grant Jenks
 http://www.grantjenks.com/
 
 Exercises
+0. Explore the effect of drag.
 1. Make the target smaller.
 2. Make the ball larger.
 3. Move the target off the ground.

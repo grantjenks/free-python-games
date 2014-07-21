@@ -5,7 +5,7 @@ Copyright (c) 2014 Grant Jenks
 http://www.grantjenks.com/
 
 Exercises
-1.
+1. Change how the ball bounces.
 """
 
 import sys, pygame, random
