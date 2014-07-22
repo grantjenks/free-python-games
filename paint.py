@@ -51,7 +51,6 @@ def draw_shapes():
         func(color, start, end)
 
 while True:
-    clock.tick(12)
     event = pygame.event.wait()
 
     if event.type == pygame.QUIT:

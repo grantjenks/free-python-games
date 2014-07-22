@@ -128,7 +128,6 @@ def restart():
 restart()
 
 while True:
-    clock.tick(12)
     event = pygame.event.wait()
 
     pos = None

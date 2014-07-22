@@ -62,7 +62,6 @@ def draw_board():
 reset()
 
 while True:
-    clock.tick(12)
     event = pygame.event.wait()
 
     if event.type == pygame.QUIT:

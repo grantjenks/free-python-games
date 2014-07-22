@@ -58,7 +58,6 @@ for rpt in range(1000):
     tile[0], black_tile[0] = black_tile[0], tile[0]
 
 while True:
-
     event = pygame.event.wait()
 
     if event.type == pygame.QUIT:
@@ -88,4 +87,3 @@ while True:
         screen.blit(tile[1], tile[0])
 
     pygame.display.flip()
-    clock.tick(20)
