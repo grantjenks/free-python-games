@@ -1,22 +1,51 @@
 """
-# Convert PyGame Apps to Javascript
+# JSnake - Convert Python to Javascript as JSnake
+
+* todo - loops like `for`, etc. need to use setTimeout trick or they will
+block the event queues
+* todo - loops like `for`, etc. need to use a `yield;` and then the whole
+program should be wrapped in a generator and `setTimeout(prog.next, 0)`
+
+function* test() {
+    for (var pos = 0; true; pos += 1) {
+        console.log('hello ' + pos);
+        yield;
+    }
+}
+
+t = test();
+
+function run() {
+    t.next();
+    # Maybe call next() repeatedly until a certain time has elapsed 
+    setTimeout(run, 100);
+}
+
+run()
+
 
 # Library Support
 
 library.pygame
 """
 
+import sys
 import ast
+import argparse
 from itertools import count
+from flask import Flask, request, Response
 
-counter = count()
+parser = argparse.ArgumentParser(description='jsnake to javascript translator')
+parser.add_argument('--translate')
 
-class PyGameToJSVisitor(ast.NodeVisitor):
+Counter = count()
+
+class JSnakeVisitor(ast.NodeVisitor):
     def __init__(self, *args, **kwargs):
-        super(PyGameToJSVisitor, self).__init__(*args, **kwargs)
+        super(JSnakeVisitor, self).__init__(*args, **kwargs)
         self._indent = 0
         self._parts = []
-        self._counter = counter
+        self._counter = Counter
 
     def result(self):
         return ''.join(self._parts)
@@ -40,7 +69,13 @@ class PyGameToJSVisitor(ast.NodeVisitor):
         visitor = getattr(self, method)
         return visitor(node)
 
-    visit_Module = ast.NodeVisitor.generic_visit
+    def visit_Module(self, node):
+        self.statement('function* __jsnake_prog() {\n')
+        self._indent += 4
+        self.generic_visit(node)
+        self._indent -= 4
+        self.statement('}\n')
+
     visit_alias = ast.NodeVisitor.generic_visit
     visit_BinOp = ast.NodeVisitor.generic_visit
     visit_Index = ast.NodeVisitor.generic_visit
@@ -63,12 +98,12 @@ class PyGameToJSVisitor(ast.NodeVisitor):
         self.append('(function () {{ {0} = []; '.format(temp))
         for generator in node.generators:
             loop_temp = self.temp()
-            self.append('for ({0} = __iter('.format(loop_temp))
+            self.append('for ({0} = __jsnake_iter('.format(loop_temp))
             self.visit(generator.iter)
             self.append('); {0}.has_next();) {{ '.format(loop_temp))
             self.visit(generator.target)
             self.append(' = {0}.next(); '.format(loop_temp))
-        self.append('{0}.append('.format(temp))
+        self.append('{0}.push('.format(temp))
         self.visit(node.elt)
         self.append('); ')
         for generator in node.generators:
@@ -96,7 +131,7 @@ class PyGameToJSVisitor(ast.NodeVisitor):
 
     def visit_Compare(self, node):
         if isinstance(node.ops[0], ast.In):
-            self.append('__in(')
+            self.append('__jsnake_in(')
             self.visit(node.left)
             self.append(', ')
             self.visit(node.comparators[0])
@@ -106,7 +141,7 @@ class PyGameToJSVisitor(ast.NodeVisitor):
 
     def visit_Subscript(self, node):
         self.visit(node.value)
-        self.append('[__index(')
+        self.append('[__jsnake_index(')
         self.visit(node.value)
         self.append(', ')
         self.visit(node.slice)
@@ -123,6 +158,8 @@ class PyGameToJSVisitor(ast.NodeVisitor):
     def visit_Assign(self, node):
         if len(node.targets) == 1 and not isinstance(node.targets[0], ast.Tuple):
             self.indent()
+            if isinstance(node.targets[0], ast.Name):
+                self.append('var ')
             self.visit(node.targets[0])
             self.append(' = ')
             self.visit(node.value)
@@ -169,7 +206,7 @@ class PyGameToJSVisitor(ast.NodeVisitor):
 
     def visit_For(self, node):
         temp = self.temp()
-        self.statement('for ({0} = __iter('.format(temp))
+        self.statement('for (var {0} = __jsnake_iter('.format(temp))
         self.visit(node.iter)
         self.append('); {0}.has_next();) {{\n'.format(temp))
         self._indent += 4
@@ -178,6 +215,7 @@ class PyGameToJSVisitor(ast.NodeVisitor):
         self.append(' = {0}.next();\n'.format(temp))
         for stmt in node.body:
             self.visit(stmt)
+        self.statement('yield;\n')
         self._indent -= 4
         self.statement('}\n')
 
@@ -210,7 +248,7 @@ class PyGameToJSVisitor(ast.NodeVisitor):
 
     def visit_Import(self, node):
         for alias in node.names:
-            self.statement('{0} = library.{0};\n'.format(alias.name))
+            self.statement('{0} = __jsnake_lib.{0};\n'.format(alias.name))
         self.generic_visit(node)
 
     def visit_ImportFrom(self, node):
@@ -218,14 +256,43 @@ class PyGameToJSVisitor(ast.NodeVisitor):
         # from pygame.locals import *
         for alias in node.names:
             name = alias.name if alias.asname is None else alias.asname
-            self.statement('{0} = library.{1}.{2};\n'.format(name, node.module, alias.name))
+            self.statement('{0} = __jsnake_lib.{1}.{2};\n'.format(name, node.module, alias.name))
 
-if __name__ == '__main__':
-    with open('nibbles.py') as fptr:
+args = parser.parse_args()
+
+if args.translate:
+    with open(args.translate) as fptr:
         module = ast.parse(fptr.read())
 
-    visitor = PyGameToJSVisitor()
+    visitor = JSnakeVisitor()
 
     visitor.visit(module)
 
     print visitor.result()
+
+    sys.exit(0)
+
+app = Flask(__name__)
+
+@app.route('/jsnake')
+def jsnake():
+    uri = request.args.get('file')
+    with open(uri) as fptr:
+        module = ast.parse(fptr.read())
+    visitor = JSnakeVisitor()
+    visitor.visit(module)
+    return Response(visitor.result(), mimetype='text/javascript')
+
+@app.route('/jsnake.js')
+def jsnake_js():
+    with open('jsnake.js') as fptr:
+        return Response(fptr.read(), mimetype='text/javascript')
+
+@app.route('/jsnake.html')
+def nibbles_html():
+    with open('jsnake.html') as fptr:
+        return fptr.read()
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    
