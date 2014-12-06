@@ -17,7 +17,7 @@ Exercises
 
 import sys, pygame
 from random import randrange
-from pygame.locals import *
+from pygame.locals import KEYDOWN, K_UP, K_RIGHT, K_DOWN, K_LEFT, QUIT, K_r, K_q
 from itertools import count
 
 size = width, height = 480, 480
@@ -37,7 +37,7 @@ for counter in count():
 
     event = pygame.event.poll()
 
-    if event.type == pygame.QUIT:
+    if event.type == QUIT:
         pygame.quit()
         sys.exit()
     elif event.type == KEYDOWN:
