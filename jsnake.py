@@ -1,32 +1,17 @@
 """
 # JSnake - Convert Python to Javascript as JSnake
 
-* todo - loops like `for`, etc. need to use setTimeout trick or they will
-block the event queues
-* todo - loops like `for`, etc. need to use a `yield;` and then the whole
-program should be wrapped in a generator and `setTimeout(prog.next, 0)`
+# Todo
 
-function* test() {
-    for (var pos = 0; true; pos += 1) {
-        console.log('hello ' + pos);
-        yield;
-    }
-}
-
-t = test();
-
-function run() {
-    t.next();
-    # Maybe call next() repeatedly until a certain time has elapsed 
-    setTimeout(run, 100);
-}
-
-run()
-
-
-# Library Support
-
-library.pygame
+* Hook up key press events
+  * Arrow keys, K_r, and K_q
+  * draw fonts
+* Use Google's Traceur compiler for ES6 to ES5 cross-compilation.
+  * Example in repos/traceur-compiler/out
+  * Commands:
+    ../traceur --out nibbles.js --script nibbles.es6.js
+    python -m SimpleHTTPServer
+    # open http://127.0.0.1:8000/jsnake.html
 """
 
 import sys
@@ -295,4 +280,3 @@ def nibbles_html():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
