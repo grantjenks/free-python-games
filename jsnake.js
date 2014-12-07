@@ -129,6 +129,11 @@ var __jsnake_lib = {
                 }
             }
         }
+    },
+    sys: {
+        exit: function () {
+            // todo
+        }
     }
 }
 
