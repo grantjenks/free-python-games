@@ -75,7 +75,7 @@ var __jsnake_lib = {
                     return __jsnake_lib.pygame.event.Event(null, null);
                 } else {
                     var event = __jsnake_consume[0];
-                    __jsnake_consume.slice(0, 1);
+                    __jsnake_consume.splice(0, 1);
                     return event;
                 }
             },
@@ -208,35 +208,63 @@ function __jsnake_rgb_to_hex(rgb) {
 Array.prototype.append = Array.prototype.push;
 
 ////////////////////////////////////////////////////////////////////////////////
+// JSnake event handlers
+////////////////////////////////////////////////////////////////////////////////
+
+$(document).on('keydown', function (event) {
+    var key = 0;
+    var pygame = __jsnake_lib.pygame;
+    var locals = pygame.locals;
+
+    switch (event.which) {
+    case 37:
+        key = locals.K_LEFT;
+        break;
+    case 38:
+        key = locals.K_UP;
+        break;
+    case 39:
+        key = locals.K_RIGHT;
+        break;
+    case 40:
+        key = locals.K_DOWN;
+        break;
+    case 81:
+        key = locals.K_q;
+        break;
+    case 82:
+        key = locals.K_r;
+        break;
+    default:
+        console.log('key error: ' + event.which);
+    }
+
+    __jsnake_consume.push(pygame.event.Event(locals.KEYDOWN, key));
+});
+
+// todo: __jsnake_produce event queue
+
+////////////////////////////////////////////////////////////////////////////////
+// JSnake game loop
+////////////////////////////////////////////////////////////////////////////////
 
 __jsnake_inst = __jsnake_prog();
 __jsnake_fps = 10;
 __jsnake_flip = false;
-__jsnake_start = (new Date()).getTime();
 __jsnake_yield = (new Date()).getTime();
 __jsnake_sleep = 0;
 
 function __jsnake_run() {
-    __jsnake_start = (new Date()).getTime();
-
-    // Amount of time since we last ran. This accounts for processing events
-    // like key presses.
-
-    var behind = __jsnake_start - __jsnake_yield - __jsnake_sleep;
-
     while (!__jsnake_flip) {
         __jsnake_inst.next();
     }
 
-    __jsnake_yield = (new Date()).getTime();
-
     var frame = 1000 / __jsnake_fps;
+    var next = __jsnake_yield + frame;
+    var curr = (new Date()).getTime();
 
-    // Amount of time screen drawing and event processing required.
-
-    var duration = __jsnake_yield - __jsnake_start + behind;
-
-    __jsnake_sleep = Math.max(frame - duration, 0);
+    __jsnake_sleep = Math.min(frame, Math.max(next - curr + __jsnake_sleep, 0));
+    __jsnake_yield = (new Date()).getTime();
     __jsnake_flip = false;
 
     setTimeout(__jsnake_run, __jsnake_sleep);

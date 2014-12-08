@@ -3,15 +3,18 @@
 
 # Todo
 
-* Hook up key press events
-  * Arrow keys, K_r, and K_q
-  * draw fonts
+* Draw fonts
+* Object equality
+  * todo: ignore functions
+    _.isEqual(next, food, function (a, b) { if (typeof a == 'function' && typeof b == 'function') { return true; } else { return undefined; } })
 * Use Google's Traceur compiler for ES6 to ES5 cross-compilation.
   * Example in repos/traceur-compiler/out
   * Commands:
     ../traceur --out nibbles.js --script nibbles.es6.js
     python -m SimpleHTTPServer
     # open http://127.0.0.1:8000/jsnake.html
+* Create source maps to help with debugging!
+  * https://github.com/mozilla/source-map
 """
 
 import sys
