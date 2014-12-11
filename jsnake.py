@@ -4,9 +4,6 @@
 # Todo
 
 * Draw fonts
-* Object equality
-  * todo: ignore functions
-    _.isEqual(next, food, function (a, b) { if (typeof a == 'function' && typeof b == 'function') { return true; } else { return undefined; } })
 * Use Google's Traceur compiler for ES6 to ES5 cross-compilation.
   * Example in repos/traceur-compiler/out
   * Commands:
@@ -124,12 +121,20 @@ class JSnakeVisitor(ast.NodeVisitor):
             self.append(', ')
             self.visit(node.comparators[0])
             self.append(')')
+        elif isinstance(node.ops[0], ast.Eq):
+            self.append('__jsnake_cmp(')
+            self.visit(node.left)
+            self.append(', ')
+            self.visit(node.comparators[0])
+            self.append(', ')
+            self.append('__jsnake_op.eq')
+            self.append(')')
         else:
             self.generic_visit(node)
 
     def visit_Subscript(self, node):
         self.visit(node.value)
-        self.append('[__jsnake_index(')
+        self.append('[__jsnake_idx(')
         self.visit(node.value)
         self.append(', ')
         self.visit(node.slice)
@@ -198,6 +203,7 @@ class JSnakeVisitor(ast.NodeVisitor):
         self.visit(node.iter)
         self.append('); {0}.has_next();) {{\n'.format(temp))
         self._indent += 4
+        self.statement('yield;\n');
         self.indent()
         self.visit(node.target)
         self.append(' = {0}.next();\n'.format(temp))

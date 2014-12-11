@@ -26,7 +26,14 @@ var __jsnake_lib = {
             Font: function (name, size) {
                 return {
                     render: function (text, antialias, color) {
-                        // todo
+                        return {
+                            kind: 'text',
+                            text: text,
+                            size: size,
+                            name: name,
+                            antialias: antialias,
+                            color: color
+                        }
                     }
                 };
             },
@@ -42,7 +49,11 @@ var __jsnake_lib = {
                     ctx.fillRect(0, 0, size[0], size[1]);
                 },
                 blit: function (surface, pos) {
-                    // todo
+                    if (surface.kind == 'text') {
+                        // todo
+                    } else {
+                        throw new Error('unrecognized surface in blit: ' + surface.kind);
+                    }
                 }
             };
         },
@@ -189,11 +200,41 @@ function __jsnake_iter(item) {
     }
 }
 
-function __jsnake_in(val, arr) {
-    return (arr.indexOf(val) >= 0);
+__jsnake_op = {
+    eq: function (lhs, rhs) {
+        if (_.isPlainObject(lhs) && _.isPlainObject(rhs)) {
+            return _.isEqual(lhs, rhs, function (alpha, beta) {
+                if (_.isFunction(alpha) && _.isFunction(beta)) {
+                    return true;
+                } else {
+                    return undefined;
+                }
+            });
+        } else {
+            return _.isEqual(lhs, rhs);
+        }
+    },
+    ne: null,
+    gt: null,
+    ge: null,
+    lt: null,
+    le: null
 }
 
-function __jsnake_index(arr, val) {
+function __jsnake_cmp(lhs, rhs, op) {
+    return op(lhs, rhs);
+}
+
+function __jsnake_in(val, arr) {
+    for (var pos = 0; pos < arr.length; pos += 1) {
+        if (__jsnake_cmp(val, arr[pos], __jsnake_op.eq)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function __jsnake_idx(arr, val) {
     return (val >= 0 ? val : val + arr.length);
 }
 
@@ -255,15 +296,25 @@ __jsnake_yield = (new Date()).getTime();
 __jsnake_sleep = 0;
 
 function __jsnake_run() {
+    var start = (new Date()).getTime();
+    var frame = 1000 / __jsnake_fps;
+
     while (!__jsnake_flip) {
         __jsnake_inst.next();
+
+        frame = 1000 / __jsnake_fps;
+        var now = (new Date()).getTime();
+
+        if ((now - start) > frame) {
+            break;
+        }
     }
 
-    var frame = 1000 / __jsnake_fps;
+    frame = 1000 / __jsnake_fps;
     var next = __jsnake_yield + frame;
-    var curr = (new Date()).getTime();
+    var now = (new Date()).getTime();
 
-    __jsnake_sleep = Math.min(frame, Math.max(next - curr + __jsnake_sleep, 0));
+    __jsnake_sleep = Math.min(frame, Math.max(next - now + __jsnake_sleep, 0));
     __jsnake_yield = (new Date()).getTime();
     __jsnake_flip = false;
 
