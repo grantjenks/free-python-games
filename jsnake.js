@@ -50,7 +50,10 @@ var __jsnake_lib = {
                 },
                 blit: function (surface, pos) {
                     if (surface.kind == 'text') {
-                        // todo
+                        var ctx = canvas.getContext("2d");
+                        ctx.font = surface.size + "px Monospace";
+                        ctx.fillStyle = __jsnake_rgb_to_hex(surface.color);
+                        ctx.fillText(surface.text, pos[0], pos[1] + surface.size);
                     } else {
                         throw new Error('unrecognized surface in blit: ' + surface.kind);
                     }

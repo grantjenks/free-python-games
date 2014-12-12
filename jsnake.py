@@ -3,15 +3,14 @@
 
 # Todo
 
-* Draw fonts
-* Use Google's Traceur compiler for ES6 to ES5 cross-compilation.
-  * Example in repos/traceur-compiler/out
-  * Commands:
-    ../traceur --out nibbles.js --script nibbles.es6.js
-    python -m SimpleHTTPServer
-    # open http://127.0.0.1:8000/jsnake.html
-* Create source maps to help with debugging!
-  * https://github.com/mozilla/source-map
+* Develop
+  python jsnake.py
+  open http://127.0.0.1:5000
+* Deploy
+  python jsnake.py --translate nibbles.py > nibbles.es6.js
+  ../traceur --out nibbles.js --script nibbles.es6.js
+  python jsnake.py --deploy
+  # FTP copy bin/jsnake to grantjenks.com/free-python-games
 """
 
 import sys
@@ -22,6 +21,7 @@ from flask import Flask, request, Response
 
 parser = argparse.ArgumentParser(description='jsnake to javascript translator')
 parser.add_argument('--translate')
+parser.add_argument('--deploy', action='store_true')
 
 Counter = count()
 
@@ -268,24 +268,95 @@ if args.translate:
 
 app = Flask(__name__)
 
-@app.route('/jsnake')
-def jsnake():
-    uri = request.args.get('file')
-    with open(uri) as fptr:
+games = (
+    'nibbles',
+)
+
+@app.route('/')
+def jsnake_root():
+    games_list = ''.join('<li><a href="{0}.html">{0}</a></li>'.format(name)
+                         for name in games)
+    content = """<!doctype html>
+    <html>
+      <head>
+        <title>JSnake Games</title>
+      </head>
+      <body>
+        <ul>
+        {0}
+        </ul>
+      </body>
+    </html>""".format(games_list)
+    return content
+
+@app.route('/<name>.html')
+def jsnake_html(name):
+    assert name in games
+    content = [
+        '<!doctype html>',
+        '<html>',
+        '  <head>',
+        '    <title>{0}</title>'.format(name.capitalize()),
+        '  </head>',
+        '  <body>',
+        '    <div id="jsnake"></div>',
+        '    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" type="text/javascript"></script>',
+        '    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>',
+        '    <script src="traceur-runtime.js" type="text/javascript"></script>',
+        '    <script src="{0}.js" type="text/javascript"></script>'.format(name),
+        '    <script src="jsnake.js" type="text/javascript"></script>',
+        '  </body>',
+        '</html>',
+    ]
+    return '\n'.join(content)
+
+@app.route('/<name>.js')
+def jsnake_js(name):
+    assert name in games
+    try:
+        with open(name + '.js') as fptr:
+            return Response(fptr.read(), mimetype='text/javascript')
+    except IOError:
+        pass
+
+    with open(name + '.py') as fptr:
         module = ast.parse(fptr.read())
     visitor = JSnakeVisitor()
     visitor.visit(module)
+
     return Response(visitor.result(), mimetype='text/javascript')
 
+
+@app.route('/traceur-runtime.js')
+def traceur_runtime():
+    with open('traceur-runtime.js') as fptr:
+        return Response(fptr.read(), mimetype='text/javascript')
+
 @app.route('/jsnake.js')
-def jsnake_js():
+def jsnake_lib():
     with open('jsnake.js') as fptr:
         return Response(fptr.read(), mimetype='text/javascript')
 
-@app.route('/jsnake.html')
-def nibbles_html():
-    with open('jsnake.html') as fptr:
-        return fptr.read()
+if args.deploy:
+    import os, shutil
+
+    shutil.rmtree('bin/jsnake', True)
+    os.makedirs('bin/jsnake')
+
+    def write_resp(func, name):
+        resp = func()
+        text = resp if isinstance(resp, str) else resp.get_data()
+        with open('bin/jsnake/' + name, 'w') as fptr:
+            fptr.write(text)
+
+    write_resp(jsnake_root, 'index.html')
+    for name in games:
+        write_resp(lambda: jsnake_html(name), name + '.html')
+        write_resp(lambda: jsnake_js(name), name + '.js')
+    write_resp(jsnake_lib, 'jsnake.js')
+    write_resp(traceur_runtime, 'traceur-runtime.js')
+
+    sys.exit(0)
 
 if __name__ == '__main__':
     app.run(debug=True)
