@@ -6,6 +6,11 @@ var __jsnake_consume = [];
 var __jsnake_produce = [];
 
 var __jsnake_lib = {
+    print: function (values) {
+        _(values).each(function (value) {
+            __jsnake_term.write(value);
+        });
+    },
     pygame: {
         init: function () {
             __jsnake_div = document.getElementById('jsnake');
@@ -287,6 +292,24 @@ $(document).on('keydown', function (event) {
 });
 
 // todo: __jsnake_produce event queue
+
+////////////////////////////////////////////////////////////////////////////////
+// JSnake Terminal
+////////////////////////////////////////////////////////////////////////////////
+
+__jsnake_term = new Terminal({
+    cols: 80,
+    rows: 24,
+    useStyle: true,
+    screenKeys: true,
+    cursorBlink: false
+});
+
+__jsnake_term.open(document.body);
+
+__jsnake_term.on('data', function(data) {
+    __jsnake_term.write(data);
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 // JSnake game loop

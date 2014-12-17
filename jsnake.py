@@ -3,6 +3,10 @@
 
 # Todo
 
+* Terminal
+  * input
+  * raw_input
+  * deploy with term.js
 * Develop
   python jsnake.py
   open http://127.0.0.1:5000
@@ -64,6 +68,15 @@ class JSnakeVisitor(ast.NodeVisitor):
     visit_alias = ast.NodeVisitor.generic_visit
     visit_BinOp = ast.NodeVisitor.generic_visit
     visit_Index = ast.NodeVisitor.generic_visit
+
+    def visit_Print(self, node):
+        self.statement('__jsnake_lib.print([')
+        for value in node.values:
+            self.visit(value)
+            self.append(', ')
+        if node.nl:
+            self.append(r'"\r\n"');
+        self.append(']);\n')
 
     def visit_Delete(self, node):
         self.indent()
@@ -213,6 +226,19 @@ class JSnakeVisitor(ast.NodeVisitor):
         self._indent -= 4
         self.statement('}\n')
 
+    def visit_While(self, node):
+        temp = self.temp()
+        self.statement('while (')
+        self.visit(node.test)
+        self.append(') {\n')
+        self._indent += 4
+        self.statement('yield;\n');
+        for stmt in node.body:
+            self.visit(stmt)
+        self.statement('yield;\n')
+        self._indent -= 4
+        self.statement('}\n')
+
     def visit_If(self, node):
         self.statement('if (')
         self.visit(node.test)
@@ -270,6 +296,7 @@ app = Flask(__name__)
 
 games = (
     'nibbles',
+    'SketchyCalculator',
 )
 
 @app.route('/')
@@ -303,6 +330,7 @@ def jsnake_html(name):
         '    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js" type="text/javascript"></script>',
         '    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>',
         '    <script src="traceur-runtime.js" type="text/javascript"></script>',
+        '    <script src="term.js" type="text/javascript"></script>',
         '    <script src="{0}.js" type="text/javascript"></script>'.format(name),
         '    <script src="jsnake.js" type="text/javascript"></script>',
         '  </body>',
@@ -335,6 +363,11 @@ def traceur_runtime():
 @app.route('/jsnake.js')
 def jsnake_lib():
     with open('jsnake.js') as fptr:
+        return Response(fptr.read(), mimetype='text/javascript')
+
+@app.route('/term.js')
+def term_js():
+    with open('term.js') as fptr:
         return Response(fptr.read(), mimetype='text/javascript')
 
 if args.deploy:
