@@ -8,30 +8,40 @@ var __jsnake_produce = [];
 var __jsnake_lib = {
     print: function (values) {
         _(values).each(function (value) {
-            __jsnake_term.write(value);
+            __jsnake_term.write(value.toString());
         });
     },
+    math: {
+        sqrt: function* (value) {
+            yield Math.sqrt(value);
+        }
+    },
     pygame: {
-        init: function () {
+        init: function* () {
             __jsnake_div = document.getElementById('jsnake');
         },
         display: {
-            set_mode: function (size) {
+            set_mode: function* (size) {
                 var screen = document.createElement('canvas');
                 screen.width = size[0];
                 screen.height = size[1];
+                screen.setAttribute('tabindex', 1);
                 __jsnake_div.appendChild(screen);
-                return __jsnake_lib.pygame.Surface(size, screen);
+                setTimeout(function () {
+                    $('#jsnake > canvas').css('outline', 'none').focus();
+                }, 100);
+                yield* __jsnake_lib.pygame.Surface(size, screen);
             },
-            flip: function () {
+            flip: function* () {
                 __jsnake_flip = true;
+                yield;
             }
         },
         font: {
-            Font: function (name, size) {
-                return {
-                    render: function (text, antialias, color) {
-                        return {
+            Font: function* (name, size) {
+                yield {
+                    render: function* (text, antialias, color) {
+                        yield {
                             kind: 'text',
                             text: text,
                             size: size,
@@ -43,17 +53,17 @@ var __jsnake_lib = {
                 };
             },
         },
-        Surface: function (size, canvas) {
-            return {
+        Surface: function* (size, canvas) {
+            yield {
                 width: size[0],
                 height: size[1],
                 canvas: canvas,
-                fill: function (color) {
+                fill: function* (color) {
                     var ctx = canvas.getContext("2d");
                     ctx.fillStyle = __jsnake_rgb_to_hex(color);
                     ctx.fillRect(0, 0, size[0], size[1]);
                 },
-                blit: function (surface, pos) {
+                blit: function* (surface, pos) {
                     if (surface.kind == 'text') {
                         var ctx = canvas.getContext("2d");
                         ctx.font = surface.size + "px Monospace";
@@ -65,14 +75,14 @@ var __jsnake_lib = {
                 }
             };
         },
-        Rect: function (left, top, width, height) {
-            return {
+        Rect: function* (left, top, width, height) {
+            yield {
                 left: left,
                 top: top,
                 width: width,
                 height: height,
-                move: function (direction) {
-                    return __jsnake_lib.pygame.Rect(
+                move: function* (direction) {
+                    yield* __jsnake_lib.pygame.Rect(
                         this.left + direction[0],
                         this.top + direction[1],
                         this.width,
@@ -82,29 +92,29 @@ var __jsnake_lib = {
             };
         },
         draw: {
-            rect: function (surface, color, rect) {
+            rect: function* (surface, color, rect) {
                 var ctx = surface.canvas.getContext("2d");
                 ctx.fillStyle = __jsnake_rgb_to_hex(color);
                 ctx.fillRect(rect.left, rect.top, rect.width, rect.height);
             }
         },
         event: {
-            poll: function () {
+            poll: function* () {
                 if (__jsnake_consume.length == 0) {
-                    return __jsnake_lib.pygame.event.Event(null, null);
+                    yield* __jsnake_lib.pygame.event.Event(null, null);
                 } else {
                     var event = __jsnake_consume[0];
                     __jsnake_consume.splice(0, 1);
-                    return event;
+                    yield event;
                 }
             },
-            Event: function (kind, key) {
-                return {
+            Event: function* (kind, key) {
+                yield {
                     type: kind,
                     key: key
                 }
             },
-            post: function (event) {
+            post: function* (event) {
                 __jsnake_produce.push(event);
             }
         },
@@ -119,38 +129,36 @@ var __jsnake_lib = {
             K_LEFT: 276
         },
         time: {
-            Clock: function () {
-                return {
-                    tick: function (fps) {
+            Clock: function* () {
+                yield {
+                    tick: function* (fps) {
+                        if (__jsnake_tick) {
+                            __jsnake_flip = true;
+                        }
                         __jsnake_fps = fps;
+                        __jsnake_tick = true;
                     }
                 }
             }
         },
-        quit: function () {
-            // todo
+        quit: function* () {
+            __jsnake_quit = true;
         }
     },
     random: {
-        randrange: function (value) {
-            return Math.floor(Math.random() * value);
+        randrange: function* (value) {
+            yield Math.floor(Math.random() * value);
         }
     },
     itertools: {
-        count: function () {
-            var curr = 0;
-            return {
-                has_next: function () { return true; },
-                next: function () {
-                    var temp = curr;
-                    curr += 1;
-                    return temp;
-                }
+        count: function* () {
+            for (var value = 0; true; value += 1) {
+                yield value;
             }
         }
     },
     sys: {
-        exit: function () {
+        exit: function* () {
             // todo
         }
     }
@@ -160,53 +168,45 @@ var __jsnake_lib = {
 // Python Built-ins
 ////////////////////////////////////////////////////////////////////////////////
 
-function str(obj) {
-    return obj.toString();
+function* str(obj) {
+    yield obj.toString();
 }
 
-function len(arr) {
-    return arr.length;
+function* len(arr) {
+    yield arr.length;
 }
 
-function min(left, right) {
-    return (left < right ? left : right);
+function* min(left, right) {
+    yield (left < right ? left : right);
 }
 
-function range(value) {
-    var curr = 0;
-    return {
-        next: function() {
-            var temp = curr;
-            curr += 1;
-            return temp;
-        },
-        has_next: function() {
-            return (curr < value);
-        }
+function* range(limit) {
+    for (var value = 0; value < limit; value += 1) {
+        yield value;
     }
+}        
+
+function* input(text) {
+    __jsnake_term.write(text);
+    while (__jsnake_term_buffer.substr(-1) != '\n') {
+        __jsnake_flip = true;
+        yield;
+    }
+    yield eval(__jsnake_term_read());
+}
+
+function* raw_input(text) {
+    __jsnake_term.write(text);
+    while (__jsnake_term_buffer.substr(-1) != '\n') {
+        __jsnake_flip = true;
+        yield;
+    }
+    yield __jsnake_term_read().slice(0, -1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // JSnake Helpers
 ////////////////////////////////////////////////////////////////////////////////
-
-function __jsnake_iter(item) {
-    if (item instanceof Array) {
-        var pos = 0;
-        return {
-            next: function () {
-                var temp = item[pos];
-                pos += 1;
-                return temp;
-            },
-            has_next: function () {
-                return pos < item.length;
-            }
-        };
-    } else {
-        return item;
-    }
-}
 
 __jsnake_op = {
     eq: function (lhs, rhs) {
@@ -254,13 +254,15 @@ function __jsnake_rgb_to_hex(rgb) {
     return '#' + toHex(rgb[0]) + toHex(rgb[1]) + toHex(rgb[2]);
 }
 
-Array.prototype.append = Array.prototype.push;
+Array.prototype.append = function* (value) {
+    this.push(value);
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // JSnake event handlers
 ////////////////////////////////////////////////////////////////////////////////
 
-$(document).on('keydown', function (event) {
+$('#jsnake').on('keydown', function (event) {
     var key = 0;
     var pygame = __jsnake_lib.pygame;
     var locals = pygame.locals;
@@ -288,10 +290,8 @@ $(document).on('keydown', function (event) {
         console.log('key error: ' + event.which);
     }
 
-    __jsnake_consume.push(pygame.event.Event(locals.KEYDOWN, key));
+    __jsnake_consume.push(pygame.event.Event(locals.KEYDOWN, key).next().value);
 });
-
-// todo: __jsnake_produce event queue
 
 ////////////////////////////////////////////////////////////////////////////////
 // JSnake Terminal
@@ -308,33 +308,83 @@ __jsnake_term = new Terminal({
 __jsnake_term.open(document.body);
 
 __jsnake_term.on('data', function(data) {
-    __jsnake_term.write(data);
+    console.log('data: ' + data);
+    if (data === '\r') {
+        __jsnake_term.write('\r');
+        __jsnake_term.write('\n');
+        __jsnake_term_buffer += '\n';
+    } else {
+        __jsnake_term.write(data);
+        __jsnake_term_buffer += data;
+    }
 });
+
+__jsnake_term_buffer = '';
+
+__jsnake_term_read = function () {
+    temp = __jsnake_term_buffer;
+    __jsnake_term_buffer = '';
+    return temp;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // JSnake game loop
 ////////////////////////////////////////////////////////////////////////////////
 
 __jsnake_inst = __jsnake_prog();
-__jsnake_fps = 10;
-__jsnake_flip = false;
+__jsnake_fps = 12;
 __jsnake_yield = (new Date()).getTime();
 __jsnake_sleep = 0;
+__jsnake_result = undefined;
+__jsnake_flip = false;
+__jsnake_quit = false;
+__jsnake_tick = false;
+
+function __jsnake_clear() {
+    var result = __jsnake_result;
+    __jsnake_result = undefined;
+    return result;
+}
 
 function __jsnake_run() {
     var start = (new Date()).getTime();
     var frame = 1000 / __jsnake_fps;
 
-    while (!__jsnake_flip) {
-        __jsnake_inst.next();
+    // Handle incoming event queue.
+
+    if (__jsnake_produce.length > 0) {
+        var event = __jsnake_produce[0];
+        __jsnake_produce.splice(0, 1);
+
+        switch (event.type) {
+        case pygame.locals.QUIT:
+            __jsnake_quit = true;
+            break;
+        default:
+            console.log('event error: ' + event.kind);
+        }
+    }
+
+    // Advance instance generator.
+
+    while (!__jsnake_flip && !__jsnake_quit) {
+        __jsnake_result = __jsnake_inst.next().value;
 
         frame = 1000 / __jsnake_fps;
         var now = (new Date()).getTime();
 
         if ((now - start) > frame) {
+            console.log('frame drop');
             break;
         }
     }
+
+    if (__jsnake_quit) {
+        return;
+    }
+
+    __jsnake_flip = false;
+    __jsnake_tick = false;
 
     frame = 1000 / __jsnake_fps;
     var next = __jsnake_yield + frame;
@@ -342,7 +392,6 @@ function __jsnake_run() {
 
     __jsnake_sleep = Math.min(frame, Math.max(next - now + __jsnake_sleep, 0));
     __jsnake_yield = (new Date()).getTime();
-    __jsnake_flip = false;
 
     setTimeout(__jsnake_run, __jsnake_sleep);
 }

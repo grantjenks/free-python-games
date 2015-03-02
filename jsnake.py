@@ -3,9 +3,12 @@
 
 # Todo
 
+* Test nibbles.py
+  * Add __jsnake_flip back. Need this alternative for exiting
+    the do { ... } while (...) game loop.
 * Terminal
-  * input
-  * raw_input
+  * Answer not displayed for SketchyCalculator.py
+  * support backspace
   * deploy with term.js
 * Develop
   python jsnake.py
@@ -92,21 +95,18 @@ class JSnakeVisitor(ast.NodeVisitor):
         self.append(';\n')
 
     def visit_ListComp(self, node):
+        result = self.temp()
         temp = self.temp()
-        self.append('(function () {{ {0} = []; '.format(temp))
-        for generator in node.generators:
-            loop_temp = self.temp()
-            self.append('for ({0} = __jsnake_iter('.format(loop_temp))
-            self.visit(generator.iter)
-            self.append('); {0}.has_next();) {{ '.format(loop_temp))
-            self.visit(generator.target)
-            self.append(' = {0}.next(); '.format(loop_temp))
-        self.append('{0}.push('.format(temp))
+        self.append('((yield* \n(function* () {{ \nvar {0} = []; \n'.format(result))
+        self.append('for (var {0} of '.format(temp))
+        assert len(node.generators) == 1
+        generator = node.generators[0]
+        self._visit_Iterable(generator.iter)
+        self.append(') {{ \nif ({0} === undefined){{ yield; }} \nelse {{ '.format(temp))
+        self.visit(generator.target)
+        self.append(' = {0}; {1}.push('.format(temp, result))
         self.visit(node.elt)
-        self.append('); ')
-        for generator in node.generators:
-            self.append('}')
-        self.append(' return {0}; }})()'.format(temp))
+        self.append('); }} }} \nyield {0}; }})()), \n__jsnake_clear())'.format(result))
 
     def visit_Add(self, node): self.append(' + ')
     def visit_Sub(self, node): self.append(' - ')
@@ -189,13 +189,13 @@ class JSnakeVisitor(ast.NodeVisitor):
         self.generic_visit(node)
 
     def visit_Call(self, node):
-        self.visit(node.func)
-        self.append('(')
-        for idx, arg in enumerate(node.args):
-            self.visit(arg)
-            if idx < len(node.args) - 1:
-                self.append(', ')
-        self.append(')')
+        temp = self.temp()
+        self.append('((yield* (function* () {{ for (var {0} of '.format(temp))
+        self._visit_Iterable(node)
+        self.append((
+            ') {{ yield {0}; if ({0} !== undefined) break; '
+            '}} }})()), __jsnake_clear())'
+        ).format(temp))
 
     def visit_Attribute(self, node):
         self.visit(node.value)
@@ -210,16 +210,32 @@ class JSnakeVisitor(ast.NodeVisitor):
         }
         self.append(consts.get(node.id, node.id))
 
+    def _visit_Iterable(self, node):
+        # TODO: Change to _visit_Iterable
+        # If func, visit func (as below)
+        # Else, visit node
+        if isinstance(node, ast.Call):
+            self.visit(node.func)
+            self.append('(')
+            for idx, arg in enumerate(node.args):
+                self.visit(arg)
+                if idx < len(node.args) - 1:
+                    self.append(', ')
+            self.append(')')
+        else:
+            self.visit(node)
+
     def visit_For(self, node):
-        temp = self.temp()
-        self.statement('for (var {0} = __jsnake_iter('.format(temp))
-        self.visit(node.iter)
-        self.append('); {0}.has_next();) {{\n'.format(temp))
+        temp = self.temp();
+        self.statement('for (var {0} of '.format(temp))
+        self._visit_Iterable(node.iter)
+        self.append(') {\n')
         self._indent += 4
-        self.statement('yield;\n');
+        self.statement('yield;\n')
+        self.statement('if ({0} === undefined) {{ continue; }}\n'.format(temp))
         self.indent()
         self.visit(node.target)
-        self.append(' = {0}.next();\n'.format(temp))
+        self.append(' = {0};\n'.format(temp))
         for stmt in node.body:
             self.visit(stmt)
         self.statement('yield;\n')
