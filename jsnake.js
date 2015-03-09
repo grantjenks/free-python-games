@@ -313,6 +313,14 @@ __jsnake_term.on('data', function(data) {
         __jsnake_term.write('\r');
         __jsnake_term.write('\n');
         __jsnake_term_buffer += '\n';
+    } else if (data.charCodeAt() == 127) { // backspace
+        __jsnake_term_buffer = __jsnake_term_buffer.substr(
+            0,
+            __jsnake_term_buffer.length - 1
+        );
+        __jsnake_term.write('\x1b[D');
+        __jsnake_term.write(' ');
+        __jsnake_term.write('\x1b[D');
     } else {
         __jsnake_term.write(data);
         __jsnake_term_buffer += data;
