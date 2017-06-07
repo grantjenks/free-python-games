@@ -11,6 +11,7 @@ In 2014, I used these games as part of week-long programming club that met in th
 
 Each game is entirely independent from the others and includes comments along with a list of exercises to work through with students. Creativity and flexibility is important. There's no right or wrong way to implement a new feature! You never know which games the students will find really interesting.
 
+
 Screenshots
 -----------
 
@@ -19,84 +20,49 @@ Nibbles
 
 Nibbles -- like Snake on the old Nokia phones.
 
-.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/nibbles.png?raw=true
-   :alt: Nibbles Free Computer Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/nibbles.png
+   :alt: Nibbles Free Python Game
 
 Memory
 ......
 
 Memory -- match tile pairs of numbers to uncover the hidden image.
 
-.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/memory.png?raw=true
-   :alt: Memory Free Computer Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/memory.png
+   :alt: Memory Free Python Game
 
 Tiles
 .....
 
 Tiles -- shuffle image tiles to solve the puzzle.
 
-.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/tiles.png?raw=true
-   :alt: Tiles Free Computer Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/tiles.png
+   :alt: Tiles Free Python Game
 
 Pacman
 ......
 
 Pacman -- simplified version of the classic.
 
-.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/pacman.png?raw=true
-   :alt: Pacman Free Computer Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/pacman.png
+   :alt: Pacman Free Python Game
 
 Maze
 ....
 
 Maze -- solve a randomly generated maze.
 
-.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/maze.png?raw=true
-   :alt: Maze Free Computer Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/maze.png
+   :alt: Maze Free Python Game
 
 Tic Tac Toe
 ...........
 
 Tic Tac Toe -- the classic.
 
-.. image:: https://github.com/grantjenks/free_python_games/blob/master/screenshots/tictactoe.png?raw=true
-   :alt: Tic Tac Toe Free Computer Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/tictactoe.png
+   :alt: Tic Tac Toe Free Python Game
 
-Requirements
-------------
-
-These games were tested on a Win32 system running Python 2.7 with pygame installed.
-
-Most games should work for Linux-type systems. Where needed (e.g. hangman.py), I tried to make the code cross-platform compatible.
-
-For Python 3 compatibility, you'll need to run the 2to3 tool, change division (/) to integer division (//), and convert return values of filter(..), map(..), etc. calls to lists.
-
-License
--------
-
-MIT-licensed.
-
-::
-    
-    Copyright (c) 2014 Grant Jenks
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to
-    deal in the Software without restriction, including without limitation the
-    rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-    sell copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    
-    The above copyright notice and this permission notice shall be included in
-    all copies or substantial portions of the Software.
-    
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-    IN THE SOFTWARE.
 
 Curriculum
 ----------
@@ -144,35 +110,6 @@ Friday
 - maze.py
 - tiles.py
 
-Tags
-----
-
-- guess.py | text-based, puzzle
-- hangman.py | text-based, two-player, puzzle
-- crypto.py | text-based, topic:encryption
-- bagels.py | text-based, puzzle
-
-- connect.py | two-player, game
-- tron.py | two-player, game
-- pong.py | two-player, game
-
-- maze.py | game, topic:maze
-- cannon.py | game, topic:projectile-motion
-- cups.py | game, topic:animation
-
-- sonar.py | game, topic:distance
-- nibbles.py | game
-- pacman.py | game
-- tictactoe.py | game, topic:artificial-intelligence
-
-- memory.py | puzzle, image
-- simonsays.py | game, puzzle
-- tiles.py | puzzle, image
-
-- paint.py | topic:drawing
-
-- flappy.py | nyi
-
 
 Quickstart
 ----------
@@ -188,6 +125,7 @@ function::
   >>> from freegames import snake
   >>> help(snake)
 
+
 User Guide
 ----------
 
@@ -202,6 +140,7 @@ tutorial, API, and development.
 .. _`Free Python Games API Reference`: http://www.grantjenks.com/docs/freegames/api.html
 .. _`Free Python Games Development`: http://www.grantjenks.com/docs/freegames/development.html
 
+
 Reference and Indices
 ---------------------
 
@@ -214,6 +153,7 @@ Reference and Indices
 .. _`Free Python Games at PyPI`: https://pypi.python.org/pypi/freegames/
 .. _`Free Python Games at GitHub`: https://github.com/grantjenks/free-python-games/
 .. _`Free Python Games Issue Tracker`: https://github.com/grantjenks/free-python-games/issues/
+
 
 Free Python Games License
 -------------------------
