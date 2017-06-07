@@ -172,3 +172,46 @@ Tags
 - paint.py | topic:drawing
 
 - flappy.py | nyi
+
+
+
+
+Free Python Games: FreeGames
+============================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+
+Apache2 License
+---------------
+
+A large number of open source projects you find today are `GPL Licensed`_.
+A project that is released as GPL cannot be used in any commercial product
+without the product itself also being offered as open source.
+
+The MIT, BSD, ISC, and Apache2 licenses are great alternatives to the GPL
+that allow your open-source software to be used freely in proprietary,
+closed-source software.
+
+FreeGames is released under terms of the `Apache2 License`_.
+
+.. _`GPL Licensed`: http://www.opensource.org/licenses/gpl-license.php
+.. _`Apache2 License`: http://opensource.org/licenses/Apache-2.0
+
+FreeGames License
+-----------------
+
+.. include:: ../LICENSE
+
+.. _`FreeGames`: http://www.grantjenks.com/docs/freegames/
