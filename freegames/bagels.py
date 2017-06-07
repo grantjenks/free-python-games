@@ -1,5 +1,4 @@
-"""
-Bagels: a number game.
+"""Bagels: a number game.
 
 Copyright (c) 2014 Grant Jenks
 http://www.grantjenks.com/
@@ -11,6 +10,7 @@ Exercises:
 1. Can you guess the number?
 2. How much harder is 6 digits? Do you need more guesses?
 3. What's the maximum number of digits we could support?
+
 """
 
 from random import sample, shuffle

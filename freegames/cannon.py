@@ -1,5 +1,4 @@
-"""
-Cannon - hitting a target with a cannon.
+"""Cannon - hitting a target with a cannon.
 
 Copyright (c) 2014 Grant Jenks
 http://www.grantjenks.com/
@@ -9,6 +8,7 @@ Exercises
 1. Make the target smaller.
 2. Make the ball larger.
 3. Move the target off the ground.
+
 """
 
 import sys, pygame
