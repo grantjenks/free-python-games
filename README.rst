@@ -174,44 +174,60 @@ Tags
 - flappy.py | nyi
 
 
+Quickstart
+----------
 
+Installing Free Python Games is simple with
+`pip <http://www.pip-installer.org/>`_::
 
-Free Python Games: FreeGames
-============================
+  $ pip install freegames
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+You can access documentation in the interpreter with Python's built-in help
+function::
 
+  >>> from freegames import snake
+  >>> help(snake)
 
+User Guide
+----------
 
-Indices and tables
-==================
+For those wanting more details, this part of the documentation describes
+tutorial, API, and development.
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* `Free Python Games Tutorial`_
+* `Free Python Games API Reference`_
+* `Free Python Games Development`_
 
+.. _`Free Python Games Tutorial`: http://www.grantjenks.com/docs/freegames/tutorial.html
+.. _`Free Python Games API Reference`: http://www.grantjenks.com/docs/freegames/api.html
+.. _`Free Python Games Development`: http://www.grantjenks.com/docs/freegames/development.html
 
-Apache2 License
----------------
+Reference and Indices
+---------------------
 
-A large number of open source projects you find today are `GPL Licensed`_.
-A project that is released as GPL cannot be used in any commercial product
-without the product itself also being offered as open source.
+* `Free Python Games Documentation`_
+* `Free Python Games at PyPI`_
+* `Free Python Games at GitHub`_
+* `Free Python Games Issue Tracker`_
 
-The MIT, BSD, ISC, and Apache2 licenses are great alternatives to the GPL
-that allow your open-source software to be used freely in proprietary,
-closed-source software.
+.. _`Free Python Games Documentation`: http://www.grantjenks.com/docs/freegames/
+.. _`Free Python Games at PyPI`: https://pypi.python.org/pypi/freegames/
+.. _`Free Python Games at GitHub`: https://github.com/grantjenks/free-python-games/
+.. _`Free Python Games Issue Tracker`: https://github.com/grantjenks/free-python-games/issues/
 
-FreeGames is released under terms of the `Apache2 License`_.
+Free Python Games License
+-------------------------
 
-.. _`GPL Licensed`: http://www.opensource.org/licenses/gpl-license.php
-.. _`Apache2 License`: http://opensource.org/licenses/Apache-2.0
+Copyright 2017 Grant Jenks
 
-FreeGames License
------------------
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-.. include:: ../LICENSE
+    http://www.apache.org/licenses/LICENSE-2.0
 
-.. _`FreeGames`: http://www.grantjenks.com/docs/freegames/
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
