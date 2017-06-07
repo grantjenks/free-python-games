@@ -1,18 +1,13 @@
-"""
-Crypto, a tool for encrypting, decrypting and decoding messages.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
-
-Based on the Caesar Cipher algorithm from:
-http://inventwithpython.com/chapter14.html
+"""Crypto: tool for encrypting and decrypting messages.
 
 Exercises
-0. Review 'ord' and 'chr' functions and letter-to-number mapping.
-1. Explain what happens if you use key 26.
-2. Find a way to decode a message without a key.
-3. Encrypt numbers.
-4. Make the encryption harder to decode.
+
+1. Review 'ord' and 'chr' functions and letter-to-number mapping.
+2. Explain what happens if you use key 26.
+3. Find a way to decode a message without a key.
+4. Encrypt numbers.
+5. Make the encryption harder to decode.
+
 """
 
 def encrypt(message, key):
@@ -57,44 +52,32 @@ def decode(message):
     # TODO: Decode a message without a key.
     pass
 
-def get_message():
-    print 'Enter a message:'
-    message = raw_input()
-    return message
-
 def get_key():
-    print 'Enter a key (1 - 25):'
     try:
-        key = int(raw_input())
+        key = int(input('Enter a key (1 - 25): '))
         return key
     except:
-        print 'Invalid key. Using key: 0.'
+        print('Invalid key. Using key: 0.')
         return 0
 
 if __name__ == '__main__':
-    print 'Do you wish to encrypt or decrypt or decode a message?'
-    choice = raw_input()
+    print('Do you wish to encrypt, decrypt, or decode a message?')
+    choice = input()
 
     if choice == 'encrypt':
-
-        message = get_message()
+        message = input('Message: ')
         key = get_key()
-        print 'Encrypted message:'
-        print encrypt(message, key)
+        print('Encrypted message:', encrypt(message, key))
 
     elif choice == 'decrypt':
-
-        message = get_message()
+        message = input('Message: ')
         key = get_key()
-        print 'Decrypted message:'
-        print decrypt(message, key)
+        print('Decrypted message:', decrypt(message, key))
 
     elif choice == 'decode':
-
-        message = get_message()
-        print 'Decoding message:'
+        message = input('Message: ')
+        print('Decoding message:')
         decode(message)
 
     else:
-
-        print 'Error: Unrecognized Command'
+        print('Error: Unrecognized Command')
