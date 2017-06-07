@@ -1,12 +1,7 @@
-"""Bagels: a number game.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
-
-Based on the Bagels game from:
-http://inventwithpython.com/chapter11.html
+"""Bagels, a number puzzle game.
 
 Exercises:
+
 1. Can you guess the number?
 2. How much harder is 6 digits? Do you need more guesses?
 3. What's the maximum number of digits we could support?
@@ -18,69 +13,60 @@ from random import sample, shuffle
 digits = 3
 guesses = 10
 
-print 'I am thinking of a {}-digit number. Try to guess what it is.'.format(digits)
-print 'Here are some clues:'
-print 'When I say:    That means:'
-print '  Pico         One digit is correct but in the wrong position.'
-print '  Fermi        One digit is correct and in the right position.'
-print '  Bagels       No digit is correct.'
-print 'There are no repeated digits in the number.'
+print('I am thinking of a', digits, 'digit number.')
+print('Try to guess what it is.')
+print('Here are some clues:')
+print('When I say:    That means:')
+print('  pico         One digit is correct but in the wrong position.')
+print('  fermi        One digit is correct and in the right position.')
+print('  bagels       No digit is correct.')
+print('There are no repeated digits in the number.')
+
+# Create a random number.
+
+letters = sample('0123456789', digits)
+
+if letters[0] == '0':
+    letters.reverse()
+
+number = ''.join(letters)
+
+print('I have thought up a number.')
+print('You have', guesses, 'guesses to get it.')
+
+counter = 1
 
 while True:
-    # Create a random number.
+    print('Guess #', counter)
+    guess = input()
 
-    letters = sample('0123456789', digits)
+    if len(guess) != digits:
+        print('Wrong number of digits. Try again!')
+        continue
 
-    if letters[0] == '0':
-        letters = letters[::-1]
+    # Create the clues.
 
-    number = ''.join(letters)
+    clues = []
 
-    print 'I have thought up a number. You have {} guesses to get it.'.format(guesses)
+    for index in range(len(guess)):
+        if guess[index] == number[index]:
+            clues.append('fermi')
+        elif guess[index] in number:
+            clues.append('pico')
 
-    counter = 1
+    shuffle(clues)
 
-    while True:
-        prompt = 'Guess #{}: '.format(counter)
-        guess = raw_input(prompt)
+    if len(clues) == 0:
+        print('bagels')
+    else:
+        print(' '.join(clues))
 
-        if len(guess) != digits:
-            print 'Wrong number of digits. Try again!'
-            continue
+    counter += 1
 
-        if not all(letter in '0123456789' for letter in guess):
-            print 'That is not a number. Try again!'
-            continue
+    if guess == number:
+        print('You got it!')
+        break
 
-        # Create the clues.
-
-        clues = []
-
-        for pos in range(len(guess)):
-
-            if guess[pos] == number[pos]:
-                clues.append('Fermi')
-            elif guess[pos] in number:
-                clues.append('Pico')
-
-        shuffle(clues)
-
-        if len(clues) == 0:
-            print 'Bagels'
-        else:
-            print ' '.join(clues)
-
-        counter += 1
-
-        if guess == number:
-            print 'You got it!'
-            break
-
-        if counter > guesses:
-            print 'You ran out of guesses. The answer was {}.'.format(number)
-            break
-
-    print 'Do you want to play again? (yes or no)'
-    answer = raw_input()
-    if not answer.lower().startswith('y'):
+    if counter > guesses:
+        print('You ran out of guesses. The answer was', number)
         break
