@@ -7,11 +7,12 @@
 # coverage files
 .coverage
 
-# setup sdist, test and upload directories
+# setup, test and upload directories
 /.cache/
 /.tox/
 /build/
 /dist/
+/docs/_build/
 /freegames.egg-info/
 
 .DS_Store
