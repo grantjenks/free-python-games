@@ -1,5 +1,6 @@
 import argparse
 import os
+import runpy
 
 directory = os.path.dirname(os.path.realpath(__file__))
 contents = os.listdir(directory)
@@ -30,11 +31,18 @@ parser_copy.add_argument(
 parser_show = subparsers.add_parser('show', help='show game source code')
 parser_show.add_argument('game', choices=games, help='game name')
 
+parser_play = subparsers.add_parser('play', help='play game')
+parser_play.add_argument('game', choices=games, help='game name')
+
 args = parser.parse_args()
 
 if args.command == 'list':
     for game in games:
         print(game)
+elif args.command == 'play':
+    filename = args.game + '.py'
+    path = os.path.join(directory, filename)
+    runpy.run_path(path)
 elif args.command == 'copy':
     filename = args.game + '.py'
 
