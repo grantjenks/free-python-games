@@ -1,84 +1,78 @@
-"""
-Connect Four.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
+"""Connect Four
 
 Exercises
+
 1. Change the colors.
 2. Draw squares instead of circles for open spaces.
-3. Add logic to detect a full board.
-4. Add logic to detect a winner.
+3. Add logic to detect a full row.
+4. Create a random computer player.
+5. How would you detect a winner?
+
 """
 
-import sys, pygame
-from pygame.locals import *
+from turtle import *
 
-pygame.init()
+turns = {'red': 'yellow', 'yellow': 'red'}
+state = {'player': 'yellow', 'rows': [0] * 8}
 
-size = width, height = 560, 480
-clock = pygame.time.Clock()
-screen = pygame.display.set_mode(size)
+def line(a, b, x, y):
+    "Draw line from (a, b) to (x, y)."
+    up()
+    goto(a, b)
+    down()
+    goto(x, y)
 
-# Notice that these colors do not precisely match their names.
+def square(x, y, size):
+    "Draw square with lower left corner at (x, y) and side length size."
+    up()
+    goto(x, y)
+    down()
+    begin_fill()
+    for count in range(4):
+        forward(size)
+        left(90)
+    end_fill()
 
-white, black = (245, 245, 220), (0, 0, 128)
-blue, red, yellow = (65, 105, 225), (255, 99, 71), (255, 215, 0)
+def grid():
+    "Draw Connect Four grid."
+    color('light blue')
+    square(-200, -200, 400)
 
-def draw_game():
-    """Draw the connect four board."""
+    color('black')
+    for x in range(-150, 200, 50):
+        line(x, -200, x, 200)
 
-    pygame.draw.rect(screen, blue, (0, 0, 560, 480))
+    for x in range(-175, 200, 50):
+        for y in range(-175, 200, 50):
+            up()
+            goto(x, y)
+            dot(40, 'white')
 
-    # Draw the circles representing open and played spaces.
+    update()
 
-    for row, line in enumerate(board):
-        for col, val in enumerate(line):
-            rect = (col * 80 + 5, row * 80 + 5, 70, 70)
-            pygame.draw.ellipse(screen, val, rect)
+def tap(x, y):
+    "Draw red or yellow circle in tapped row."
+    player = state['player']
+    rows = state['rows']
 
-    # Draw vertical lines denoting column choices.
+    row = int((x + 200) // 50)
+    count = rows[row]
 
-    for val in range(6):
-        offset = 80 + 80 * val
-        pygame.draw.line(screen, black, (offset, 0), (offset, 480), 3)
+    x = ((x + 200) // 50) * 50 - 200 + 25
+    y = count * 50 - 200 + 25
 
-    pygame.display.flip()
+    up()
+    goto(x, y)
+    dot(40, player)
+    update()
 
-def restart():
-    global board, turn
-    board = [[white] * 7, [white] * 7, [white] * 7,
-             [white] * 7, [white] * 7, [white] * 7]
-    turn = red
-    draw_game()
+    rows[row] = count + 1
+    state['player'] = turns[player]
 
-restart()
-
-while True:
-    event = pygame.event.wait()
-    col = None
-
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-    elif event.type == KEYDOWN:
-        if event.key == K_r:
-            restart()
-        elif event.key == K_q:
-            pygame.event.post(pygame.event.Event(QUIT))
-    elif event.type == MOUSEBUTTONDOWN and event.button == 1:
-        col = event.pos[0] / 80
-
-    if col is None: continue
-
-    # Search for an open row in this column.
-
-    for val in reversed(range(6)):
-        if board[val][col] == white: break
-    else:
-        continue
-
-    board[val][col] = turn
-    draw_game()
-
-    turn = yellow if turn == red else red
+setup(420, 420, 370, 0)
+hideturtle()
+tracer(False)
+grid()
+listen()
+onscreenclick(tap)
+done()
