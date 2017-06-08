@@ -17,7 +17,6 @@ state = {'food': [0, 0], 'snake': [[10, 0], [20, 0]], 'direction': 0}
 
 def square(x, y, size, name):
     "Draw square at x, y with given size and color."
-    tracer(False)
     up()
     goto(x, y)
     color(name)
@@ -29,7 +28,7 @@ def square(x, y, size, name):
         left(90)
 
     end_fill()
-    tracer(True)
+    update()
 
 def tap(x, y):
     "Change snake direction."
@@ -74,10 +73,11 @@ def move():
     square(food[0], food[1], 10, 'green')
     ontimer(move, 100)
 
-reset()
+setup(420, 420, 370, 0)
 hideturtle()
+tracer(False)
+square(-200, -200, 400, 'black')
 listen()
 onscreenclick(tap)
-square(-200, -200, 400, 'black')
 move()
 done()
