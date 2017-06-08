@@ -39,10 +39,6 @@ args = parser.parse_args()
 if args.command == 'list':
     for game in games:
         print(game)
-elif args.command == 'play':
-    filename = args.game + '.py'
-    path = os.path.join(directory, filename)
-    runpy.run_path(path)
 elif args.command == 'copy':
     filename = args.game + '.py'
 
@@ -57,7 +53,6 @@ elif args.command == 'copy':
             writer.write(text)
     else:
         print('ERROR: File already exists. Specify --force to overwrite.')
-
 else:
     assert args.command == 'show'
     
