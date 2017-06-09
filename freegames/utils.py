@@ -8,7 +8,7 @@ class vector(collections.Sequence):
     Vectors can be modified in place.
 
     """
-    __slots__ = ('x', 'y')
+    __slots__ = ('_x', '_y', '_hash')
 
     def __init__(self, x, y):
         """Initialize vector with coordinates: x, y.
@@ -20,8 +20,65 @@ class vector(collections.Sequence):
         2
 
         """
-        self.x = x
-        self.y = y
+        self._hash = None
+        self._x = x
+        self._y = y
+
+    @property
+    def x(self):
+        """X-axis component of vector.
+
+        >>> v = vector(1, 2)
+        >>> v.x
+        1
+        >>> v.x = 3
+        >>> v.x
+        3
+
+        """
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        if self._hash is not None:
+            raise ValueError('cannot set x after hashing')
+        self._x = value
+
+    @property
+    def y(self):
+        """Y-axis component of vector.
+
+        >>> v = vector(1, 2)
+        >>> v.y
+        2
+        >>> v.y = 5
+        >>> v.y
+        5
+
+        """
+        return self._y
+
+    @y.setter
+    def y(self, value):
+        if self._hash is not None:
+            raise ValueError('cannot set y after hashing')
+        self._y = value
+
+    def __hash__(self):
+        """v.__hash__() -> hash(v)
+
+        >>> v = vector(1, 2)
+        >>> h = hash(v)
+        >>> v.x = 2
+        Traceback (most recent call last):
+            ...
+        ValueError: cannot set x after hashing
+
+        """
+        if self._hash is None:
+            pair = (self._x, self._y)
+            self._hash = hash(pair)
+        return self._hash
 
     def __len__(self):
         """v.__len__() -> len(v)
@@ -48,9 +105,9 @@ class vector(collections.Sequence):
 
         """
         if index == 0:
-            return self.x
+            return self._x
         elif index == 1:
-            return self.y
+            return self._y
         else:
             raise IndexError
 
@@ -64,7 +121,7 @@ class vector(collections.Sequence):
 
         """
         type_self = type(self)
-        return type_self(self.x, self.y)
+        return type_self(self._x, self._y)
 
     @staticmethod
     def _isclose(a, b):
@@ -80,8 +137,8 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            x_isclose = self._isclose(self.x, other.x)
-            return x_isclose and self._isclose(self.y, other.y)
+            x_isclose = self._isclose(self._x, other._x)
+            return x_isclose and self._isclose(self._y, other._y)
         return NotImplemented
 
     def __ne__(self, other):
@@ -94,9 +151,24 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            x_isclose = self._isclose(self.x, other.x)
-            return not x_isclose or not self._isclose(self.y, other.y)
+            x_isclose = self._isclose(self._x, other._x)
+            return not x_isclose or not self._isclose(self._y, other._y)
         return NotImplemented
+
+    def move(self, other):
+        """Move vector by other (in-place).
+
+        >>> v = vector(1, 2)
+        >>> w = vector(3, 4)
+        >>> v.move(w)
+        >>> v
+        vector(4, 6)
+        >>> v.move(3)
+        >>> v
+        vector(7, 9)
+
+        """
+        self.__iadd__(other)
 
     def __iadd__(self, other):
         """v.__iadd__(w) -> v += w
@@ -112,11 +184,11 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            self.x += other.x
-            self.y += other.y
+            self._x += other._x
+            self._y += other._y
         else:
-            self.x += other
-            self.y += other
+            self._x += other
+            self._y += other
         return self
 
     def __add__(self, other):
@@ -151,11 +223,11 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            self.x -= other.x
-            self.y -= other.y
+            self._x -= other._x
+            self._y -= other._y
         else:
-            self.x -= other
-            self.y -= other
+            self._x -= other
+            self._y -= other
         return self
 
     def __sub__(self, other):
@@ -186,11 +258,11 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            self.x *= other.x
-            self.y *= other.y
+            self._x *= other._x
+            self._y *= other._y
         else:
-            self.x *= other
-            self.y *= other
+            self._x *= other
+            self._y *= other
         return self
 
     def __mul__(self, other):
@@ -225,11 +297,11 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            self.x /= other.x
-            self.y /= other.y
+            self._x /= other._x
+            self._y /= other._y
         else:
-            self.x /= other
-            self.y /= other
+            self._x /= other
+            self._y /= other
         return self
 
     def __truediv__(self, other):
@@ -267,7 +339,7 @@ class vector(collections.Sequence):
         5.0
 
         """
-        return (self.x ** 2 + self.y ** 2) ** 0.5
+        return (self._x ** 2 + self._y ** 2) ** 0.5
 
     def rotate(self, angle):
         """Rotate vector counter-clockwise by angle (in-place).
@@ -281,10 +353,10 @@ class vector(collections.Sequence):
         radians = angle * math.pi / 180.0
         cosine = math.cos(radians)
         sine = math.sin(radians)
-        x = self.x
-        y = self.y
-        self.x = x * cosine - y * sine
-        self.y = y * cosine + x * sine
+        x = self._x
+        y = self._y
+        self._x = x * cosine - y * sine
+        self._y = y * cosine + x * sine
 
     def __repr__(self):
         """v.__repr__() -> repr(v)
@@ -296,4 +368,4 @@ class vector(collections.Sequence):
         """
         type_self = type(self)
         name = type_self.__name__
-        return '{}({!r}, {!r})'.format(name, self.x, self.y)
+        return '{}({!r}, {!r})'.format(name, self._x, self._y)
