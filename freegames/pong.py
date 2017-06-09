@@ -1,89 +1,91 @@
-"""
-Pong - Classic game of pong.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
+"""Pong, classic arcade game.
 
 Exercises
-1. Change how the ball bounces.
+
+1. Change the colors.
+2. What is the frame rate? Make it faster or slower.
+3. Change the speed of the ball.
+4. Change the size of the paddles.
+5. Change how the ball bounces off walls.
+
 """
 
-import sys, pygame, random
-from pygame.locals import *
+from random import choice, random
+from turtle import *
+from freegames import vector
 
-pygame.init()
+x = (3 + random() * 2) * choice([1, -1])
+y = (3 + random() * 2) * choice([1, -1])
+state = {1: 0, 2: 0, 'ball': vector(0, 0), 'aim': vector(x, y)}
 
-lhs, rhs = x, y = 0, 1
-width, height, fps = 320, 320, 20
+def rectangle(x, y, width, height):
+    "Draw rectangle at (x, y) with given width and height."
+    up()
+    goto(x, y)
+    down()
+    begin_fill()
+    for count in range(2):
+        forward(width)
+        left(90)
+        forward(height)
+        left(90)
+    end_fill()
 
-clock = pygame.time.Clock()
-screen = pygame.display.set_mode((width, height))
-
-white, black = (255, 255, 255), (0, 0, 0)
+def move(x, change):
+    "Move paddle position at x by change."
+    state[x] += change
 
 def draw():
-    pygame.draw.rect(screen, black, (0, 0, width, height))
-    pygame.draw.circle(screen, white, map(int, ball), 2)
-    pygame.draw.rect(screen, white, paddle[lhs])
-    pygame.draw.rect(screen, white, paddle[rhs])
+    "Draw game and move pong ball."
+    clear()
+    rectangle(-200, state[1], 10, 50)
+    rectangle(190, state[2], 10, 50)
 
-def update():
-    global dead
+    ball = state['ball']
+    aim = state['aim']
 
-    ball[x] += motion[x]
-    ball[y] += motion[y]
+    ball += aim
+    x = ball.x
+    y = ball.y
 
-    if ball[x] <= 0 or ball[x] >= width:
-        dead = True
-        return
+    up()
+    goto(x, y)
+    dot(10)
+    update()
 
-    if ball[y] <= 0 or ball[y] >= height:
-        motion[y] *= -1
-        motion[y] += random.random() - 0.5
+    aim *= 1.001
 
-    ball_rect = Rect(ball[x] - 2, ball[y] - 2, 4, 4)
-    paddles = map(Rect, paddle)
+    if y < -200 or y > 200:
+        aim.y = -aim.y
 
-    if (ball_rect.colliderect(paddles[lhs])
-        or ball_rect.colliderect(paddles[rhs])):
-        motion[x] *= -1
-        motion[x] += random.random() - 0.5
+    if x < -185:
+        low = state[1]
+        high = state[1] + 50
 
-def reset():
-    global ball, motion, paddle, dead
-    dead = False
-    ball = [width / 2, height / 2]
-    motion = [random.choice([-7, -6, -5, -4, 4, 5, 6, 7]) / 2.0,
-              random.choice([-7, -6, -5, -4, 4, 5, 6, 7]) / 2.0]
-    paddle = [[5, height / 2 - 20, 5, 40],
-              [width - 10, height / 2 - 20, 5, 40]]
+        if low <= y <= high:
+            aim.x = -aim.x
+        else:
+            return
 
-reset()
+    if x > 185:
+        low = state[2]
+        high = state[2] + 50
 
-while True:
-    clock.tick(fps)
+        if low <= y <= high:
+            aim.x = -aim.x
+        else:
+            return
 
-    event = pygame.event.poll()
+    ontimer(draw, 50)
 
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-    elif event.type == KEYDOWN:
-        if event.key == K_r:
-            reset()
-        elif event.key == K_q:
-            pygame.event.post(pygame.event.Event(QUIT))
-        elif event.key == K_UP:
-            paddle[rhs][y] -= 20
-        elif event.key == K_DOWN:
-            paddle[rhs][y] += 20
-        elif event.key == K_e:
-            paddle[lhs][y] -= 20
-        elif event.key == K_d:
-            paddle[lhs][y] += 20
 
-    if not dead:
-        update()
-    draw()
-
-    pygame.display.flip()
+setup(420, 420, 370, 0)
+hideturtle()
+tracer(False)
+listen()
+onkey(lambda: move(1, 20), 'w')
+onkey(lambda: move(1, -20), 's')
+onkey(lambda: move(2, 20), 'i')
+onkey(lambda: move(2, -20), 'k')
+draw()
+done()
