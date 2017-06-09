@@ -32,8 +32,9 @@ def draw():
     aim.move(random() - 0.5)
     aim.rotate(random() * 10 - 5)
 
+    # clear()
     goto(ant.x, ant.y)
-    color(abs(ant.x), abs(ant.y), 200)
+    # color(abs(ant.x), abs(ant.y), 200)
     dot(4)
 
     if running:
@@ -43,7 +44,7 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 up()
-colormode(255)
+# colormode(255)
 running = True
 draw()
 done()
