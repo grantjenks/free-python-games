@@ -168,7 +168,9 @@ class vector(collections.Sequence):
         vector(5, 7)
 
         """
-        if isinstance(other, vector):
+        if self._hash is not None:
+            raise ValueError('cannot add vector after hashing')
+        elif isinstance(other, vector):
             self._x += other._x
             self._y += other._y
         else:
@@ -222,7 +224,9 @@ class vector(collections.Sequence):
         vector(-3, -3)
 
         """
-        if isinstance(other, vector):
+        if self._hash is not None:
+            raise ValueError('cannot subtract vector after hashing')
+        elif isinstance(other, vector):
             self._x -= other._x
             self._y -= other._y
         else:
@@ -257,7 +261,9 @@ class vector(collections.Sequence):
         vector(6, 16)
 
         """
-        if isinstance(other, vector):
+        if self._hash is not None:
+            raise ValueError('cannot multiply vector after hashing')
+        elif isinstance(other, vector):
             self._x *= other._x
             self._y *= other._y
         else:
@@ -311,7 +317,9 @@ class vector(collections.Sequence):
         vector(0.25, 0.25)
 
         """
-        if isinstance(other, vector):
+        if self._hash is not None:
+            raise ValueError('cannot divide vector after hashing')
+        elif isinstance(other, vector):
             self._x /= other._x
             self._y /= other._y
         else:
@@ -365,6 +373,8 @@ class vector(collections.Sequence):
         True
 
         """
+        if self._hash is not None:
+            raise ValueError('cannot rotate vector after hashing')
         radians = angle * math.pi / 180.0
         cosine = math.cos(radians)
         sine = math.sin(radians)
