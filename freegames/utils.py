@@ -155,21 +155,6 @@ class vector(collections.Sequence):
             return not x_isclose or not self._isclose(self._y, other._y)
         return NotImplemented
 
-    def move(self, other):
-        """Move vector by other (in-place).
-
-        >>> v = vector(1, 2)
-        >>> w = vector(3, 4)
-        >>> v.move(w)
-        >>> v
-        vector(4, 6)
-        >>> v.move(3)
-        >>> v
-        vector(7, 9)
-
-        """
-        self.__iadd__(other)
-
     def __iadd__(self, other):
         """v.__iadd__(w) -> v += w
 
@@ -208,6 +193,21 @@ class vector(collections.Sequence):
         return copy.__iadd__(other)
 
     __radd__ = __add__
+
+    def move(self, other):
+        """Move vector by other (in-place).
+
+        >>> v = vector(1, 2)
+        >>> w = vector(3, 4)
+        >>> v.move(w)
+        >>> v
+        vector(4, 6)
+        >>> v.move(3)
+        >>> v
+        vector(7, 9)
+
+        """
+        self.__iadd__(other)
 
     def __isub__(self, other):
         """v.__isub__(w) -> v -= w
@@ -282,6 +282,21 @@ class vector(collections.Sequence):
         return copy.__imul__(other)
 
     __rmul__ = __mul__
+
+    def scale(self, other):
+        """Scale vector by other (in-place).
+
+        >>> v = vector(1, 2)
+        >>> w = vector(3, 4)
+        >>> v.scale(w)
+        >>> v
+        vector(3, 8)
+        >>> v.scale(0.5)
+        >>> v
+        vector(1.5, 4.0)
+
+        """
+        self.__imul__(other)
 
     def __itruediv__(self, other):
         """v.__itruediv__(w) -> v /= w
