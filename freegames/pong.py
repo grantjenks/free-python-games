@@ -14,9 +14,13 @@ from random import choice, random
 from turtle import *
 from freegames import vector
 
-x = (3 + random() * 2) * choice([1, -1])
-y = (3 + random() * 2) * choice([1, -1])
-state = {1: 0, 2: 0, 'ball': vector(0, 0), 'aim': vector(x, y)}
+def value():
+    "Randomly generate value between (-5, -3) or (3, 5)."
+    return (3 + random() * 2) * choice([1, -1])
+
+ball = vector(0, 0)
+aim = vector(value(), value())
+state = {1: 0, 2: 0}
 
 def move(player, change):
     "Move player position by change."
@@ -41,10 +45,7 @@ def draw():
     rectangle(-200, state[1], 10, 50)
     rectangle(190, state[2], 10, 50)
 
-    ball = state['ball']
-    aim = state['aim']
-
-    ball += aim
+    ball.move(aim)
     x = ball.x
     y = ball.y
 
