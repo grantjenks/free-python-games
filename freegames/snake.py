@@ -10,74 +10,70 @@ Excercises
 
 from turtle import *
 from random import randrange
+from freegames import vector
 
-xdir = [10, 0, -10, 0]  # right, up, left, down
-ydir = [0, 10, 0, -10]
-state = {'food': [0, 0], 'snake': [[10, 0], [20, 0]], 'direction': 0}
+food = vector(0, 0)
+snake = [vector(10, 0)]
+aim = vector(0, -10)
 
 def square(x, y, size, name):
     "Draw square at x, y with given size and color."
     up()
     goto(x, y)
-    color(name)
     down()
+    color(name)
     begin_fill()
-
     for i in range(4):
         forward(size - 1)
         left(90)
-
     end_fill()
-    update()
 
 def tap(x, y):
     "Change snake direction."
     if x > y and x > -y:
-        state['direction'] = 0  # right
+        aim.x = 10
+        aim.y = 0
     elif x < y and -x < y:
-        state['direction'] = 1  # up
+        aim.x = 0
+        aim.y = 10
     elif -x > y and -x > -y:
-        state['direction'] = 2  # left
+        aim.x = -10
+        aim.y = 0
     elif -x < -y and x < -y:
-        state['direction'] = 3  # down
+        aim.x = 0
+        aim.y = -10
+
+def inside(head):
+    return -200 < head.x < 190 and -200 < head.y < 190
 
 def move():
     "Move snake forward one segment."
-    snake = state['snake']
-    last = snake[-1]
-    direction = state['direction']
-    xnew = last[0] + xdir[direction]
-    ynew = last[1] + ydir[direction]
-    head = [xnew, ynew]
+    head = snake[-1].copy()
+    head.move(aim)
 
-    if head in snake:
-        square(xnew, ynew, 10, 'red')
+    if not inside(head) or head in snake:
+        square(head.x, head.y, 10, 'red')
+        update()
         return
 
-    if not (-200 <= xnew < 200 and -200 <= ynew < 200):
-        square(xnew, ynew, 10, 'red')
-        return
-
-    square(xnew, ynew, 10, 'white')
+    square(head.x, head.y, 10, 'black')
     snake.append(head)
-    food = state['food']
 
     if head == food:
         print('Snake:', len(snake))
-        food[0] = randrange(-15, 15) * 10
-        food[1] = randrange(-15, 15) * 10
+        food.x = randrange(-15, 15) * 10
+        food.y = randrange(-15, 15) * 10
     else:
         tail = snake.pop(0)
-        square(tail[0], tail[1], 10, 'black')
+        square(tail.x, tail.y, 10, 'white')
 
-    square(food[0], food[1], 10, 'green')
+    square(food.x, food.y, 10, 'green')
+    update()
     ontimer(move, 100)
 
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
-square(-200, -200, 400, 'black')
-listen()
 onscreenclick(tap)
 move()
 done()
