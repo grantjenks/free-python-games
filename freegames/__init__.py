@@ -1,3 +1,5 @@
+from .utils import vector
+
 __title__ = 'freegames'
 __version__ = '1.0.4'
 __build__ = 0x010004
