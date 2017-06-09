@@ -18,6 +18,10 @@ x = (3 + random() * 2) * choice([1, -1])
 y = (3 + random() * 2) * choice([1, -1])
 state = {1: 0, 2: 0, 'ball': vector(0, 0), 'aim': vector(x, y)}
 
+def move(player, change):
+    "Move player position by change."
+    state[player] += change
+
 def rectangle(x, y, width, height):
     "Draw rectangle at (x, y) with given width and height."
     up()
@@ -30,10 +34,6 @@ def rectangle(x, y, width, height):
         forward(height)
         left(90)
     end_fill()
-
-def move(x, change):
-    "Move paddle position at x by change."
-    state[x] += change
 
 def draw():
     "Draw game and move pong ball."
@@ -52,8 +52,6 @@ def draw():
     goto(x, y)
     dot(10)
     update()
-
-    aim *= 1.001
 
     if y < -200 or y > 200:
         aim.y = -aim.y
