@@ -11,9 +11,6 @@ Exercises
 
 from turtle import *
 
-turns = {'X': 'O', 'O': 'X'}
-state = {'player': 'X'}
-
 def line(a, b, x, y):
     "Draw line from (a, b) to (x, y)."
     up()
@@ -27,31 +24,40 @@ def grid():
     line(67, 200, 67, -200)
     line(-200, -67, 200, -67)
     line(-200, 67, 200, 67)
-    update()
+
+def drawx(x, y):
+    "Draw X player."
+    line(x, y, x + 133, y + 133)
+    line(x, y + 133, x + 133, y)
+
+def drawo(x, y):
+    "Draw O player."
+    up()
+    goto(x + 67, y + 5)
+    down()
+    circle(62)
+
+def round(value):
+    return ((value + 200) // 133) * 133 - 200
+
+state = {'player': 0}
+players = [drawx, drawo]
 
 def tap(x, y):
     "Draw X or O in tapped square."
-    x = ((x + 200) // 133) * 133 - 200
-    y = ((y + 200) // 133) * 133 - 200
-
+    x = round(x)
+    y = round(y)
     player = state['player']
-
-    if player == 'X':
-        line(x, y, x + 133, y + 133)
-        line(x, y + 133, x + 133, y)
-    elif player == 'O':
-        up()
-        goto(x + 67, y + 5)
-        down()
-        circle(62)
-
+    draw = players[player]
+    draw(x, y)
     update()
-    state['player'] = turns[player]
+    state['player'] = not player
 
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 grid()
+update()
 listen()
 onscreenclick(tap)
 done()
