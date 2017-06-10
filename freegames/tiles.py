@@ -1,89 +1,96 @@
-"""
-Tiles, a game of re-arranging an image.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
+"""Tiles, number swapping game.
 
 Exercises
+
 1. Track a score by the number of tile moves.
-2. Permit diagonal squares as adjacent.
+2. Permit diagonal squares as neighbors.
 3. Respond to arrow keys instead of mouse clicks.
+4. Make the grid bigger.
+
 """
 
-import sys, pygame
-import random
-from pygame.locals import *
+from random import *
+from turtle import *
+from freegames import floor, vector
 
-pygame.init()
+tiles = {}
+neighbors = [
+    vector(100, 0),
+    vector(-100, 0),
+    vector(0, 100),
+    vector(0, -100),
+]
 
-# Initialize variables.
+def load():
+    "Load tiles and scramble."
+    count = 1
 
-tile_size = 160
-size = width, height = 480, 480
-font = pygame.font.Font(None, 14)
-clock = pygame.time.Clock()
-screen = pygame.display.set_mode(size)
-image = pygame.image.load('car.jpg')
-#TODO: Track 'score' by number of tile moves.
+    for y in range(-200, 200, 100):
+        for x in range(-200, 200, 100):
+            mark = vector(x, y)
+            tiles[mark] = count
+            count += 1
 
-# These are the valid adjacent squares.
+    tiles[mark] = None
 
-above, below = (0, -tile_size), (0, tile_size)
-left, right = (-tile_size, 0), (tile_size, 0)
-#TODO: Permit diagonal squares as adjacent.
+    for count in range(1000):
+        neighbor = choice(neighbors)
+        spot = mark + neighbor
 
-# Create tiles.
+        if spot in tiles:
+            number = tiles[spot]
+            tiles[spot] = None
+            tiles[mark] = number
+            mark = spot
 
-tiles = []
-for x_pos in range(width / tile_size):
-    for y_pos in range(height / tile_size):
-        area = pygame.Rect(x_pos * tile_size, y_pos * tile_size,
-                           tile_size, tile_size)
-        tile = pygame.Surface((tile_size, tile_size))
-        tile.blit(image, (0, 0), area)
-        tiles.append([area, tile])
+def square(mark, number):
+    "Draw white square with black outline and number."
+    up()
+    goto(mark.x, mark.y)
+    down()
 
-# Replace last tile with black square.
+    color('black', 'white')
+    begin_fill()
+    for count in range(4):
+        forward(99)
+        left(90)
+    end_fill()
 
-tiles[-1][1] = pygame.Surface((tile_size, tile_size))
-black_tile = tiles[-1]
+    if number is None:
+        return
+    elif number < 10:
+        forward(30)
+    else:
+        forward(5)
 
-# Mix up tile locations.
+    write(number, font=('Arial', 80, 'normal'))
 
-for rpt in range(1000):
-    # Swap black tile with random adjacent tile.
-    areas = map(black_tile[0].move, (above, below, left, right))
-    adjacent_tiles = [tile for tile in tiles if tile[0] in areas]
-    tile = random.choice(adjacent_tiles)
-    tile[0], black_tile[0] = black_tile[0], tile[0]
+def tap(x, y):
+    "Swap tile and empty square."
+    x = floor(x, 100)
+    y = floor(y, 100)
+    mark = vector(x, y)
 
-while True:
-    event = pygame.event.wait()
+    for neighbor in neighbors:
+        spot = mark + neighbor
 
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-    elif event.type == KEYDOWN:
-        if event.key in (K_UP, K_DOWN, K_RIGHT, K_LEFT):
-            # TODO: Respond to arrow keys.
-            pass
-        elif event.key == K_q:
-            pygame.event.post(pygame.event.Event(QUIT))
-    elif event.type == MOUSEBUTTONDOWN:
-        # Swap a clicked tile if it is adjacent.
+        if spot in tiles and tiles[spot] is None:
+            number = tiles[mark]
+            tiles[spot] = number
+            square(spot, number)
+            tiles[mark] = None
+            square(mark, None)
 
-        place = ((event.pos[0] / tile_size) * tile_size,
-                 (event.pos[1] / tile_size) * tile_size)
+def draw():
+    "Draw all tiles."
+    for mark in tiles:
+        square(mark, tiles[mark])
+    update()
 
-        tile = [tile for tile in tiles if tile[0].topleft == place][0]
-
-        diff = (tile[0][0] - black_tile[0][0],
-                tile[0][1] - black_tile[0][1])
-
-        if diff in (above, below, left, right):
-            black_tile[0], tile[0] = tile[0], black_tile[0]
-
-    for tile in tiles:
-        screen.blit(tile[1], tile[0])
-
-    pygame.display.flip()
+setup(420, 420, 370, 0)
+hideturtle()
+tracer(False)
+load()
+draw()
+onscreenclick(tap)
+done()
