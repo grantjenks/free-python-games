@@ -3,6 +3,24 @@ import math
 import os
 
 
+def floor(value, size, offset=200):
+    """Floor of value given size and offset.
+
+    >>> floor(10, 100)
+    0.0
+    >>> floor(120, 100)
+    100.0
+    >>> floor(-10, 100)
+    -100.0
+    >>> floor(-150, 100)
+    -200.0
+    >>> floor(50, 167)
+    -33.0
+
+    """
+    return float(((value + offset) // size) * size - offset)
+
+
 def path(filename):
     "Return full path to filename."
     filepath = os.path.realpath(__file__)
