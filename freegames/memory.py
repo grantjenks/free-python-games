@@ -1,135 +1,85 @@
-"""
-Memory, a game of remembering number pairs.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
+"""Memory, puzzle game of number pairs.
 
 Exercises:
-1. Change the image.
-2. Change the background color to white and the foreground color to black.
-3. Increase the number of tiles to an 8x8 grid.
+
+1. Count and print how many taps occur.
+2. Decrease the number of tiles to a 4x4 grid.
+3. Detect when all tiles are revealed.
+4. Center single-digit tile.
+5. Use letters instead of tiles.
+
 """
 
-import sys, pygame, random, time
-from pygame.locals import *
+from random import *
+from turtle import *
+from freegames import path
 
-pygame.init()
+car = path('car.gif')
+tiles = list(range(32)) * 2
+state = {'mark': None}
+hide = [True] * 64
 
-# Initialize variables.
+def square(x, y):
+    "Draw white square with black outline at (x, y)."
+    up()
+    goto(x, y)
+    down()
+    color('black', 'white')
+    begin_fill()
+    for count in range(4):
+        forward(50)
+        left(90)
+    end_fill()
 
-tile_size = 120
-size = width, height = 480, 480
-font = pygame.font.Font(None, 14)
-clock = pygame.time.Clock()
-screen = pygame.display.set_mode(size)
-image = pygame.image.load('car.jpg')
-font = pygame.font.Font(None, 60)
-black, white = (0, 0, 0), (255, 255, 255)
+def index(x, y):
+    "Convert (x, y) coordinates to tiles index."
+    return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
-# Create tiles.
+def xy(index):
+    "Convert tiles index to (x, y) coordinates."
+    return (index % 8) * 50 - 200, (index // 8) * 50 - 200
 
-tiles = []
-for y_pos in range(0, height, tile_size):
-    for x_pos in range(0, width, tile_size):
-        area = pygame.Rect(x_pos, y_pos, tile_size, tile_size)
-        tile = pygame.Surface((tile_size, tile_size))
-        tile.blit(image, (0, 0), area)
-        tiles.append((area, tile))
+def tap(x, y):
+    "Update mark and hidden tiles based on tap."
+    spot = index(x, y)
+    mark = state['mark']
 
-def draw_game():
-    """Draw the game state."""
-
-    # Clear the screen with a black background.
-
-    pygame.draw.rect(screen, black, (0, 0, width, height))
-
-    # Draw lines to create grid for tiles.
-
-    for pos in range(1, width / tile_size):
-        offset = pos * tile_size
-        pygame.draw.line(screen, white, (offset, 0), (offset, height))
-
-    for pos in range(1, height / tile_size):
-        offset = pos * tile_size
-        pygame.draw.line(screen, white, (0, offset), (width, offset))
-
-    # Draw tiles correctly guessed.
-
-    for pos, tile in enumerate(tiles):
-        if guesses[pos]:
-            screen.blit(tile[1], tile[0])
-
-    def draw_number(value):
-        """Draw the number at a particular tile."""
-        surface = font.render(str(values[value]), True, white)
-        screen.blit(surface, tiles[value][0].move(45, 45))
-
-    if select is not None: draw_number(select)
-    if match is not None: draw_number(match)
-
-    pygame.display.flip()
-
-def restart():
-    """Reset the game with random values."""
-    global values, guesses, select, match, pause
-    select, match, pause = None, None, 0
-    count = len(tiles)
-    assert count % 2 == 0
-    values = list(range(count / 2)) * 2
-    random.shuffle(values)
-    guesses = [False] * count
-    draw_game()
-
-restart()
-
-while True:
-    event = pygame.event.wait()
-    pos = None
-
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-    elif event.type == KEYDOWN:
-        if event.key == K_r:
-            restart()
-        elif event.key == K_q:
-            pygame.event.post(pygame.event.Event(QUIT))
-    elif event.type == MOUSEBUTTONDOWN and event.button == 1:
-        pos = event.pos
-
-    if pause > 0:
-        if pos is None:
-            if pause == 1:
-                select, match, pause = None, None, 0
-                draw_game()
-            else:
-                pause -= 1
-                continue
-        else:
-            select, match, pause = None, None, 0
-            draw_game()
-
-    if pos is None: continue
-
-    xxx = pos[0] / tile_size
-    yyy = pos[1] / tile_size
-    index = yyy * (width / tile_size) + xxx
-
-    if guesses[index]:
-        continue
+    if mark is None or mark == spot or tiles[mark] != tiles[spot]:
+        state['mark'] = spot
     else:
-        if select is None:
-            select = index
-        else:
-            if select == index:
-                continue
-            else:
-                if values[select] == values[index]:
-                    guesses[select] = True
-                    guesses[index] = True
-                    select = None
-                else:
-                    pause = 12 * 3
-                    match = index
+        hide[spot] = False
+        hide[mark] = False
+        state['mark'] = None
 
-    draw_game()
+def draw():
+    "Draw image and tiles."
+    clear()
+    goto(0, 0)
+    shape(car)
+    stamp()
+
+    for index in range(64):
+        if hide[index]:
+            x, y = xy(index)
+            square(x, y)
+
+    mark = state['mark']
+
+    if mark is not None:
+        x, y = xy(mark)
+        up()
+        goto(x + 5, y)
+        color('black')
+        write(tiles[mark], font=('Arial', 40, 'normal'))
+
+    update()
+    ontimer(draw, 100)
+
+shuffle(tiles)
+setup(420, 420, 370, 0)
+addshape(car)
+hideturtle()
+tracer(False)
+onscreenclick(tap)
+draw()
+done()
