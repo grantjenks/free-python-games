@@ -1,5 +1,14 @@
 import collections
 import math
+import os
+
+
+def path(filename):
+    "Return full path to filename."
+    filepath = os.path.realpath(__file__)
+    dirpath = os.path.dirname(filepath)
+    fullpath = os.path.join(dirpath, filename)
+    return fullpath
 
 
 class vector(collections.Sequence):

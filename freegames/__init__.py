@@ -1,4 +1,4 @@
-from .utils import vector
+from .utils import path, vector
 
 __title__ = 'freegames'
 __version__ = '1.0.4'
