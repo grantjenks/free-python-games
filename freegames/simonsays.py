@@ -43,11 +43,10 @@ def grid():
 
 def flash(tile):
     "Flash tile in grid."
-    x, y = tile
     glow, dark = tiles[tile]
-    square(x, y, glow)
+    square(tile.x, tile.y, glow)
     sleep(0.5)
-    square(x, y, dark)
+    square(tile.x, tile.y, dark)
     sleep(0.5)
 
 def grow():
