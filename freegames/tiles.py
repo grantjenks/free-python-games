@@ -59,11 +59,9 @@ def square(mark, number):
     if number is None:
         return
     elif number < 10:
-        forward(30)
-    else:
-        forward(5)
+        forward(20)
 
-    write(number, font=('Arial', 80, 'normal'))
+    write(number, font=('Arial', 60, 'normal'))
 
 def tap(x, y):
     "Swap tile and empty square."
