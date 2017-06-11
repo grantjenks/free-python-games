@@ -31,9 +31,6 @@ parser_copy.add_argument(
 parser_show = subparsers.add_parser('show', help='show game source code')
 parser_show.add_argument('game', choices=games, help='game name')
 
-parser_play = subparsers.add_parser('play', help='play game')
-parser_play.add_argument('game', choices=games, help='game name')
-
 args = parser.parse_args()
 
 if args.command == 'list':
