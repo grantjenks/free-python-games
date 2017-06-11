@@ -1,4 +1,4 @@
-"""Flappy Bird Clone
+"""Flappy, game inspired by Flappy Bird.
 
 Exercises
 
@@ -17,39 +17,44 @@ bird = vector(0, 0)
 balls = []
 
 def tap(x, y):
-    up = vector(0, 40)
+    up = vector(0, 30)
     bird.move(up)
 
 def inside(point):
     return -200 < point.x < 200 and -200 < point.y < 200
 
 def draw():
-    alive = True
-
     bird.y -= 5
 
     for ball in balls:
-        ball.x -= 2
+        ball.x -= 3
 
-    if randrange(20) == 0:
+    if randrange(15) == 0:
         y = randrange(-199, 199)
         ball = vector(199, y)
         balls.append(ball)
         
-    alive &= inside(bird)
+    alive = inside(bird)
 
     for ball in balls:
-        alive &= abs(ball - bird) > 15
+        dodge = abs(ball - bird) > 15
+        alive = alive and dodge
 
-    balls[:] = [ball for ball in balls if inside(ball)]
+    if len(balls) > 30:
+        balls.pop(0)
 
     clear()
-    goto(bird.x, bird.y)
-    dot(10, 'green')
 
     for ball in balls:
         goto(ball.x, ball.y)
         dot(20, 'black')
+
+    goto(bird.x, bird.y)
+
+    if alive:
+        dot(10, 'green')
+    else:
+        dot(10, 'red')
 
     update()
 
