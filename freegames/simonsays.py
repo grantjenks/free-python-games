@@ -1,86 +1,93 @@
-"""
-Simon Says
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
+"""Simon Says
 
 Exercises
-1. Add more rectangles.
+
+1. Speed up tile flash rate.
+2. Add more tiles.
+
 """
 
-import sys, pygame
-from pygame.locals import *
-from pygame import Rect
-from random import randrange
+from random import choice
+from time import sleep
+from turtle import *
+from freegames import floor, vector
 
-pygame.init()
+pattern = []
+guesses = []
+tiles = {
+    vector(0, 0): ('red', 'dark red'),
+    vector(0, -200): ('blue', 'dark blue'),
+    vector(-200, 0): ('green', 'dark green'),
+    vector(-200, -200): ('yellow', 'khaki'),
+}
 
-screen = pygame.display.set_mode((480, 480))
-font = pygame.font.Font(None, 16)
-clock = pygame.time.Clock()
+def square(x, y, name):
+    "Draw square at (x, y) with color name."
+    up()
+    goto(x, y)
+    down()
+    color(name)
+    begin_fill()
+    for count in range(4):
+        forward(200)
+        left(90)
+    end_fill()
+    update()
 
-black, white = (0, 0, 0), (255, 255, 255)
-rects = ((Rect(  5,   5, 230, 230), (200, 200,   0), (255, 255,   0)),
-         (Rect(245,   5, 230, 230), (200,   0,   0), (255,   0,   0)),
-         (Rect(  5, 245, 230, 230), (  0, 200,   0), (  0, 255,   0)),
-         (Rect(245, 245, 230, 230), (  0,   0, 200), (  0,   0, 255)))
+def grid():
+    "Draw grid of tiles."
+    square(0, 0, 'dark red')
+    square(0, -200, 'dark blue')
+    square(-200, 0, 'dark green')
+    square(-200, -200, 'khaki')
 
-def reset():
-    global guess, pattern
-    guess, pattern = [], [randrange(len(rects))]
-    draw_pattern()
+def flash(tile):
+    "Flash tile in grid."
+    x, y = tile
+    glow, dark = tiles[tile]
+    square(x, y, glow)
+    sleep(0.5)
+    square(x, y, dark)
+    sleep(0.5)
 
-def draw_pattern():
-    for value in pattern:
-        rect = rects[value]
+def grow():
+    "Grow pattern and flash tiles."
+    tile = choice(list(tiles))
+    pattern.append(tile)
 
-        clock.tick(12)
-        draw_screen()
-        pygame.display.flip()
+    for tile in pattern:
+        flash(tile)
 
-        clock.tick(12)
-        draw_screen()
-        pygame.draw.rect(screen, rect[2], rect[0])
-        pygame.display.flip()
+    print('Pattern length:', len(pattern))
+    guesses.clear()
 
-def draw_screen():
-    pygame.draw.rect(screen, black, (0, 0, 480, 480))
-    for rect in rects:
-        pygame.draw.rect(screen, rect[1], rect[0])
+def tap(x, y):
+    "Respond to screen tap."
+    onscreenclick(None)
+    x = floor(x, 200)
+    y = floor(y, 200)
+    tile = vector(x, y)
+    index = len(guesses)
 
-def draw_message(message):
-    surface = font.render(message, True, black)
-    screen.blit(surface, (10, 10))
+    if tile != pattern[index]:
+        exit()
 
-reset()
+    guesses.append(tile)
+    flash(tile)
 
-while True:
-    event = pygame.event.wait()
+    if len(guesses) == len(pattern):
+        grow()
 
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-    elif event.type == KEYDOWN:
-        if event.key == K_r:
-            reset()
-        elif event.key == K_q:
-            pygame.event.post(pygame.event.Event(QUIT))
-    elif event.type == MOUSEBUTTONDOWN and event.button == 1:
-        for index, rect in enumerate(rects):
-            if rect[0].collidepoint(event.pos):
-                guess.append(index)
+    onscreenclick(tap)
 
-    if len(guess) > 0:
-        if all(lhs == rhs for lhs, rhs in zip(pattern, guess)):
-            if len(pattern) == len(guess):
-                pattern.append(randrange(len(rects)))
-                guess = []
-                draw_pattern()
-        else:
-            pygame.draw.rect(screen, white, (0, 0, 480, 480))
-            draw_message("Simon didn't say that!")
-            pygame.display.flip()
-    else:
-        draw_screen()
-        draw_message('Pattern length: ' + str(len(pattern)))
-        pygame.display.flip()
+def start(x, y):
+    "Start game."
+    grow()
+    onscreenclick(tap)
+
+setup(420, 420, 370, 0)
+hideturtle()
+tracer(False)
+grid()
+onscreenclick(start)
+done()
