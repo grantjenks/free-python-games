@@ -30,11 +30,8 @@ st.setup(
     author='Grant Jenks',
     author_email='contact@grantjenks.com',
     url='http://www.grantjenks.com/docs/freegames/',
-    packages=st.find_packages(exclude=('tests', 'docs')),
-    package_data={
-        '': ['LICENSE', 'README.rst'],
-        'freegames': ['*.gif'],
-    },
+    packages=['freegames'],
+    include_package_data=True,
     tests_require=['tox'],
     cmdclass={'test': Tox},
     license='Apache 2.0',
