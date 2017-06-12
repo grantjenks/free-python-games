@@ -9,7 +9,7 @@ def game_file(name):
     "Return True if filename represents a game."
     return not name.startswith('__') and name.endswith('.py')
 
-games = [name[:-3] for name in contents if game_file(name)]
+games = sorted(name[:-3] for name in contents if game_file(name))
 
 parser = argparse.ArgumentParser(
     prog='freegames',
