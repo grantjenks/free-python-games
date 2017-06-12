@@ -63,7 +63,7 @@ class vector(collections.Sequence):
         3
 
         """
-        return self._x
+        return round(self._x, 9)
 
     @x.setter
     def x(self, value):
@@ -83,7 +83,7 @@ class vector(collections.Sequence):
         5
 
         """
-        return self._y
+        return round(self._y, 9)
 
     @y.setter
     def y(self, value):
@@ -103,7 +103,7 @@ class vector(collections.Sequence):
 
         """
         if self._hash is None:
-            pair = (self._x, self._y)
+            pair = (self.x, self.y)
             self._hash = hash(pair)
         return self._hash
 
@@ -132,9 +132,9 @@ class vector(collections.Sequence):
 
         """
         if index == 0:
-            return self._x
+            return self.x
         elif index == 1:
-            return self._y
+            return self.y
         else:
             raise IndexError
 
@@ -150,10 +150,6 @@ class vector(collections.Sequence):
         type_self = type(self)
         return type_self(self._x, self._y)
 
-    @staticmethod
-    def _isclose(a, b):
-        return abs(a - b) <= max(1e-05 * max(abs(a), abs(b)), 1e-08)
-
     def __eq__(self, other):
         """v.__eq__(w) -> v == w
 
@@ -164,8 +160,7 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            x_isclose = self._isclose(self._x, other._x)
-            return x_isclose and self._isclose(self._y, other._y)
+            return self.x == other.x and self.y == other.y
         return NotImplemented
 
     def __ne__(self, other):
@@ -178,8 +173,7 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            x_isclose = self._isclose(self._x, other._x)
-            return not x_isclose or not self._isclose(self._y, other._y)
+            return self.x != other.x and self.y != other.y
         return NotImplemented
 
     def __iadd__(self, other):
@@ -377,8 +371,8 @@ class vector(collections.Sequence):
 
         """
         copy = self.copy()
-        copy.x = -copy.x
-        copy.y = -copy.y
+        copy._x = -copy._x
+        copy._y = -copy._y
         return copy
 
     def __abs__(self):
@@ -420,4 +414,4 @@ class vector(collections.Sequence):
         """
         type_self = type(self)
         name = type_self.__name__
-        return '{}({!r}, {!r})'.format(name, self._x, self._y)
+        return '{}({!r}, {!r})'.format(name, self.x, self.y)
