@@ -68,9 +68,9 @@ def draw():
     if mark is not None:
         x, y = xy(mark)
         up()
-        goto(x + 5, y)
+        goto(x + 2, y)
         color('black')
-        write(tiles[mark], font=('Arial', 40, 'normal'))
+        write(tiles[mark], font=('Arial', 30, 'normal'))
 
     update()
     ontimer(draw, 100)
