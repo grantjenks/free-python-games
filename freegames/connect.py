@@ -22,23 +22,10 @@ def line(a, b, x, y):
     down()
     goto(x, y)
 
-def square(x, y, size):
-    "Draw square with lower left corner at (x, y) and side length size."
-    up()
-    goto(x, y)
-    down()
-    begin_fill()
-    for count in range(4):
-        forward(size)
-        left(90)
-    end_fill()
-
 def grid():
     "Draw Connect Four grid."
-    color('light blue')
-    square(-200, -200, 400)
+    bgcolor('light blue')
 
-    color('black')
     for x in range(-150, 200, 50):
         line(x, -200, x, 200)
 
