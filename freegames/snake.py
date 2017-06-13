@@ -17,15 +17,15 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
-def square(x, y, size, name):
-    "Draw square at x, y with given size and color."
+def square(x, y, name):
+    "Draw square at x, y with color name."
     up()
     goto(x, y)
     down()
     color(name)
     begin_fill()
     for i in range(4):
-        forward(size - 1)
+        forward(9)
         left(90)
     end_fill()
 
@@ -44,11 +44,10 @@ def move():
     head.move(aim)
 
     if not inside(head) or head in snake:
-        square(head.x, head.y, 10, 'red')
+        square(head.x, head.y, 'red')
         update()
         return
 
-    square(head.x, head.y, 10, 'black')
     snake.append(head)
 
     if head == food:
@@ -56,10 +55,14 @@ def move():
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
-        tail = snake.pop(0)
-        square(tail.x, tail.y, 10, 'white')
+        snake.pop(0)
 
-    square(food.x, food.y, 10, 'green')
+    clear()
+
+    for body in snake:
+        square(body.x, body.y, 'black')
+
+    square(food.x, food.y, 'green')
     update()
     ontimer(move, 100)
 
