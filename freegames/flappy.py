@@ -17,13 +17,16 @@ bird = vector(0, 0)
 balls = []
 
 def tap(x, y):
+    "Move bird up in response to screen tap."
     up = vector(0, 30)
     bird.move(up)
 
 def inside(point):
+    "Return True if point on screen."
     return -200 < point.x < 200 and -200 < point.y < 200
 
 def draw():
+    "Update objects and draw screen."
     bird.y -= 5
 
     for ball in balls:
@@ -61,13 +64,10 @@ def draw():
     if alive:
         ontimer(draw, 50)
 
-def start(x, y):
-    draw()
-    onscreenclick(tap)
-
 setup(420, 420, 370, 0)
 hideturtle()
 up()
 tracer(False)
-onscreenclick(start)
+onscreenclick(tap)
+draw()
 done()
