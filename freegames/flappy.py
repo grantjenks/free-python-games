@@ -32,7 +32,7 @@ def draw():
     for ball in balls:
         ball.x -= 3
 
-    if randrange(15) == 0:
+    if randrange(10) == 0:
         y = randrange(-199, 199)
         ball = vector(199, y)
         balls.append(ball)
