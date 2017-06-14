@@ -20,15 +20,15 @@ p2xy = vector(100, 0)
 p2aim = vector(-4, 0)
 p2body = set()
 
-def square(x, y, side, name):
-    "Draw square at (x, y) with given side length and fill color."
+def square(x, y, name):
+    "Draw square at (x, y) with color name."
     up()
     goto(x, y)
     down()
     color(name)
     begin_fill()
     for count in range(4):
-        forward(side)
+        forward(3)
         left(90)
     end_fill()
 
@@ -54,8 +54,8 @@ def draw():
     p1body.add(p1head)
     p2body.add(p2head)
 
-    square(p1xy.x, p1xy.y, 3, 'red')
-    square(p2xy.x, p2xy.y, 3, 'blue')
+    square(p1xy.x, p1xy.y, 'red')
+    square(p2xy.x, p2xy.y, 'blue')
     update()
     ontimer(draw, 50)
 
