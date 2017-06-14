@@ -37,7 +37,7 @@ def drawo(x, y):
     down()
     circle(62)
 
-def round(value):
+def floor(value):
     return ((value + 200) // 133) * 133 - 200
 
 state = {'player': 0}
@@ -45,8 +45,8 @@ players = [drawx, drawo]
 
 def tap(x, y):
     "Draw X or O in tapped square."
-    x = round(x)
-    y = round(y)
+    x = floor(x)
+    y = floor(y)
     player = state['player']
     draw = players[player]
     draw(x, y)
