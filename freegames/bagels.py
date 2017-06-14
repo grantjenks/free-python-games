@@ -8,7 +8,7 @@ Exercises:
 
 """
 
-from random import sample, shuffle
+from random import randint, shuffle
 
 digits = 3
 guesses = 10
@@ -24,12 +24,7 @@ print('There are no repeated digits in the number.')
 
 # Create a random number.
 
-letters = sample('0123456789', digits)
-
-if letters[0] == '0':
-    letters.reverse()
-
-number = ''.join(letters)
+number = str(randint(100, 999))
 
 print('I have thought up a number.')
 print('You have', guesses, 'guesses to get it.')
@@ -59,7 +54,8 @@ while True:
     if len(clues) == 0:
         print('bagels')
     else:
-        print(' '.join(clues))
+        for clue in clues:
+            print(clue)
 
     counter += 1
 
