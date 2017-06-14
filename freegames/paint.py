@@ -1,94 +1,79 @@
-"""
-Paint, for drawing shapes.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
+"""Paint, for drawing shapes.
 
 Exercises
+
 1. Add a color.
-2. Complete draw_circle.
-3. Complete draw_rectangle.
-4. Complete draw_triangle.
+2. Complete circle.
+3. Complete rectangle.
+4. Complete triangle.
 5. Add width parameter.
+
 """
 
-import sys, pygame
-from pygame.locals import *
+from turtle import *
+from freegames import vector
 
-pygame.init()
+def line(start, end):
+    "Draw line from start to end."
+    up()
+    goto(start.x, start.y)
+    down()
+    goto(end.x, end.y)
 
-screen = pygame.display.set_mode((480, 480))
-clock = pygame.time.Clock()
+def square(start, end):
+    "Draw square from start to end."
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
 
-black, white = (0, 0, 0), (255, 255, 255)
-red, green, blue = (255, 0, 0), (0, 255, 0), (0, 0, 255)
+    for count in range(4):
+        forward(end.x - start.x)
+        left(90)
 
-def draw_line(color, start, end):
-    pygame.draw.line(screen, color, start, end)
+    end_fill()
 
-def draw_square(color, start, end):
-    width = end[0] - start[0]
-    pygame.draw.rect(screen, color, (start[0], start[1], width, width))
+def circle(start, end):
+    "Draw circle from start to end."
+    pass  # TODO
 
-def draw_circle(color, start, end):
-    # TODO
-    pass
+def rectangle(start, end):
+    "Draw rectangle from start to end."
+    pass  # TODO
 
-def draw_rectangle(color, start, end):
-    # TODO
-    pass
+def triangle(start, end):
+    "Draw triangle from start to end."
+    pass  # TODO
 
-def draw_triangle(color, start, end):
-    # TODO
-    pass
+def tap(x, y):
+    "Store starting point or draw shape."
+    start = state['start']
 
-shapes = [[draw_square, white, (0, 0), (480, 480)]]
-shape, color, start = draw_line, black, None
+    if start is None:
+        state['start'] = vector(x, y)
+    else:
+        shape = state['shape']
+        end = vector(x, y)
+        shape(start, end)
+        state['start'] = None
 
-def draw_shapes():
-    for shape in shapes:
-        func, color, start, end = shape
-        func(color, start, end)
+def store(key, value):
+    "Store value in state at key."
+    state[key] = value
 
-while True:
-    event = pygame.event.wait()
-
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-    elif event.type == KEYDOWN:
-        if event.key == K_r:
-            color = red
-        elif event.key == K_g:
-            color = green
-        elif event.key == K_u:
-            color = blue
-        elif event.key == K_b:
-            color = black
-        elif event.key == K_w:
-            color = white
-        elif event.key == K_l:
-            shape = draw_line
-        elif event.key == K_s:
-            shape = draw_square
-        elif event.key == K_c:
-            shape = draw_circle
-        elif event.key == K_e:
-            shape = draw_rectangle
-        elif event.key == K_t:
-            shape = draw_triangle
-        elif event.key == K_a:
-            shapes = [[draw_square, white, (0, 0), (480, 480)]]
-        elif event.key == K_q:
-            pygame.event.post(pygame.event.Event(QUIT))
-    elif event.type == MOUSEBUTTONDOWN and event.button == 1:
-        start = pygame.mouse.get_pos()
-        shapes.append([shape, color, start, start])
-    elif event.type == MOUSEBUTTONUP and event.button == 1:
-        start = None
-
-    if start is not None:
-        shapes[-1][-1] = pygame.mouse.get_pos()
-        
-    draw_shapes()
-    pygame.display.flip()
+state = {'start': None, 'shape': line}
+setup(420, 420, 370, 0)
+onscreenclick(tap)
+listen()
+onkey(undo, 'u')
+onkey(lambda: color('black'), 'K')
+onkey(lambda: color('white'), 'W')
+onkey(lambda: color('green'), 'G')
+onkey(lambda: color('blue'), 'B')
+onkey(lambda: color('red'), 'R')
+onkey(lambda: store('shape', line), 'l')
+onkey(lambda: store('shape', square), 's')
+onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', rectangle), 'r')
+onkey(lambda: store('shape', triangle), 't')
+done()
