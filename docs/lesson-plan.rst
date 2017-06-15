@@ -190,7 +190,7 @@ Bible Story
 Day 5
 -----
 
-- Activity: Make your own game.
+- Activity: Make or modify your own game.
 - Famous Christian programmer: Jon Skeet
 
 
