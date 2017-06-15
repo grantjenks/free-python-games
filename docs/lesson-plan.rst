@@ -207,7 +207,7 @@ Bible Story
 
 * John - God the Debugger - Jesus Heals the Blind Man
 
-  
+
 
 * Revelation 21 - God the Recreator
 
