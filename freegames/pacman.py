@@ -1,16 +1,131 @@
-"""
-Simplified Pacman.
-
-Copyright (c) 2014 Grant Jenks
-http://www.grantjenks.com/
+"""Pacman, classic arcade game.
 
 Exercises
-1. Change the pacman board.
+
+1. Change the board.
 2. Change the number of monsters.
-3. Change the starting position of pacman.
+3. Change where pacman starts.
 4. Make the monsters faster/slower.
 5. Make the monsters smarter.
+
 """
+
+from random import *
+from turtle import *
+from freegames import floor, vector
+
+
+aim = vector(5, 0)
+pacman = vector(-40, -80)
+tiles = [
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0,
+    0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0,
+    0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+]
+
+def square(x, y):
+    up()
+    goto(x, y)
+    down()
+    begin_fill()
+    for count in range(4):
+        forward(20)
+        left(90)
+    end_fill()
+
+def offset(point):
+    x = (floor(point.x, 20) + 200) / 20
+    y = (180 - floor(point.y, 20)) / 20
+    index = int(x + y * 20)
+    return index
+
+def valid(man, aim):
+    step = man + aim
+    index = offset(step)
+
+    if tiles[index] == 0:
+        return False
+
+    step.x += 19
+
+    step.move(19)
+    index = offset(step)
+
+    return tiles[index] != 0
+
+def move(man, aim):
+    if valid(man, aim):
+        man.move(aim)
+
+def draw():
+    clear()
+    color('blue')
+
+    for index in range(len(tiles)):
+        tile = tiles[index]
+
+        if tile > 0:
+            x = (index % 20) * 20 - 200
+            y = 180 - (index // 20) * 20
+            square(x, y)
+
+            if tile == 1:
+                up()
+                goto(x + 10, y + 10)
+                dot(2, 'white')
+
+    move(pacman, aim)
+    up()
+    goto(pacman.x + 10, pacman.y + 10)
+    dot(20, 'yellow')
+
+    for index in range(400):
+        x = index % 20 * 20 - 200
+        y = 180 - (index // 20) * 20
+        goto(x, y)
+        color('white')
+        write(index)
+    
+    update()
+    ontimer(draw, 50)
+
+def change(x, y):
+    aim.x = x
+    aim.y = y
+
+setup(420, 420, 370, 0)
+bgcolor('black')
+hideturtle()
+tracer(False)
+listen()
+onkey(lambda: change(5, 0), 'Right')
+onkey(lambda: change(-5, 0), 'Left')
+onkey(lambda: change(0, 5), 'Up')
+onkey(lambda: change(0, -5), 'Down')
+draw()
+done()
+
+import sys; sys.exit(0)
+
+
+
 
 import sys
 import pygame
