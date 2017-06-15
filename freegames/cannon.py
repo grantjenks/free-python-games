@@ -1,8 +1,11 @@
-"""Cannon, hitting targets with a cannon.
+"""Cannon, hitting targets with projectiles.
 
 Exercises
 
-1.
+1. Keep score by counting target hits.
+2. Vary the effect of gravity.
+3. Apply gravity to the targets.
+4. Change the speed of the ball.
 
 """
 
@@ -10,63 +13,69 @@ from random import randrange
 from turtle import *
 from freegames import vector
 
-cannon = vector(100, 100)
-balls = []
-speeds = []
+ball = vector(-200, -200)
+speed = vector(0, 0)
 targets = []
 
 def tap(x, y):
-    ball = vector(-200, -200)
-    balls.append(ball)
-    speed = (vector(x, y) + 200) / 50
-    speeds.append(speed)
+    "Respond to screen tap."
+    if not inside(ball):
+        ball.x = -199
+        ball.y = -199
+        speed.x = (x + 200) / 25
+        speed.y = (y + 200) / 25
 
 def inside(xy):
+    "Return True if xy within screen."
     return -200 < xy.x < 200 and -200 < xy.y < 200
 
 def draw():
+    "Draw ball and targets."
     clear()
 
-    if randrange(10) == 0:
-        y = randrange(-200, 200)
+    for target in targets:
+        goto(target.x, target.y)
+        dot(20, 'blue')
+
+    if inside(ball):
+        goto(ball.x, ball.y)
+        dot(6, 'red')
+
+    update()
+
+def move():
+    "Move ball and targets."
+    if randrange(40) == 0:
+        y = randrange(-150, 150)
         target = vector(200, y)
         targets.append(target)
 
     for target in targets:
-        target.x -= 1
-        goto(target.x, target.y)
-        dot(20, 'blue')
+        target.x -= 0.5
 
-    for index in range(len(balls)):
-        ball = balls[index]
-        speed = speeds[index]
-        speed.y -= 0.02
-        ball += speed
-        goto(ball.x, ball.y)
-        dot(2, 'red')
+    if inside(ball):
+        speed.y -= 0.35
+        ball.move(speed)
 
-    hits = targets.copy()
+    dupe = targets.copy()
     targets.clear()
 
-    for target in hits:
-        if all(abs(target - ball) > 12 for ball in balls):
+    for target in dupe:
+        if abs(target - ball) > 13:
             targets.append(target)
 
-    duds = balls.copy()
-    balls.clear()
+    draw()
 
-    for ball in duds:
-        if inside(ball):
-            balls.append(ball)  # Ooops, must update speed!
+    for target in targets:
+        if not inside(target):
+            return
 
-    update()
-    ontimer(draw, 50)
-
+    ontimer(move, 50)
 
 setup(420, 420, 370, 0)
 hideturtle()
 up()
 tracer(False)
 onscreenclick(tap)
-draw()
+move()
 done()
