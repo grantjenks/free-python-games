@@ -38,6 +38,7 @@ def drawo(x, y):
     circle(62)
 
 def floor(value):
+    "Round value down to grid with square size 133."
     return ((value + 200) // 133) * 133 - 200
 
 state = {'player': 0}

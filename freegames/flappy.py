@@ -36,7 +36,7 @@ def draw():
         y = randrange(-199, 199)
         ball = vector(199, y)
         balls.append(ball)
-        
+
     alive = inside(bird)
 
     for ball in balls:

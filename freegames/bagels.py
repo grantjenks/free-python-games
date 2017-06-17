@@ -48,7 +48,7 @@ while True:
 
     clues = []
 
-    for index in range(len(guess)):
+    for index in range(digits):
         if guess[index] == number[index]:
             clues.append('fermi')
         elif guess[index] in number:

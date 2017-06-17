@@ -33,6 +33,7 @@ def square(x, y, name):
     end_fill()
 
 def inside(head):
+    "Return True if head inside screen."
     return -200 < head.x < 200 and -200 < head.y < 200
 
 def draw():

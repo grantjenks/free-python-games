@@ -1,6 +1,9 @@
+"""Free Games CLI
+
+"""
+
 import argparse
 import os
-import runpy
 
 directory = os.path.dirname(os.path.realpath(__file__))
 contents = os.listdir(directory)
@@ -56,6 +59,6 @@ elif args.command == 'copy':
         print('ERROR: File already exists. Specify --force to overwrite.')
 else:
     assert args.command == 'show'
-    
+
     with open(os.path.join(directory, args.game + '.py')) as reader:
         print(reader.read())

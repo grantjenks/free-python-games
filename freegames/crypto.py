@@ -11,6 +11,7 @@ Exercises
 """
 
 def encrypt(message, key):
+    "Encrypt message with key."
     result = ''
 
     # Iterate letters in message and encrypt each individually.
@@ -46,15 +47,18 @@ def encrypt(message, key):
     return result
 
 def decrypt(message, key):
+    "Decrypt message with key."
     return encrypt(message, -key)
 
 def decode(message):
-    # TODO: Decode a message without a key.
-    pass
+    "Decode message without key."
+    pass  # TODO
 
 def get_key():
+    "Get key from user."
     try:
-        key = int(input('Enter a key (1 - 25): '))
+        text = input('Enter a key (1 - 25): ')
+        key = int(text)
         return key
     except:
         print('Invalid key. Using key: 0.')
@@ -65,19 +69,19 @@ if __name__ == '__main__':
     choice = input()
 
     if choice == 'encrypt':
-        message = input('Message: ')
-        key = get_key()
-        print('Encrypted message:', encrypt(message, key))
+        phrase = input('Message: ')
+        code = get_key()
+        print('Encrypted message:', encrypt(phrase, code))
 
     elif choice == 'decrypt':
-        message = input('Message: ')
-        key = get_key()
-        print('Decrypted message:', decrypt(message, key))
+        phrase = input('Message: ')
+        code = get_key()
+        print('Decrypted message:', decrypt(phrase, code))
 
     elif choice == 'decode':
-        message = input('Message: ')
+        phrase = input('Message: ')
         print('Decoding message:')
-        decode(message)
+        decode(phrase)
 
     else:
         print('Error: Unrecognized Command')

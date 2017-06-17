@@ -1,3 +1,7 @@
+"""Free Games
+
+"""
+
 from .utils import floor, path, vector
 
 __title__ = 'freegames'

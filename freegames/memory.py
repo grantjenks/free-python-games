@@ -35,9 +35,9 @@ def index(x, y):
     "Convert (x, y) coordinates to tiles index."
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
-def xy(index):
-    "Convert tiles index to (x, y) coordinates."
-    return (index % 8) * 50 - 200, (index // 8) * 50 - 200
+def xy(count):
+    "Convert tiles count to (x, y) coordinates."
+    return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
 def tap(x, y):
     "Update mark and hidden tiles based on tap."
@@ -58,9 +58,9 @@ def draw():
     shape(car)
     stamp()
 
-    for index in range(64):
-        if hide[index]:
-            x, y = xy(index)
+    for count in range(64):
+        if hide[count]:
+            x, y = xy(count)
             square(x, y)
 
     mark = state['mark']
