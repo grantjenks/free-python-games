@@ -1,3 +1,7 @@
+"""Utilities
+
+"""
+
 import collections
 import math
 import os
@@ -35,6 +39,9 @@ class vector(collections.Sequence):
     Vectors can be modified in place.
 
     """
+    # pylint: disable=invalid-name
+    PRECISION = 6
+
     __slots__ = ('_x', '_y', '_hash')
 
     def __init__(self, x, y):
@@ -48,8 +55,8 @@ class vector(collections.Sequence):
 
         """
         self._hash = None
-        self._x = x
-        self._y = y
+        self._x = round(x, self.PRECISION)
+        self._y = round(y, self.PRECISION)
 
     @property
     def x(self):
@@ -63,13 +70,13 @@ class vector(collections.Sequence):
         3
 
         """
-        return round(self._x, 9)
+        return self._x
 
     @x.setter
     def x(self, value):
         if self._hash is not None:
             raise ValueError('cannot set x after hashing')
-        self._x = value
+        self._x = round(value, self.PRECISION)
 
     @property
     def y(self):
@@ -83,13 +90,13 @@ class vector(collections.Sequence):
         5
 
         """
-        return round(self._y, 9)
+        return self._y
 
     @y.setter
     def y(self, value):
         if self._hash is not None:
             raise ValueError('cannot set y after hashing')
-        self._y = value
+        self._y = round(value, self.PRECISION)
 
     def __hash__(self):
         """v.__hash__() -> hash(v)
@@ -148,7 +155,7 @@ class vector(collections.Sequence):
 
         """
         type_self = type(self)
-        return type_self(self._x, self._y)
+        return type_self(self.x, self.y)
 
     def __eq__(self, other):
         """v.__eq__(w) -> v == w
@@ -192,11 +199,11 @@ class vector(collections.Sequence):
         if self._hash is not None:
             raise ValueError('cannot add vector after hashing')
         elif isinstance(other, vector):
-            self._x += other._x
-            self._y += other._y
+            self.x += other.x
+            self.y += other.y
         else:
-            self._x += other
-            self._y += other
+            self.x += other
+            self.y += other
         return self
 
     def __add__(self, other):
@@ -248,11 +255,11 @@ class vector(collections.Sequence):
         if self._hash is not None:
             raise ValueError('cannot subtract vector after hashing')
         elif isinstance(other, vector):
-            self._x -= other._x
-            self._y -= other._y
+            self.x -= other.x
+            self.y -= other.y
         else:
-            self._x -= other
-            self._y -= other
+            self.x -= other
+            self.y -= other
         return self
 
     def __sub__(self, other):
@@ -285,11 +292,11 @@ class vector(collections.Sequence):
         if self._hash is not None:
             raise ValueError('cannot multiply vector after hashing')
         elif isinstance(other, vector):
-            self._x *= other._x
-            self._y *= other._y
+            self.x *= other.x
+            self.y *= other.y
         else:
-            self._x *= other
-            self._y *= other
+            self.x *= other
+            self.y *= other
         return self
 
     def __mul__(self, other):
@@ -341,11 +348,11 @@ class vector(collections.Sequence):
         if self._hash is not None:
             raise ValueError('cannot divide vector after hashing')
         elif isinstance(other, vector):
-            self._x /= other._x
-            self._y /= other._y
+            self.x /= other.x
+            self.y /= other.y
         else:
-            self._x /= other
-            self._y /= other
+            self.x /= other
+            self.y /= other
         return self
 
     def __truediv__(self, other):
@@ -370,9 +377,10 @@ class vector(collections.Sequence):
         vector(-1, -2)
 
         """
+        # pylint: disable=invalid-unary-operand-type
         copy = self.copy()
-        copy._x = -copy._x
-        copy._y = -copy._y
+        copy.x = -copy.x
+        copy.y = -copy.y
         return copy
 
     def __abs__(self):
@@ -383,7 +391,7 @@ class vector(collections.Sequence):
         5.0
 
         """
-        return (self._x ** 2 + self._y ** 2) ** 0.5
+        return (self.x ** 2 + self.y ** 2) ** 0.5
 
     def rotate(self, angle):
         """Rotate vector counter-clockwise by angle (in-place).
@@ -399,10 +407,10 @@ class vector(collections.Sequence):
         radians = angle * math.pi / 180.0
         cosine = math.cos(radians)
         sine = math.sin(radians)
-        x = self._x
-        y = self._y
-        self._x = x * cosine - y * sine
-        self._y = y * cosine + x * sine
+        x = self.x
+        y = self.y
+        self.x = x * cosine - y * sine
+        self.y = y * cosine + x * sine
 
     def __repr__(self):
         """v.__repr__() -> repr(v)
