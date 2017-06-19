@@ -133,10 +133,12 @@ For those wanting more details, this part of the documentation describes
 tutorial, API, and development.
 
 * `Free Python Games Tutorial`_
+* `Free Python Games Lesson Plan`_
 * `Free Python Games API Reference`_
 * `Free Python Games Development`_
 
 .. _`Free Python Games Tutorial`: http://www.grantjenks.com/docs/freegames/tutorial.html
+.. _`Free Python Games Lesson Plan`: http://www.grantjenks.com/docs/freegames/lesson-plan.html
 .. _`Free Python Games API Reference`: http://www.grantjenks.com/docs/freegames/api.html
 .. _`Free Python Games Development`: http://www.grantjenks.com/docs/freegames/development.html
 
