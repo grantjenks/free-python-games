@@ -205,16 +205,16 @@ Games
 Bible Story
 ...........
 
-* Revelation 21 - God the Recreator
-
-  1. When does the new heaven and new earth occur?
-  2. What is special about the new heaven and new earth?
-  3. Who is the Lamb and the Bride?
-  4. What is special about the city?
-
-* John 9:1-33 - God, my Debugger
+* John 9:1-33 - God the Restorer
 
   1. What does Jesus tell the disciples?
   2. What does the man tell the Pharisees?
   3. What does the man believe about Jesus?
   4. What do you believe about Jesus?
+
+* Revelation 21 - God the Restorer
+
+  1. What does God make? When?
+  2. Who is the Lamb and the Bride?
+  3. What is special about the city?
+  4. How can we live in the Holy City?
