@@ -6,4 +6,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - pytest -v tests
+  - PYTHONPATH=. pytest -v tests
