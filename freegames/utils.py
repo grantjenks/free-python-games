@@ -205,7 +205,7 @@ class vector(collections.Sequence):
 
         """
         if isinstance(other, vector):
-            return self.x != other.x and self.y != other.y
+            return self.x != other.x or self.y != other.y
         return NotImplemented
 
     def __iadd__(self, other):
