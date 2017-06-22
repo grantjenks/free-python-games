@@ -10,7 +10,7 @@ Exercises
 """
 
 from turtle import *
-from freegames import vector
+from freegames import square, vector
 
 p1xy = vector(-100, 0)
 p1aim = vector(4, 0)
@@ -19,18 +19,6 @@ p1body = set()
 p2xy = vector(100, 0)
 p2aim = vector(-4, 0)
 p2body = set()
-
-def square(x, y, name):
-    "Draw square at (x, y) with color name."
-    up()
-    goto(x, y)
-    down()
-    color(name)
-    begin_fill()
-    for count in range(4):
-        forward(3)
-        left(90)
-    end_fill()
 
 def inside(head):
     "Return True if head inside screen."
@@ -55,8 +43,8 @@ def draw():
     p1body.add(p1head)
     p2body.add(p2head)
 
-    square(p1xy.x, p1xy.y, 'red')
-    square(p2xy.x, p2xy.y, 'blue')
+    square(p1xy.x, p1xy.y, 3, 'red')
+    square(p2xy.x, p2xy.y, 3, 'blue')
     update()
     ontimer(draw, 50)
 

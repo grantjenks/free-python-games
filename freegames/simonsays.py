@@ -10,7 +10,7 @@ Exercises
 from random import choice
 from time import sleep
 from turtle import *
-from freegames import floor, vector
+from freegames import floor, square, vector
 
 pattern = []
 guesses = []
@@ -21,32 +21,22 @@ tiles = {
     vector(-200, -200): ('yellow', 'khaki'),
 }
 
-def square(x, y, name):
-    "Draw square at (x, y) with color name."
-    up()
-    goto(x, y)
-    down()
-    color(name)
-    begin_fill()
-    for count in range(4):
-        forward(200)
-        left(90)
-    end_fill()
-    update()
-
 def grid():
     "Draw grid of tiles."
-    square(0, 0, 'dark red')
-    square(0, -200, 'dark blue')
-    square(-200, 0, 'dark green')
-    square(-200, -200, 'khaki')
+    square(0, 0, 200, 'dark red')
+    square(0, -200, 200, 'dark blue')
+    square(-200, 0, 200, 'dark green')
+    square(-200, -200, 200, 'khaki')
+    update()
 
 def flash(tile):
     "Flash tile in grid."
     glow, dark = tiles[tile]
-    square(tile.x, tile.y, glow)
+    square(tile.x, tile.y, 200, glow)
+    update()
     sleep(0.5)
-    square(tile.x, tile.y, dark)
+    square(tile.x, tile.y, 200, dark)
+    update()
     sleep(0.5)
 
 def grow():

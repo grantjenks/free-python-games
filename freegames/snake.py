@@ -11,23 +11,11 @@ Excercises
 
 from turtle import *
 from random import randrange
-from freegames import vector
+from freegames import square, vector
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
-def square(x, y, name):
-    "Draw square at x, y with color name."
-    up()
-    goto(x, y)
-    down()
-    color(name)
-    begin_fill()
-    for i in range(4):
-        forward(9)
-        left(90)
-    end_fill()
 
 def change(x, y):
     "Change snake direction."
@@ -44,7 +32,7 @@ def move():
     head.move(aim)
 
     if not inside(head) or head in snake:
-        square(head.x, head.y, 'red')
+        square(head.x, head.y, 9, 'red')
         update()
         return
 
@@ -60,9 +48,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 'black')
+        square(body.x, body.y, 9, 'black')
 
-    square(food.x, food.y, 'green')
+    square(food.x, food.y, 9, 'green')
     update()
     ontimer(move, 100)
 
