@@ -10,13 +10,7 @@ Exercises
 """
 
 from turtle import *
-
-def line(a, b, x, y):
-    "Draw line from (a, b) to (x, y)."
-    up()
-    goto(a, b)
-    down()
-    goto(x, y)
+from freegames import line
 
 def grid():
     "Draw tic-tac-toe grid."

@@ -11,16 +11,10 @@ Exercises
 """
 
 from turtle import *
+from freegames import line
 
 turns = {'red': 'yellow', 'yellow': 'red'}
 state = {'player': 'yellow', 'rows': [0] * 8}
-
-def line(a, b, x, y):
-    "Draw line from (a, b) to (x, y)."
-    up()
-    goto(a, b)
-    down()
-    goto(x, y)
 
 def grid():
     "Draw Connect Four grid."

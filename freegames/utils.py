@@ -5,6 +5,7 @@
 import collections
 import math
 import os
+import turtle
 
 
 def floor(value, size, offset=200):
@@ -31,6 +32,14 @@ def path(filename):
     dirpath = os.path.dirname(filepath)
     fullpath = os.path.join(dirpath, filename)
     return fullpath
+
+
+def line(a, b, x, y):
+    "Draw line from (a, b) to (x, y)."
+    turtle.up()
+    turtle.goto(a, b)
+    turtle.down()
+    turtle.goto(x, y)
 
 
 class vector(collections.Sequence):

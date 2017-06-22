@@ -2,7 +2,7 @@
 
 """
 
-from .utils import floor, path, vector
+from .utils import floor, line, path, vector
 
 __title__ = 'freegames'
 __version__ = '1.4.6'
