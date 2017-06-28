@@ -72,16 +72,13 @@ if __name__ == '__main__':
         phrase = input('Message: ')
         code = get_key()
         print('Encrypted message:', encrypt(phrase, code))
-
     elif choice == 'decrypt':
         phrase = input('Message: ')
         code = get_key()
         print('Decrypted message:', decrypt(phrase, code))
-
     elif choice == 'decode':
         phrase = input('Message: ')
         print('Decoding message:')
         decode(phrase)
-
     else:
         print('Error: Unrecognized Command')
