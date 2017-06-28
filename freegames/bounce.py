@@ -6,6 +6,7 @@ Exercises
 2. Change how the ball bounces when it hits a wall.
 3. Make the ball leave a trail.
 4. Change the ball color based on position.
+   Hint: colormode(255); color(0, 100, 200)
 
 """
 
@@ -35,7 +36,6 @@ def draw():
 
     clear()
     goto(x, y)
-    # color(abs(ball.x), abs(ball.y), 200)
     dot(10)
 
     ontimer(draw, 50)
@@ -44,6 +44,5 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 up()
-# colormode(255)
 draw()
 done()
