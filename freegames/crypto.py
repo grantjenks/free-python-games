@@ -64,21 +64,20 @@ def get_key():
         print('Invalid key. Using key: 0.')
         return 0
 
-if __name__ == '__main__':
-    print('Do you wish to encrypt, decrypt, or decode a message?')
-    choice = input()
+print('Do you wish to encrypt, decrypt, or decode a message?')
+choice = input()
 
-    if choice == 'encrypt':
-        phrase = input('Message: ')
-        code = get_key()
-        print('Encrypted message:', encrypt(phrase, code))
-    elif choice == 'decrypt':
-        phrase = input('Message: ')
-        code = get_key()
-        print('Decrypted message:', decrypt(phrase, code))
-    elif choice == 'decode':
-        phrase = input('Message: ')
-        print('Decoding message:')
-        decode(phrase)
-    else:
-        print('Error: Unrecognized Command')
+if choice == 'encrypt':
+    phrase = input('Message: ')
+    code = get_key()
+    print('Encrypted message:', encrypt(phrase, code))
+elif choice == 'decrypt':
+    phrase = input('Message: ')
+    code = get_key()
+    print('Decrypted message:', decrypt(phrase, code))
+elif choice == 'decode':
+    phrase = input('Message: ')
+    print('Decoding message:')
+    decode(phrase)
+else:
+    print('Error: Unrecognized Command')
