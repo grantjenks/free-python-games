@@ -6,7 +6,6 @@
 import collections
 import math
 import os
-import turtle
 
 
 def floor(value, size, offset=200):
@@ -37,6 +36,7 @@ def path(filename):
 
 def line(a, b, x, y):
     "Draw line from (a, b) to (x, y)."
+    import turtle
     turtle.up()
     turtle.goto(a, b)
     turtle.down()
@@ -45,6 +45,7 @@ def line(a, b, x, y):
 
 def square(x, y, size, name):
     "Draw square at (x, y) with size and color name."
+    import turtle
     turtle.up()
     turtle.goto(x, y)
     turtle.down()
