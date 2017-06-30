@@ -12,57 +12,112 @@ In 2014, I used these games as part of week-long programming club that met in th
 Each game is entirely independent from the others and includes comments along with a list of exercises to work through with students. Creativity and flexibility is important. There's no right or wrong way to implement a new feature! You never know which games the students will find really interesting.
 
 
-Screenshots
------------
+Screencaps
+----------
 
-Nibbles
-.......
-
-Nibbles -- like Snake on the old Nokia phones.
-
-.. image:: http://www.grantjenks.com/docs/freegames/_static/nibbles.png
-   :alt: Nibbles Free Python Game
-
-Memory
-......
-
-Memory -- match tile pairs of numbers to uncover the hidden image.
-
-.. image:: http://www.grantjenks.com/docs/freegames/_static/memory.png
-   :alt: Memory Free Python Game
-
-Tiles
-.....
-
-Tiles -- shuffle image tiles to solve the puzzle.
-
-.. image:: http://www.grantjenks.com/docs/freegames/_static/tiles.png
-   :alt: Tiles Free Python Game
-
-Pacman
-......
-
-Pacman -- simplified version of the classic.
-
-.. image:: http://www.grantjenks.com/docs/freegames/_static/pacman.png
-   :alt: Pacman Free Python Game
-
-Maze
+Paint
 ....
 
-Maze -- solve a randomly generated maze.
+Paint -- draw lines and shapes on the screen.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/maze.png
-   :alt: Maze Free Python Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/paint.gif
+   :alt: Paint Free Python Game
 
-Tic Tac Toe
-...........
+Snake
+....
 
-Tic Tac Toe -- the classic.
+Snake -- classic arcade game.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/tictactoe.png
-   :alt: Tic Tac Toe Free Python Game
+.. image:: http://www.grantjenks.com/docs/freegames/_static/snake.gif
+   :alt: Snake Free Python Game
 
+Pacman
+....
+
+Pacman -- classic arcade game.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/pacman.gif
+   :alt: Pacman Free Python Game
+
+Cannon
+....
+
+Cannon -- projectile motion.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/cannon.gif
+   :alt: Cannon Free Python Game
+
+Connect
+....
+
+Connect -- Connect 4 game.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/connect.gif
+   :alt: Connect Free Python Game
+
+Flappy
+....
+
+Flappy -- Flappy-bird inspired game.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/flappy.gif
+   :alt: Flappy Free Python Game
+
+Memory
+....
+
+Memory -- puzzle game of number pairs.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/memory.gif
+   :alt: Memory Free Python Game
+
+Pong
+....
+
+Pong -- classic arcade game.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/pong.gif
+   :alt: Pong Free Python Game
+
+Simonsays
+....
+
+Simonsays -- classic memory puzzle game.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/simonsays.gif
+   :alt: Simonsays Free Python Game
+
+Tictactoe
+....
+
+Tictactoe -- classic game.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/tictactoe.gif
+   :alt: Tictactoe Free Python Game
+
+Tiles
+....
+
+Tiles -- puzzle game of sliding numbers into place.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/tiles.gif
+   :alt: Tiles Free Python Game
+
+Tron
+....
+
+Tron -- classic arcade game.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/tron.gif
+   :alt: Tron Free Python Game
+
+Fidget
+....
+
+Fidget -- fidget spinner inspired animation.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/fidget.gif
+   :alt: Fidget Free Python Game
 
 Curriculum
 ----------
