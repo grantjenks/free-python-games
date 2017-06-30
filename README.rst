@@ -16,7 +16,7 @@ Screencaps
 ----------
 
 Paint
-....
+.....
 
 Paint -- draw lines and shapes on the screen.
 
@@ -24,7 +24,7 @@ Paint -- draw lines and shapes on the screen.
    :alt: Paint Free Python Game
 
 Snake
-....
+.....
 
 Snake -- classic arcade game.
 
@@ -32,7 +32,7 @@ Snake -- classic arcade game.
    :alt: Snake Free Python Game
 
 Pacman
-....
+......
 
 Pacman -- classic arcade game.
 
@@ -40,7 +40,7 @@ Pacman -- classic arcade game.
    :alt: Pacman Free Python Game
 
 Cannon
-....
+......
 
 Cannon -- projectile motion.
 
@@ -48,7 +48,7 @@ Cannon -- projectile motion.
    :alt: Cannon Free Python Game
 
 Connect
-....
+.......
 
 Connect -- Connect 4 game.
 
@@ -56,7 +56,7 @@ Connect -- Connect 4 game.
    :alt: Connect Free Python Game
 
 Flappy
-....
+......
 
 Flappy -- Flappy-bird inspired game.
 
@@ -64,7 +64,7 @@ Flappy -- Flappy-bird inspired game.
    :alt: Flappy Free Python Game
 
 Memory
-....
+......
 
 Memory -- puzzle game of number pairs.
 
@@ -79,24 +79,24 @@ Pong -- classic arcade game.
 .. image:: http://www.grantjenks.com/docs/freegames/_static/pong.gif
    :alt: Pong Free Python Game
 
-Simonsays
-....
+Simon Says
+..........
 
-Simonsays -- classic memory puzzle game.
+Simon Says -- classic memory puzzle game.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/simonsays.gif
    :alt: Simonsays Free Python Game
 
-Tictactoe
-....
+Tic Tac Toe
+...........
 
-Tictactoe -- classic game.
+Tic Tac Toe -- classic game.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/tictactoe.gif
    :alt: Tictactoe Free Python Game
 
 Tiles
-....
+.....
 
 Tiles -- puzzle game of sliding numbers into place.
 
@@ -112,7 +112,7 @@ Tron -- classic arcade game.
    :alt: Tron Free Python Game
 
 Fidget
-....
+......
 
 Fidget -- fidget spinner inspired animation.
 
