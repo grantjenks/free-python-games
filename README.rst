@@ -2,67 +2,85 @@ Free Python Games
 =================
 
 `Free Python Games`_ is an Apache2 licensed collection of free Python games
-intended for education and fun.
+intended for education and fun. The games are written in simple Python code and
+designed for experimentation and changes. Simplified versions of several
+classic arcade games are included.
 
-// fun to play
-// easy to tinker
-// Python is an excellent language for learners
-// built atop Turtle, award winning library for learners?
-// work on Raspberry Pi
+Python is one of the top-five most popular programming languages in the world
+and available for free from `Python.org <https://www.python.org/>`_. Python
+includes an extensive Standard Library distributed with your installation. The
+Standard Library has a module called Turtle which is a popular way to introduce
+programming to kids. Turtle was part of the original Logo programming language
+developed by Wally Feurzig and Seymour Papert in 1966. All of the games in
+`Free Python Games`_ are implemented using Python and its Turtle module.
 
-A collection (18) of free python games.
+Starting in 2012, `Free Python Games`_ began as an after school program to
+teach programming to inner-city youth. The goal was to have fun as much as it
+was to learn. Since then the games have been improved and used in a variety of
+settings ranging from classrooms to summer day-camps.
 
-In the first half of 2012, I wrote ten games to teach a group of students some
-basics of programming. The goal was to have fun as much as it was to
-learn. Here you'll find simplified versions of several classics.
-
-In 2013, I used these games again as part of a programming club for high school
-students at Downtown College Prep in San Jose, CA. At that time, I added a
-number of new games bringing the total up to eighteen and covering more
-advanced topics like projectile motion and encryption.
-
-In 2014, I used these games as part of week-long programming club that met in
-the evenings at The River Church Community in San Jose, CA. Our demographic was
-middle and high school students.
-
-In 2017, I taught a week-long summer camp using these games running on Raspberry Pis.
+The games run anywhere Python can be installed which includes desktop computers
+running Windows, Mac OS, or Linux and older or low-power hardware such as the
+Raspberry Pi. Kids across the United States in grades 6th-12th have enjoyed
+learning about topics such as encryption and projectile motion through games.
 
 Each game is entirely independent from the others and includes comments along
 with a list of exercises to work through with students. Creativity and
-flexibility is important. There's no right or wrong way to implement a new
-feature! You never know which games the students will find really interesting.
+flexibility is important. There is no right or wrong way to implement a new
+feature or behavior! You never know which games students will engage with best.
 
 TODO
 
-* view source sphinx extension
+* Setup AppVeyor
+* Add comment to bagels.py and crypto.py
+* Describe how games work
+* Confirm testimonials
+* Curriculum page
+* Improve module help docstring
 
 
 Testimonials
 ------------
 
-// Brett Bymaster, Youth Pastor, The River Church Community
+*"I love Free Python Games because the games are fun and they're easy to
+understand and change. I like making my own games now."*
 
-// Terri Furton, Principle, Downtown College Preparatory?
+-- Luke Martin, Student
 
-// parent? Noah's Dad? Lance's Dad?
+*"Free Python Games inspired and introduced a new hobby to our son. Thank you so
+much for exposing him to coding. He is having so much fun!"*
 
-// Kid? Lance? Noah? Luke?
+-- Mary Lai, Parent
 
-// Teacher? Rick Schertle?
+*"Free Python Games are great because they really engage students and let them
+learn at their own pace."*
+
+-- Rick Schertle, Teacher, Steindorf STEAM School
+
+*"Free Python Games combines play and learning in a flexible environment that
+reduces the stress of a difficult topic like programming."*
+
+-- Brett Bymaster, Youth Pastor, The River Church Community
+
+*"Free Python Games is great for students, is highly organized and flexible,
+and seeks to unleash inquiry and understanding."*
+
+-- Terri Furton, Principal, Downtown College Prep
 
 
 Features
 --------
 
 - Fun to play!
+- Simple Python code
 - Easy to install
 - Designed for education
-- Pure-Python
-- Depends only on Python's Standard Library
+- Depends only on the Python Standard Library
+- Used in hundreds of hours of classroom instruction
 - Fully Documented
-- 100% test coverage
+- 100% Test Coverage
 - Developed on Python 3.4
-- Tested on CPython 2.7, 3.4, 3.5, 3.6 and PyPy
+- Tested on CPython 2.7, 3.4, 3.5, and 3.6
 - Tested on Windows, Mac OS X, Raspbian (Raspberry Pi), and Linux
 - Tested using Travis CI and AppVeyor CI
 
@@ -79,7 +97,8 @@ Quickstart
 Installing Free Python Games is simple with
 `pip <http://www.pip-installer.org/>`_::
 
-  $ pip install freegames
+  $ python3 -m pip install freegames
+  $ python3 -m freegames --help
 
 You can access documentation in the interpreter with Python's built-in help
 function::
