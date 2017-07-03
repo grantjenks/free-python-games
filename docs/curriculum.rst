@@ -1,7 +1,8 @@
 Curriculum
 ----------
 
-What follows are notes for a week-long curriculum with about 3 hours of classroom time each day.
+What follows are notes for a week-long curriculum with about 3 hours of
+classroom time each day.
 
 Monday
 ......

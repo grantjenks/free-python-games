@@ -31,7 +31,8 @@ Requests for Contributions
 Get the Code
 ------------
 
-:doc:`Free Python Games <index>` is actively developed in a `GitHub repository`_.
+:doc:`Free Python Games <index>` is actively developed in a `GitHub
+repository`_.
 
 You can either clone the public repository::
 
