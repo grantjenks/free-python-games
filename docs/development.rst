@@ -23,10 +23,10 @@ Requests for Contributions
 #. Improved documentation.
 #. Additional games. Requirements for new games:
 
-   #. Fun to play.
-   #. Matching code style.
-   #. Limited Python feature set.
-   #. Short (less than 100 lines of code).
+   * Fun to play.
+   * Matching code style.
+   * Limited Python feature set.
+   * Short (less than 100 lines of code).
 
 Get the Code
 ------------
