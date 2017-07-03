@@ -9,7 +9,18 @@ import os
 
 
 def floor(value, size, offset=200):
-    """Floor of value given size and offset.
+    """Floor of `value` given `size` and `offset`.
+
+    The floor function is best understood with a diagram of the number line::
+
+         -200  -100    0    100   200
+        <--|--x--|-----|--y--|--z--|-->
+
+    The number line shown has offset 200 denoted by the left-hand tick mark at
+    -200 and size 100 denoted by the tick marks at -100, 0, 100, and 200. The
+    floor of a value is the left-hand tick mark of the range where it lies. So
+    for the points show above: ``floor(x)`` is -200, ``floor(y)`` is 0, and
+    ``floor(z)`` is 100.
 
     >>> floor(10, 100)
     0.0
@@ -27,7 +38,7 @@ def floor(value, size, offset=200):
 
 
 def path(filename):
-    "Return full path to filename."
+    "Return full path to `filename` in freegames module."
     filepath = os.path.realpath(__file__)
     dirpath = os.path.dirname(filepath)
     fullpath = os.path.join(dirpath, filename)
@@ -35,7 +46,7 @@ def path(filename):
 
 
 def line(a, b, x, y):
-    "Draw line from (a, b) to (x, y)."
+    "Draw line from `(a, b)` to `(x, y)`."
     import turtle
     turtle.up()
     turtle.goto(a, b)
@@ -44,7 +55,11 @@ def line(a, b, x, y):
 
 
 def square(x, y, size, name):
-    "Draw square at (x, y) with size and color name."
+    """Draw square at `(x, y)` with side length `size` and fill color `name`.
+
+    The square is oriented so the bottom left corner is at (x, y).
+
+    """
     import turtle
     turtle.up()
     turtle.goto(x, y)
@@ -62,7 +77,15 @@ def square(x, y, size, name):
 class vector(collections.Sequence):
     """Two-dimensional vector.
 
-    Vectors can be modified in place.
+    Vectors can be modified in-place.
+
+    >>> v = vector(0, 1)
+    >>> v.move(1)
+    >>> v
+    vector(1, 2)
+    >>> v.rotate(90)
+    >>> v
+    vector(-2.0, 1.0)
 
     """
     # pylint: disable=invalid-name
