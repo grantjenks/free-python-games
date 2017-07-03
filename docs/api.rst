@@ -16,16 +16,16 @@ Drawing Functions
 
 .. autofunction:: freegames.square
 
-Vectors
--------
-
-.. autoclass:: freegames.vector
-   :members:
-   :special-members:
-
 Helper Functions
 ----------------
 
 .. autofunction:: freegames.floor
 
 .. autofunction:: freegames.path
+
+Vectors
+-------
+
+.. autoclass:: freegames.vector
+   :members:
+   :special-members:
