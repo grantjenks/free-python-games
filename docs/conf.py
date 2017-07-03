@@ -93,6 +93,8 @@ todo_include_todos = True
 #
 html_theme = 'alabaster'
 
+from collections import OrderedDict
+
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -100,13 +102,18 @@ html_theme_options = {
     'logo': 'gj-logo.png',
     'logo_name': True,
     'logo_text_align': 'center',
-    'travis_button': True,
     'analytics_id': 'UA-19364636-2',
     'show_powered_by': False,
     'show_related': True,
     'github_user': 'grantjenks',
     'github_repo': 'free-python-games',
     'github_type': 'star',
+    'extra_nav_links': OrderedDict([
+        ('Free Python Games', 'http://www.grantjenks.com/docs/freegames/'),
+        ('Curriculum', 'http://www.grantjenks.com/docs/freegames/curriculum.html'),
+        ('API Reference', 'http://www.grantjenks.com/docs/freegames/api.html'),
+        ('Development', 'http://www.grantjenks.com/docs/freegames/development.html'),
+    ]),
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -119,9 +126,9 @@ html_sidebars = {
     '**': [
         'about.html',
         'gumroad.html',
-        'localtoc.html',
-        'relations.html',
-        'searchbox.html',
+        'topics.html',
+        'pagetoc.html',
+        'search.html',
     ]
 }
 

@@ -1,3 +1,50 @@
+Curriculum
+----------
+
+What follows are notes for a week-long curriculum with about 3 hours of classroom time each day.
+
+Monday
+......
+
+- Interactive python interpreter
+- nibbles.py
+  - Commenting code
+- guess.py
+- paint.py
+  - Getting help in the ipython interpreter
+
+Tuesday
+.......
+
+- tron.py
+- crypto.py
+- memory.py
+
+Wednesday
+.........
+
+- pacman.py
+- bagels.py
+- cannon.py
+- cups.py
+
+Thursday
+........
+
+- tictactoe.py
+- hangman.py
+- sonar.py
+- simonsays.py
+
+Friday
+......
+
+- pong.py
+- connect.py
+- maze.py
+- tiles.py
+
+
 Lesson Plan
 ===========
 
