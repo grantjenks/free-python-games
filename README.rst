@@ -29,6 +29,8 @@ with a list of exercises to work through with students. Creativity and
 flexibility is important. There is no right or wrong way to implement a new
 feature or behavior! You never know which games students will engage with best.
 
+.. _`Free Python Games`: http://www.grantjenks.com/docs/freegames/
+
 
 Testimonials
 ------------
@@ -275,9 +277,9 @@ References
 * `Free Python Games Issue Tracker`_
 
 .. _`Free Python Games Documentation`: http://www.grantjenks.com/docs/freegames/
-.. _`Free Python Games at PyPI`: https://pypi.python.org/pypi/freegames/
-.. _`Free Python Games at GitHub`: https://github.com/grantjenks/free-python-games/
-.. _`Free Python Games Issue Tracker`: https://github.com/grantjenks/free-python-games/issues/
+.. _`Free Python Games at PyPI`: https://pypi.python.org/pypi/freegames
+.. _`Free Python Games at GitHub`: https://github.com/grantjenks/free-python-games
+.. _`Free Python Games Issue Tracker`: https://github.com/grantjenks/free-python-games/issues
 
 
 Free Python Games License
