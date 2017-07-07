@@ -11,23 +11,18 @@ Exercises
 
 from random import randint
 
-start = 0
+start = 1
 end = 100
 value = randint(start, end)
 
+print(value)
 print("I'm thinking of a number between", start, "and", end)
 
 guess = None
 
 while guess != value:
-
     text = input("Guess the number: ")
-
-    try:
-        guess = int(text)
-    except:
-        print("Whoops! Be sure the number contains only digits.")
-        continue
+    guess = int(text)
 
     if guess < value:
         print("Higher.")
