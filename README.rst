@@ -131,7 +131,9 @@ Free Games
 Paint
 .....
 
-Paint -- draw lines and shapes on the screen.
+Paint -- draw lines and shapes on the screen. Click to mark the start of a
+shape and click again to mark its end. Different shapes and colors can be
+selected using the keyboard.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/paint.gif
    :alt: Paint Free Python Game
@@ -139,7 +141,9 @@ Paint -- draw lines and shapes on the screen.
 Snake
 .....
 
-Snake -- classic arcade game.
+Snake -- classic arcade game. Use the arrow keys to navigate and eat the green
+food. Each time the food is consumed, the snake grows one segment longer. Avoid
+eating yourself or going out of bounds!
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/snake.gif
    :alt: Snake Free Python Game
@@ -147,7 +151,8 @@ Snake -- classic arcade game.
 Pacman
 ......
 
-Pacman -- classic arcade game.
+Pacman -- classic arcade game. Use the arrow keys to navigate and eat all the
+white food. Watch out for red ghosts that roam the maze.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/pacman.gif
    :alt: Pacman Free Python Game
@@ -155,7 +160,9 @@ Pacman -- classic arcade game.
 Cannon
 ......
 
-Cannon -- projectile motion.
+Cannon -- projectile motion. Click the screen to fire your cannnonball. The
+cannonball pops blue balloons in its path. Pop all the balloons before they can
+cross the screen.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/cannon.gif
    :alt: Cannon Free Python Game
@@ -163,7 +170,8 @@ Cannon -- projectile motion.
 Connect
 .......
 
-Connect -- Connect 4 game.
+Connect -- Connect 4 game. Click a row to drop a disc. The first player to
+connect four discs vertically, horizontally, or diagonally wins!
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/connect.gif
    :alt: Connect Free Python Game
@@ -171,7 +179,8 @@ Connect -- Connect 4 game.
 Flappy
 ......
 
-Flappy -- Flappy-bird inspired game.
+Flappy -- Flappy-bird inspired game. Click the screen to flap your wings. Watch
+out for black ravens as you fly across the screen.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/flappy.gif
    :alt: Flappy Free Python Game
@@ -179,7 +188,8 @@ Flappy -- Flappy-bird inspired game.
 Memory
 ......
 
-Memory -- puzzle game of number pairs.
+Memory -- puzzle game of number pairs. Click a tile to reveal a number. Match
+two numbers and the tiles will disappear to reveal an image.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/memory.gif
    :alt: Memory Free Python Game
@@ -187,7 +197,8 @@ Memory -- puzzle game of number pairs.
 Pong
 ....
 
-Pong -- classic arcade game.
+Pong -- classic arcade game. Use the keyboard to move your paddle up and
+down. The first player to miss the ball loses.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/pong.gif
    :alt: Pong Free Python Game
@@ -195,7 +206,9 @@ Pong -- classic arcade game.
 Simon Says
 ..........
 
-Simon Says -- classic memory puzzle game.
+Simon Says -- classic memory puzzle game. Click the screen to start. Watch the
+pattern and then click the tiles in the same order. Each time you get the
+sequence right the pattern gets one step longer.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/simonsays.gif
    :alt: Simonsays Free Python Game
@@ -203,7 +216,8 @@ Simon Says -- classic memory puzzle game.
 Tic Tac Toe
 ...........
 
-Tic Tac Toe -- classic game.
+Tic Tac Toe -- classic game. Click the screen to place an X or O. Connect three
+in a row and you win!
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/tictactoe.gif
    :alt: Tictactoe Free Python Game
@@ -211,7 +225,9 @@ Tic Tac Toe -- classic game.
 Tiles
 .....
 
-Tiles -- puzzle game of sliding numbers into place.
+Tiles -- puzzle game of sliding numbers into place. Click a tile adjacent to
+the empty square to swap positions. Can you make the tiles count one to fifteen
+from left to right and bottom to top?
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/tiles.gif
    :alt: Tiles Free Python Game
@@ -219,7 +235,8 @@ Tiles -- puzzle game of sliding numbers into place.
 Tron
 ....
 
-Tron -- classic arcade game.
+Tron -- classic arcade game. Use the keyboard to change the direction of your
+Tron player. Avoid touching the line drawn by your opponent.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/tron.gif
    :alt: Tron Free Python Game
@@ -227,7 +244,8 @@ Tron -- classic arcade game.
 Fidget
 ......
 
-Fidget -- fidget spinner inspired animation.
+Fidget -- fidget spinner inspired animation. Click the screen to accelerate the
+fidget spinner.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/fidget.gif
    :alt: Fidget Free Python Game
@@ -237,7 +255,7 @@ User Guide
 ----------
 
 For those wanting more details, this part of the documentation describes
-tutorial, API, and development.
+curriculum, API, and development.
 
 * `Free Python Games Curriculum`_
 * `Free Python Games API Reference`_
