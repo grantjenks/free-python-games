@@ -1,59 +1,13 @@
-Curriculum
-----------
+Free Python Games Curriculum
+============================
 
-What follows are notes for a week-long curriculum with about 3 hours of
-classroom time each day.
-
-Monday
-......
-
-- Interactive python interpreter
-- nibbles.py
-  - Commenting code
-- guess.py
-- paint.py
-  - Getting help in the ipython interpreter
-
-Tuesday
-.......
-
-- tron.py
-- crypto.py
-- memory.py
-
-Wednesday
-.........
-
-- pacman.py
-- bagels.py
-- cannon.py
-- cups.py
-
-Thursday
-........
-
-- tictactoe.py
-- hangman.py
-- sonar.py
-- simonsays.py
-
-Friday
-......
-
-- pong.py
-- connect.py
-- maze.py
-- tiles.py
-
-
-Lesson Plan
-===========
-
-Developed for Maker Camp 2017 at The River Church Community.
+What follows are notes for a week-long curriculum developed for Maker Camp at
+The River Church Community. Maker Camp was a summer day camp for Middle School
+students in the California Bay Area.
 
 - Each game has exercises at the top.
-- Extras: $ python -m turtledemo
-- http://pythontutor.com
+- Visualize code with http://pythontutor.com
+- Extras: $ python3 -m turtledemo
 
 
 Day 1
@@ -67,15 +21,10 @@ Day 1
 - Introduce Python Shell, white background, write Python statements.
 - Activity: connect and decorate computers.
 - Problem solving: divide and conquer.
-
-
-Topics
-......
-
-- Statements: assignment, if/elif/else, while, import, try/except, for, def
-- Data types: int, float, bool, str
-- Functions: print, help, int, range
-
+- Statements: assignment, if/elif/else, while, import
+- Data types: int, str
+- Functions: print, help, int
+- Modules: random
 
 Games
 .....
@@ -95,11 +44,10 @@ Games
 
 - snake.py - Classic arcade game.
 
-
 Bible Story
 ...........
 
-- Genesis 1 - God the Creator
+- Genesis 1 - God the Creator (Creation)
 
   1. What did God do at the beginning?
   2. What did God see in creation?
@@ -113,15 +61,10 @@ Day 2
 - Activity: Blind partner obstacle course.
 - Problem solving: brute-force.
 - Famous Christian programmer: Donald Knuth
-
-
-Topics
-......
-
-- Statements: assignment, if/elif/else, while, import, try/except, for, def
-- Data types: int, float, bool, str
-- Functions: print, help, type, dir, int, str, ord, chr
-
+- Statements: try/except, for, def
+- Data types: float, bool
+- Functions: type, dir, str, ord, chr
+- Modules: turtle
 
 Games
 .....
@@ -147,10 +90,8 @@ Games
   - begin_fill(); end_fill()
   - width function
   - Write polygon(sides, length) function
-  - hideturtle(); tracer(False); polygon(4, 200); update()
 
 - flappy.py - Flappy Bird inspired game.
-
 
 Bible Story
 ...........
@@ -166,10 +107,9 @@ Bible Story
 Day 3
 -----
 
-- Functions: onscreenclick, onkey, ontimer
 - Activity: Simon Says
 - Famous Christian programmer: Fred Brooks
-
+- Functions: onscreenclick, onkey, ontimer
 
 Games
 .....
@@ -181,6 +121,7 @@ Games
   - flower(...)
   - Draw flower and rotate
   - ontimer(...)
+  - hideturtle(); tracer(False); polygon(4, 200); update()
 
 - tictactoe.py - Tic-tac-toe.
 
@@ -194,11 +135,10 @@ Games
 - simonsays.py - Simon Says
 - cannon.py - Hitting targets with projectiles.
 
-
 Bible Story
 ...........
 
-- Mark 1:1-18 - God the Programmer ("fish for people")
+- Mark 1:1-18 - God the Programmer ("fishers of people")
 
   1. What did Isaiah say would happen?
   2. What did John the Baptist say would happen?
@@ -209,10 +149,9 @@ Bible Story
 Day 4
 -----
 
-- Data types: list, dict, vector
 - Activity: Collage of concepts.
 - Famous Christian programmer: Larry Wall
-
+- Data types: list, dict, vector
 
 Games
 .....
@@ -223,16 +162,15 @@ Games
 - tron.py - Classic arcade game.
 - tiles.py - Puzzle game of number shuffling.
 
-
 Bible Story
 ...........
 
-* John 11:17-44 - God the Debugger
+* John 9:1-33 - God the Debugger (Blind Man and Jesus)
 
-  1. What was wrong?
-  2. How did Jesus feel?
-  3. What did Jesus tell others?
-  4. How did Jesus debug the scene?
+  1. What does Jesus tell the disciples?
+  2. What does the man tell the Pharisees?
+  3. What does the man believe about Jesus?
+  4. What do you believe about Jesus?
 
 
 Day 5
@@ -240,7 +178,7 @@ Day 5
 
 - Activity: Make or modify your own game.
 - Famous Christian programmer: Jon Skeet
-
+- Answer: What next?
 
 Games
 .....
@@ -249,18 +187,10 @@ Games
 - memory.py - Puzzle game of number pairs.
 - pacman.py - Classic arcade game.
 
-
 Bible Story
 ...........
 
-* John 9:1-33 - God the Restorer
-
-  1. What does Jesus tell the disciples?
-  2. What does the man tell the Pharisees?
-  3. What does the man believe about Jesus?
-  4. What do you believe about Jesus?
-
-* Revelation 21 - God the Restorer
+* Revelation 21 - God the Restorer (New Heaven and New Earth)
 
   1. What does God make? When?
   2. Who is the Lamb and the Bride?
