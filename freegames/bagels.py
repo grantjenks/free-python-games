@@ -6,6 +6,8 @@ Exercises:
 2. How much harder is 6 digits? Do you need more guesses?
 3. What's the maximum number of digits we could support?
 
+Adapted from code in https://inventwithpython.com/chapter11.html
+
 """
 
 from random import sample, shuffle

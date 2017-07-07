@@ -31,8 +31,6 @@ feature or behavior! You never know which games students will engage with best.
 
 TODO
 
-* Setup AppVeyor
-* Add comment to bagels.py and crypto.py
 * Describe how games work
 * Confirm testimonials
 * Curriculum page

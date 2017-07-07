@@ -8,6 +8,8 @@ Exercises
 4. Encrypt numbers.
 5. Make the encryption harder to decode.
 
+Adapted from code in https://inventwithpython.com/chapter14.html
+
 """
 
 def encrypt(message, key):
