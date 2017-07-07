@@ -29,13 +29,6 @@ with a list of exercises to work through with students. Creativity and
 flexibility is important. There is no right or wrong way to implement a new
 feature or behavior! You never know which games students will engage with best.
 
-TODO
-
-* Describe how games work
-* Confirm testimonials
-* Curriculum page
-* Improve module help docstring
-
 
 Testimonials
 ------------
