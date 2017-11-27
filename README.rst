@@ -243,6 +243,15 @@ Tron player. Avoid touching the line drawn by your opponent.
 .. image:: http://www.grantjenks.com/docs/freegames/_static/tron.gif
    :alt: Tron Free Python Game
 
+Maze
+....
+
+Maze -- move from one side to another. Tap the screen to trace a path from one
+side to another.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/maze.gif
+   :alt: Maze Free Python Game
+
 Fidget
 ......
 

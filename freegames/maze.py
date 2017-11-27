@@ -1,10 +1,10 @@
-"""Maze, moving from one side to another.
+"""Maze, move from one side to another.
 
 Excercises
 
 1. Keep score by counting taps.
 2. Make the maze harder.
-3. Can you always find a path from one side to another?
+3. Generate the same maze twice.
 
 """
 
