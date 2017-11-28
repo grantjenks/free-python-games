@@ -246,11 +246,13 @@ Tron player. Avoid touching the line drawn by your opponent.
 Maze
 ....
 
-Maze -- move from one side to another. Tap the screen to trace a path from one
-side to another.
+Maze -- move from one side to another. Inspired by `A Universe in One Line of
+Code with 10 PRINT`_. Tap the screen to trace a path from one side to another.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/maze.gif
    :alt: Maze Free Python Game
+
+.. _`A Universe in One Line of Code with 10 PRINT`: https://www.makeartwithpython.com/blog/10-print-in-python/
 
 Fidget
 ......
