@@ -6,7 +6,6 @@ from setuptools.command.test import test as TestCommand
 
 import freegames
 
-
 class Tox(TestCommand):
     def finalize_options(self):
         TestCommand.finalize_options(self)
@@ -20,7 +19,6 @@ class Tox(TestCommand):
 
 with io.open('README.rst', encoding='UTF-8') as reader:
     readme = reader.read()
-
 
 st.setup(
     name='freegames',
