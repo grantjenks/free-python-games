@@ -84,7 +84,7 @@ def draw_grid(x, y):
             if grid[i][j] == 1:
                 square(i * box_size, j * box_size, box_size, 'green')
             else:
-                square(i * box_size, j * box_size, box_size, 'red')
+                square(i * box_size, j * box_size, box_size, 'black')
 
     ontimer(redraw_grid, 500)
 
