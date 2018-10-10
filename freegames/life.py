@@ -42,8 +42,7 @@ def randomize_grid(x, y):
 def step(x, y):
     """Update the grid for one step in the simulation."""
 
-    # Copy grid since we require 8 neighbors for calculation
-    # and we go line by line (and memory is cheap).
+    # Build a fresh grid to fill with updated values.
     fresh_grid = []
 
     for i in range(x+2):
@@ -69,6 +68,7 @@ def step(x, y):
                 if total == 3:
                     fresh_grid[i][j] = 1
 
+    # Copy the new grid over the old copy.
     grid[:] = fresh_grid[:]
 
 
