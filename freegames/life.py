@@ -18,13 +18,15 @@ from freegames import square
 
 cells = {}
 
-for x in range(-200, 200, 10):
-    for y in range(-200, 200, 10):
-        cells[x, y] = False
+def initialize():
+    "Randomly initialize the cells."
+    for x in range(-200, 200, 10):
+        for y in range(-200, 200, 10):
+            cells[x, y] = False
 
-for x in range(-50, 50, 10):
-    for y in range(-50, 50, 10):
-        cells[x, y] = choice([True, False])
+    for x in range(-50, 50, 10):
+        for y in range(-50, 50, 10):
+            cells[x, y] = choice([True, False])
 
 def step():
     "Compute one step in the Game of Life."
@@ -59,5 +61,6 @@ def draw():
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
+initialize()
 draw()
 done()

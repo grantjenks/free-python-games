@@ -129,6 +129,8 @@ disable=
     wildcard-import,
     xrange-builtin,
     zip-builtin-not-iterating,
+    no-else-return,
+    assigning-non-slot,
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

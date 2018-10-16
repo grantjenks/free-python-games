@@ -189,10 +189,9 @@ class vector(collections.Sequence):
         """
         if index == 0:
             return self.x
-        elif index == 1:
+        if index == 1:
             return self.y
-        else:
-            raise IndexError
+        raise IndexError
 
     def copy(self):
         """Return copy of vector.
