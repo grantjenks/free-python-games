@@ -176,7 +176,7 @@ Connect -- Connect 4 game. Click a row to drop a disc. The first player to
 connect four discs vertically, horizontally, or diagonally wins!
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/connect.gif
-   :alt: Connect Free Python Game
+   :alt: Connect 4 Free Python Game
 
 Flappy
 ......
@@ -185,7 +185,7 @@ Flappy -- Flappy-bird inspired game. Click the screen to flap your wings. Watch
 out for black ravens as you fly across the screen.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/flappy.gif
-   :alt: Flappy Free Python Game
+   :alt: Flappy Bird Free Python Game
 
 Memory
 ......
@@ -213,7 +213,7 @@ pattern and then click the tiles in the same order. Each time you get the
 sequence right the pattern gets one step longer.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/simonsays.gif
-   :alt: Simonsays Free Python Game
+   :alt: Simon Says Free Python Game
 
 Tic Tac Toe
 ...........
@@ -222,7 +222,7 @@ Tic Tac Toe -- classic game. Click the screen to place an X or O. Connect three
 in a row and you win!
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/tictactoe.gif
-   :alt: Tictactoe Free Python Game
+   :alt: Tic Tac Toe Free Python Game
 
 Tiles
 .....
@@ -243,6 +243,15 @@ Tron player. Avoid touching the line drawn by your opponent.
 .. image:: http://www.grantjenks.com/docs/freegames/_static/tron.gif
    :alt: Tron Free Python Game
 
+Life
+....
+
+Life -- Conway's Game of Life. The classic, zero-player, cellular automation
+created in 1970 by John Conway.
+
+.. image:: http://www.grantjenks.com/docs/freegames/_static/life.gif
+   :alt: Game of Life Free Python Game
+
 Maze
 ....
 
@@ -261,7 +270,7 @@ Fidget -- fidget spinner inspired animation. Click the screen to accelerate the
 fidget spinner.
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/fidget.gif
-   :alt: Fidget Free Python Game
+   :alt: Fidget Spinner Free Python Game
 
 
 User Guide
