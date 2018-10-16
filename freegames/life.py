@@ -8,7 +8,7 @@ Exercises
 1. Can you identify any Still Lifes, Oscillators, or Spaceships?
 2. How can you make the simulation faster? Or bigger?
 3. How would you modify the initial state?
-3. Try changing the rules of life :)
+4. Try changing the rules of life :)
 
 """
 
