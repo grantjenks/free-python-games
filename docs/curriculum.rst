@@ -29,7 +29,7 @@ Day 1
 Games
 .....
 
-- guess.py - Guess number within range.
+- `guess.py`_ - Guess number within range.
 
   - Explain: from random import randint
   - randint(...)
@@ -196,3 +196,6 @@ Bible Story
   2. Who is the Lamb and the Bride?
   3. What is special about the city?
   4. How can we live in the Holy City?
+
+
+.. _`guess.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py
