@@ -42,7 +42,7 @@ Games
   - Increase range to 1,000 and guess the number.
   - Discuss method of guessing. That's an algorithm!
 
-- snake.py - Classic arcade game.
+- `snake.py`_ - Classic arcade game.
 
 Bible Story
 ...........
@@ -69,14 +69,14 @@ Day 2
 Games
 .....
 
-- crypto.py - Encrypt, decrypt and decode messages.
+- `crypto.py`_ - Encrypt, decrypt and decode messages.
 
   - ord function and chr function
   - modulo operator
   - Write decode function
   - Encrypt numbers
 
-- paint.py - Draw shapes.
+- `paint.py`_ - Draw shapes.
 
   - Draw line
   - Draw square
@@ -91,7 +91,7 @@ Games
   - width function
   - Write polygon(sides, length) function
 
-- flappy.py - Flappy Bird inspired game.
+- `flappy.py`_ - Flappy Bird inspired game.
 
 Bible Story
 ...........
@@ -114,7 +114,7 @@ Day 3
 Games
 .....
 
-- bagels.py - Digit guessing puzzle.
+- `bagels.py`_ - Digit guessing puzzle.
 - Animation
 
   - Draw arc: circle(100, 90)
@@ -123,7 +123,7 @@ Games
   - ontimer(...)
   - hideturtle(); tracer(False); polygon(4, 200); update()
 
-- tictactoe.py - Tic-tac-toe.
+- `tictactoe.py`_ - Tic-tac-toe.
 
   - line(...)
   - grid(...)
@@ -132,8 +132,8 @@ Games
   - floor(...)
   - onscreenclick(goto)
 
-- simonsays.py - Simon Says
-- cannon.py - Hitting targets with projectiles.
+- `simonsays.py`_ - Simon Says
+- `cannon.py`_ - Hitting targets with projectiles.
 
 Bible Story
 ...........
@@ -156,11 +156,11 @@ Day 4
 Games
 .....
 
-- bounce.py - Simple animation demo.
-- pong.py - Classic arcade game.
-- ant.py - Simple animation demo.
-- tron.py - Classic arcade game.
-- tiles.py - Puzzle game of number shuffling.
+- `bounce.py`_ - Simple animation demo.
+- `pong.py`_ - Classic arcade game.
+- `ant.py`_ - Simple animation demo.
+- `tron.py`_ - Classic arcade game.
+- `tiles.py`_ - Puzzle game of number shuffling.
 
 Bible Story
 ...........
@@ -183,9 +183,9 @@ Day 5
 Games
 .....
 
-- connect.py - Connect Four
-- memory.py - Puzzle game of number pairs.
-- pacman.py - Classic arcade game.
+- `connect.py`_ - Connect Four
+- `memory.py`_ - Puzzle game of number pairs.
+- `pacman.py`_ - Classic arcade game.
 
 Bible Story
 ...........
@@ -199,3 +199,19 @@ Bible Story
 
 
 .. _`guess.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/guess.py
+.. _`snake.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/snake.py
+.. _`crypto.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/crypto.py
+.. _`paint.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/paint.py
+.. _`flappy.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/flappy.py
+.. _`bagels.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/bagels.py
+.. _`tictactoe.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/tictactoe.py
+.. _`simonsays.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/simonsays.py
+.. _`cannon.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/cannon.py
+.. _`bounce.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/bounce.py
+.. _`pong.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/pong.py
+.. _`ant.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/ant.py
+.. _`tron.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/tron.py
+.. _`tiles.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/tiles.py
+.. _`connect.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/connect.py
+.. _`memory.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/memory.py
+.. _`pacman.py`: https://github.com/grantjenks/free-python-games/blob/master/freegames/pacman.py
