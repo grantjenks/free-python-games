@@ -279,10 +279,12 @@ User Guide
 For those wanting more details, this part of the documentation describes
 curriculum, API, and development.
 
+* `Talk: Give the Gift of Python`_
 * `Free Python Games Curriculum`_
 * `Free Python Games API Reference`_
 * `Free Python Games Development`_
 
+.. _`Talk: Give the Gift of Python`: http://www.grantjenks.com/docs/freegames/give-gift-python.html
 .. _`Free Python Games Curriculum`: http://www.grantjenks.com/docs/freegames/curriculum.html
 .. _`Free Python Games API Reference`: http://www.grantjenks.com/docs/freegames/api.html
 .. _`Free Python Games Development`: http://www.grantjenks.com/docs/freegames/development.html
