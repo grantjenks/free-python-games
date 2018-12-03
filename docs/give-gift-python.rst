@@ -16,8 +16,8 @@ What we need?
 2. Typing skills.
 3. Math: Arithmetic, Algebra, Geometry
 
-Quickstart
-----------
+Setup
+-----
 
 1. Install Python, https://www.python.org/
 2. Run IDLE, ``$ python -m idlelib.idle``
@@ -52,8 +52,8 @@ Loops
 
    >>> reset()
    >>> for each in range(4):
-           forward(100)
-           right(90)
+   ...     forward(100)
+   ...     right(90)
 
 Shapes
 ......
@@ -63,8 +63,8 @@ Shapes
    >>> reset()
    >>> begin_fill()
    >>> for each in range(4):
-           forward(100)
-           right(90)
+   ...     forward(100)
+   ...     right(90)
    >>> end_fill()
 
 Dots
@@ -81,11 +81,11 @@ Functions
 .. code-block:: python
 
    >>> def square():
-           begin_fill()
-           for each in range(4):
-               forward(100)
-               right(90)
-           end_fill()
+   ...     begin_fill()
+   ...     for each in range(4):
+   ...         forward(100)
+   ...         right(90)
+   ...         end_fill()
    >>> reset()
    >>> square()
 
