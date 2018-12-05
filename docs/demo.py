@@ -13,24 +13,20 @@ slide = 0
 slides = [
 '''
 # Give the Gift of Python
-'''.splitlines(),
-'''
 
-## Who am I?
+## Grant Jenks
 
-# 1. Professional Python trainer for Fotune 100 companies.
-# 2. Married to High School Chemistry teacher, father of two.
-# 3. Hundreds of hours of 4th-12th grade instruction.
-
-
+# 1. Python trainer for Fortune 100 companies.
+# 2. Married to Chemistry teacher, father of two.
+# 3. 100s of hours of 4-12th grade instruction.
 '''.splitlines(),
 '''
 
 ## Setup
 
-# 1. Install Python:  https://www.python.org/
-# 2. Run IDLE:        $ python -m idlelib.idle
-# 3. Use Turtle:      https://docs.python.org/library/turtle.html
+# 1. Install Python: https://www.python.org/
+# 2. Run IDLE: $ python -m idlelib.idle
+# 3. Use built-in Turtle module!
 '''.splitlines(),
     [
         '',
@@ -45,48 +41,28 @@ slides = [
         '',
         'forward(100)', 1,
         'right(90)', 1,
+        'fd(100)', 1,
+        'rt(90)', 1,
+        'backward(-100)', 1,
+        'left(-90)', 1,
         'forward(100)', 1,
         'right(90)', 1,
-        'forward(100)', 1,
-        'right(90)', 1,
-        'forward(100)', 1,
-        'right(90)', 1,
+        'undo()', 1,
+        'undo()', 1,
     ],
     [
         '',
         '## Loops',
         '',
         'reset()', 0.5,
-        'for each in range(4):', 0.5,
-        'forward(100)', 0.5,
-        'right(90)', 0.5,
-        '', 3,
-    ],
-    [
-        '',
-        '### Star Loop',
-        '',
-        'reset()', 0.5,
         'for each in range(5):', 0.5,
-        'forward(100)', 0.5,
-        'right(144)', 0.5,
+        'bk(100)', 0.5,
+        'lt(144)', 0.5,
         '', 3,
     ],
     [
         '',
-        '## Shapes',
-        '',
-        'reset()', 0.5,
-        'begin_fill()', 0.5,
-        'for each in range(4):', 0.5,
-        'forward(100)', 0.5,
-        'right(90)', 0.5,
-        '', 3,
-        'end_fill()', 0.5,
-    ],
-    [
-        '',
-        '## Functions',
+        '## Functions and Shapes',
         '',
         'def square():', 0.5,
         'begin_fill()', 0.5,
@@ -104,70 +80,92 @@ slides = [
         '## Dots',
         '',
         'reset()', 0.5,
-        'dot(10)', 1,
+        'help(dot)', 1,
+        'dot(100)', 1,
     ],
     [
         '',
-        '## Colors',
+        '## Colors'
         '',
         'reset()', 0.5,
-        "color('orange')", 0.5,
-        'square()', 3,
-    ],
-    [
-        '',
-        '### Color Spiral'
-        '',
         'from itertools import *', 0.5,
-        'reset()', 0.5,
-        "bgcolor('black')", 0.5,
-        "colors = 'red', 'orange', 'yellow', 'green', 'blue', 'purple'", 0.5,
-        'rainbow = cycle(colors)', 0.5,
-        'width(4)', 0.5,
-        'for length in range(2, 120, 2):', 0.5,
-	'color(next(rainbow))', 0.5,
-	'forward(length)', 0.5,
-	'left(59)', 0.5,
-        '', 5,
+        "colors = cycle(['red', 'green', 'blue', 'purple'])", 0.5,
+        'def present():', 0.5,
+        'for i in range(4):', 0.5,
+	'color(next(colors))', 0.5,
+        'square()', 0.5,
+        'left(90)', 0.5,
+        '',
+        'present()', 5,
     ],
     [
         '',
         '## Locations',
         '',
         'reset()', 0.5,
+        'def line(a, b, x, y):', 0.5,
         'up()', 0.5,
-        'goto(100, 100)', 0.5,
+        'goto(a, b)', 0.5,
         'down()', 0.5,
-        'dot(40)', 0.5,
-        'up()', 0.5,
-        'goto(-100, -100)', 0.5,
-        'down()', 0.5,
-        'dot(40)', 0.5,
+        'goto(x, y)', 0.5,
+        '',
+        "color('red')", 0.5,
+        'width(20)', 0.5,
+        'line(-100, -100, 0, 200)', 1,
+        'line(0, 200, 100, -100)', 1,
+        'line(100, -100, -100, -100)', 1,
     ],
     [
         '',
-        '## Open the Turtle Window',
+        '## Mouse Inputs',
         '',
-        'from turtle import *', 0.5,
-        'reset()', 1,
+        'width(10)', 0.5,
+        "color('green')", 0.5,
+        'def tap(x, y):', 0.5,
+        'goto(x, y)', 0.5,
+        'dot(20)', 0.5,
+        '',
+        'onscreenclick(tap)', 0.5,
     ],
     [
-        ''
-        '## Inputs',
         '',
-        # TODO -- paint.py -- mouse
-        # TODO -- keys -- move dot
+        '## Keyboard Events',
+        '',
+        'reset()', 0.5,
+        'width(10)', 0.5,
+        "onkey(lambda: fd(30), 'Up')", 0.5,
+        "onkey(lambda: bk(30), 'Down')", 0.5,
+        "onkey(lambda: lt(30), 'Left')", 0.5,
+        "onkey(lambda: rt(30), 'Right')", 0.5,
+        'listen()', 0.5,
     ],
-    # animation
-    # ant.py -- random walk
-    # vector
-    # bounce.py -- vector
-    # maze.py -- animation with inputs
-    # tictactoe.py
-    # tips, activities, notes
+    [
+        '',
+        '## Animation',
+        '',
+        'hideturtle()', 0.5,
+        'tracer(False)', 0.5,
+        'running = True', 0.5,
+        'def draw():', 0.5,
+        'clear()', 0.5,
+        'present()', 0.5,
+        'update()', 0.5,
+        'left(1)', 0.5,
+        'if running:', 0.5,
+        'ontimer(draw, 100)',
+        '',
+        'reset()', 0.5,
+        'draw()', 0.5,
+    ],
+'''
 
+## Free Python Games
+
+# 1. Search: Free Python Games
+# 2. $ python -m pip install freegames
+# 3. http://www.grantjenks.com/docs/freegames/
+'''.splitlines(),
 ]
-slide = -2 + len(slides)
 
 
 def worker():
@@ -180,6 +178,7 @@ def worker():
             for part in parts:
                 if part == '':
                     pyautogui.press('enter')
+                    time.sleep(0.25)
                 elif part == -1:
                     pyautogui.press('backspace')
                 elif isinstance(part, str):
@@ -202,6 +201,8 @@ def commander():
     global slide
     while True:
         value = input()
+        if value == 'q':
+            exit()
         try:
             slide = int(value)
         except ValueError:
