@@ -1,6 +1,3 @@
-import docutils.frontend
-import docutils.parsers.rst
-import docutils.utils
 import pyautogui
 import pynput.keyboard as kb
 import queue
