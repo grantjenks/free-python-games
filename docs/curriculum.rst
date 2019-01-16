@@ -15,7 +15,7 @@ Day 1
 
 - What is a computer? Calculator + Clock.
 - Discuss Alan Turing and Turing Machines.
-- Disucss John Von Neumann and Von Neumann Machines.
+- Discuss John Von Neumann and Von Neumann Machines.
 - What is a program? Computer Recipe.
 - Introduce Terminal, black background, give the computer commands.
 - Introduce Python Shell, white background, write Python statements.
