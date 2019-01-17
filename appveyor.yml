@@ -2,12 +2,10 @@ environment:
 
   matrix:
 
-    - PYTHON: "C:\\Python27"
     - PYTHON: "C:\\Python34"
     - PYTHON: "C:\\Python35"
     - PYTHON: "C:\\Python36"
     - PYTHON: "C:\\Python37"
-    - PYTHON: "C:\\Python27-x64"
     - PYTHON: "C:\\Python34-x64"
     - PYTHON: "C:\\Python35-x64"
     - PYTHON: "C:\\Python36-x64"
@@ -15,10 +13,11 @@ environment:
 
 install:
 
-  - "%PYTHON%\\python.exe -m pip install tox"
+  - "%PYTHON%\\python.exe -m pip install pytest"
 
 build: off
 
 test_script:
 
-  - "%PYTHON%\\python.exe -m tox -e py"
+  - set PYTHONPATH=C:\projects\free-python-games;C:\projects\free-python-games\tests
+  - "%PYTHON%\\python.exe -m pytest -v tests"
