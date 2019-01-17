@@ -7,3 +7,23 @@
    curriculum
    api
    development
+   guess
+   snake
+   crypto
+   paint
+   maze
+   flappy
+   bagels
+   tictactoe
+   ant
+   simonsays
+   cannon
+   bounce
+   pong
+   life
+   tron
+   tiles
+   connect
+   memory
+   pacman
+   fidget
