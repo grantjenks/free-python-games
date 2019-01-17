@@ -1,9 +1,15 @@
+sudo: false
 language: python
-python:
-  - "3.4"
-  - "3.5"
-  - "3.6"
-install:
-  - pip install -r requirements.txt
-script:
-  - PYTHONPATH=.:./tests pytest -v tests
+install: pip install tox
+script: tox
+matrix:
+  include:
+    - python: 3.4
+      env: TOXENV=py34
+    - python: 3.5
+      env: TOXENV=py35
+    - python: 3.6
+      env: TOXENV=py36
+    - python: 3.7
+      dist: xenial
+      env: TOXENV=py37
