@@ -37,7 +37,7 @@ st.setup(
     license='Apache 2.0',
     install_requires=[],
     classifiers=(
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Education',
         'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: Apache Software License',
@@ -47,6 +47,7 @@ st.setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: CPython',
         'Topic :: Games/Entertainment',
         'Topic :: Games/Entertainment :: Arcade',
