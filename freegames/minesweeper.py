@@ -8,9 +8,9 @@ Exercises
 
 """
 
-from freegames import floor, square
 from random import randrange, seed
 from turtle import *
+from freegames import floor, square
 
 seed(0)
 bombs = {}
