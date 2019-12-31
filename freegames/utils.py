@@ -246,7 +246,7 @@ class vector(collections.Sequence):
         """
         if self._hash is not None:
             raise ValueError('cannot add vector after hashing')
-        elif isinstance(other, vector):
+        if isinstance(other, vector):
             self.x += other.x
             self.y += other.y
         else:
@@ -302,7 +302,7 @@ class vector(collections.Sequence):
         """
         if self._hash is not None:
             raise ValueError('cannot subtract vector after hashing')
-        elif isinstance(other, vector):
+        if isinstance(other, vector):
             self.x -= other.x
             self.y -= other.y
         else:
@@ -339,7 +339,7 @@ class vector(collections.Sequence):
         """
         if self._hash is not None:
             raise ValueError('cannot multiply vector after hashing')
-        elif isinstance(other, vector):
+        if isinstance(other, vector):
             self.x *= other.x
             self.y *= other.y
         else:
@@ -395,7 +395,7 @@ class vector(collections.Sequence):
         """
         if self._hash is not None:
             raise ValueError('cannot divide vector after hashing')
-        elif isinstance(other, vector):
+        if isinstance(other, vector):
             self.x /= other.x
             self.y /= other.y
         else:
