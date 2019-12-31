@@ -65,7 +65,7 @@ def draw():
 
     mark = state['mark']
 
-    if mark is not None:
+    if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
         goto(x + 2, y)
