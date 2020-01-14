@@ -1,6 +1,6 @@
 Free Python Games
 =================
-
+[![Run on Repl.it](https://repl.it/badge/github/grantjenks/free-python-games)](https://repl.it/github/grantjenks/free-python-games)
 `Free Python Games`_ is an Apache2 licensed collection of free Python games
 intended for education and fun. The games are written in simple Python code and
 designed for experimentation and changes. Simplified versions of several
