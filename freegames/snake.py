@@ -17,6 +17,37 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+def grid():
+    forward(200)
+    right(100)
+    left(10)
+    '''penup()
+    setposition(-210,-200)
+    pendown()
+    for i in range(21):
+        forward(410)
+        left(90)
+        forward(10)
+        left(90)
+        forward(410)
+        right(90)
+        forward(10)
+        right(90)
+    penup()
+    setposition(-210,-200)
+    pendown()  
+    left(90)  
+    for i in range(21):
+        forward(410)
+        right(90)
+        forward(10)
+        right(90)
+        forward(410)
+        left(90)
+        forward(10)
+        left(90)'''
+    
+
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -94,13 +125,15 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, 'green')
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, 'yellow')
     update()
-    ontimer(move, 100)
+    ontimer(move, 90 )
 
 setup(420, 420, 370, 0)
+bgcolor('black')
+timer(100)
 hideturtle()
 tracer(False)
 listen()
