@@ -28,11 +28,11 @@ def inside(head):
 
 def timer(x):
     '''New'''
-    T=0
-    while T<=x:
-            T=T+1
+    T = 0
+    while T <= x:
+            T = T+1
             print('.')
-            if(T==x):
+            if(T == x):
                     break
             try:
                 time.sleep(1)
@@ -45,6 +45,28 @@ def lost():
     print('YOU HAVE LOST')
     SystemExit()            
 
+def wall(head,x,y):
+    if x == (-200):
+        head.x = 190
+        head.y = y
+        head = (head.x, head.y)
+        return(head)
+    if y == (-200):
+        head.x = x
+        head.y = 190
+        head = (head.x, head.y)
+        return(head)
+    if x == (190):
+        head.x = -200
+        head.y = y
+        head = (head.x, head.y)
+        return(head)
+    if y == (190):
+        head.x = x
+        head.y = -200
+        head = (head.x, head.y)
+        return(head)
+    
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
@@ -53,10 +75,12 @@ def move():
     if head in snake:
         square(head.x, head.y, 9, 'red')
         lost()
-        done()
-        return 
+        return(head)
 
-    if not inside(head)   
+    if not inside(head):
+        wallx = head.x
+        wally = head.y
+        wall(head, wallx, wally)
         
     snake.append(head)
 
