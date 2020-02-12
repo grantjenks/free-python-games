@@ -55,6 +55,8 @@ def move():
         lost()
         done()
         return 
+
+    if not inside(head)   
         
     snake.append(head)
 
