@@ -26,20 +26,40 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
+def timer(x):
+    '''New'''
+    T=0
+    while T<=x:
+            T=T+1
+            print('.')
+            if(T==x):
+                    break
+            try:
+                time.sleep(1)
+            except:
+                continue
+
+def lost():
+    '''New'''
+    timer(4)
+    print('YOU HAVE LOST')
+    SystemExit()            
+
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
 
-    if not inside(head) or head in snake:
+    if head in snake:
         square(head.x, head.y, 9, 'red')
-        update()
-        return
-
+        lost()
+        done()
+        return 
+        
     snake.append(head)
 
     if head == food:
-        print('Snake:', len(snake))
+        print('Snakes are:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
