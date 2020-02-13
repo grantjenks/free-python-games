@@ -74,7 +74,8 @@ def lost():
     '''New'''
     timer(4)
     print('YOU HAVE LOST')
-    SystemExit()            
+    SystemExit()
+    exit()           
 
 def wall(head,x,y):
     if x == (-200):
