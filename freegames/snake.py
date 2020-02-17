@@ -12,10 +12,12 @@ Exercises
 from turtle import *
 from random import randrange
 from freegames import square, vector
+import time
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+Game = 1
 
 def grid():
     forward(200)
@@ -47,7 +49,6 @@ def grid():
         forward(10)
         left(90)'''
     
-
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -57,23 +58,11 @@ def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 
-def timer(x):
-    '''New'''
-    T = 0
-    while T <= x:
-            T = T+1
-            print('.')
-            if(T == x):
-                    break
-            try:
-                time.sleep(1)
-            except:
-                continue
-
 def lost():
     '''New'''
-    timer(4)
     print('YOU HAVE LOST')
+    time.sleep(3)
+    bye()
     SystemExit()            
 
 def wall(head,x,y):
@@ -97,16 +86,24 @@ def wall(head,x,y):
         head.y = -200
         head = (head.x, head.y)
         return(head)
-    
+
+def redSnake(head):
+    square(head.x, head.y, 9, 'red')
+    Game = 0
+    print(Game)
+    return(head)
+
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
 
     if head in snake:
-        square(head.x, head.y, 9, 'red')
+        redSnake(head)
+        return head
+    
+    if Game == 0:
         lost()
-        return(head)
 
     if not inside(head):
         wallx = head.x
@@ -133,7 +130,6 @@ def move():
 
 setup(420, 420, 370, 0)
 bgcolor('black')
-timer(100)
 hideturtle()
 tracer(False)
 listen()
