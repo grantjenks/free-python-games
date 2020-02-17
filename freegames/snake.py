@@ -63,7 +63,7 @@ def lost():
     print('YOU HAVE LOST')
     time.sleep(3)
     bye()
-    SystemExit()            
+    SystemExit()                      
 
 def wall(head,x,y):
     if x == (-200):
