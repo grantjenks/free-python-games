@@ -51,6 +51,7 @@ def lost():
     '''declares on screen and within the command line that the player lost and closes everything'''
     printTitle()
     print('YOU HAVE LOST')
+    highScore(len(snake))
     time.sleep(3) 
     bye()
     SystemExit()                   
@@ -118,6 +119,17 @@ def move():
     square(food.x, food.y, 9, 'yellow')
     update()
     ontimer(move, 90)
+
+def highScore(score):
+    f = open("snake.txt","r")
+    high = f.read()
+    high = int(high)
+    f.close()
+    if score > high:
+        open("snake.txt", "w").close()
+        f = open("snake.txt","w")
+        f.write(str(score))
+        print('NEW HIGH SCORE')
 
 setup(420, 420, 370, 0)
 bgcolor('black')
