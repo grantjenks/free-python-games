@@ -129,7 +129,7 @@ def highScore(score):
         open("snake.txt", "w").close()
         f = open("snake.txt","w")
         f.write(str(score))
-        print('NEW HIGH SCORE')
+        print('NEW HIGH SCORE', score)
 
 setup(420, 420, 370, 0)
 bgcolor('black')
