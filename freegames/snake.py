@@ -17,37 +17,15 @@ import time
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-Game = 1
 
-def grid():
-    forward(200)
-    right(100)
-    left(10)
-    '''penup()
-    setposition(-210,-200)
-    pendown()
-    for i in range(21):
-        forward(410)
-        left(90)
-        forward(10)
-        left(90)
-        forward(410)
-        right(90)
-        forward(10)
-        right(90)
+def printTitle():
     penup()
-    setposition(-210,-200)
-    pendown()  
-    left(90)  
-    for i in range(21):
-        forward(410)
-        right(90)
-        forward(10)
-        right(90)
-        forward(410)
-        left(90)
-        forward(10)
-        left(90)'''
+    goto(120,50)
+    pendown()
+    color('red')
+    style = ('courier', 35, 'italic')
+    write('YOU HAVE LOST', font=style, align='right')
+    hideturtle()
     
 def change(x, y):
     "Change snake direction."
@@ -60,10 +38,11 @@ def inside(head):
 
 def lost():
     '''New'''
+    printTitle()
     print('YOU HAVE LOST')
-    time.sleep(3)
+    time.sleep(3) 
     bye()
-    SystemExit()                      
+    SystemExit()                   
 
 def wall(head,x,y):
     if x == (-200):
@@ -87,23 +66,22 @@ def wall(head,x,y):
         head = (head.x, head.y)
         return(head)
 
-def redSnake(head):
-    square(head.x, head.y, 9, 'red')
-    Game = 0
-    print(Game)
-    return(head)
-
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
+    game = 1
 
     if head in snake:
-        redSnake(head)
-        return head
-    
-    if Game == 0:
+        game = 0
+        for body in snake:
+            square(body.x, body.y, 9, 'red')
+        '''return(head)'''
+
+    if game == 0:
         lost()
+        return (head)
+    
 
     if not inside(head):
         wallx = head.x
