@@ -21,12 +21,14 @@ def grid():
 
 def drawx(x, y):
     "Draw X player."
+    pensize(10)
     line(x, y, x + 133, y + 133)
     line(x, y + 133, x + 133, y)
 
 def drawo(x, y):
     "Draw O player."
     up()
+    pensize(10)
     goto(x + 67, y + 5)
     down()
     circle(62)
