@@ -27,13 +27,13 @@ import time
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
+lives = 3
 def printTitle():
     '''within the turtle screen prints YOU HAVE LOST '''
     penup()
     goto( 120, 50)
     pendown()
-    color('red')
+    color('orange')
     style = ('courier', 35, 'italic')
     write('YOU HAVE LOST', font= style, align= 'right')
     hideturtle()
@@ -53,8 +53,7 @@ def lost():
     print('YOU HAVE LOST')
     highScore(len(snake))
     time.sleep(3) 
-    bye()
-    SystemExit()                   
+    restarting()                   
 
 def wall(head,x,y):
     '''Creates no walls so the snake can go to the edge and reappear on the exact other edge'''
@@ -81,6 +80,8 @@ def wall(head,x,y):
     '''slight glitch when entering the limit edge of the screen'''
 
 def move():
+    global snake
+    global food
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
@@ -104,7 +105,11 @@ def move():
     snake.append(head)
 
     if head == food:
-        print('Snake:', len(snake))
+        penup()
+        goto(400,400)
+        pendown()
+        write('Snake:', len(snake))
+        penup()
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
@@ -131,7 +136,7 @@ def highScore(score):
         f.write(str(score))
         print('NEW HIGH SCORE', score)
 
-def main():
+def run():
     setup(420, 420, 370, 0)
     bgcolor('black')
     hideturtle()
@@ -141,7 +146,77 @@ def main():
     onkey(lambda: change(-10, 0), 'Left')
     onkey(lambda: change(0, 10), 'Up')
     onkey(lambda: change(0, -10), 'Down')
+    time.sleep(2)
     move()
     done()
 
+def intro():
+    setup(420,420,370,0)
+    penup()
+    goto(0,0)
+    pendown()
+    color('green')
+    style = ('courier', 35, 'italic')
+    style2 = ('courier', 15, 'italic')
+    write('WELCOME TO SNAKE!', font= style, align= 'center')
+    penup()
+    goto(0,-25)
+    pendown()
+    write('Loading... The Game is about to begin', font= style2, align= 'center')
+    hideturtle()
+    loadingBar()
+
+def loadingBar():
+    snakex = -50
+    snakey = -100
+    hideturtle()
+    square(snakex, snakey, 15, 'green')
+    square(snakex+17, snakey, 15, 'green')
+    square(snakex+34, snakey, 15, 'green')
+    square(snakex+51, snakey, 15, 'green')
+    square(snakex+68, snakey, 15, 'green')
+
+def restarting():
+    global food
+    global snake
+    global lives
+    food = vector(0, 0)
+    snake = [vector(10, 0)]
+    if lives != 0:
+        lives = lives - 1
+        setup(420,420,370,0)
+        penup()
+        goto(0,0)
+        pendown()
+        color('green')
+        style = ('courier', 35, 'italic')
+        style2 = ('courier', 15, 'italic')
+        write('YOU ATE YOURSELF' , font= style, align= 'center')
+        penup()
+        goto(0,-25)
+        pendown()
+        write('restarting in a few seconds...' , font= style2, align= 'center')
+        '''penup()
+        goto(-390,-390)
+        pendown()
+        write('lives',lives)'''
+        time.sleep(3)
+        clear()
+        run()
+    else:
+        penup()
+        goto(0,0)
+        pendown()
+        color('red')
+        style = ('courier', 25, 'italic')
+        write('YOU ATE UP ALL YOUR LIVES.\n         GOODBYE' , font= style, align= 'center')
+        time.sleep(1.5)
+        bye()
+        SystemExit()
+
+def main():
+    intro()
+    time.sleep(1)
+    run()
+    
 main()
