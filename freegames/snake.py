@@ -85,6 +85,13 @@ def move():
     head.move(aim)
     game = 1
 
+    penup()
+    color('green')
+    style = ('courier', 20, 'italic')
+    goto(160,180)
+    pendown()
+    write('Snake:' + str(len(snake)), font = style, align = 'right')
+
     if head in snake:
         game = 0
         for body in snake:
@@ -103,11 +110,6 @@ def move():
     snake.append(head)
 
     if head == food:
-        penup()
-        goto(400,400)
-        pendown()
-        write('Snake:', len(snake))
-        penup()
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
