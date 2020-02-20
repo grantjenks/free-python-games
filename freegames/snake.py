@@ -27,7 +27,7 @@ import time
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-lives = 3
+lives = 2
 def printTitle():
     '''within the turtle screen prints YOU HAVE LOST '''
     penup()
@@ -45,7 +45,7 @@ def change(x, y):
 
 def inside(head):
     "Return True if head inside boundaries."
-    return -200 < head.x < 190 and -200 < head.y < 190
+    return -200 < head.x < 200 and -190 < head.y < 190
 
 def lost():
     '''declares on screen and within the command line that the player lost and closes everything'''
@@ -58,30 +58,28 @@ def lost():
 def wall(head,x,y):
     '''Creates no walls so the snake can go to the edge and reappear on the exact other edge'''
     if x == (-200):
-        head.x = 190
+        head.x = 200
         head.y = y
         head = (head.x, head.y)
         return(head)
-    if y == (-200):
+    if y == (-190):
         head.x = x
         head.y = 190
         head = (head.x, head.y)
         return(head)
-    if x == (190):
+    if x == (200):
         head.x = -200
         head.y = y
         head = (head.x, head.y)
         return(head)
     if y == (190):
         head.x = x
-        head.y = -200
+        head.y = -190
         head = (head.x, head.y)
         return(head)
     '''slight glitch when entering the limit edge of the screen'''
 
 def move():
-    global snake
-    global food
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
@@ -95,7 +93,7 @@ def move():
     if game == 0:
         lost()
         return (head)
-    
+
     if not inside(head):
         '''checks if the snake is going out of bounds to reappear on oppisite side'''
         wallx = head.x
@@ -137,6 +135,9 @@ def highScore(score):
         print('NEW HIGH SCORE', score)
 
 def run():
+    global snake
+    snake = [1]
+    snake = [vector(10, 0)]
     setup(420, 420, 370, 0)
     bgcolor('black')
     hideturtle()
@@ -180,6 +181,7 @@ def restarting():
     global food
     global snake
     global lives
+    snake = [1]
     food = vector(0, 0)
     snake = [vector(10, 0)]
     if lives != 0:
@@ -196,10 +198,11 @@ def restarting():
         goto(0,-25)
         pendown()
         write('restarting in a few seconds...' , font= style2, align= 'center')
-        '''penup()
-        goto(-390,-390)
+        penup()
+        goto(-200,-200)
         pendown()
-        write('lives',lives)'''
+        style3 = ('courier', 20, 'italic')
+        write('LIVES '+ str(lives+1), font = style3, align = 'left')
         time.sleep(3)
         clear()
         run()
