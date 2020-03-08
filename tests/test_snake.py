@@ -14,3 +14,7 @@ def test_snake():
         + [('timer', True)] * 300
     )
     runpy.run_module('freegames.snake')
+    
+
+if __name__ == "__main__":
+    test_snake()
