@@ -90,7 +90,7 @@ def move():
     style = ('courier', 20, 'italic')
     goto(160,180)
     pendown()
-    write('Snake:' + str(len(snake)), font = style, align = 'right')
+    #write('Snake:' + str(len(snake)), font = style, align = 'right')
 
     if head in snake:
         game = 0
