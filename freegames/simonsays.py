@@ -11,6 +11,7 @@ from random import choice
 from time import sleep
 from turtle import *
 from freegames import floor, square, vector
+import time
 
 pattern = []
 guesses = []
@@ -34,10 +35,10 @@ def flash(tile):
     glow, dark = tiles[tile]
     square(tile.x, tile.y, 200, glow)
     update()
-    sleep(0.5)
+    sleep(0.25)
     square(tile.x, tile.y, 200, dark)
     update()
-    sleep(0.5)
+    sleep(0.25)
 
 def grow():
     "Grow pattern and flash tiles."
@@ -52,6 +53,7 @@ def grow():
 
 def tap(x, y):
     "Respond to screen tap."
+
     onscreenclick(None)
     x = floor(x, 200)
     y = floor(y, 200)
@@ -59,6 +61,7 @@ def tap(x, y):
     index = len(guesses)
 
     if tile != pattern[index]:
+        failed()
         exit()
 
     guesses.append(tile)
@@ -71,12 +74,58 @@ def tap(x, y):
 
 def start(x, y):
     "Start game."
+    for tile in tiles:
+        flash(tile)
+    time.sleep(1)
+    print('Simon says...')
     grow()
     onscreenclick(tap)
 
-setup(420, 420, 370, 0)
-hideturtle()
-tracer(False)
-grid()
-onscreenclick(start)
-done()
+def failed():
+    setup(420, 420, 370, 0)
+    bgcolor('black')
+    goto(0,0)
+    pendown()
+    color('black')
+    style = ('courier', 20, 'italic')
+    style2 = ('courier', 15, 'italic')
+    write('Simon didnt show you that!', font= style, align= 'center')
+    penup()
+    goto(0,-25)
+    pendown()
+    write('You Lost', font= style2, align= 'center')
+    hideturtle()
+    time.sleep(4)
+
+def openPage():
+    setup(420, 420, 370, 0)
+    bgcolor('black')
+    goto(0,0)
+    pendown()
+    color('red')
+    style = ('courier', 27, 'italic')
+    style2 = ('courier', 15, 'italic')
+    write('Welcome to Simon Says!', font= style, align= 'center')
+    penup()
+    goto(0,-25)
+    pendown()
+    write('follow the pattern Simon shows you', font= style2, align= 'center')
+    hideturtle()
+    time.sleep(2)
+
+
+def main():
+    openPage()
+    setup(420, 420, 370, 0)
+    bgcolor('black')
+    hideturtle()
+    tracer(False)
+    grid()
+    goto(0,-20)
+    color('black')
+    style = ('courier', 25, 'italic')
+    write('Click the screen\n   to begin', font= style, align= 'center')
+    time.sleep(2)
+    onscreenclick(start)
+    done()
+main()

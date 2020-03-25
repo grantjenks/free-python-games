@@ -12,6 +12,7 @@ Exercises
 from random import *
 from turtle import *
 from freegames import floor, vector
+import time
 
 tiles = {}
 neighbors = [
@@ -85,10 +86,29 @@ def draw():
         square(mark, tiles[mark])
     update()
 
-setup(420, 420, 370, 0)
-hideturtle()
-tracer(False)
-load()
-draw()
-onscreenclick(tap)
-done()
+def openPage():
+    setup(420, 420, 370, 0)
+    goto(0,0)
+    pendown()
+    color('black')
+    style = ('courier', 35, 'italic')
+    style2 = ('courier', 15, 'italic')
+    write('WELCOME TO TILES!', font= style, align= 'center')
+    penup()
+    goto(0,-25)
+    pendown()
+    write('Move the tiles so they match in order', font= style2, align= 'center')
+    hideturtle()
+    time.sleep(4)  
+
+def main():
+    openPage()
+    setup(420, 420, 370, 0)
+    hideturtle()
+    tracer(False)
+    load()
+    draw()
+    onscreenclick(tap)
+    done()
+
+main()
