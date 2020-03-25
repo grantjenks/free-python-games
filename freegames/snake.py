@@ -86,7 +86,7 @@ def move():
     game = 1
 
     penup()
-    color('green')
+    color('yellow')
     style = ('courier', 20, 'italic')
     goto(160,180)
     pendown()

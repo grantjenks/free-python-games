@@ -22,7 +22,7 @@ p2body = set()
 
 def inside(head):
     "Return True if head inside screen."
-    return -200 < head.x < 200 and -200 < head.y < 200
+    return -300 < head.x < 300 and -300 < head.y < 300
 
 def draw():
     "Advance players and draw game."
@@ -48,13 +48,18 @@ def draw():
     update()
     ontimer(draw, 50)
 
-setup(420, 420, 370, 0)
+setup(620, 620, 570, 0)
 hideturtle()
 tracer(False)
 listen()
-onkey(lambda: p1aim.rotate(90), 'a')
-onkey(lambda: p1aim.rotate(-90), 'd')
-onkey(lambda: p2aim.rotate(90), 'j')
-onkey(lambda: p2aim.rotate(-90), 'l')
+onkey(lambda: p1aim.rotate(0), 'Right')
+onkey(lambda: p1aim.rotate(180), 'Left')
+onkey(lambda: p1aim.rotate(90), 'Up')
+onkey(lambda: p1aim.rotate(270), 'Down')
+
+onkey(lambda: p2aim.rotate(90), 'w')
+onkey(lambda: p2aim.rotate(270), 's')
+onkey(lambda: p2aim.rotate(180), 'a')
+onkey(lambda: p2aim.rotate(0), 'd')
 draw()
 done()
