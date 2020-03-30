@@ -13,6 +13,7 @@ from turtle import *
 from random import randrange
 from freegames import square, vector
 
+started = False
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
@@ -21,6 +22,13 @@ def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
+
+# Starts moving the snake in response to a key press, only if the game hasn't already started
+def keyPress():
+    global started
+    if started is False:
+        move()
+    started = True
 
 def inside(head):
     "Return True if head inside boundaries."
@@ -62,5 +70,5 @@ onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
-move()
+onkeypress(lambda: keyPress())
 done()
