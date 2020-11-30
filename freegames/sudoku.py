@@ -10,9 +10,10 @@ from freegames import floor, vector
 
 # def game_start를 정의한다. -> game start 버튼을 생성한다. 난이도 선택 누르면 sudoku_load 한다.
 tiles = {}
-
+difficulty = 0
 origin_board = [[0 for j in range(0, 9)] for i in range(0, 9)]
 board = [[0 for j in range(0, 9)] for i in range(0, 9)]
+board_show = [[0 for j in range(0, 9)] for i in range(0, 9)]
 row = [[0 for j in range(0, 10)] for i in range(0, 10)]
 col = [[0 for j in range(0, 10)] for i in range(0, 10)]
 diag = [[0 for j in range(0, 10)] for i in range(0, 10)]
@@ -36,6 +37,7 @@ def make_sudoku(k):
 
     global terminate_flag
     global board
+    global board_show
 
     if terminate_flag == True:
         return True
@@ -44,6 +46,7 @@ def make_sudoku(k):
         for i in range(0, 9):
             for j in range(0, 9):
                 board[i][j] = origin_board[i][j]
+                board_show[i][j] = origin_board[i][j]
         terminate_flag = True
         return True
 
@@ -62,17 +65,58 @@ def make_sudoku(k):
             make_sudoku(k+1)
             row[i][m], col[j][m], diag[d][m] = 0, 0, 0
             origin_board[i][j] = 0
+def erase(diff):
+    global board_show
 
-# load -> sudoku_load
+    if(diff == 0):
+        for x in range(0, 9, 3):
+            for y in range(0, 9, 3):
+                count = 0
+                for z in range(99):
+                    i = randrange(x, x + 3)
+                    j = randrange(y, y + 3)
+                    if(count == 3):
+                        continue
+                    if(board_show[i][j] != None):
+                        board_show[i][j] = None
+                        count += 1
+
+    if(diff == 1):
+        for x in range(0, 9, 3):
+            for y in range(0, 9, 3):
+                count = 0
+                for z in range(99):
+                    i = randrange(x, x + 3)
+                    j = randrange(y, y + 3)
+                    if(count == 4):
+                        continue
+                    if(board_show[i][j] != None):
+                        board_show[i][j] = None
+                        count += 1
+
+    if(diff == 2):
+        for x in range(0, 9, 3):
+            for y in range(0, 9, 3):
+                count = 0
+                for z in range(99):
+                    i = randrange(x, x + 3)
+                    j = randrange(y, y + 3)
+                    if(count == 5):
+                        continue
+                    if(board_show[i][j] != None):
+                        board_show[i][j] = None
+                        count += 1
+
+
 def sudoku_load():
     "Load tiles"
 
     i = 0
     j = 0
-    for y in range(-400, 500, 100):
-        for x in range(-400, 500, 100):
+    for y in range(-200, 250, 50):
+        for x in range(-200, 250, 50):
             mark = vector(x, y)
-            tiles[mark] = board[i][j]
+            tiles[mark] = board_show[i][j]
             j = j + 1
             if(j == 9):
                 j = 0
@@ -89,7 +133,7 @@ def square(mark, number):
     color('black', 'white')
     begin_fill()
     for count in range(4):
-        forward(99)
+        forward(50)
         left(90)
     end_fill()
 
@@ -98,7 +142,7 @@ def square(mark, number):
     elif number < 10:
         forward(20)
 
-    write(number, font=('Arial', 60, 'normal'))
+    write(number, font=('Arial', 30, 'normal'))
 def index(x, y):
     "Convert (x, y) coordinates to tiles index."
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
@@ -106,6 +150,7 @@ def tap(x, y):
     "Update mark and hidden tiles based on tap."
     coordinate = vector(x, y)
     print(coordinate)
+
 def draw():
     "Draw all tiles."
     for mark in tiles:
@@ -124,6 +169,7 @@ tracer(False)
 game_start()
 board_init()
 make_sudoku(0)
+erase(difficulty)
 sudoku_load()
 draw()
 done()
