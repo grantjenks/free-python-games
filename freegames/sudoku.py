@@ -1,13 +1,14 @@
 from random import *
 from turtle import *
 from freegames import floor, vector
+
 # def sudoku_load 를 정의한다. -> 실행할 때마다 현재 sudoku 상태를 입력된 숫자를 base로 업데이트
 # 입력된 것이 1~9가 아닐경우 에러 메세지를 출력한다.
 # 입력된 것이 한줄 혹은 한 박스를 모두 채우면 색깔을 바꾼다?
 # 입력된 숫자는 업데이트 할 수 있어야 한다.
 # def sudoku_restart를 정의한다. -> 초기화 한다.
 
-# def game_start를 정의한다. -> game start 버튼을 생성한다. 누르면 sudoku_load 한다.
+# def game_start를 정의한다. -> game start 버튼을 생성한다. 난이도 선택 누르면 sudoku_load 한다.
 tiles = {}
 difficulty = 0
 origin_board = [[0 for j in range(0, 9)] for i in range(0, 9)]
@@ -17,8 +18,7 @@ row = [[0 for j in range(0, 10)] for i in range(0, 10)]
 col = [[0 for j in range(0, 10)] for i in range(0, 10)]
 diag = [[0 for j in range(0, 10)] for i in range(0, 10)]
 terminate_flag = False
-
-
+difficulty = -1
 def board_init():
     seq_diag = [0, 4, 8]
     for offset in range(0, 9, 3):
@@ -65,8 +65,6 @@ def make_sudoku(k):
             make_sudoku(k+1)
             row[i][m], col[j][m], diag[d][m] = 0, 0, 0
             origin_board[i][j] = 0
-
-
 def erase(diff):
     global board_show
 
@@ -110,7 +108,7 @@ def erase(diff):
                         count += 1
 
 
-def load():
+def sudoku_load():
     "Load tiles"
 
     i = 0
@@ -125,7 +123,6 @@ def load():
                 i = i + 1
             if(i == 9):
                 break
-
 
 def square(mark, number):
     "Draw white square with black outline and number."
@@ -146,21 +143,33 @@ def square(mark, number):
         forward(20)
 
     write(number, font=('Arial', 30, 'normal'))
-
+def index(x, y):
+    "Convert (x, y) coordinates to tiles index."
+    return int((x + 200) // 50 + ((y + 200) // 50) * 8)
+def tap(x, y):
+    "Update mark and hidden tiles based on tap."
+    coordinate = vector(x, y)
+    print(coordinate)
 
 def draw():
     "Draw all tiles."
     for mark in tiles:
         square(mark, tiles[mark])
     update()
+def game_start():
+    "draw game start button and select difficulty"
+    print("Hello")
+    s = textinput("", "please select your difficulty")
 
 
 setup(1000, 1000, 370, 0)
 hideturtle()
+onscreenclick(tap)
 tracer(False)
+game_start()
 board_init()
 make_sudoku(0)
 erase(difficulty)
-load()
+sudoku_load()
 draw()
 done()
