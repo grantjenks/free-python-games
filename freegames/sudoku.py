@@ -136,7 +136,7 @@ def square(mark, number):
     color('black', 'white')
     begin_fill()
     for count in range(4):
-        forward(99)
+        forward(50)
         left(90)
     end_fill()
 
@@ -160,7 +160,7 @@ hideturtle()
 tracer(False)
 board_init()
 make_sudoku(0)
-erase(0)
+erase(difficulty)
 load()
 draw()
 done()
