@@ -20,28 +20,21 @@ neighbors = [
     vector(0, 100),
     vector(0, -100),
 ]
-
+#tile => sudoku 자료구조
+# load
 def load():
     "Load tiles and scramble."
     count = 1
 
-    for y in range(-200, 200, 100):
-        for x in range(-200, 200, 100):
-            mark = vector(x, y)
-            tiles[mark] = count
+    
+    for y in range(-200, 500, 100):
+        for x in range(-200, 500, 100):
+            mark = vector(x, y) #vector 이다. tiles의 위치를 나타냄
+            tiles[mark] = count #여기가 채워넣는 값이다. 
             count += 1
+    print(mark)
 
-    tiles[mark] = None
 
-    for count in range(1000):
-        neighbor = choice(neighbors)
-        spot = mark + neighbor
-
-        if spot in tiles:
-            number = tiles[spot]
-            tiles[spot] = None
-            tiles[mark] = number
-            mark = spot
 
 def square(mark, number):
     "Draw white square with black outline and number."
@@ -81,7 +74,11 @@ def tap(x, y):
 
 def draw():
     "Draw all tiles."
+    ##
     for mark in tiles:
+        print(mark)
+        print(tiles)
+        print('---\n')
         square(mark, tiles[mark])
     update()
 

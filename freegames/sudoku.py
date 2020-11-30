@@ -27,6 +27,5 @@ penup()
 goto(-130, 300)
 pendown()
 write("SUDOKU", font = ("consolas", 50, "bold"))    # 문자 쓰기
-#textinput()
 hideturtle()
 done()
