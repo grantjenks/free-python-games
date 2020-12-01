@@ -204,9 +204,13 @@ def tap_ingame(x, y):
         sudoku_load()
         draw()
 
-        # Game over 
-        if board_tofill == board:
-            messagebox.showinfo("Congratulations!", "You win!")
+        # when the game is over, there are two options: restart or exit
+        if board == board_tofill:
+            if messagebox.askyesno("Congratulations!","You won! New Game?") == True:
+                restart()
+            else:
+                print("Bye!")
+                exit()
 
 # find out which button is clicked
 
