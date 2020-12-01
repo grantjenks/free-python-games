@@ -181,6 +181,24 @@ def square_given(mark, number):
         pencolor('black')
         write(number, font=('Arial', 30, 'normal'))
 
+# initialize conditions and start the game again
+def restart():
+    global origin_board, board, board_show, board_tofill, row, col, dialog, terminate_flag, difficulty, coordinate
+
+    tiles = {}
+    origin_board = [[0 for j in range(0, 9)] for i in range(0, 9)]
+    board = [[0 for j in range(0, 9)] for i in range(0, 9)]
+    board_show = [[0 for j in range(0, 9)] for i in range(0, 9)]
+    board_tofill = [[0 for j in range(0, 9)] for i in range(0, 9)]
+    row = [[0 for j in range(0, 10)] for i in range(0, 10)]
+    col = [[0 for j in range(0, 10)] for i in range(0, 10)]
+    diag = [[0 for j in range(0, 10)] for i in range(0, 10)]
+
+    terminate_flag = False
+    difficulty = -1 
+    coordinate = vector(0, 0)
+
+    game_start()
 
 # convert clicked coordinate to particular array
 def tap_ingame(x, y):
