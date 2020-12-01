@@ -1,8 +1,8 @@
 from random import *
 from turtle import *
 from freegames import floor, vector, square
-# 입력된 것이 1~9가 아닐경우 에러 메세지를 출력한다.
-# 정답검사, 게임 종료조건, restart 버튼
+from tkinter import messagebox
+
 tiles = {}
 # using in board_init(), no need to modify
 origin_board = [[0 for j in range(0, 9)] for i in range(0, 9)]
@@ -203,6 +203,10 @@ def tap_ingame(x, y):
         board_tofill[array_y][array_x] = temp
         sudoku_load()
         draw()
+
+        # Game over 
+        if board_tofill == board:
+            messagebox.showinfo("Congratulations!", "You win!")
 
 # find out which button is clicked
 
