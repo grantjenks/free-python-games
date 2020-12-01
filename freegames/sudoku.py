@@ -146,13 +146,28 @@ def square_given(mark, number):
     up()
     goto(mark.x, mark.y)
     down()
-
-    color('black', 'white')
-    begin_fill()
-    for count in range(4):
-        forward(50)
-        left(90)
-    end_fill()
+    # 'white' and 'skyblue' colors are used for background colors of the board
+    if -225<mark.y<-25 and (mark.x<-75 or mark.x>25):
+        color('black', 'skyblue')
+        begin_fill()
+        for count in range(4):
+            forward(50)
+            left(90)
+        end_fill()
+    elif -125<mark.x<75 and (mark.y<-175 or mark.y>-75):
+        color('black', 'skyblue')
+        begin_fill()
+        for count in range(4):
+            forward(50)
+            left(90)
+        end_fill()
+    else:
+        color('black', 'white')
+        begin_fill()
+        for count in range(4):
+            forward(50)
+            left(90)
+        end_fill()
 
     if number is None:
         return
