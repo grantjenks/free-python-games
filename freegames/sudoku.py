@@ -178,10 +178,16 @@ def tap_ingame(x, y):
     print(array_y, array_x)
     print(board_show[array_y][array_x])
     if(board_show[array_y][array_x] is None):
-        board_tofill[array_y][array_x] = int(
-            numinput("num input", "plz input number", None, minval=1, maxval=9))
-    sudoku_load()
-    draw()
+        # get user's input
+        temp = int(numinput("num input", "plz input number", None, minval=1, maxval=9))
+        # check whether user's input is correct or not
+        # if it's wrong, get user's input again
+        while (temp != board[array_y][array_x]):
+            temp = int(numinput("Wrong answer!", "plz input another number", None, minval=1, maxval=9))
+        # if it's correct, store it to board_tofill and draw the board again
+        board_tofill[array_y][array_x] = temp
+        sudoku_load()
+        draw()
 
 # find out which button is clicked
 
