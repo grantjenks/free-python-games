@@ -219,22 +219,27 @@ def tap_ingame(x, y):
         print(array_y, array_x)
         print(board_show[array_y][array_x])
         if(board_show[array_y][array_x] is None):
-            temp = int(
-                numinput("num input", "plz enter an integer", None, minval=1, maxval=9))
-            while (temp != board[array_y][array_x]):
-                messagebox.showerror("Wrong answer!", "Try again!")
-                temp = int(numinput("Wrong answer!", "plz enter another integer", None, minval=1, maxval=9))
+            temp = numinput("num input", "plz enter an integer", None, minval=1, maxval=9)
+            if temp is not None:
+                temp = int(temp)
+                while (temp != board[array_y][array_x]):
+                    messagebox.showerror("Wrong answer!", "Try again!")
+                    temp = numinput("Wrong answer!", "plz enter another integer", None, minval=1, maxval=9)
+                    if temp is None:
+                        break
+                    else:
+                        temp = int(temp)
 
-            board_tofill[array_y][array_x] = temp
-            sudoku_load()
-            draw()
+                board_tofill[array_y][array_x] = temp
+                sudoku_load()
+                draw()
 
-            if board == board_tofill:
-                if messagebox.askyesno("Congratulations!","You won! New Game?") == True:
-                    restart()
-                else:
-                    print("Bye!")
-                    exit()
+                if board == board_tofill:
+                    if messagebox.askyesno("Congratulations!","You won! New Game?") == True:
+                        restart()
+                    else:
+                        print("Bye!")
+                        exit()
     
 
 # find out which button is clicked
