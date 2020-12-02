@@ -309,7 +309,7 @@ def game_start():
     goto(0, 100)
     down()
     color('black')
-    write("Please select your difficulty", move=True,
+    write("Please select the difficulty level", move=True,
           align="center", font=("맑은고딕", 18, "bold"))
     onscreenclick(tap_button)
 
