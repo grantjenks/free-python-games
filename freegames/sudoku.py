@@ -208,8 +208,8 @@ def num_of_last_tofills():
     global board_tofill
     toret = 0  # return value
 
-    for x in range(0, 10):
-        for y in range(0, 10):
+    for x in range(0, 9):
+        for y in range(0, 9):
             if(board_tofill[x][y] is None):
                 toret += 1
     return toret
@@ -218,8 +218,8 @@ def num_of_last_tofills():
 def Is_all_num_right():
     global board
     global board_tofill
-    for x in range(0, 10):
-        for y in range(0, 10):
+    for x in range(0, 9):
+        for y in range(0, 9):
             if(board_tofill[x][y] is not board[x][y]):
                 print("not correct board")
                 return 0
@@ -261,7 +261,7 @@ def tap_ingame(x, y):
             #채우고 나서 컬럼,로우,3x3정사각형 안에 중복 있나 확인, 있다면 다시 입력하게 함..
 
             # board_tofill이 모두 채워졌으면, 총 정답이 맞는지 확인
-            if(num_of_last_tofills() == 0):
+            if(num_of_last_tofills() is 0):
                 judgement = Is_all_num_right()
                 if(judgement is 0):
                     print("정답이다.게임끝냄")
