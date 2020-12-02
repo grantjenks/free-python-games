@@ -224,9 +224,9 @@ def tap_ingame(x, y):
         print(board_show[array_y][array_x])
         if(board_show[array_y][array_x] is None):
             temp = int(
-                numinput("num input", "plz input number", None, minval=1, maxval=9))
+                numinput("num input", "plz enter an integer", None, minval=1, maxval=9))
             while (temp != board[array_y][array_x]):
-                temp = int(numinput("Wrong answer!", "plz input another number", None, minval=1, maxval=9))
+                temp = int(numinput("Wrong answer!", "plz enter another integer", None, minval=1, maxval=9))
 
             board_tofill[array_y][array_x] = temp
             sudoku_load() # board_tofill에 맞게 다시 보드판 그려줌.
@@ -322,7 +322,7 @@ def game_start():
     goto(0, 100)
     down()
     color('black')
-    write("Please select your difficulty", move=True,
+    write("Please select the difficulty level", move=True,
           align="center", font=("맑은고딕", 18, "bold"))
     onscreenclick(tap_button)
 
