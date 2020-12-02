@@ -210,7 +210,7 @@ def num_of_last_tofills():
 
     for x in range(0, 10):
         for y in range(0, 10):
-            if(board_tofill is None):
+            if(board_tofill[x][y] is None):
                 toret += 1
     return toret
 
@@ -219,7 +219,10 @@ def Is_all_num_right():
     global board_tofill
     for x in range(0, 10):
         for y in range(0, 10):
-            if()
+            if(board_tofill[x][y] is not board[x][y]):
+                print("not correct board")
+                return 0
+    return 1
 
 # convert clicked coordinate to particular array
 
