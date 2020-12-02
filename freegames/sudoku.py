@@ -22,6 +22,8 @@ difficulty = -1  # default value
 coordinate = vector(0, 0)
 
 # board_init function, no need to modify, no need of use
+
+
 def board_init():
     seq_diag = [0, 4, 8]
     for offset in range(0, 9, 3):
@@ -137,20 +139,22 @@ def sudoku_load():
                 break
 
 # writing data function, no need to modify, no need of use
+
+
 def square_given(mark, number):
     "Draw white square with black outline and number."
     up()
     goto(mark.x, mark.y)
     down()
 
-    if -225<mark.y<-25 and (mark.x<-75 or mark.x>25):
+    if -225 < mark.y < -25 and (mark.x < -75 or mark.x > 25):
         color('black', 'skyblue')
         begin_fill()
         for count in range(4):
             forward(50)
             left(90)
         end_fill()
-    elif -125<mark.x<75 and (mark.y<-175 or mark.y>-75):
+    elif -125 < mark.x < 75 and (mark.y < -175 or mark.y > -75):
         color('black', 'skyblue')
         begin_fill()
         for count in range(4):
@@ -196,14 +200,30 @@ def restart():
 
     game_start()
 
+    # 앞으로 몇개나 채워야 할것이 남았는지 리턴한다.
+    # 한개 채울때마다 실행해가며 정답을 확인할지 결정한다.
+
+
+def num_of_last_tofills():
+    global board_tofill
+    toret = 0  # return value
+
+    for x in range(0, 10):
+        for y in range(0, 10):
+            if(board_tofill is None):
+                toret += 1
+    return toret
+
 def Is_all_num_right():
     global board
     global board_tofill
-    for x in range(0,10):
-        for y in range(0,10):
+    for x in range(0, 10):
+        for y in range(0, 10):
             if()
 
 # convert clicked coordinate to particular array
+
+
 def tap_ingame(x, y):
     global terminate_flag
     global difficulty
@@ -211,7 +231,7 @@ def tap_ingame(x, y):
     result = change_pixel_index_to_button_index(x, y)
     if(result == 5):
         restart()
-        
+
     elif(result != 5):
         array_x = int((x + 225)//50)
         array_y = int((y + 325)//50)
@@ -225,12 +245,14 @@ def tap_ingame(x, y):
         print(array_y, array_x)
         print(board_show[array_y][array_x])
         if(board_show[array_y][array_x] is None):
-            temp = numinput("num input", "plz enter an integer", None, minval=1, maxval=9)
+            temp = numinput("num input", "plz enter an integer",
+                            None, minval=1, maxval=9)
             if temp is not None:
                 temp = int(temp)
                 while (temp != board[array_y][array_x]):
                     messagebox.showerror("Wrong answer!", "Try again!")
-                    temp = numinput("Wrong answer!", "plz enter another integer", None, minval=1, maxval=9)
+                    temp = numinput(
+                        "Wrong answer!", "plz enter another integer", None, minval=1, maxval=9)
                     if temp is None:
                         break
                     else:
@@ -241,17 +263,17 @@ def tap_ingame(x, y):
                 draw()
 
                 if board == board_tofill:
-                    if messagebox.askyesno("Congratulations!","You won! New Game?") == True:
+                    if messagebox.askyesno("Congratulations!", "You won! New Game?") == True:
                         restart()
                     else:
                         print("Bye!")
                         exit()
-    
+
 
 # find out which button is clicked
 def change_pixel_index_to_button_index(x, y):
     if(x >= 200 and x <= 280 and y <= 330 and y >= 280):
-        return 5;
+        return 5
     elif(x >= 60 and x <= 140 and y <= 0 and y >= -80):
         return 3
     elif(x >= - 40 and x <= 40 and y <= 0 and y >= -80):
@@ -272,18 +294,22 @@ def print_title():
 
 # print difficulty level
 
+
 def print_difficulty():
     global difficulty
-    
+
     up()
     goto(0, 200)
     down()
     if difficulty == 0:
-        write("Easy", move=False, align="center", font=("Arial", 20, "underline"))
+        write("Easy", move=False, align="center",
+              font=("Arial", 20, "underline"))
     if difficulty == 1:
-        write("Normal", move=False, align="center", font=("Arial", 20, "underline"))
+        write("Normal", move=False, align="center",
+              font=("Arial", 20, "underline"))
     if difficulty == 2:
-        write("Hard", move=False, align="center", font=("Arial", 20, "underline"))
+        write("Hard", move=False, align="center",
+              font=("Arial", 20, "underline"))
 
 # drawing square
 
@@ -299,7 +325,7 @@ def draw():
 # recognize which button is clicked
 
 
-def tap_button(x, y): 
+def tap_button(x, y):
     global difficulty
     result = change_pixel_index_to_button_index(x, y)
     if(result == 1):
@@ -356,9 +382,10 @@ def ingame():
     print_title()
     print_difficulty()
     sudoku_load()
-    draw() 
+    draw()
     onscreenclick(None)
     onscreenclick(tap_ingame)  # bind tap_ingame
+
 
 def reloadbutton():
     up()
@@ -366,7 +393,6 @@ def reloadbutton():
     down()
     color('black')
     write("HOME", move=True, align="center", font=("Arial", 15, "bold"))
-    
 
 
 setup(600, 800, 370, 0)
