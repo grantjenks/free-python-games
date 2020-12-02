@@ -226,16 +226,9 @@ def Is_all_num_right():
     return 1
 
 
-def Is_column_right(col):
+def Is_okay_input(col):
     a = 1
 
-
-def Is_row_right(row):
-    a = 1
-
-
-def Is_square_right(x, y):
-    a = 1
 
 # convert clicked coordinate to particular array
 
@@ -265,6 +258,7 @@ def tap_ingame(x, y):
                             None, minval=1, maxval=9)
 
             board_tofill[array_y][array_x] = int(temp)
+            #채우고 나서 컬럼,로우,3x3정사각형 안에 중복 있나 확인, 
             sudoku_load()
             draw()
 
