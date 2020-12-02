@@ -214,6 +214,7 @@ def num_of_last_tofills():
                 toret += 1
     return toret
 
+
 def Is_all_num_right():
     global board
     global board_tofill
@@ -224,11 +225,20 @@ def Is_all_num_right():
                 return 0
     return 1
 
+
 def Is_column_right(col):
+    a = 1
+
+
 def Is_row_right(row):
-def Is_square_right(x,y):
+    a = 1
+
+
+def Is_square_right(x, y):
+    a = 1
 
 # convert clicked coordinate to particular array
+
 
 def tap_ingame(x, y):
     global terminate_flag
@@ -253,27 +263,17 @@ def tap_ingame(x, y):
         if(board_show[array_y][array_x] is None):
             temp = numinput("num input", "plz enter an integer",
                             None, minval=1, maxval=9)
-            if temp is not None:
-                temp = int(temp)
-                while (temp != board[array_y][array_x]):
-                    messagebox.showerror("Wrong answer!", "Try again!")
-                    temp = numinput(
-                        "Wrong answer!", "plz enter another integer", None, minval=1, maxval=9)
-                    if temp is None:
-                        break
-                    else:
-                        temp = int(temp)
 
-                board_tofill[array_y][array_x] = temp
-                sudoku_load()
-                draw()
+            board_tofill[array_y][array_x] = int(temp)
+            sudoku_load()
+            draw()
 
-                if board == board_tofill:
-                    if messagebox.askyesno("Congratulations!", "You won! New Game?") == True:
-                        restart()
-                    else:
-                        print("Bye!")
-                        exit()
+            if board == board_tofill:
+                if messagebox.askyesno("Congratulations!", "You won! New Game?") == True:
+                    restart()
+                else:
+                    print("Bye!")
+                    exit()
 
 
 # find out which button is clicked
