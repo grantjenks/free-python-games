@@ -3,9 +3,6 @@ from turtle import *
 from freegames import floor, vector, square
 from tkinter import messagebox
 
-# 입력된 것이 1~9가 아닐경우 에러 메세지를 출력한다.
-# 정답검사, 게임 종료조건, restart 버튼
-
 tiles = {}
 # using in board_init(), no need to modify
 origin_board = [[0 for j in range(0, 9)] for i in range(0, 9)]
@@ -25,8 +22,6 @@ difficulty = -1  # default value
 coordinate = vector(0, 0)
 
 # board_init function, no need to modify, no need of use
-
-
 def board_init():
     seq_diag = [0, 4, 8]
     for offset in range(0, 9, 3):
@@ -142,8 +137,6 @@ def sudoku_load():
                 break
 
 # writing data function, no need to modify, no need of use
-
-
 def square_given(mark, number):
     "Draw white square with black outline and number."
     up()
@@ -244,8 +237,6 @@ def tap_ingame(x, y):
     
 
 # find out which button is clicked
-
-
 def change_pixel_index_to_button_index(x, y):
     if(x >= 200 and x <= 280 and y <= 330 and y >= 280):
         return 5;
@@ -281,7 +272,7 @@ def draw():
 # recognize which button is clicked
 
 
-def tap_button(x, y): # 버튼 클릭하기
+def tap_button(x, y): 
     global difficulty
     result = change_pixel_index_to_button_index(x, y)
     if(result == 1):
@@ -337,7 +328,7 @@ def game_start():
 def ingame():
     print_title()
     sudoku_load()
-    draw() # 표 그려주기
+    draw() 
     onscreenclick(None)
     onscreenclick(tap_ingame)  # bind tap_ingame
 
