@@ -3,6 +3,9 @@ from turtle import *
 from freegames import floor, vector, square
 from tkinter import messagebox
 
+# 입력된 것이 1~9가 아닐경우 에러 메세지를 출력한다.
+# 정답검사, 게임 종료조건, restart 버튼
+
 tiles = {}
 # using in board_init(), no need to modify
 origin_board = [[0 for j in range(0, 9)] for i in range(0, 9)]
@@ -146,7 +149,7 @@ def square_given(mark, number):
     up()
     goto(mark.x, mark.y)
     down()
-    # 'white' and 'skyblue' colors are used for background colors of the board
+
     if -225<mark.y<-25 and (mark.x<-75 or mark.x>25):
         color('black', 'skyblue')
         begin_fill()
@@ -181,7 +184,7 @@ def square_given(mark, number):
         pencolor('black')
         write(number, font=('Arial', 30, 'normal'))
 
-# initialize conditions and start the game again
+
 def restart():
     global origin_board, board, board_show, board_tofill, row, col, dialog, terminate_flag, difficulty, coordinate
 
@@ -195,46 +198,55 @@ def restart():
     diag = [[0 for j in range(0, 10)] for i in range(0, 10)]
 
     terminate_flag = False
-    difficulty = -1 
+    difficulty = -1
     coordinate = vector(0, 0)
 
     game_start()
 
+
 # convert clicked coordinate to particular array
 def tap_ingame(x, y):
-    array_x = int((x + 225)/50)
-    array_y = int((y + 325)/50)
-    if(array_x < 0 or array_x > 8 or array_y < 0 or array_y > 8):
-        array_x = -1
-        array_y = -1
+    global terminate_flag
+    global difficulty
+    global coordinate
+    result = change_pixel_index_to_button_index(x, y)
+    if(result == 5):
+        restart()
+        
+    elif(result != 5):
+        array_x = int((x + 225)/50)
+        array_y = int((y + 325)/50)
+        if(array_x < 0 or array_x > 8 or array_y < 0 or array_y > 8):
+            array_x = -1
+            array_y = -1
     # if click coordinate is out of box, change coordinate -1, -1
-    print(array_y, array_x)
-    print(board_show[array_y][array_x])
-    if(board_show[array_y][array_x] is None):
-        # get user's input
-        temp = int(numinput("num input", "plz input number", None, minval=1, maxval=9))
-        # check whether user's input is correct or not
-        # if it's wrong, get user's input again
-        while (temp != board[array_y][array_x]):
-            temp = int(numinput("Wrong answer!", "plz input another number", None, minval=1, maxval=9))
-        # if it's correct, store it to board_tofill and draw the board again
-        board_tofill[array_y][array_x] = temp
-        sudoku_load()
-        draw()
+        print(array_y, array_x)
+        print(board_show[array_y][array_x])
+        if(board_show[array_y][array_x] is None):
+            temp = int(
+                numinput("num input", "plz input number", None, minval=1, maxval=9))
+            while (temp != board[array_y][array_x]):
+                temp = int(numinput("Wrong answer!", "plz input another number", None, minval=1, maxval=9))
 
-        # when the game is over, there are two options: restart or exit
-        if board == board_tofill:
-            if messagebox.askyesno("Congratulations!","You won! New Game?") == True:
-                restart()
-            else:
-                print("Bye!")
-                exit()
+            board_tofill[array_y][array_x] = temp
+            sudoku_load() # board_tofill에 맞게 다시 보드판 그려줌.
+            draw()
+
+            if board == board_tofill:
+                if messagebox.askyesno("Congratulations!","You won! New Game?") == True:
+                    restart()
+                else:
+                    print("Bye!")
+                    exit()
+    
 
 # find out which button is clicked
 
 
 def change_pixel_index_to_button_index(x, y):
-    if(x >= 60 and x <= 140 and y <= 0 and y >= -80):
+    if(x >= 200 and x <= 280 and y <= 330 and y >= 280):
+        return 5;
+    elif(x >= 60 and x <= 140 and y <= 0 and y >= -80):
         return 3
     elif(x >= - 40 and x <= 40 and y <= 0 and y >= -80):
         return 2
@@ -264,7 +276,7 @@ def draw():
 # recognize which button is clicked
 
 
-def tap_button(x, y):
+def tap_button(x, y): # 버튼 클릭하기
     global difficulty
     result = change_pixel_index_to_button_index(x, y)
     if(result == 1):
@@ -280,6 +292,7 @@ def tap_button(x, y):
         make_sudoku(0)
         erase(difficulty)
         ingame()
+        reloadbutton()
 
 # create page to choose difficulty
 
@@ -309,7 +322,7 @@ def game_start():
     goto(0, 100)
     down()
     color('black')
-    write("Please select the difficulty level", move=True,
+    write("Please select your difficulty", move=True,
           align="center", font=("맑은고딕", 18, "bold"))
     onscreenclick(tap_button)
 
@@ -319,9 +332,14 @@ def game_start():
 def ingame():
     print_title()
     sudoku_load()
-    draw()
+    draw() # 표 그려주기
     onscreenclick(None)
     onscreenclick(tap_ingame)  # bind tap_ingame
+
+def reloadbutton():
+    goto(250, 300)
+    color('black')
+    write("HOME", move=True, align="center", font=("Arial", 15, "bold"))
 
 
 setup(600, 800, 370, 0)
