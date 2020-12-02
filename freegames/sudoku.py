@@ -224,8 +224,11 @@ def Is_all_num_right():
                 return 0
     return 1
 
-# convert clicked coordinate to particular array
+def Is_column_right(col):
+def Is_row_right(row):
+def Is_square_right(x,y):
 
+# convert clicked coordinate to particular array
 
 def tap_ingame(x, y):
     global terminate_flag
