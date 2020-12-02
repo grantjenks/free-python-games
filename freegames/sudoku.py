@@ -226,7 +226,7 @@ def Is_all_num_right():
     return 1
 
 
-def Is_okay_input(col):
+def Is_okay_input(x,y,value):
     a = 1
 
 
