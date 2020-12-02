@@ -337,9 +337,12 @@ def ingame():
     onscreenclick(tap_ingame)  # bind tap_ingame
 
 def reloadbutton():
+    up()
     goto(250, 300)
+    down()
     color('black')
     write("HOME", move=True, align="center", font=("Arial", 15, "bold"))
+    
 
 
 setup(600, 800, 370, 0)
