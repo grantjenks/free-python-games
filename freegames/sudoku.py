@@ -214,12 +214,12 @@ def tap_ingame(x, y):
         restart()
         
     elif(result != 5):
-        array_x = int((x + 225)/50)
-        array_y = int((y + 325)/50)
+        array_x = int((x + 225)//50)
+        array_y = int((y + 325)//50)
+        # if click coordinate is out of box, change coordinate -1, -1
         if(array_x < 0 or array_x > 8 or array_y < 0 or array_y > 8):
             array_x = -1
             array_y = -1
-    # if click coordinate is out of box, change coordinate -1, -1
         print(array_y, array_x)
         print(board_show[array_y][array_x])
         if(board_show[array_y][array_x] is None):
