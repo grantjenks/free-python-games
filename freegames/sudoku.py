@@ -268,10 +268,12 @@ def print_title():
 
 
 def draw():
+    up()
     "Draw all tiles."
     for mark in tiles:
         square_given(mark, tiles[mark])
     update()
+    down()
 
 # recognize which button is clicked
 
