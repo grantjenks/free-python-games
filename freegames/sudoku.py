@@ -220,6 +220,9 @@ def tap_ingame(x, y):
         if(array_x < 0 or array_x > 8 or array_y < 0 or array_y > 8):
             array_x = -1
             array_y = -1
+            print("Out of range! Please click on the board.")
+            return
+
         print(array_y, array_x)
         print(board_show[array_y][array_x])
         if(board_show[array_y][array_x] is None):
@@ -229,7 +232,7 @@ def tap_ingame(x, y):
                 temp = int(numinput("Wrong answer!", "plz enter another integer", None, minval=1, maxval=9))
 
             board_tofill[array_y][array_x] = temp
-            sudoku_load() # board_tofill에 맞게 다시 보드판 그려줌.
+            sudoku_load()
             draw()
 
             if board == board_tofill:
