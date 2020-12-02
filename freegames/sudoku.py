@@ -222,6 +222,7 @@ def tap_ingame(x, y):
             temp = int(
                 numinput("num input", "plz enter an integer", None, minval=1, maxval=9))
             while (temp != board[array_y][array_x]):
+                messagebox.showerror("Wrong answer!", "Try again!")
                 temp = int(numinput("Wrong answer!", "plz enter another integer", None, minval=1, maxval=9))
 
             board_tofill[array_y][array_x] = temp
