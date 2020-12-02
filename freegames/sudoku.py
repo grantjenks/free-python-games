@@ -264,6 +264,21 @@ def print_title():
     down()
     write("SUDOKU", move=False, align="center", font=("Arial", 30, "bold"))
 
+# print difficulty level
+
+def print_difficulty():
+    global difficulty
+    
+    up()
+    goto(0, 200)
+    down()
+    if difficulty == 0:
+        write("Easy", move=False, align="center", font=("Arial", 20, "underline"))
+    if difficulty == 1:
+        write("Normal", move=False, align="center", font=("Arial", 20, "underline"))
+    if difficulty == 2:
+        write("Hard", move=False, align="center", font=("Arial", 20, "underline"))
+
 # drawing square
 
 
@@ -333,6 +348,7 @@ def game_start():
 
 def ingame():
     print_title()
+    print_difficulty()
     sudoku_load()
     draw() 
     onscreenclick(None)
