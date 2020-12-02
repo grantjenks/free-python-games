@@ -196,6 +196,12 @@ def restart():
 
     game_start()
 
+def Is_all_num_right():
+    global board
+    global board_tofill
+    for x in range(0,10):
+        for y in range(0,10):
+            if()
 
 # convert clicked coordinate to particular array
 def tap_ingame(x, y):
