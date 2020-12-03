@@ -261,16 +261,16 @@ def tap_ingame(x, y):
             # 채우고 나서 컬럼,로우,3x3정사각형 안에 중복 있나 확인, 있다면 다시 입력하게 함..
 
             # board_tofill이 모두 채워졌으면, 총 정답이 맞는지 확인
-            if(num_of_last_tofills() is 0):
+            if(num_of_last_tofills() == 0):
                 judgement = Is_all_num_right()
-                if(judgement is 1):
+                if(judgement == 1):
                     print("정답이다.게임끝냄")
                     if messagebox.askyesno("Congratulations!", "You won! New Game?") == True:
                         restart()
                     else:
                         print("Bye!")
                         exit()
-                elif(judgement is 0):
+                elif(judgement == 0):
                     print("아직 정답 아님")
                     # + 화면에 정답 아니라고 프린트 해아함!
             sudoku_load()
