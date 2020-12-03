@@ -225,10 +225,6 @@ def Is_all_num_right():
     return 1
 
 
-def Is_okay_input(x, y, value):
-    a = 1
-
-
 # convert clicked coordinate to particular array
 
 
@@ -257,7 +253,9 @@ def tap_ingame(x, y):
                             None, minval=1, maxval=9)
             if temp is not None:
                 board_tofill[array_y][array_x] = int(temp)
-            # 채우고 나서 컬럼,로우,3x3정사각형 안에 중복 있나 확인, 있다면 다시 입력하게 함..
+            
+            sudoku_load()
+            draw()
 
             # board_tofill이 모두 채워졌으면, 총 정답이 맞는지 확인
             if(num_of_last_tofills() == 0):
@@ -273,8 +271,6 @@ def tap_ingame(x, y):
                     print("Not a correct board")
                     messagebox.showerror("Wrong answer!", "Not a correct board. Try again!")
                     
-            sudoku_load()
-            draw()
 
 def change_pixel_index_to_button_index(x, y):
     if(x >= 200 and x <= 280 and y <= 330 and y >= 280):
