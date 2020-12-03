@@ -255,8 +255,8 @@ def tap_ingame(x, y):
         if(board_show[array_y][array_x] is None):
             temp = numinput("num input", "plz enter an integer",
                             None, minval=1, maxval=9)
-
-            board_tofill[array_y][array_x] = int(temp)
+            if temp is not None:
+                board_tofill[array_y][array_x] = int(temp)
             # 채우고 나서 컬럼,로우,3x3정사각형 안에 중복 있나 확인, 있다면 다시 입력하게 함..
 
             # board_tofill이 모두 채워졌으면, 총 정답이 맞는지 확인
@@ -269,7 +269,7 @@ def tap_ingame(x, y):
                     else:
                         print("Bye!")
                         exit()
-                elif(judgement == 0):
+                else:
                     print("Not a correct board")
                     messagebox.showerror("Wrong answer!", "Not a correct board. Try again!")
                     
