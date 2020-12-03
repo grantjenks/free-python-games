@@ -181,6 +181,7 @@ def square_given(mark, number):
         pencolor('black')
         write(number, font=('Arial', 30, 'normal'))
 
+# restart the game & go to the page for selecting difficulty
 
 def restart():
     global origin_board, board, board_show, board_tofill, row, col, dialog, terminate_flag, difficulty, coordinate
@@ -200,9 +201,7 @@ def restart():
 
     game_start()
 
-    # 앞으로 몇개나 채워야 할것이 남았는지 리턴한다.
-    # 한개 채울때마다 실행해가며 정답을 확인할지 결정한다.
-
+# return how many cells are left to fill in
 
 def num_of_last_tofills():
     global board_tofill
@@ -214,6 +213,7 @@ def num_of_last_tofills():
                 toret += 1
     return toret
 
+# check whether the user's board is correct or not
 
 def Is_all_num_right():
     global board
@@ -257,7 +257,8 @@ def tap_ingame(x, y):
             sudoku_load()
             draw()
 
-            # board_tofill이 모두 채워졌으면, 총 정답이 맞는지 확인
+            # check whether the completed board is correct or not
+
             if(num_of_last_tofills() == 0):
                 judgement = Is_all_num_right()
                 if(judgement == 1):
