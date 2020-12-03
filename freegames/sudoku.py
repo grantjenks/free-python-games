@@ -220,8 +220,7 @@ def Is_all_num_right():
     global board_tofill
     for x in range(0, 9):
         for y in range(0, 9):
-            if(board_tofill[x][y] is not board[x][y]):
-                print("not correct board")
+            if(board_tofill[x][y] is not board[x][y]):               
                 return 0
     return 1
 
@@ -264,15 +263,16 @@ def tap_ingame(x, y):
             if(num_of_last_tofills() == 0):
                 judgement = Is_all_num_right()
                 if(judgement == 1):
-                    print("정답이다.게임끝냄")
+                    print("Correct answer!")
                     if messagebox.askyesno("Congratulations!", "You won! New Game?") == True:
                         restart()
                     else:
                         print("Bye!")
                         exit()
                 elif(judgement == 0):
-                    print("아직 정답 아님")
-                    # + 화면에 정답 아니라고 프린트 해아함!
+                    print("Not a correct board")
+                    messagebox.showerror("Wrong answer!", "Not a correct board. Try again!")
+                    
             sudoku_load()
             draw()
 
