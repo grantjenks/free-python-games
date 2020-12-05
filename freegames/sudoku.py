@@ -2,7 +2,7 @@ from random import *
 from turtle import *
 from freegames import floor, vector, square
 from tkinter import messagebox
-
+import tkinter.messagebox
 tiles = {}
 # using in board_init(), no need to modify
 origin_board = [[0 for j in range(0, 9)] for i in range(0, 9)]
@@ -251,6 +251,8 @@ def tap_ingame(x, y):
         if(board_show[array_y][array_x] is None):
             temp = numinput("num input", "plz enter an integer",
                             None, minval=1, maxval=9)
+            if temp is not int:
+                tkinter.messagebox.showinfo("Warning!","입력하신 수는 정수가 아닙니다!")
             if temp is not None:
                 board_tofill[array_y][array_x] = int(temp)
             
