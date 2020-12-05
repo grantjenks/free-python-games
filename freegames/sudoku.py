@@ -233,6 +233,15 @@ def tap_ingame(x, y):
     global difficulty
     global coordinate
     result = change_pixel_index_to_button_index(x, y)
+    cnt = 0
+    num_to_fill = 0
+    if (difficulty == 0 ):
+         num_to_fill = 27
+    elif(difficulty == 1):
+         num_to_fill = 36
+    else:
+         num_to_fill = 45
+         
     if(result == 5):
         restart()
 
@@ -253,15 +262,16 @@ def tap_ingame(x, y):
                             None, minval=1, maxval=9)
             if temp is not int:
                 tkinter.messagebox.showinfo("Warning!","입력하신 수는 정수가 아닙니다!")
-            if temp is not None:
+            elif temp is not None:
                 board_tofill[array_y][array_x] = int(temp)
+                cnt += 1
             
             sudoku_load()
             draw()
 
             # check whether the completed board is correct or not
 
-            if(num_of_last_tofills() == 0):
+            if(cnt == num_to_fill):
                 judgement = Is_all_num_right()
                 if(judgement == 1):
                     print("Correct answer!")
