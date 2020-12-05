@@ -235,6 +235,7 @@ def tap_ingame(x, y):
     result = change_pixel_index_to_button_index(x, y)
     cnt = 0
     num_to_fill = 0
+    
     if (difficulty == 0 ):
          num_to_fill = 27
     elif(difficulty == 1):
