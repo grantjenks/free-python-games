@@ -262,7 +262,7 @@ def tap_ingame(x, y):
             temp = numinput("num input", "plz enter an integer",
                             None, minval=1, maxval=9)
             if temp is not int:
-                tkinter.messagebox.showinfo("Warning!","입력하신 수는 정수가 아닙니다!")
+                tkinter.messagebox.showinfo("Warning!","input is not integer")
             elif temp is not None:
                 board_tofill[array_y][array_x] = int(temp)
                 cnt += 1
