@@ -9,6 +9,7 @@
    development
    guess
    snake
+   snake_oop
    crypto
    paint
    maze

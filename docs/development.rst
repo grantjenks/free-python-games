@@ -26,7 +26,7 @@ Requests for Contributions
    * Fun to play.
    * Matching code style.
    * Limited Python feature set.
-   * Short (less than 100 lines of code).
+   * Short (less than 100 lines of code, or 300 lines in oriented object version).
 
 Get the Code
 ------------
