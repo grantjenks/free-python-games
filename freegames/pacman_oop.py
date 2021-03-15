@@ -23,8 +23,13 @@ class Pacman:
         self.status = "ALIVE"
 
     def move(self):
-        "Change pacman aim if valid."
         self.position.move(self.aim)
+    
+    def dead(self):
+        self.status = "DEAD"
+    
+    def alive(self):
+        return self.status != "DEAD"
 
 class Ghost:
     def __init__(self,x,y,w,z):
@@ -41,12 +46,10 @@ class GamePacman:
         self.path = Turtle(visible=False)
         self.writer = Turtle(visible=False)
         self.pacman = Pacman()
-        self.ghost1 = Ghost(-180,160,5,0)
-        self.ghost2 = Ghost(-180,-160,0,5)
-        self.ghost3 = Ghost(100,160,0,-5)
-        self.ghost4 = Ghost(100,160,-5,0)
-        ghosts = [self.ghost1,self.ghost2,self.ghost3,self.ghost4]
-        self.aim = vector(5,0)
+        self.ghosts = [Ghost(-180,160,5,0),
+                    Ghost(-180,-160,0,5),
+                    Ghost(100,160,0,-5),
+                    Ghost(100,-160,-5,0)]
         self.tiles = [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -74,6 +77,7 @@ class GamePacman:
         onkey(lambda: self.change(-5, 0), 'Left')
         onkey(lambda: self.change(0, 5), 'Up')
         onkey(lambda: self.change(0, -5), 'Down')
+
     def square(self,x,y):
         self.path.up()
         self.path.goto(x,y)
@@ -132,24 +136,8 @@ class GamePacman:
         self.writer.goto(160, 160)
         self.writer.color('white')
         self.writer.write(self.state['score'])
-    
-    def draw_pacman(self):
-        up()
-        goto(self.pacman.position.x +10  , self.pacman.position.y + 10)
-        dot(20,'yellow')
-    
-    def run(self):
-        
-        self.writer.undo()
-        self.draw_score()
 
-        clear()
-
-        if self.valid(self.pacman.position + self.pacman.aim):
-            self.pacman.move()
-            print("moveu-se",self.pacman.position)
         index = self.offset(self.pacman.position)
-
         if self.tiles[index] == 1:
             self.tiles[index] = 2
             self.state['score'] += 1
@@ -157,45 +145,64 @@ class GamePacman:
             y = 180 - (index // 20) * 20
             self.square(x, y)
         
-        self.draw_pacman()
+    
+    def move_and_draw_pacman(self):
 
-        update()
-        ontimer(self.run, 100)
-
-        '''#   ghost   aim
-        for point, course in ghosts:
-        if valid(point + course):
-            point.move(course)
-        else:
-            options = [
-                vector(5, 0),
-                vector(-5, 0),
-                vector(0, 5),
-                vector(0, -5),
-            ]
-            plan = choice(options)
-            course.x = plan.x
-            course.y = plan.y
+        if self.valid(self.pacman.position + self.pacman.aim):
+            self.pacman.move()
+            print("moveu-se",self.pacman.position)
 
         up()
-        goto(point.x + 10, point.y + 10)
-        dot(20, 'red')
-
-    update()
-
-    for point, course in ghosts:
-        if abs(pacman - point) < 20:
-            return'''
-
-
-        
+        goto(self.pacman.position.x +10  , self.pacman.position.y + 10)
+        dot(20,'yellow')
     
+
+    def move_and_draw_ghost(self):
+        for ghost in self.ghosts:
+            if self.valid(ghost.position + ghost.aim):
+                ghost.move()
+            else:
+                options = [
+                    vector(5, 0),
+                    vector(-5, 0),
+                    vector(0, 5),
+                    vector(0, -5),
+                ]
+                plan = choice(options)
+                ghost.aim.x = plan.x
+                ghost.aim.y = plan.y
+
+            up()
+            goto(ghost.position.x + 10, ghost.position.y + 10)
+            dot(20, 'red')
+
+    def run(self):
+
+        self.writer.undo()
+        self.draw_score()
+        clear()
+
+        self.move_and_draw_pacman()
+
+        self.move_and_draw_ghost()
+
+        if self.pacman.alive():
+            ontimer(self.run, 100)
+        else:
+            return
+
+        for ghost in self.ghosts:
+                if abs(self.pacman.position - ghost.position) < 20:
+                    self.pacman.dead()
+
+        update()
+
 def init():
     setup(420, 420, 370, 0)
     hideturtle()
     tracer(False)
     listen()
-    
+
     game = GamePacman()
     game.draw_world()
     game.run()
@@ -203,5 +210,3 @@ def init():
 
 if __name__ == '__main__':
     init()
-
-
