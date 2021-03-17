@@ -25,67 +25,53 @@ class Pacman:
         self.position.move(self.aim)
     
     def dead(self):
-        self.status = "DEAD"
+        self.status = "DIE"
     
     def alive(self):
-        return self.status != "DEAD"
+        return self.status != "DIE"
+    
+    def next_position(self, aim=None):
+        if aim != None :
+            new_position = self.position + aim
+        else:
+            new_position = self.position + self.aim
+        return new_position
+
+    turn_to_left = {'NORTH': ('WEST', vector(-5, 0)),
+                'WEST' : ('SOUTH', vector(0, -5)),
+                'SOUTH': ('EAST', vector(5, 0)),
+                'EAST' : ('NORTH', vector(0, 5))}
+
+    turn_to_right = {'NORTH': ('EAST', vector(5, 0)),
+                'EAST' : ('SOUTH', vector(0, -5)),
+                'SOUTH': ('WEST', vector(-5, 0)),
+                'WEST' : ('NORTH', vector(0, 5))}
+
+    turn_to_go_back = {'NORTH': ('SOUTH', vector(0, -5)),
+                'SOUTH' : ('NORTH', vector(0, 5)),
+                'WEST': ('EAST', vector(5, 0)),
+                'EAST' : ('WEST', vector(-5, 0))}
 
     def left(self):
-        if self.direction == "NORTH" :
-            self.aim.x = -5
-            self.aim.y = 0
-
-        elif self.direction == "SOUTH":
-            self.aim.x = 5
-            self.aim.y = 0
-
-        elif self.direction == "WEST" :
-            self.aim.x = 0
-            self.aim.y = -5
-
-        elif self.direction == "EAST":
-            self.aim.x = 0
-            self.aim.y = 5
+        self.direction, new_aim = self.turn_to_left[self.direction]
+        self.aim.x = new_aim.x
+        self.aim.y = new_aim.y
 
     def right(self):
-        if self.direction == "NORTH" :
-            self.aim.x = 5
-            self.aim.y = 0
-
-        elif self.direction == "SOUTH":
-            self.aim.x = -5
-            self.aim.y = 0
-
-        elif self.direction == "WEST" :
-            self.aim.x = 0
-            self.aim.y = 5
-
-        elif self.direction == "EAST":
-            self.aim.x = 0
-            self.aim.y = -5  
+        self.direction, new_aim = self.turn_to_right[self.direction]
+        self.aim.x = new_aim.x
+        self.aim.y = new_aim.y
     
     def u_turn(self):
-        if self.direction == "NORTH" :
-            self.aim.x = 0
-            self.aim.y = -5
-            
-        elif self.direction == "SOUTH":
-            self.aim.x = 0
-            self.aim.y = 5
-            
-        elif self.direction == "WEST" :
-            self.aim.x = 5
-            self.aim.y = 0
-            
-        elif self.direction == "EAST":
-            self.aim.x = -5
-            self.aim.y = 0
-            
+        self.direction, new_aim = self.turn_to_go_back[self.direction]
+        self.aim.x = new_aim.x
+        self.aim.y = new_aim.y
+  
 class Ghost:
-    def __init__(self,x,y,w,z):
-        self.position = vector(x,y) 
-        self.aim = vector(w, z)
-        self.color = "red"
+    def __init__(self,position_x,position_y,aim_x,aim_y):
+        self.position = vector(position_x,position_y) 
+        self.aim = vector(aim_x, aim_y)
+
     def move(self):
         self.position.move(self.aim)
     
@@ -96,9 +82,7 @@ class Ghost:
             vector(0, 5),
             vector(0, -5),
         ]
-        plan = choice(options)
-        self.aim.x = plan.x
-        self.aim.y = plan.y
+        self.aim = choice(options)
 
 class GamePacman:
     def __init__(self):
@@ -140,44 +124,41 @@ class GamePacman:
         onkey(lambda: self.on_downkeypressed(), 'Down')
 
     def on_rightkeypressed(self):
-        if self.pacman_next_position(5,0):
+        if self.valid(self.pacman.next_position(vector(5,0))):
             if self.pacman.direction == 'NORTH':
                 self.pacman.right()
             elif self.pacman.direction == "SOUTH":
                 self.pacman.left()
             elif self.pacman.direction == "WEST":
                 self.pacman.u_turn()
-            self.pacman.direction = "EAST"
     
     def on_leftkeypressed(self):
-        if self.pacman_next_position(-5,0):
+        if self.valid(self.pacman.next_position (vector(-5,0))):
             if self.pacman.direction == 'NORTH':
                 self.pacman.left()
             elif self.pacman.direction == "SOUTH":
                 self.pacman.right()
             elif self.pacman.direction == "EAST":
                 self.pacman.u_turn()
-            self.pacman.direction = "WEST"
+
 
     def on_upkeypressed(self):
-        if self.pacman_next_position(0,5):
+        if self.valid(self.pacman.next_position(vector(0,5))):
             if self.pacman.direction == 'WEST':
                 self.pacman.right()
             elif self.pacman.direction == "EAST":
                 self.pacman.left()
-            if self.pacman.direction == "SOUTH":
+            elif self.pacman.direction == "SOUTH":
                 self.pacman.u_turn()
-            self.pacman.direction = "NORTH"
 
     def  on_downkeypressed (self):
-        if self.pacman_next_position(0,-5):
+        if self.valid(self.pacman.next_position(vector(0,-5))):
             if self.pacman.direction == 'WEST':
                 self.pacman.left()
             elif self.pacman.direction == "EAST":
                 self.pacman.right()
             elif self.pacman.direction == "NORTH":
                 self.pacman.u_turn()
-            self.pacman.direction = "SOUTH"
 
     def square(self,x,y):
         self.path.up()
@@ -210,19 +191,7 @@ class GamePacman:
             return False
 
         return point.x % 20 == 0 or point.y % 20 == 0
-    
-    def pacman_next_position(self, x=None, y=None):
-        if x != None and y != None:
-            if self.valid(self.pacman.position + vector(x, y)):
-                return True
-            else:
-                return False
-        else:
-            if self.valid(self.pacman.position + self.pacman.aim):
-                return True
-            else:
-                return False
-            
+      
     def draw_world(self):
         bgcolor('black')
         self.path.color('blue')
@@ -252,10 +221,10 @@ class GamePacman:
             y = 180 - (index // 20) * 20
             self.square(x, y)
 
-    def move_pacman(self):
-        self.pacman.move()
+    def move_and_draw_pacman(self):
+        if self.valid(self.pacman.next_position()):
+            self.pacman.move()
 
-    def draw_pacman(self):
         up()
         goto(self.pacman.position.x +10 , self.pacman.position.y + 10)
         dot(20,'yellow')
@@ -281,12 +250,8 @@ class GamePacman:
         self.writer.undo()
         self.draw_score()
         clear()
-        
-        if self.pacman_next_position():
-            self.move_pacman()
-            self.draw_pacman()
-        else:
-            self.draw_pacman()
+
+        self.move_and_draw_pacman()
 
         self.move_and_draw_ghost()
 
