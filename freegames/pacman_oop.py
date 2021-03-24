@@ -2,11 +2,11 @@
 
 Exercises
 
-1. Change the board.
-2. Change the number of ghosts.
-3. Change where pacman starts.
-4. Make the ghosts faster/slower.
-5. Make the ghosts smarter.
+1. Move the score variable/attribute to Pacman's class. This attribute must be incremented by a new method in Pacman's code. Chose draw_score according to the needed changes in GamePacman.
+2. Create a speed attribute and do the needed changes to change Pacman's speed according to its value.
+3. Create a subclass of Ghosts that each one of them has ghosts with different speeds value (Use the second exercise as an example).
+4. Create a superclass for both Pacman and Ghost.
+5. Create different types of food.
 
 """
 
@@ -14,21 +14,30 @@ from random import choice
 from turtle import bgcolor, clear, up, down, goto, Turtle, dot, update, ontimer, setup, hideturtle, tracer, listen, onkey, done
 from freegames import floor, vector
 
-class Pacman:
-    def __init__(self):
-        self.aim = vector(5, 0)
-        self.direction = "EAST"
-        self.position = vector(-40, -80)
-        self.status = "ALIVE"
-
-    def move(self):
-        self.position.move(self.aim)
+class Master:
+    speed = 1
+    def __init__(self,position_x, position_y,aim_x,aim_y):
+        self.position = vector(position_x,position_y)
+        self.aim = vector(aim_x, aim_y)
     
-    def dead(self):
-        self.status = "DIE"
+    def move(self):
+        self.position.move(self.aim * self.speed)
+
+class Pacman(Master):
+    score = 0
+    def __init__(self,position_x, position_y,aim_x,aim_y):
+        super().__init__(position_x, position_y,aim_x,aim_y)
+        self.direction = "EAST"
+        self.state = "ALIVE"
+
+    def eat(self):
+        self.score +=1
+            
+    def die(self):
+        self.state = "DEAD"
     
     def alive(self):
-        return self.status != "DIE"
+        return self.state != "DEAD"
     
     def next_position(self, aim=None):
         if aim != None :
@@ -47,33 +56,24 @@ class Pacman:
                 'SOUTH': ('WEST', vector(-5, 0)),
                 'WEST' : ('NORTH', vector(0, 5))}
 
-    turn_to_go_back = {'NORTH': ('SOUTH', vector(0, -5)),
+    turn_to_around = {'NORTH': ('SOUTH', vector(0, -5)),
                 'SOUTH' : ('NORTH', vector(0, 5)),
                 'WEST': ('EAST', vector(5, 0)),
                 'EAST' : ('WEST', vector(-5, 0))}
 
     def left(self):
         self.direction, new_aim = self.turn_to_left[self.direction]
-        self.aim.x = new_aim.x
-        self.aim.y = new_aim.y
+        self.aim = new_aim
 
     def right(self):
         self.direction, new_aim = self.turn_to_right[self.direction]
-        self.aim.x = new_aim.x
-        self.aim.y = new_aim.y
+        self.aim = new_aim
     
-    def u_turn(self):
-        self.direction, new_aim = self.turn_to_go_back[self.direction]
-        self.aim.x = new_aim.x
-        self.aim.y = new_aim.y
+    def turn_around(self):
+        self.direction, new_aim = self.turn_to_around[self.direction]
+        self.aim = new_aim
   
-class Ghost:
-    def __init__(self,position_x,position_y,aim_x,aim_y):
-        self.position = vector(position_x,position_y) 
-        self.aim = vector(aim_x, aim_y)
-
-    def move(self):
-        self.position.move(self.aim)
+class Ghost(Master):
     
     def change_direction(self):
         options = [
@@ -84,16 +84,39 @@ class Ghost:
         ]
         self.aim = choice(options)
 
+class FastGhost(Ghost):
+    speed = 2
+
+class SlowGhost(Ghost):
+    speed = 0.5
+
+class Food:
+    def __init__(self, x=None, y=None):
+        self.position = vector(x,y)
+        self.color = "yellow"
+        self.state = "ABSENT" 
+    
+    def captured(self):
+        self.state = "ABSENT"
+    
+    def with_food(self):
+        self.state = "PRESENT"
+
+    def without_food(self):
+        if self.state == "ABSENT":
+            return True
+
 class GamePacman:
     def __init__(self):
         self.state = {'score': 0}
         self.path = Turtle(visible=False)
         self.writer = Turtle(visible=False)
-        self.pacman = Pacman()
+        self.pacman = Pacman(-40, -80, 5, 0)
+        self.food = Food(-160,100)
         self.ghosts = [Ghost(-180,160,5,0),
-                    Ghost(-180,-160,0,5),
-                    Ghost(100,160,0,-5),
-                    Ghost(100,-160,-5,0)]
+                    FastGhost(-180,-160,0,5),
+                    SlowGhost(100,160,0,-5),
+                    FastGhost(100,-160,-5,0)]
         self.tiles = [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -130,7 +153,7 @@ class GamePacman:
             elif self.pacman.direction == "SOUTH":
                 self.pacman.left()
             elif self.pacman.direction == "WEST":
-                self.pacman.u_turn()
+                self.pacman.turn_around()
     
     def on_leftkeypressed(self):
         if self.valid(self.pacman.next_position (vector(-5,0))):
@@ -139,7 +162,7 @@ class GamePacman:
             elif self.pacman.direction == "SOUTH":
                 self.pacman.right()
             elif self.pacman.direction == "EAST":
-                self.pacman.u_turn()
+                self.pacman.turn_around()
 
 
     def on_upkeypressed(self):
@@ -149,7 +172,7 @@ class GamePacman:
             elif self.pacman.direction == "EAST":
                 self.pacman.left()
             elif self.pacman.direction == "SOUTH":
-                self.pacman.u_turn()
+                self.pacman.turn_around()
 
     def  on_downkeypressed (self):
         if self.valid(self.pacman.next_position(vector(0,-5))):
@@ -158,7 +181,7 @@ class GamePacman:
             elif self.pacman.direction == "EAST":
                 self.pacman.right()
             elif self.pacman.direction == "NORTH":
-                self.pacman.u_turn()
+                self.pacman.turn_around()
 
     def square(self,x,y):
         self.path.up()
@@ -215,11 +238,22 @@ class GamePacman:
 
         index = self.offset(self.pacman.position)
         if self.tiles[index] == 1:
+            self.pacman.eat()
             self.tiles[index] = 2
-            self.state['score'] += 1
+            self.state['score'] = self.pacman.score
             x = (index % 20) * 20 - 200
             y = 180 - (index // 20) * 20
             self.square(x, y)
+    
+    def create_and_draw_food(self):
+        foods_positions = [vector(-180,150),vector(-180,-150),vector(100,150),vector(100,-150)]
+        if self.food.without_food() == True:
+            self.food.position = choice(foods_positions)
+        if self.valid(self.food.position):
+            up()
+            goto(self.food.position.x + 10, self.food.position.y + 10)
+            dot(10,self.food.color)
+            self.food.with_food()
 
     def move_and_draw_pacman(self):
         if self.valid(self.pacman.next_position()):
@@ -243,8 +277,11 @@ class GamePacman:
     def check_collision(self):
         for ghost in self.ghosts:
             if abs(self.pacman.position - ghost.position) < 20:
-                self.pacman.dead()
-
+                self.pacman.die()
+            if abs(self.pacman.position - self.food.position) < 20:
+                self.pacman.score += 2
+                self.food.captured()
+    
     def run(self):
 
         self.writer.undo()
@@ -256,6 +293,8 @@ class GamePacman:
         self.move_and_draw_ghost()
 
         self.check_collision()
+        
+        self.create_and_draw_food()
 
         if self.pacman.alive():
             ontimer(self.run, 100)
