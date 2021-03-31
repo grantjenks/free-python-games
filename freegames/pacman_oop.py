@@ -18,6 +18,7 @@ from freegames import floor, vector
 
 class Actor:
     speed = 1
+    score = 0
     def __init__(self,position_x, position_y,aim_x,aim_y):
         self.position = vector(position_x,position_y)
         self.aim = vector(aim_x, aim_y)
@@ -26,14 +27,15 @@ class Actor:
         self.position.move(self.aim * self.speed)
 
 class Pacman(Actor):
-    speed = 0
+    speed = 1
+    score = {'score': 0}
     def __init__(self,position_x, position_y,aim_x,aim_y):
         super().__init__(position_x, position_y, aim_x, aim_y)
         self.direction = "EAST"
         self.state = "ALIVE"
 
-    def eat(self, power):
-        self.score += power
+    def eat(self, food):
+        self.score['score'] += food
             
     def die(self):
         self.state = "DEAD"
@@ -111,7 +113,6 @@ class Food:
 
 class GamePacman:
     def __init__(self):
-        self.state = {'score': 0}
         self.path = Turtle(visible=False)
         self.writer = Turtle(visible=False)
         self.pacman = Pacman(-40, -80, 5, 0)
@@ -236,16 +237,16 @@ class GamePacman:
     def draw_score(self):
         self.writer.goto(160, 160)
         self.writer.color('white')
-        self.writer.write(self.state['score'])
+        self.writer.write(self.pacman.score['score'])
 
-        index = self.offset(self.pacman.position)
-        if self.tiles[index] == 1:
-            self.pacman.eat()
+        
+
+    def clear_map(self,index):
             self.tiles[index] = 2
-            self.state['score'] = self.pacman.score
             x = (index % 20) * 20 - 200
             y = 180 - (index // 20) * 20
             self.square(x, y)
+
     
     def create_and_draw_food(self):
         foods_positions = [vector(-180,150),vector(-180,-150),vector(100,150),vector(100,-150)]
@@ -283,6 +284,11 @@ class GamePacman:
             if abs(self.pacman.position - self.food.position) < 20:
                 self.pacman.eat(self.food.power)
                 self.food.captured()
+            index = self.offset(self.pacman.position )
+            if self.tiles[index] == 1:
+                self.pacman.eat(1)
+                self.clear_map(index)
+                
     
     def run(self):
 
@@ -290,11 +296,11 @@ class GamePacman:
         self.draw_score()
         clear()
 
+        self.check_collision()
+
         self.move_and_draw_pacman()
 
         self.move_and_draw_ghost()
-
-        self.check_collision()
         
         self.create_and_draw_food()
 
