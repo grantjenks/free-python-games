@@ -2,9 +2,11 @@
 
 Exercises
 
-1. Move the score variable/attribute to Pacman's class. This attribute must be incremented by a new method in Pacman's code. Chose draw_score according to the needed changes in GamePacman.
+1. Move the score variable/attribute to Pacman's class. This attribute must be incremented by a new method in Pacman's code. 
+    Chose draw_score according to the needed changes in GamePacman.
 2. Create a speed attribute and do the needed changes to change Pacman's speed according to its value.
-3. Create a subclass of Ghosts that each one of them has ghosts with different speeds value (Use the second exercise as an example).
+3. Create a subclass of Ghosts that each one of them has ghosts
+    with different speeds value (Use the second exercise as an example).
 4. Create a superclass for both Pacman and Ghost.
 5. Create different types of food.
 
@@ -14,7 +16,7 @@ from random import choice
 from turtle import bgcolor, clear, up, down, goto, Turtle, dot, update, ontimer, setup, hideturtle, tracer, listen, onkey, done
 from freegames import floor, vector
 
-class Master:
+class Actor:
     speed = 1
     def __init__(self,position_x, position_y,aim_x,aim_y):
         self.position = vector(position_x,position_y)
@@ -23,15 +25,15 @@ class Master:
     def move(self):
         self.position.move(self.aim * self.speed)
 
-class Pacman(Master):
-    score = 0
+class Pacman(Actor):
+    speed = 0
     def __init__(self,position_x, position_y,aim_x,aim_y):
-        super().__init__(position_x, position_y,aim_x,aim_y)
+        super().__init__(position_x, position_y, aim_x, aim_y)
         self.direction = "EAST"
         self.state = "ALIVE"
 
-    def eat(self):
-        self.score +=1
+    def eat(self, power):
+        self.score += power
             
     def die(self):
         self.state = "DEAD"
@@ -73,7 +75,7 @@ class Pacman(Master):
         self.direction, new_aim = self.turn_to_around[self.direction]
         self.aim = new_aim
   
-class Ghost(Master):
+class Ghost(Actor):
     
     def change_direction(self):
         options = [
@@ -91,6 +93,7 @@ class SlowGhost(Ghost):
     speed = 0.5
 
 class Food:
+    power = 5
     def __init__(self, x=None, y=None):
         self.position = vector(x,y)
         self.color = "yellow"
@@ -163,7 +166,6 @@ class GamePacman:
                 self.pacman.right()
             elif self.pacman.direction == "EAST":
                 self.pacman.turn_around()
-
 
     def on_upkeypressed(self):
         if self.valid(self.pacman.next_position(vector(0,5))):
@@ -279,7 +281,7 @@ class GamePacman:
             if abs(self.pacman.position - ghost.position) < 20:
                 self.pacman.die()
             if abs(self.pacman.position - self.food.position) < 20:
-                self.pacman.score += 2
+                self.pacman.eat(self.food.power)
                 self.food.captured()
     
     def run(self):
