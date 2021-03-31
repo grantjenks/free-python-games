@@ -35,7 +35,11 @@ class Pacman(Actor):
         self.state = "ALIVE"
 
     def eat(self, food):
-        self.score['score'] += food
+        if type(food) == Food:
+            self.score['score'] += food.power
+        else:
+            self.score['score'] += food
+            print(food)
             
     def die(self):
         self.state = "DEAD"
@@ -101,15 +105,14 @@ class Food:
         self.color = "yellow"
         self.state = "ABSENT" 
     
-    def captured(self):
-        self.state = "ABSENT"
-    
-    def with_food(self):
-        self.state = "PRESENT"
+    def toggle_state_to_present(self):
+        self.state = 'PRESENT'
 
-    def without_food(self):
-        if self.state == "ABSENT":
-            return True
+    def toggle_state_to_absent(self):
+        self.state = 'ABSENT'
+
+    def is_captured(self):    
+        return self.state == "ABSENT"
 
 class GamePacman:
     def __init__(self):
@@ -239,8 +242,6 @@ class GamePacman:
         self.writer.color('white')
         self.writer.write(self.pacman.score['score'])
 
-        
-
     def clear_map(self,index):
             self.tiles[index] = 2
             x = (index % 20) * 20 - 200
@@ -248,15 +249,16 @@ class GamePacman:
             self.square(x, y)
 
     
-    def create_and_draw_food(self):
+    def move_and_draw_food(self):
         foods_positions = [vector(-180,150),vector(-180,-150),vector(100,150),vector(100,-150)]
-        if self.food.without_food() == True:
+        if self.food.is_captured():
             self.food.position = choice(foods_positions)
         if self.valid(self.food.position):
             up()
             goto(self.food.position.x + 10, self.food.position.y + 10)
             dot(10,self.food.color)
-            self.food.with_food()
+            self.food.toggle_state_to_present()
+            
 
     def move_and_draw_pacman(self):
         if self.valid(self.pacman.next_position()):
@@ -282,8 +284,8 @@ class GamePacman:
             if abs(self.pacman.position - ghost.position) < 20:
                 self.pacman.die()
             if abs(self.pacman.position - self.food.position) < 20:
-                self.pacman.eat(self.food.power)
-                self.food.captured()
+                self.food.toggle_state_to_absent()
+                self.pacman.eat(self.food)
             index = self.offset(self.pacman.position )
             if self.tiles[index] == 1:
                 self.pacman.eat(1)
@@ -302,7 +304,7 @@ class GamePacman:
 
         self.move_and_draw_ghost()
         
-        self.create_and_draw_food()
+        self.move_and_draw_food()
 
         if self.pacman.alive():
             ontimer(self.run, 100)
