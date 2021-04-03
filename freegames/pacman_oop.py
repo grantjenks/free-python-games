@@ -18,7 +18,6 @@ from freegames import floor, vector
 
 class Actor:
     speed = 1
-    score = 0
     def __init__(self,position_x, position_y,aim_x,aim_y):
         self.position = vector(position_x,position_y)
         self.aim = vector(aim_x, aim_y)
@@ -28,18 +27,14 @@ class Actor:
 
 class Pacman(Actor):
     speed = 1
-    score = {'score': 0}
     def __init__(self,position_x, position_y,aim_x,aim_y):
         super().__init__(position_x, position_y, aim_x, aim_y)
         self.direction = "EAST"
         self.state = "ALIVE"
+        self.score = {'score': 0}
 
     def eat(self, food):
-        if type(food) == Food:
             self.score['score'] += food.power
-        else:
-            self.score['score'] += food
-            print(food)
             
     def die(self):
         self.state = "DEAD"
@@ -105,10 +100,10 @@ class Food:
         self.color = "yellow"
         self.state = "ABSENT" 
     
-    def toggle_state_to_present(self):
+    def food_show(self):
         self.state = 'PRESENT'
 
-    def toggle_state_to_absent(self):
+    def food_hide(self):
         self.state = 'ABSENT'
 
     def is_captured(self):    
@@ -257,7 +252,7 @@ class GamePacman:
             up()
             goto(self.food.position.x + 10, self.food.position.y + 10)
             dot(10,self.food.color)
-            self.food.toggle_state_to_present()
+            self.food.food_show()
             
 
     def move_and_draw_pacman(self):
@@ -284,11 +279,11 @@ class GamePacman:
             if abs(self.pacman.position - ghost.position) < 20:
                 self.pacman.die()
             if abs(self.pacman.position - self.food.position) < 20:
-                self.food.toggle_state_to_absent()
+                self.food.food_hide()
                 self.pacman.eat(self.food)
             index = self.offset(self.pacman.position )
             if self.tiles[index] == 1:
-                self.pacman.eat(1)
+                self.pacman.eat(self.food)
                 self.clear_map(index)
                 
     
