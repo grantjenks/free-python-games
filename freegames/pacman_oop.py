@@ -34,7 +34,7 @@ class Pacman(Actor):
         self.score = {'score': 0}
 
     def eat(self, food):
-            self.score['score'] += food.power
+            self.score['score'] += food.energy
             
     def die(self):
         self.state = "DEAD"
@@ -94,7 +94,8 @@ class SlowGhost(Ghost):
     speed = 0.5
 
 class Food:
-    power = 5
+    
+    energy = 1
     def __init__(self, x=None, y=None):
         self.position = vector(x,y)
         self.color = "yellow"
@@ -237,7 +238,7 @@ class GamePacman:
         self.writer.color('white')
         self.writer.write(self.pacman.score['score'])
 
-    def clear_map(self,index):
+    def clear_tile(self,index):
             self.tiles[index] = 2
             x = (index % 20) * 20 - 200
             y = 180 - (index // 20) * 20
@@ -284,7 +285,7 @@ class GamePacman:
             index = self.offset(self.pacman.position )
             if self.tiles[index] == 1:
                 self.pacman.eat(self.food)
-                self.clear_map(index)
+                self.clear_tile(index)
                 
     
     def run(self):
