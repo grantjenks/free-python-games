@@ -101,10 +101,10 @@ class Food:
         self.color = "yellow"
         self.state = "ABSENT" 
     
-    def food_show(self):
+    def show(self):
         self.state = 'PRESENT'
 
-    def food_hide(self):
+    def hide(self):
         self.state = 'ABSENT'
 
     def is_captured(self):    
@@ -253,7 +253,7 @@ class GamePacman:
             up()
             goto(self.food.position.x + 10, self.food.position.y + 10)
             dot(10,self.food.color)
-            self.food.food_show()
+            self.food.show()
             
 
     def move_and_draw_pacman(self):
@@ -280,7 +280,7 @@ class GamePacman:
             if abs(self.pacman.position - ghost.position) < 20:
                 self.pacman.die()
             if abs(self.pacman.position - self.food.position) < 20:
-                self.food.food_hide()
+                self.food.hide()
                 self.pacman.eat(self.food)
             index = self.offset(self.pacman.position )
             if self.tiles[index] == 1:
