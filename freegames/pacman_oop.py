@@ -16,32 +16,26 @@ from random import choice
 from turtle import bgcolor, clear, up, down, goto, Turtle, dot, update, ontimer, setup, hideturtle, tracer, listen, onkey, done
 from freegames import floor, vector
 
-class Actor:
-    speed = 1
+class Pacman:
     def __init__(self,position_x, position_y,aim_x,aim_y):
         self.position = vector(position_x,position_y)
         self.aim = vector(aim_x, aim_y)
-    
-    def move(self):
-        self.position.move(self.aim * self.speed)
-
-class Pacman(Actor):
-    speed = 1
-    def __init__(self,position_x, position_y,aim_x,aim_y):
-        super().__init__(position_x, position_y, aim_x, aim_y)
         self.direction = "EAST"
         self.state = "ALIVE"
-        self.score = {'score': 0}
+        self.score = 0
 
-    def eat(self, food):
-            self.score['score'] += food.energy
-            
+    def move(self):
+        self.position.move(self.aim )
+
+    def eat(self):
+            self.score += 1
+
     def die(self):
         self.state = "DEAD"
-    
+
     def alive(self):
         return self.state != "DEAD"
-    
+
     def next_position(self, aim=None):
         if aim != None :
             new_position = self.position + aim
@@ -71,13 +65,19 @@ class Pacman(Actor):
     def right(self):
         self.direction, new_aim = self.turn_to_right[self.direction]
         self.aim = new_aim
-    
+
     def turn_around(self):
         self.direction, new_aim = self.turn_to_around[self.direction]
         self.aim = new_aim
-  
-class Ghost(Actor):
-    
+
+class Ghost:
+    def __init__(self,position_x, position_y,aim_x,aim_y):
+        self.position = vector(position_x,position_y)
+        self.aim = vector(aim_x, aim_y)
+
+    def move(self):
+        self.position.move(self.aim )
+
     def change_direction(self):
         options = [
             vector(5, 0),
@@ -87,39 +87,15 @@ class Ghost(Actor):
         ]
         self.aim = choice(options)
 
-class FastGhost(Ghost):
-    speed = 2
-
-class SlowGhost(Ghost):
-    speed = 0.5
-
-class Food:
-    
-    energy = 1
-    def __init__(self, x=None, y=None):
-        self.position = vector(x,y)
-        self.color = "yellow"
-        self.state = "ABSENT" 
-    
-    def show(self):
-        self.state = 'PRESENT'
-
-    def hide(self):
-        self.state = 'ABSENT'
-
-    def is_captured(self):    
-        return self.state == "ABSENT"
-
 class GamePacman:
     def __init__(self):
         self.path = Turtle(visible=False)
         self.writer = Turtle(visible=False)
         self.pacman = Pacman(-40, -80, 5, 0)
-        self.food = Food(-160,100)
         self.ghosts = [Ghost(-180,160,5,0),
-                    FastGhost(-180,-160,0,5),
-                    SlowGhost(100,160,0,-5),
-                    FastGhost(100,-160,-5,0)]
+                    Ghost(-180,-160,0,5),
+                    Ghost(100,160,0,-5),
+                    Ghost(100,-160,-5,0)]
         self.tiles = [
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -157,7 +133,7 @@ class GamePacman:
                 self.pacman.left()
             elif self.pacman.direction == "WEST":
                 self.pacman.turn_around()
-    
+
     def on_leftkeypressed(self):
         if self.valid(self.pacman.next_position (vector(-5,0))):
             if self.pacman.direction == 'NORTH':
@@ -196,7 +172,7 @@ class GamePacman:
             self.path.left(90)
         
         self.path.end_fill()
-    
+
     def offset(self,point):
         x = (floor(point.x, 20) + 200) / 20
         y = (180 - floor(point.y, 20)) / 20
@@ -216,7 +192,7 @@ class GamePacman:
             return False
 
         return point.x % 20 == 0 or point.y % 20 == 0
-      
+
     def draw_world(self):
         bgcolor('black')
         self.path.color('blue')
@@ -232,29 +208,20 @@ class GamePacman:
                     self.path.up()
                     self.path.goto(x + 10, y + 10)
                     self.path.dot(2, 'white')
-        
+
     def draw_score(self):
-        self.writer.goto(160, 160)
+        self.writer.goto(140, 160)
         self.writer.color('white')
-        self.writer.write(self.pacman.score['score'])
+        self.writer.clear()
+        self.writer.write('score: ')
+        self.writer.goto(175, 160)
+        self.writer.write(self.pacman.score)
 
     def clear_tile(self,index):
             self.tiles[index] = 2
             x = (index % 20) * 20 - 200
             y = 180 - (index // 20) * 20
             self.square(x, y)
-
-    
-    def move_and_draw_food(self):
-        foods_positions = [vector(-180,150),vector(-180,-150),vector(100,150),vector(100,-150)]
-        if self.food.is_captured():
-            self.food.position = choice(foods_positions)
-        if self.valid(self.food.position):
-            up()
-            goto(self.food.position.x + 10, self.food.position.y + 10)
-            dot(10,self.food.color)
-            self.food.show()
-            
 
     def move_and_draw_pacman(self):
         if self.valid(self.pacman.next_position()):
@@ -279,28 +246,19 @@ class GamePacman:
         for ghost in self.ghosts:
             if abs(self.pacman.position - ghost.position) < 20:
                 self.pacman.die()
-            if abs(self.pacman.position - self.food.position) < 20:
-                self.food.hide()
-                self.pacman.eat(self.food)
+
             index = self.offset(self.pacman.position )
             if self.tiles[index] == 1:
-                self.pacman.eat(self.food)
+                self.pacman.eat()
                 self.clear_tile(index)
-                
     
     def run(self):
-
         self.writer.undo()
         self.draw_score()
         clear()
-
         self.check_collision()
-
         self.move_and_draw_pacman()
-
         self.move_and_draw_ghost()
-        
-        self.move_and_draw_food()
 
         if self.pacman.alive():
             ontimer(self.run, 100)
@@ -314,7 +272,6 @@ def init():
     hideturtle()
     tracer(False)
     listen()
-
     game = GamePacman()
     game.run()
     done()
