@@ -4,6 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
+SPHINXINTL    = python -msphinx_intl
 SPHINXPROJ    = FreeGames
 SOURCEDIR     = .
 BUILDDIR      = _build
@@ -12,7 +13,22 @@ BUILDDIR      = _build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile update-po
+
+update-po: pot
+	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" $(O)
+
+pot: gettext
+	@cp $(BUILDDIR)/gettext/{docs,sphinx}.pot locale/
+
+%-translated: LOCALES = $(patsubst locale/%,%,$(wildcard locale/*))
+%-translated:
+	@for locale in $(LOCALES); do \
+	  SPHINXOPTS="-D language=$$locale"; \
+	  BUILDDIR="$(BUILDDIR)/$$locale"; \
+	  TARGET="$(patsubst %-translated,%,$@)"; \
+	  $(SPHINXBUILD) -M "$$TARGET" "$(SOURCEDIR)" "$$BUILDDIR" $$SPHINXOPTS; \
+	done
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

@@ -1,0 +1,1362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2020, Grant Jenks
+# This file is distributed under the same license as the Free Python Games package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Free Python Games 2.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-18 17:25-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../ant.rst:2
+msgid "Ant"
+msgstr ""
+
+#: ../../ant.rst:4
+msgid "Ant, simple animation demo."
+msgstr ""
+
+#: ../../api.rst:2
+msgid "Free Python Games API Reference"
+msgstr ""
+
+#: ../../api.rst:4
+msgid ":doc:`Free Python Games <index>` includes a few helpful utilities. The best way to expose beginners to these functions is with Python's built-in help function. Learners should be able to understand and write the drawing functions themselves."
+msgstr ""
+
+#: ../../api.rst:13
+msgid "Drawing Functions"
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.line:1
+msgid "Draw line from `(a, b)` to `(x, y)`."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.square:1
+msgid "Draw square at `(x, y)` with side length `size` and fill color `name`."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.square:3
+msgid "The square is oriented so the bottom left corner is at (x, y)."
+msgstr ""
+
+#: ../../api.rst:20
+msgid "Helper Functions"
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.floor:1
+msgid "Floor of `value` given `size` and `offset`."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.floor:3
+msgid "The floor function is best understood with a diagram of the number line::"
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.floor:8
+msgid "The number line shown has offset 200 denoted by the left-hand tick mark at -200 and size 100 denoted by the tick marks at -100, 0, 100, and 200. The floor of a value is the left-hand tick mark of the range where it lies. So for the points show above: ``floor(x)`` is -200, ``floor(y)`` is 0, and ``floor(z)`` is 100."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.path:1
+msgid "Return full path to `filename` in freegames module."
+msgstr ""
+
+#: ../../api.rst:27
+msgid "Vectors"
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector:1
+msgid "Two-dimensional vector."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector:3
+msgid "Vectors can be modified in-place."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector.__init__:1
+msgid "Initialize vector with coordinates: x, y."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector.__add__:1
+msgid "v.__add__(w) -> v + w"
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector.__mul__:1
+msgid "v.__mul__(w) -> v * w"
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector.copy:1
+msgid "Return copy of vector."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector.move:1
+msgid "Move vector by other (in-place)."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector.rotate:1
+msgid "Rotate vector counter-clockwise by angle (in-place)."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.utils.vector.scale:1
+msgid "Scale vector by other (in-place)."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.vector.x:1
+msgid "X-axis component of vector."
+msgstr ""
+
+#: ../../../freegames/utils.py:docstring of freegames.vector.y:1
+msgid "Y-axis component of vector."
+msgstr ""
+
+#: ../../bagels.rst:2
+msgid "Bagels"
+msgstr ""
+
+#: ../../bagels.rst:4
+msgid "Bagels, a number puzzle game."
+msgstr ""
+
+#: ../../bounce.rst:2
+msgid "Bounce"
+msgstr ""
+
+#: ../../bounce.rst:4
+msgid "Bounce, a simple animation demo."
+msgstr ""
+
+#: ../../cannon.rst:2
+#: ../../../README.rst:169
+msgid "Cannon"
+msgstr ""
+
+#: ../../cannon.rst:4
+msgid "Cannon, hitting targets with projectiles."
+msgstr ""
+
+#: ../../connect.rst:2
+msgid "Connect Four"
+msgstr ""
+
+#: ../../connect.rst:4
+msgid "Connect Four, two-player connection game."
+msgstr ""
+
+#: ../../crypto.rst:2
+msgid "Crypto"
+msgstr ""
+
+#: ../../crypto.rst:4
+msgid "Crypto: tool for encrypting and decrypting messages."
+msgstr ""
+
+#: ../../curriculum.rst:2
+msgid "Free Python Games Curriculum"
+msgstr ""
+
+#: ../../curriculum.rst:4
+msgid "What follows are notes for a week-long curriculum developed for Maker Camp at The River Church Community. Maker Camp was a summer day camp for Middle School students in the California Bay Area."
+msgstr ""
+
+#: ../../curriculum.rst:8
+msgid "Each game has exercises at the top."
+msgstr ""
+
+#: ../../curriculum.rst:9
+msgid "Visualize code with http://pythontutor.com"
+msgstr ""
+
+#: ../../curriculum.rst:10
+msgid "Extras: $ python3 -m turtledemo"
+msgstr ""
+
+#: ../../curriculum.rst:14
+msgid "Day 1"
+msgstr ""
+
+#: ../../curriculum.rst:16
+msgid "What is a computer? Calculator + Clock."
+msgstr ""
+
+#: ../../curriculum.rst:17
+msgid "Discuss Alan Turing and Turing Machines."
+msgstr ""
+
+#: ../../curriculum.rst:18
+msgid "Discuss John Von Neumann and Von Neumann Machines."
+msgstr ""
+
+#: ../../curriculum.rst:19
+msgid "What is a program? Computer Recipe."
+msgstr ""
+
+#: ../../curriculum.rst:20
+msgid "Introduce Terminal, black background, give the computer commands."
+msgstr ""
+
+#: ../../curriculum.rst:21
+msgid "Introduce Python Shell, white background, write Python statements."
+msgstr ""
+
+#: ../../curriculum.rst:22
+msgid "Activity: connect and decorate computers."
+msgstr ""
+
+#: ../../curriculum.rst:23
+msgid "Problem solving: divide and conquer."
+msgstr ""
+
+#: ../../curriculum.rst:24
+msgid "Statements: assignment, if/elif/else, while, import"
+msgstr ""
+
+#: ../../curriculum.rst:25
+msgid "Data types: int, str"
+msgstr ""
+
+#: ../../curriculum.rst:26
+msgid "Functions: print, help, int"
+msgstr ""
+
+#: ../../curriculum.rst:27
+msgid "Modules: random"
+msgstr ""
+
+#: ../../curriculum.rst:30
+#: ../../curriculum.rst:70
+#: ../../curriculum.rst:115
+#: ../../curriculum.rst:157
+#: ../../curriculum.rst:184
+msgid "Games"
+msgstr ""
+
+#: ../../curriculum.rst:32
+msgid ":doc:`guess`.py - Guess number within range."
+msgstr ""
+
+#: ../../curriculum.rst:34
+msgid "Explain: from random import randint"
+msgstr ""
+
+#: ../../curriculum.rst:35
+msgid "randint(...)"
+msgstr ""
+
+#: ../../curriculum.rst:36
+msgid "Variables"
+msgstr ""
+
+#: ../../curriculum.rst:37
+msgid "Equality"
+msgstr ""
+
+#: ../../curriculum.rst:38
+msgid "print(...)"
+msgstr ""
+
+#: ../../curriculum.rst:39
+msgid "Inequality"
+msgstr ""
+
+#: ../../curriculum.rst:40
+msgid "input(...)"
+msgstr ""
+
+#: ../../curriculum.rst:41
+msgid "int(...)"
+msgstr ""
+
+#: ../../curriculum.rst:42
+msgid "Increase range to 1,000 and guess the number."
+msgstr ""
+
+#: ../../curriculum.rst:43
+msgid "Discuss method of guessing. That's an algorithm!"
+msgstr ""
+
+#: ../../curriculum.rst:45
+msgid ":doc:`snake`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:48
+#: ../../curriculum.rst:97
+#: ../../curriculum.rst:139
+#: ../../curriculum.rst:166
+#: ../../curriculum.rst:191
+msgid "Bible Story"
+msgstr ""
+
+#: ../../curriculum.rst:50
+msgid "Genesis 1 - God the Creator (Creation)"
+msgstr ""
+
+#: ../../curriculum.rst:52
+msgid "What did God do at the beginning?"
+msgstr ""
+
+#: ../../curriculum.rst:53
+msgid "What did God see in creation?"
+msgstr ""
+
+#: ../../curriculum.rst:54
+msgid "What is special about people?"
+msgstr ""
+
+#: ../../curriculum.rst:55
+msgid "Why do we create things?"
+msgstr ""
+
+#: ../../curriculum.rst:59
+msgid "Day 2"
+msgstr ""
+
+#: ../../curriculum.rst:61
+msgid "Activity: Blind partner obstacle course."
+msgstr ""
+
+#: ../../curriculum.rst:62
+msgid "Problem solving: brute-force."
+msgstr ""
+
+#: ../../curriculum.rst:63
+msgid "Famous Christian programmer: Donald Knuth"
+msgstr ""
+
+#: ../../curriculum.rst:64
+msgid "Statements: try/except, for, def"
+msgstr ""
+
+#: ../../curriculum.rst:65
+msgid "Data types: float, bool"
+msgstr ""
+
+#: ../../curriculum.rst:66
+msgid "Functions: type, dir, str, ord, chr"
+msgstr ""
+
+#: ../../curriculum.rst:67
+msgid "Modules: turtle"
+msgstr ""
+
+#: ../../curriculum.rst:72
+msgid ":doc:`crypto`.py - Encrypt, decrypt and decode messages."
+msgstr ""
+
+#: ../../curriculum.rst:74
+msgid "ord function and chr function"
+msgstr ""
+
+#: ../../curriculum.rst:75
+msgid "modulo operator"
+msgstr ""
+
+#: ../../curriculum.rst:76
+msgid "Write decode function"
+msgstr ""
+
+#: ../../curriculum.rst:77
+msgid "Encrypt numbers"
+msgstr ""
+
+#: ../../curriculum.rst:79
+msgid ":doc:`paint`.py - Draw shapes."
+msgstr ""
+
+#: ../../curriculum.rst:81
+msgid "Draw line"
+msgstr ""
+
+#: ../../curriculum.rst:82
+msgid "Draw square"
+msgstr ""
+
+#: ../../curriculum.rst:83
+msgid "for-statement, range function."
+msgstr ""
+
+#: ../../curriculum.rst:84
+msgid "Draw five-pointed star: forward(50); right(144) (x5)"
+msgstr ""
+
+#: ../../curriculum.rst:85
+msgid "Draw six-pointed star: forward(50); left(60); forward(50); right(120) (x6)"
+msgstr ""
+
+#: ../../curriculum.rst:86
+#: ../../give-gift-python.rst:141
+msgid "help(...)"
+msgstr ""
+
+#: ../../curriculum.rst:87
+#: ../../give-gift-python.rst:142
+msgid "undo(...)"
+msgstr ""
+
+#: ../../curriculum.rst:88
+msgid "def-statement, refactor code to star function"
+msgstr ""
+
+#: ../../curriculum.rst:89
+msgid "color('green'); color('blue', 'yellow')"
+msgstr ""
+
+#: ../../curriculum.rst:90
+msgid "begin_fill(); end_fill()"
+msgstr ""
+
+#: ../../curriculum.rst:91
+msgid "width function"
+msgstr ""
+
+#: ../../curriculum.rst:92
+msgid "Write polygon(sides, length) function"
+msgstr ""
+
+#: ../../curriculum.rst:94
+msgid ":doc:`flappy`.py - Flappy Bird inspired game."
+msgstr ""
+
+#: ../../curriculum.rst:99
+msgid "Genesis 6:5-22 - God the Engineer (Noah)"
+msgstr ""
+
+#: ../../curriculum.rst:101
+msgid "Why did God regret making people?"
+msgstr ""
+
+#: ../../curriculum.rst:102
+msgid "How was Noah different?"
+msgstr ""
+
+#: ../../curriculum.rst:103
+msgid "What was God's plan?"
+msgstr ""
+
+#: ../../curriculum.rst:104
+msgid "How are we washed today?"
+msgstr ""
+
+#: ../../curriculum.rst:108
+msgid "Day 3"
+msgstr ""
+
+#: ../../curriculum.rst:110
+msgid "Activity: Simon Says"
+msgstr ""
+
+#: ../../curriculum.rst:111
+msgid "Famous Christian programmer: Fred Brooks"
+msgstr ""
+
+#: ../../curriculum.rst:112
+msgid "Functions: onscreenclick, onkey, ontimer"
+msgstr ""
+
+#: ../../curriculum.rst:117
+msgid ":doc:`bagels`.py - Digit guessing puzzle."
+msgstr ""
+
+#: ../../curriculum.rst:118
+#: ../../give-gift-python.rst:120
+msgid "Animation"
+msgstr ""
+
+#: ../../curriculum.rst:120
+msgid "Draw arc: circle(100, 90)"
+msgstr ""
+
+#: ../../curriculum.rst:121
+msgid "flower(...)"
+msgstr ""
+
+#: ../../curriculum.rst:122
+msgid "Draw flower and rotate"
+msgstr ""
+
+#: ../../curriculum.rst:123
+msgid "ontimer(...)"
+msgstr ""
+
+#: ../../curriculum.rst:124
+msgid "hideturtle(); tracer(False); polygon(4, 200); update()"
+msgstr ""
+
+#: ../../curriculum.rst:126
+msgid ":doc:`tictactoe`.py - Tic-tac-toe."
+msgstr ""
+
+#: ../../curriculum.rst:128
+msgid "line(...)"
+msgstr ""
+
+#: ../../curriculum.rst:129
+msgid "grid(...)"
+msgstr ""
+
+#: ../../curriculum.rst:130
+msgid "drawx(...)"
+msgstr ""
+
+#: ../../curriculum.rst:131
+msgid "drawo(...)"
+msgstr ""
+
+#: ../../curriculum.rst:132
+msgid "floor(...)"
+msgstr ""
+
+#: ../../curriculum.rst:133
+msgid "onscreenclick(goto)"
+msgstr ""
+
+#: ../../curriculum.rst:135
+msgid ":doc:`simonsays`.py - Simon Says"
+msgstr ""
+
+#: ../../curriculum.rst:136
+msgid ":doc:`cannon`.py - Hitting targets with projectiles."
+msgstr ""
+
+#: ../../curriculum.rst:141
+msgid "Mark 1:1-18 - God the Programmer (\"fishers of people\")"
+msgstr ""
+
+#: ../../curriculum.rst:143
+msgid "What did Isaiah say would happen?"
+msgstr ""
+
+#: ../../curriculum.rst:144
+msgid "What did John the Baptist say would happen?"
+msgstr ""
+
+#: ../../curriculum.rst:145
+msgid "What did God say about Jesus? When?"
+msgstr ""
+
+#: ../../curriculum.rst:146
+msgid "How did Jesus give his disciples new jobs?"
+msgstr ""
+
+#: ../../curriculum.rst:150
+msgid "Day 4"
+msgstr ""
+
+#: ../../curriculum.rst:152
+msgid "Activity: Collage of concepts."
+msgstr ""
+
+#: ../../curriculum.rst:153
+msgid "Famous Christian programmer: Larry Wall"
+msgstr ""
+
+#: ../../curriculum.rst:154
+msgid "Data types: list, dict, vector"
+msgstr ""
+
+#: ../../curriculum.rst:159
+msgid ":doc:`bounce`.py - Simple animation demo."
+msgstr ""
+
+#: ../../curriculum.rst:160
+msgid ":doc:`pong`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:161
+msgid ":doc:`ant`.py - Simple animation demo."
+msgstr ""
+
+#: ../../curriculum.rst:162
+msgid ":doc:`tron`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:163
+msgid ":doc:`tiles`.py - Puzzle game of number shuffling."
+msgstr ""
+
+#: ../../curriculum.rst:168
+msgid "John 9:1-33 - God the Debugger (Blind Man and Jesus)"
+msgstr ""
+
+#: ../../curriculum.rst:170
+msgid "What does Jesus tell the disciples?"
+msgstr ""
+
+#: ../../curriculum.rst:171
+msgid "What does the man tell the Pharisees?"
+msgstr ""
+
+#: ../../curriculum.rst:172
+msgid "What does the man believe about Jesus?"
+msgstr ""
+
+#: ../../curriculum.rst:173
+msgid "What do you believe about Jesus?"
+msgstr ""
+
+#: ../../curriculum.rst:177
+msgid "Day 5"
+msgstr ""
+
+#: ../../curriculum.rst:179
+msgid "Activity: Make or modify your own game."
+msgstr ""
+
+#: ../../curriculum.rst:180
+msgid "Famous Christian programmer: Jon Skeet"
+msgstr ""
+
+#: ../../curriculum.rst:181
+msgid "Answer: What next?"
+msgstr ""
+
+#: ../../curriculum.rst:186
+msgid ":doc:`connect`.py - Connect Four"
+msgstr ""
+
+#: ../../curriculum.rst:187
+msgid ":doc:`memory`.py - Puzzle game of number pairs."
+msgstr ""
+
+#: ../../curriculum.rst:188
+msgid ":doc:`pacman`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:193
+msgid "Revelation 21 - God the Restorer (New Heaven and New Earth)"
+msgstr ""
+
+#: ../../curriculum.rst:195
+msgid "What does God make? When?"
+msgstr ""
+
+#: ../../curriculum.rst:196
+msgid "Who is the Lamb and the Bride?"
+msgstr ""
+
+#: ../../curriculum.rst:197
+msgid "What is special about the city?"
+msgstr ""
+
+#: ../../curriculum.rst:198
+msgid "How can we live in the Holy City?"
+msgstr ""
+
+#: ../../development.rst:2
+msgid "Free Python Games Development"
+msgstr ""
+
+#: ../../development.rst:4
+msgid ":doc:`Free Python Games <index>` development is lead by Grant Jenks <contact@grantjenks.com>."
+msgstr ""
+
+#: ../../development.rst:8
+msgid "Collaborators Welcome"
+msgstr ""
+
+#: ../../development.rst:10
+msgid "Search issues or open a new issue to start a discussion around a bug."
+msgstr ""
+
+#: ../../development.rst:11
+msgid "Fork the `GitHub repository`_ and make your changes in a new branch."
+msgstr ""
+
+#: ../../development.rst:12
+msgid "Write a test which shows the bug was fixed."
+msgstr ""
+
+#: ../../development.rst:13
+msgid "Send a pull request and message the development lead until its merged and published."
+msgstr ""
+
+#: ../../development.rst:19
+msgid "Requests for Contributions"
+msgstr ""
+
+#: ../../development.rst:21
+msgid "Simplifications to existing games."
+msgstr ""
+
+#: ../../development.rst:22
+msgid "Refactoring to simplify games."
+msgstr ""
+
+#: ../../development.rst:23
+msgid "Improved documentation."
+msgstr ""
+
+#: ../../development.rst:24
+msgid "Additional games. Requirements for new games:"
+msgstr ""
+
+#: ../../development.rst:26
+msgid "Fun to play."
+msgstr ""
+
+#: ../../development.rst:27
+msgid "Matching code style."
+msgstr ""
+
+#: ../../development.rst:28
+msgid "Limited Python feature set."
+msgstr ""
+
+#: ../../development.rst:29
+msgid "Short (less than 100 lines of code)."
+msgstr ""
+
+#: ../../development.rst:32
+msgid "Get the Code"
+msgstr ""
+
+#: ../../development.rst:34
+msgid ":doc:`Free Python Games <index>` is actively developed in a `GitHub repository`_."
+msgstr ""
+
+#: ../../development.rst:37
+msgid "You can either clone the public repository::"
+msgstr ""
+
+#: ../../development.rst:41
+msgid "Download the `tarball <https://github.com/grantjenks/free-python-games/tarball/master>`_::"
+msgstr ""
+
+#: ../../development.rst:45
+msgid "Or, download the `zipball <https://github.com/grantjenks/free-python-games/zipball/master>`_::"
+msgstr ""
+
+#: ../../development.rst:50
+msgid "Installing Dependencies"
+msgstr ""
+
+#: ../../development.rst:52
+msgid "Install development dependencies with `pip <http://www.pip-installer.org/>`_::"
+msgstr ""
+
+#: ../../development.rst:56
+msgid "All packages for running tests and building documentation will be installed."
+msgstr ""
+
+#: ../../development.rst:59
+msgid "Testing"
+msgstr ""
+
+#: ../../development.rst:61
+msgid ":doc:`Free Python Games <index>` currently tests against three versions of Python:"
+msgstr ""
+
+#: ../../development.rst:64
+msgid "CPython 3.4"
+msgstr ""
+
+#: ../../development.rst:65
+msgid "CPython 3.5"
+msgstr ""
+
+#: ../../development.rst:66
+msgid "CPython 3.6"
+msgstr ""
+
+#: ../../development.rst:68
+msgid "Testing uses `tox <https://pypi.python.org/pypi/tox>`_. If you don't want to install all the development requirements, then, after downloading, you can simply run::"
+msgstr ""
+
+#: ../../development.rst:74
+msgid "The test argument to setup.py will download a minimal testing infrastructure and run the tests."
+msgstr ""
+
+#: ../../fidget.rst:2
+#: ../../../README.rst:295
+msgid "Fidget"
+msgstr ""
+
+#: ../../fidget.rst:4
+msgid "Fidget, inspired by fidget spinners."
+msgstr ""
+
+#: ../../flappy.rst:2
+#: ../../../README.rst:192
+msgid "Flappy"
+msgstr ""
+
+#: ../../flappy.rst:4
+msgid "Flappy, game inspired by Flappy Bird."
+msgstr ""
+
+#: ../../give-gift-python.rst:2
+msgid "Give the Gift of Python"
+msgstr ""
+
+#: ../../give-gift-python.rst:4
+msgid "*Talk given at SF Python Holiday Party on December 5, 2018.*"
+msgstr ""
+
+#: ../../give-gift-python.rst:7
+msgid "Who am I?"
+msgstr ""
+
+#: ../../give-gift-python.rst:9
+msgid "Python programmer."
+msgstr ""
+
+#: ../../give-gift-python.rst:10
+msgid "Hundreds of hours of classroom instruction."
+msgstr ""
+
+#: ../../give-gift-python.rst:13
+msgid "What we need?"
+msgstr ""
+
+#: ../../give-gift-python.rst:15
+msgid "Interest!"
+msgstr ""
+
+#: ../../give-gift-python.rst:16
+msgid "Typing skills."
+msgstr ""
+
+#: ../../give-gift-python.rst:17
+msgid "Math: Arithmetic, Algebra, Geometry"
+msgstr ""
+
+#: ../../give-gift-python.rst:20
+msgid "Setup"
+msgstr ""
+
+#: ../../give-gift-python.rst:22
+msgid "Install Python, https://www.python.org/"
+msgstr ""
+
+#: ../../give-gift-python.rst:23
+msgid "Run IDLE, ``$ python -m idlelib.idle``"
+msgstr ""
+
+#: ../../give-gift-python.rst:24
+msgid "Write code."
+msgstr ""
+
+#: ../../give-gift-python.rst:27
+msgid "Open the Turtle Window"
+msgstr ""
+
+#: ../../give-gift-python.rst:35
+msgid "Commands"
+msgstr ""
+
+#: ../../give-gift-python.rst:49
+msgid "Loops"
+msgstr ""
+
+#: ../../give-gift-python.rst:59
+msgid "Shapes"
+msgstr ""
+
+#: ../../give-gift-python.rst:71
+msgid "Dots"
+msgstr ""
+
+#: ../../give-gift-python.rst:79
+msgid "Functions"
+msgstr ""
+
+#: ../../give-gift-python.rst:93
+msgid "Colors"
+msgstr ""
+
+#: ../../give-gift-python.rst:102
+msgid "Locations"
+msgstr ""
+
+#: ../../give-gift-python.rst:113
+msgid "Inputs"
+msgstr ""
+
+#: ../../give-gift-python.rst:115
+msgid "listen"
+msgstr ""
+
+#: ../../give-gift-python.rst:116
+msgid "onclick"
+msgstr ""
+
+#: ../../give-gift-python.rst:117
+msgid "onkey"
+msgstr ""
+
+#: ../../give-gift-python.rst:122
+msgid "ontimer"
+msgstr ""
+
+#: ../../give-gift-python.rst:123
+msgid "hideturtle"
+msgstr ""
+
+#: ../../give-gift-python.rst:124
+msgid "tracer"
+msgstr ""
+
+#: ../../give-gift-python.rst:125
+msgid "clear"
+msgstr ""
+
+#: ../../give-gift-python.rst:126
+msgid "update"
+msgstr ""
+
+#: ../../give-gift-python.rst:139
+msgid "Tips"
+msgstr ""
+
+#: ../../give-gift-python.rst:143
+msgid "Embrace copy/paste"
+msgstr ""
+
+#: ../../give-gift-python.rst:144
+msgid "Close window/reset()"
+msgstr ""
+
+#: ../../give-gift-python.rst:147
+msgid "Activities"
+msgstr ""
+
+#: ../../give-gift-python.rst:149
+msgid "Spell your name."
+msgstr ""
+
+#: ../../give-gift-python.rst:150
+msgid "``python -m pip install freegames``"
+msgstr ""
+
+#: ../../give-gift-python.rst:153
+msgid "Notes"
+msgstr ""
+
+#: ../../give-gift-python.rst:155
+msgid "Start simple! Start easy! Start plain!"
+msgstr ""
+
+#: ../../give-gift-python.rst:156
+msgid "Focus on fun! No PEP8. No Pylint."
+msgstr ""
+
+#: ../../give-gift-python.rst:157
+msgid "Make it readable! Say it aloud."
+msgstr ""
+
+#: ../../give-gift-python.rst:158
+msgid "No special shells! No IPython."
+msgstr ""
+
+#: ../../give-gift-python.rst:159
+msgid "Show them mistakes! Red is your favorite color!"
+msgstr ""
+
+#: ../../give-gift-python.rst:160
+msgid "No virtual environments!"
+msgstr ""
+
+#: ../../give-gift-python.rst:161
+msgid "If they're not ready, don't push them!"
+msgstr ""
+
+#: ../../give-gift-python.rst:162
+msgid "No dunder methods or attributes! No __name__ or __main__."
+msgstr ""
+
+#: ../../guess.rst:2
+msgid "Guess"
+msgstr ""
+
+#: ../../guess.rst:4
+msgid "Guess a number within a range."
+msgstr ""
+
+#: ../../../README.rst:2
+msgid "Free Python Games"
+msgstr ""
+
+#: ../../../README.rst:4
+msgid "`Free Python Games`_ is an Apache2 licensed collection of free Python games intended for education and fun. The games are written in simple Python code and designed for experimentation and changes. Simplified versions of several classic arcade games are included."
+msgstr ""
+
+#: ../../../README.rst:9
+msgid "Python is one of the top-five most popular programming languages in the world and available for free from `Python.org <https://www.python.org/>`_. Python includes an extensive Standard Library distributed with your installation. The Standard Library has a module called Turtle which is a popular way to introduce programming to kids. Turtle was part of the original Logo programming language developed by Wally Feurzig and Seymour Papert in 1966. All of the games in `Free Python Games`_ are implemented using Python and its Turtle module."
+msgstr ""
+
+#: ../../../README.rst:17
+msgid "Starting in 2012, `Free Python Games`_ began as an after school program to teach programming to inner-city youth. The goal was to have fun as much as it was to learn. Since then the games have been improved and used in a variety of settings ranging from classrooms to summer day-camps."
+msgstr ""
+
+#: ../../../README.rst:22
+msgid "The games run anywhere Python can be installed which includes desktop computers running Windows, Mac OS, or Linux and older or low-power hardware such as the Raspberry Pi. Kids across the United States in grades 6th-12th have enjoyed learning about topics such as encryption and projectile motion through games."
+msgstr ""
+
+#: ../../../README.rst:27
+msgid "Each game is entirely independent from the others and includes comments along with a list of exercises to work through with students. Creativity and flexibility is important. There is no right or wrong way to implement a new feature or behavior! You never know which games students will engage with best."
+msgstr ""
+
+#: ../../../README.rst:36
+msgid "Testimonials"
+msgstr ""
+
+#: ../../../README.rst:38
+msgid "*\"I love Free Python Games because the games are fun and they're easy to understand and change. I like making my own games now.\"*"
+msgstr ""
+
+#: ../../../README.rst:41
+msgid "-- Luke Martin, Student"
+msgstr ""
+
+#: ../../../README.rst:43
+msgid "*\"Free Python Games inspired and introduced a new hobby to our son. Thank you so much for exposing him to coding. He is having so much fun!\"*"
+msgstr ""
+
+#: ../../../README.rst:46
+msgid "-- Mary Lai, Parent"
+msgstr ""
+
+#: ../../../README.rst:48
+msgid "*\"Free Python Games are great because they really engage students and let them learn at their own pace.\"*"
+msgstr ""
+
+#: ../../../README.rst:51
+msgid "-- Rick Schertle, Teacher, Steindorf STEAM School"
+msgstr ""
+
+#: ../../../README.rst:53
+msgid "*\"Free Python Games combines play and learning in a flexible environment that reduces the stress of a difficult topic like programming.\"*"
+msgstr ""
+
+#: ../../../README.rst:56
+msgid "-- Brett Bymaster, Youth Pastor, The River Church Community"
+msgstr ""
+
+#: ../../../README.rst:58
+msgid "*\"Free Python Games is great for students, is highly organized and flexible, and seeks to unleash inquiry and understanding.\"*"
+msgstr ""
+
+#: ../../../README.rst:61
+msgid "-- Terri Furton, Principal, Downtown College Prep"
+msgstr ""
+
+#: ../../../README.rst:65
+msgid "Features"
+msgstr ""
+
+#: ../../../README.rst:67
+msgid "Fun to play!"
+msgstr ""
+
+#: ../../../README.rst:68
+msgid "Simple Python code"
+msgstr ""
+
+#: ../../../README.rst:69
+msgid "Easy to install"
+msgstr ""
+
+#: ../../../README.rst:70
+msgid "Designed for education"
+msgstr ""
+
+#: ../../../README.rst:71
+msgid "Depends only on the Python Standard Library"
+msgstr ""
+
+#: ../../../README.rst:72
+msgid "Used in hundreds of hours of classroom instruction"
+msgstr ""
+
+#: ../../../README.rst:73
+msgid "Fully Documented"
+msgstr ""
+
+#: ../../../README.rst:74
+msgid "100% Test Coverage"
+msgstr ""
+
+#: ../../../README.rst:75
+msgid "Developed on Python 3.7"
+msgstr ""
+
+#: ../../../README.rst:76
+msgid "Tested on CPython 2.7, 3.4, 3.5, 3.6, and 3.7"
+msgstr ""
+
+#: ../../../README.rst:77
+msgid "Tested on Windows, Mac OS X, Raspbian (Raspberry Pi), and Linux"
+msgstr ""
+
+#: ../../../README.rst:78
+msgid "Tested using Travis CI and AppVeyor CI"
+msgstr ""
+
+#: ../../../README.rst:88
+msgid "Quickstart"
+msgstr ""
+
+#: ../../../README.rst:90
+msgid "Installing Free Python Games is simple with `pip <https://pypi.python.org/pypi/pip>`_::"
+msgstr ""
+
+#: ../../../README.rst:95
+msgid "Free Python Games supports a command-line interface (CLI). Help for the CLI is available using::"
+msgstr ""
+
+#: ../../../README.rst:100
+msgid "The CLI supports three commands: list, copy, and show. For a list of all games run::"
+msgstr ""
+
+#: ../../../README.rst:105
+msgid "Any of the listed games may be played by executing the Python module from the command-line. To reference the Python module, combine \"freegames\" with the name of the game. For example, to play the \"snake\" game run::"
+msgstr ""
+
+#: ../../../README.rst:111
+msgid "Games can be modified by copying their source code. The copy command will create a Python file in your local directory which you can edit. For example, to copy and play the \"snake\" game run::"
+msgstr ""
+
+#: ../../../README.rst:118
+msgid "Python includes a built-in text editor named IDLE which can also execute Python code. To launch the editor and make changes to the \"snake\" game run::"
+msgstr ""
+
+#: ../../../README.rst:123
+msgid "You can also access documentation in the interpreter with Python's built-in help function::"
+msgstr ""
+
+#: ../../../README.rst:131
+msgid "Free Games"
+msgstr ""
+
+#: ../../../README.rst:134
+#: ../../paint.rst:2
+msgid "Paint"
+msgstr ""
+
+#: ../../../README.rst:136
+msgid "`Paint`_ -- draw lines and shapes on the screen. Click to mark the start of a shape and click again to mark its end. Different shapes and colors can be selected using the keyboard."
+msgstr ""
+
+#: ../../../README.rst:146
+#: ../../snake.rst:2
+msgid "Snake"
+msgstr ""
+
+#: ../../../README.rst:148
+msgid "`Snake`_ -- classic arcade game. Use the arrow keys to navigate and eat the green food. Each time the food is consumed, the snake grows one segment longer. Avoid eating yourself or going out of bounds!"
+msgstr ""
+
+#: ../../../README.rst:158
+#: ../../pacman.rst:2
+msgid "Pacman"
+msgstr ""
+
+#: ../../../README.rst:160
+msgid "`Pacman`_ -- classic arcade game. Use the arrow keys to navigate and eat all the white food. Watch out for red ghosts that roam the maze."
+msgstr ""
+
+#: ../../../README.rst:171
+msgid "`Cannon`_ -- projectile motion. Click the screen to fire your cannnonball. The cannonball pops blue balloons in its path. Pop all the balloons before they can cross the screen."
+msgstr ""
+
+#: ../../../README.rst:181
+msgid "Connect"
+msgstr ""
+
+#: ../../../README.rst:183
+msgid "`Connect`_ -- Connect 4 game. Click a row to drop a disc. The first player to connect four discs vertically, horizontally, or diagonally wins!"
+msgstr ""
+
+#: ../../../README.rst:194
+msgid "`Flappy`_ -- Flappy-bird inspired game. Click the screen to flap your wings. Watch out for black ravens as you fly across the screen."
+msgstr ""
+
+#: ../../../README.rst:203
+#: ../../memory.rst:2
+msgid "Memory"
+msgstr ""
+
+#: ../../../README.rst:205
+msgid "`Memory`_ -- puzzle game of number pairs. Click a tile to reveal a number. Match two numbers and the tiles will disappear to reveal an image."
+msgstr ""
+
+#: ../../../README.rst:214
+#: ../../pong.rst:2
+msgid "Pong"
+msgstr ""
+
+#: ../../../README.rst:216
+msgid "`Pong`_ -- classic arcade game. Use the keyboard to move your paddle up and down. The first player to miss the ball loses."
+msgstr ""
+
+#: ../../../README.rst:225
+#: ../../simonsays.rst:2
+msgid "Simon Says"
+msgstr ""
+
+#: ../../../README.rst:227
+msgid "`Simon Says`_ -- classic memory puzzle game. Click the screen to start. Watch the pattern and then click the tiles in the same order. Each time you get the sequence right the pattern gets one step longer."
+msgstr ""
+
+#: ../../../README.rst:237
+#: ../../tictactoe.rst:2
+msgid "Tic Tac Toe"
+msgstr ""
+
+#: ../../../README.rst:239
+msgid "`Tic Tac Toe`_ -- classic game. Click the screen to place an X or O. Connect three in a row and you win!"
+msgstr ""
+
+#: ../../../README.rst:248
+#: ../../tiles.rst:2
+msgid "Tiles"
+msgstr ""
+
+#: ../../../README.rst:250
+msgid "`Tiles`_ -- puzzle game of sliding numbers into place. Click a tile adjacent to the empty square to swap positions. Can you make the tiles count one to fifteen from left to right and bottom to top?"
+msgstr ""
+
+#: ../../../README.rst:260
+#: ../../tron.rst:2
+msgid "Tron"
+msgstr ""
+
+#: ../../../README.rst:262
+msgid "`Tron`_ -- classic arcade game. Use the keyboard to change the direction of your Tron player. Avoid touching the line drawn by your opponent."
+msgstr ""
+
+#: ../../../README.rst:271
+#: ../../life.rst:2
+msgid "Life"
+msgstr ""
+
+#: ../../../README.rst:273
+msgid "`Life`_ -- Conway's Game of Life. The classic, zero-player, cellular automation created in 1970 by John Conway."
+msgstr ""
+
+#: ../../../README.rst:282
+#: ../../maze.rst:2
+msgid "Maze"
+msgstr ""
+
+#: ../../../README.rst:284
+msgid "`Maze`_ -- move from one side to another. Inspired by `A Universe in One Line of Code with 10 PRINT`_. Tap the screen to trace a path from one side to another."
+msgstr ""
+
+#: ../../../README.rst:297
+msgid "`Fidget`_ -- fidget spinner inspired animation. Click the screen to accelerate the fidget spinner."
+msgstr ""
+
+#: ../../../README.rst:307
+msgid "User Guide"
+msgstr ""
+
+#: ../../../README.rst:309
+msgid "For those wanting more details, this part of the documentation describes curriculum, API, and development."
+msgstr ""
+
+#: ../../../README.rst:312
+msgid "`Talk: Give the Gift of Python`_"
+msgstr ""
+
+#: ../../../README.rst:313
+msgid "`Free Python Games Curriculum`_"
+msgstr ""
+
+#: ../../../README.rst:314
+msgid "`Free Python Games API Reference`_"
+msgstr ""
+
+#: ../../../README.rst:315
+msgid "`Free Python Games Development`_"
+msgstr ""
+
+#: ../../../README.rst:324
+msgid "References"
+msgstr ""
+
+#: ../../../README.rst:326
+msgid "`Free Python Games Documentation`_"
+msgstr ""
+
+#: ../../../README.rst:327
+msgid "`Free Python Games at PyPI`_"
+msgstr ""
+
+#: ../../../README.rst:328
+msgid "`Free Python Games at GitHub`_"
+msgstr ""
+
+#: ../../../README.rst:329
+msgid "`Free Python Games Issue Tracker`_"
+msgstr ""
+
+#: ../../../README.rst:338
+msgid "Free Python Games License"
+msgstr ""
+
+#: ../../../README.rst:340
+msgid "Copyright 2017-2020 Grant Jenks"
+msgstr ""
+
+#: ../../../README.rst:342
+msgid "Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.  You may obtain a copy of the License at"
+msgstr ""
+
+#: ../../../README.rst:346
+msgid "http://www.apache.org/licenses/LICENSE-2.0"
+msgstr ""
+
+#: ../../../README.rst:348
+msgid "Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License."
+msgstr ""
+
+#: ../../life.rst:4
+msgid "Game of Life simulation."
+msgstr ""
+
+#: ../../maze.rst:4
+msgid "Maze, move from one side to another."
+msgstr ""
+
+#: ../../memory.rst:4
+msgid "Memory, puzzle game of number pairs."
+msgstr ""
+
+#: ../../pacman.rst:4
+msgid "Pacman, classic arcade game."
+msgstr ""
+
+#: ../../paint.rst:4
+msgid "Paint, for drawing shapes."
+msgstr ""
+
+#: ../../pong.rst:4
+msgid "Pong, classic arcade game."
+msgstr ""
+
+#: ../../simonsays.rst:4
+msgid "A game of watching and recalling patterns."
+msgstr ""
+
+#: ../../snake.rst:4
+msgid "Snake, classic arcade game."
+msgstr ""
+
+#: ../../tictactoe.rst:4
+msgid "A paper-and-pencil game for two players."
+msgstr ""
+
+#: ../../tiles.rst:4
+msgid "Tiles, number swapping game."
+msgstr ""
+
+#: ../../tron.rst:4
+msgid "Tron, classic arcade game."
+msgstr ""
