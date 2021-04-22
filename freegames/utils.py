@@ -477,7 +477,7 @@ class vector(collections.Sequence):
 
         >>> v = vector(4, 3)
         >>> v.mag()
-        5
+        5.0
         """
         return (self.x ** 2 + self.y ** 2) ** 0.5
 
@@ -486,6 +486,6 @@ class vector(collections.Sequence):
 
         >>> v = vector(2, 0)
         >>> v.normalized()
-        vector(1, 0)"""
+        vector(1.0, 0.0)"""
 
         return vector(self.x / self.mag(), self.y / self.mag())
