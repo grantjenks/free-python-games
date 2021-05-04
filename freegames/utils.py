@@ -472,14 +472,7 @@ class vector(collections.Sequence):
         name = type_self.__name__
         return '{}({!r}, {!r})'.format(name, self.x, self.y)
 
-    def mag(self):
-        """Return the magnitude of the vector.
-
-        >>> v = vector(4, 3)
-        >>> v.mag()
-        5.0
-        """
-        return (self.x ** 2 + self.y ** 2) ** 0.5
+    mag = __abs__
 
     def normalized(self):
         """Return a normalized copy of the vector.
