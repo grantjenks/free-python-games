@@ -10,7 +10,7 @@ Exercises:
 
 """
 
-story = "The [adj] [adj] [n] [v] over the [adj] [adj] [n]"
+story = "The [adj] [adj] [n] [v] over the [adj] [n]."
 # The quick brown fox jumps over the lazy dog.
 
 word_type_counter = {}
