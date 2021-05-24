@@ -7,53 +7,35 @@ Exercises:
 3. Can you add additional parts of speech?
 4. Can you add flexibility in a loaded story template?
 5. Can you adjust for grammar? (past tense, etc.)
-
+6. Can you fix the bug that occurs if there is a period after the story?
+7. At what point would you need to encapsulate into a function?
+8. Can you use a function for this?
+9. What problems can occur to the expected output if the program were to 
+    crash mid-run (ex: due to power failure, unexpected computer freeze etc.)
+10. How could you re-engineer this to allow for more robust retention of 
+    the original story and/or the input collected?
 """
 
-story = "The [adj] [adj] [n] [v] over the [adj] [n]."
-# The quick brown fox jumps over the lazy dog.
+story_template = "The [adj] [adj] [n] [v] over the [adj] [n]"
+# The quick brown fox jumps over the lazy dog
 
-word_type_counter = {}
-
-word_storage = {}
+new_story = ""
 
 word_type_key = {
-    "adj": "adjective",
-    "n": "noun",
-    "v": "verb",
-    "adv": "adverb"
+    "[adj]": "adjective",
+    "[n]": "noun",
+    "[v]": "verb",
+    "[adv]": "adverb"
 }
 
-def extract_word_types():
-    "Word types required extracted from story"
-    for w_type in word_type_key:
-        lookup = "[{}]".format(w_type)
-        word_type_counter[w_type] = story.count(lookup)
+"Replace word types with user provided words"
+for char_block in story_template.split(' '):
+    if char_block in word_type_key:
+        new_word = input("Please enter a {}: ".format(
+            word_type_key[char_block]))
+        new_story += " {} ".format(new_word)
+    else:
+        new_story += " {} ".format(char_block)
 
-def get_words():
-    "Get words from user"
-    for word in word_type_counter:
-        while word_type_counter[word] > 0:
-            question = input("Please enter a {}.({} remaining):".format(
-                word_type_key[word].upper(),
-                word_type_counter[word]))
-            if word not in word_storage:
-                word_storage[word] = [question]
-            else:
-                word_storage[word].append(question)
-            word_type_counter[word] -= 1
-
-def get_new_story():
-    "Return new madlibbed story"
-    new_story = story
-    for word_type in word_storage:
-        for i, word in enumerate(word_storage[word_type]):
-            lookup = "[{}]".format(word_type)
-            new_story = new_story.replace(lookup, word, 1)
-    return new_story
-
-
-extract_word_types()
-get_words()
 print("Your new story:")
-print(get_new_story())
+print(new_story)
