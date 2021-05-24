@@ -4,7 +4,7 @@ Exercises:
 
 1. Can you create functionality to replace the given story?
 2. Can you load the story and template from a file?
-3. Can you add additional tenses?
+3. Can you add additional parts of speech?
 4. Can you add flexibility in a loaded story template?
 5. Can you adjust for grammar? (past tense, etc.)
 
