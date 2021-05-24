@@ -11,7 +11,7 @@ Exercises:
 """
 
 story = "The [adj] [adj] [n] [v] over the [adj] [adj] [n]"
-# The quick black fox jumped over the lazy brown dog.
+# The quick brown fox jumps over the lazy dog.
 
 word_type_counter = {}
 
