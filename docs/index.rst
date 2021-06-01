@@ -27,3 +27,4 @@
    memory
    pacman
    fidget
+   madlibs
