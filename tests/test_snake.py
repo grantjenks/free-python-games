@@ -15,6 +15,14 @@ def test_snake():
         ('key Left',),
         ('timer',),
         ('key Up',),
+        ('timer',),
+        ('key Right',),
+        ('timer',),
+        ('key Down',),
+        ('timer',),
+        ('key Left',),
+        ('timer',),
+        ('key Up',),
     ]
     mockturtle.events += [('timer', True)] * 300
     runpy.run_module('freegames.snake')
