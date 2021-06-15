@@ -11,6 +11,7 @@ Exercises
 
 from random import randrange
 from turtle import *
+
 from freegames import vector
 
 ball = vector(-200, -200)

@@ -11,6 +11,7 @@ Exercises
 
 from random import *
 from turtle import *
+
 from freegames import vector
 
 bird = vector(0, 0)

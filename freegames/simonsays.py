@@ -10,6 +10,7 @@ Exercises
 from random import choice
 from time import sleep
 from turtle import *
+
 from freegames import floor, square, vector
 
 pattern = []

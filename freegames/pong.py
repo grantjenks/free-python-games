@@ -14,6 +14,7 @@ Exercises
 
 from random import choice, random
 from turtle import *
+
 from freegames import vector
 
 

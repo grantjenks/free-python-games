@@ -1,7 +1,7 @@
 import io
-import setuptools as st
 import sys
 
+import setuptools as st
 from setuptools.command.test import test as TestCommand
 
 import freegames
