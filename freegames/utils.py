@@ -3,7 +3,7 @@
 """
 # pylint: disable=no-member
 
-import collections
+import collections.abc
 import math
 import os
 
@@ -76,7 +76,7 @@ def square(x, y, size, name):
     turtle.end_fill()
 
 
-class vector(collections.Sequence):
+class vector(collections.abc.Sequence):
     """Two-dimensional vector.
 
     Vectors can be modified in-place.
