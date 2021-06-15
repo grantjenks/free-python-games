@@ -30,7 +30,8 @@ def encrypt(message, key):
 
             if letter.isupper():
                 base = ord('A')
-            elif letter.islower():
+            else:
+                assert letter.islower()
                 base = ord('a')
 
             # The encryption equation:
