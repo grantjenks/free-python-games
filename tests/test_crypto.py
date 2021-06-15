@@ -12,6 +12,7 @@ def test_crypto_encrypt():
     with mock.patch.multiple('builtins', **mocks):
         runpy.run_module('freegames.crypto')
 
+
 def test_crypto_encrypt_bad_key():
     random.seed(0)
     mock_input = mock.Mock()
@@ -20,6 +21,7 @@ def test_crypto_encrypt_bad_key():
 
     with mock.patch.multiple('builtins', **mocks):
         runpy.run_module('freegames.crypto')
+
 
 def test_crypto_bad_command():
     random.seed(0)
@@ -30,6 +32,7 @@ def test_crypto_bad_command():
     with mock.patch.multiple('builtins', **mocks):
         runpy.run_module('freegames.crypto')
 
+
 def test_crypto_decrypt():
     random.seed(0)
     mock_input = mock.Mock()
@@ -38,6 +41,7 @@ def test_crypto_decrypt():
 
     with mock.patch.multiple('builtins', **mocks):
         runpy.run_module('freegames.crypto')
+
 
 def test_crypto_decode():
     random.seed(0)

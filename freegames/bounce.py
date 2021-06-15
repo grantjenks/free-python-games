@@ -14,12 +14,15 @@ from random import *
 from turtle import *
 from freegames import vector
 
+
 def value():
     "Randomly generate value between (-5, -3) or (3, 5)."
     return (3 + random() * 2) * choice([1, -1])
 
+
 ball = vector(0, 0)
 aim = vector(value(), value())
+
 
 def draw():
     "Move ball and draw game."
@@ -39,6 +42,7 @@ def draw():
     dot(10)
 
     ontimer(draw, 50)
+
 
 setup(420, 420, 370, 0)
 hideturtle()
