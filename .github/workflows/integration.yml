@@ -13,9 +13,9 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 6
+      max-parallel: 5
       matrix:
-        check: [bluecheck, doc8, docs, isortcheck, flake8, rstcheck]
+        check: [bluecheck, doc8, docs, isortcheck, rstcheck]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
@@ -35,7 +35,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: [3.6, 3.7, 3.8, 3.9]
     steps:
       - uses: actions/checkout@v2
