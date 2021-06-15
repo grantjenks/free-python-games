@@ -9,8 +9,7 @@ sys.modules['turtle'] = sys.modules['mockturtle']
 
 def test_pacman():
     random.seed(0)
-    mockturtle.events[:] = (
-        [('timer', True), ('key Up',)] * 600
-        + [('timer', True)] * 3000
-    )
+    mockturtle.events.clear()
+    mockturtle.events += [('timer', True), ('key Up',)] * 600
+    mockturtle.events += [('timer', True)] * 3000
     runpy.run_module('freegames.pacman')
