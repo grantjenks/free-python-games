@@ -5,6 +5,7 @@
 state = {}
 events = []
 
+
 class Turtle:
     def __init__(self, visible=True):
         pass
@@ -78,6 +79,7 @@ class Turtle:
     def undo(self):
         pass
 
+
 _turtle = Turtle()
 goto = _turtle.goto
 up = _turtle.up
@@ -103,21 +105,27 @@ bgcolor = _turtle.bgcolor
 update = _turtle.update
 undo = _turtle.undo
 
+
 def setup(width, height, x, y):
     pass
+
 
 def listen():
     pass
 
+
 def onkey(function, key):
     state['key ' + key] = function
+
 
 def ontimer(function, delay):
     state['timer'] = function
     state['delay'] = delay
 
+
 def onscreenclick(function):
     state['click'] = function
+
 
 def done():
     for event in events:

@@ -11,6 +11,7 @@ def test_main_list():
     with mock.patch('sys.argv', ['__main__.py', 'list']):
         runpy.run_module('freegames.__main__')
 
+
 def test_main_copy():
     random.seed(0)
     mock_open = mock.Mock()
@@ -19,6 +20,7 @@ def test_main_copy():
     with mock.patch('sys.argv', ['__main__.py', 'copy', 'guess']):
         with mock.patch('builtins.open', mock_open):
             runpy.run_module('freegames.__main__')
+
 
 def test_main_copy_error():
     cwd = os.getcwd()
@@ -32,6 +34,7 @@ def test_main_copy_error():
             runpy.run_module('freegames.__main__')
     finally:
         os.remove('guess.py')
+
 
 def test_main_show():
     random.seed(0)

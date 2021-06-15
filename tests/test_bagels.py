@@ -12,6 +12,7 @@ def test_bagels_pass():
     with mock.patch.multiple('builtins', **mocks):
         runpy.run_module('freegames.bagels')
 
+
 def test_bagels_fail():
     random.seed(0)
     mock_input = mock.Mock()

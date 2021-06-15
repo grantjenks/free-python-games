@@ -48,6 +48,7 @@ def path(filename):
 def line(a, b, x, y):
     "Draw line from `(a, b)` to `(x, y)`."
     import turtle
+
     turtle.up()
     turtle.goto(a, b)
     turtle.down()
@@ -61,6 +62,7 @@ def square(x, y, size, name):
 
     """
     import turtle
+
     turtle.up()
     turtle.goto(x, y)
     turtle.down()
@@ -88,6 +90,7 @@ class vector(collections.Sequence):
     vector(-2.0, 1.0)
 
     """
+
     # pylint: disable=invalid-name
     PRECISION = 6
 

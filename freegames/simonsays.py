@@ -21,6 +21,7 @@ tiles = {
     vector(-200, -200): ('yellow', 'khaki'),
 }
 
+
 def grid():
     "Draw grid of tiles."
     square(0, 0, 200, 'dark red')
@@ -28,6 +29,7 @@ def grid():
     square(-200, 0, 200, 'dark green')
     square(-200, -200, 200, 'khaki')
     update()
+
 
 def flash(tile):
     "Flash tile in grid."
@@ -39,6 +41,7 @@ def flash(tile):
     update()
     sleep(0.5)
 
+
 def grow():
     "Grow pattern and flash tiles."
     tile = choice(list(tiles))
@@ -49,6 +52,7 @@ def grow():
 
     print('Pattern length:', len(pattern))
     guesses.clear()
+
 
 def tap(x, y):
     "Respond to screen tap."
@@ -69,10 +73,12 @@ def tap(x, y):
 
     onscreenclick(tap)
 
+
 def start(x, y):
     "Start game."
     grow()
     onscreenclick(tap)
+
 
 setup(420, 420, 370, 0)
 hideturtle()
