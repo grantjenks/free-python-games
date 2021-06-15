@@ -13,6 +13,7 @@ from turtle import *
 
 state = {'turn': 0}
 
+
 def spinner():
     "Draw fidget spinner."
     clear()
@@ -32,6 +33,7 @@ def spinner():
     right(120)
     update()
 
+
 def animate():
     "Animate fidget spinner."
     if state['turn'] > 0:
@@ -40,9 +42,11 @@ def animate():
     spinner()
     ontimer(animate, 20)
 
+
 def flick():
     "Flick fidget spinner."
     state['turn'] += 10
+
 
 setup(420, 420, 370, 0)
 hideturtle()

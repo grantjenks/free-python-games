@@ -61,12 +61,14 @@ def square(x, y):
 
     path.end_fill()
 
+
 def offset(point):
     "Return offset of point in tiles."
     x = (floor(point.x, 20) + 200) / 20
     y = (180 - floor(point.y, 20)) / 20
     index = int(x + y * 20)
     return index
+
 
 def valid(point):
     "Return True if point is valid in tiles."
@@ -81,6 +83,7 @@ def valid(point):
         return False
 
     return point.x % 20 == 0 or point.y % 20 == 0
+
 
 def world():
     "Draw world using path."
@@ -99,6 +102,7 @@ def world():
                 path.up()
                 path.goto(x + 10, y + 10)
                 path.dot(2, 'white')
+
 
 def move():
     "Move pacman and all ghosts."
@@ -149,11 +153,13 @@ def move():
 
     ontimer(move, 100)
 
+
 def change(x, y):
     "Change pacman aim if valid."
     if valid(pacman + vector(x, y)):
         aim.x = x
         aim.y = y
+
 
 setup(420, 420, 370, 0)
 hideturtle()

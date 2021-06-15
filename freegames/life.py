@@ -18,6 +18,7 @@ from freegames import square
 
 cells = {}
 
+
 def initialize():
     "Randomly initialize the cells."
     for x in range(-200, 200, 10):
@@ -28,6 +29,7 @@ def initialize():
         for y in range(-50, 50, 10):
             cells[x, y] = choice([True, False])
 
+
 def step():
     "Compute one step in the Game of Life."
     neighbors = {}
@@ -37,7 +39,7 @@ def step():
             count = -cells[x, y]
             for h in [-10, 0, 10]:
                 for v in [-10, 0, 10]:
-                    count += cells[x+h, y+v]
+                    count += cells[x + h, y + v]
             neighbors[x, y] = count
 
     for cell, count in neighbors.items():
@@ -46,6 +48,7 @@ def step():
                 cells[cell] = False
         elif count == 3:
             cells[cell] = True
+
 
 def draw():
     "Draw all the squares."
