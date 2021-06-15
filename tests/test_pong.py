@@ -9,16 +9,15 @@ sys.modules['turtle'] = sys.modules['mockturtle']
 
 def test_pong_1():
     random.seed(0)
-    mockturtle.events[:] = (
-        [('timer',), ('key s',)] * 8
-        + [('timer', True)] * 600
-    )
+    mockturtle.events.clear()
+    mockturtle.events += [('timer',), ('key s',)] * 8
+    mockturtle.events += [('timer', True)] * 600
     runpy.run_module('freegames.pong')
+
 
 def test_pong_2():
     random.seed(1)
-    mockturtle.events[:] = (
-        [('timer',), ('key k',)] * 12
-        + [('timer', True)] * 600
-    )
+    mockturtle.events.clear()
+    mockturtle.events += [('timer',), ('key k',)] * 12
+    mockturtle.events += [('timer', True)] * 600
     runpy.run_module('freegames.pong')
