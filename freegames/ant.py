@@ -36,14 +36,12 @@ def draw():
     goto(ant.x, ant.y)
     dot(4)
 
-    if running:
-        ontimer(draw, 100)
+    ontimer(draw, 100)
 
 
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 up()
-running = True
 draw()
 done()
