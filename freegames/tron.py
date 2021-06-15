@@ -10,6 +10,7 @@ Exercises
 """
 
 from turtle import *
+
 from freegames import square, vector
 
 p1xy = vector(-100, 0)

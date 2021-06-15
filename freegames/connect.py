@@ -11,6 +11,7 @@ Exercises
 """
 
 from turtle import *
+
 from freegames import line
 
 turns = {'red': 'yellow', 'yellow': 'red'}
