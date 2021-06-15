@@ -1,6 +1,9 @@
+-e .
+blue
 coverage
 doc8
-gj
+flake8
+isort
 pylint
 pytest
 pytest-cov
