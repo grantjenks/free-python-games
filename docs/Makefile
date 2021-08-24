@@ -16,7 +16,7 @@ help:
 .PHONY: help Makefile update-po
 
 update-po: pot
-	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" $(O)
+	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" -l pt_BR
 
 pot: gettext
 	@cp $(BUILDDIR)/gettext/{docs,sphinx}.pot locale/
