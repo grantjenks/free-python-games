@@ -19,8 +19,7 @@ update-po: pot
 	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" -l pt_BR
 
 pot: gettext
-	@cp $(BUILDDIR)/gettext/docs.pot locale/
-	@cp $(BUILDDIR)/gettext/sphinx.pot locale/
+	@cp $(BUILDDIR)/gettext/*.pot locale/
 
 %-translated: LOCALES = $(patsubst locale/%,%,$(wildcard locale/*))
 %-translated:
