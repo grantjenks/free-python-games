@@ -3,8 +3,8 @@
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = python -msphinx
-SPHINXINTL    = python -msphinx_intl
+SPHINXBUILD   = python3 -msphinx
+SPHINXINTL    = python3 -msphinx_intl
 SPHINXPROJ    = FreeGames
 SOURCEDIR     = .
 BUILDDIR      = _build
