@@ -202,4 +202,4 @@ todo_include_todos = True
 
 # Gettext / i18n
 locale_dirs = ['locale/']
-gettext_compact = 'docs'
+gettext_compact = False
