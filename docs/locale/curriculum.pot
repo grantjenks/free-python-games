@@ -1,0 +1,505 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2020, Grant Jenks
+# This file is distributed under the same license as the Free Python Games package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Free Python Games 2.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-24 21:25-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../curriculum.rst:2
+msgid "Free Python Games Curriculum"
+msgstr ""
+
+#: ../../curriculum.rst:4
+msgid "What follows are notes for a week-long curriculum developed for Maker Camp at The River Church Community. Maker Camp was a summer day camp for Middle School students in the California Bay Area."
+msgstr ""
+
+#: ../../curriculum.rst:8
+msgid "Each game has exercises at the top."
+msgstr ""
+
+#: ../../curriculum.rst:9
+msgid "Visualize code with http://pythontutor.com"
+msgstr ""
+
+#: ../../curriculum.rst:10
+msgid "Extras: $ python3 -m turtledemo"
+msgstr ""
+
+#: ../../curriculum.rst:14
+msgid "Day 1"
+msgstr ""
+
+#: ../../curriculum.rst:16
+msgid "What is a computer? Calculator + Clock."
+msgstr ""
+
+#: ../../curriculum.rst:17
+msgid "Discuss Alan Turing and Turing Machines."
+msgstr ""
+
+#: ../../curriculum.rst:18
+msgid "Discuss John Von Neumann and Von Neumann Machines."
+msgstr ""
+
+#: ../../curriculum.rst:19
+msgid "What is a program? Computer Recipe."
+msgstr ""
+
+#: ../../curriculum.rst:20
+msgid "Introduce Terminal, black background, give the computer commands."
+msgstr ""
+
+#: ../../curriculum.rst:21
+msgid "Introduce Python Shell, white background, write Python statements."
+msgstr ""
+
+#: ../../curriculum.rst:22
+msgid "Activity: connect and decorate computers."
+msgstr ""
+
+#: ../../curriculum.rst:23
+msgid "Problem solving: divide and conquer."
+msgstr ""
+
+#: ../../curriculum.rst:24
+msgid "Statements: assignment, if/elif/else, while, import"
+msgstr ""
+
+#: ../../curriculum.rst:25
+msgid "Data types: int, str"
+msgstr ""
+
+#: ../../curriculum.rst:26
+msgid "Functions: print, help, int"
+msgstr ""
+
+#: ../../curriculum.rst:27
+msgid "Modules: random"
+msgstr ""
+
+#: ../../curriculum.rst:30
+#: ../../curriculum.rst:70
+#: ../../curriculum.rst:115
+#: ../../curriculum.rst:157
+#: ../../curriculum.rst:184
+msgid "Games"
+msgstr ""
+
+#: ../../curriculum.rst:32
+msgid ":doc:`guess`.py - Guess number within range."
+msgstr ""
+
+#: ../../curriculum.rst:34
+msgid "Explain: from random import randint"
+msgstr ""
+
+#: ../../curriculum.rst:35
+msgid "randint(...)"
+msgstr ""
+
+#: ../../curriculum.rst:36
+msgid "Variables"
+msgstr ""
+
+#: ../../curriculum.rst:37
+msgid "Equality"
+msgstr ""
+
+#: ../../curriculum.rst:38
+msgid "print(...)"
+msgstr ""
+
+#: ../../curriculum.rst:39
+msgid "Inequality"
+msgstr ""
+
+#: ../../curriculum.rst:40
+msgid "input(...)"
+msgstr ""
+
+#: ../../curriculum.rst:41
+msgid "int(...)"
+msgstr ""
+
+#: ../../curriculum.rst:42
+msgid "Increase range to 1,000 and guess the number."
+msgstr ""
+
+#: ../../curriculum.rst:43
+msgid "Discuss method of guessing. That's an algorithm!"
+msgstr ""
+
+#: ../../curriculum.rst:45
+msgid ":doc:`snake`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:48
+#: ../../curriculum.rst:97
+#: ../../curriculum.rst:139
+#: ../../curriculum.rst:166
+#: ../../curriculum.rst:191
+msgid "Bible Story"
+msgstr ""
+
+#: ../../curriculum.rst:50
+msgid "Genesis 1 - God the Creator (Creation)"
+msgstr ""
+
+#: ../../curriculum.rst:52
+msgid "What did God do at the beginning?"
+msgstr ""
+
+#: ../../curriculum.rst:53
+msgid "What did God see in creation?"
+msgstr ""
+
+#: ../../curriculum.rst:54
+msgid "What is special about people?"
+msgstr ""
+
+#: ../../curriculum.rst:55
+msgid "Why do we create things?"
+msgstr ""
+
+#: ../../curriculum.rst:59
+msgid "Day 2"
+msgstr ""
+
+#: ../../curriculum.rst:61
+msgid "Activity: Blind partner obstacle course."
+msgstr ""
+
+#: ../../curriculum.rst:62
+msgid "Problem solving: brute-force."
+msgstr ""
+
+#: ../../curriculum.rst:63
+msgid "Famous Christian programmer: Donald Knuth"
+msgstr ""
+
+#: ../../curriculum.rst:64
+msgid "Statements: try/except, for, def"
+msgstr ""
+
+#: ../../curriculum.rst:65
+msgid "Data types: float, bool"
+msgstr ""
+
+#: ../../curriculum.rst:66
+msgid "Functions: type, dir, str, ord, chr"
+msgstr ""
+
+#: ../../curriculum.rst:67
+msgid "Modules: turtle"
+msgstr ""
+
+#: ../../curriculum.rst:72
+msgid ":doc:`crypto`.py - Encrypt, decrypt and decode messages."
+msgstr ""
+
+#: ../../curriculum.rst:74
+msgid "ord function and chr function"
+msgstr ""
+
+#: ../../curriculum.rst:75
+msgid "modulo operator"
+msgstr ""
+
+#: ../../curriculum.rst:76
+msgid "Write decode function"
+msgstr ""
+
+#: ../../curriculum.rst:77
+msgid "Encrypt numbers"
+msgstr ""
+
+#: ../../curriculum.rst:79
+msgid ":doc:`paint`.py - Draw shapes."
+msgstr ""
+
+#: ../../curriculum.rst:81
+msgid "Draw line"
+msgstr ""
+
+#: ../../curriculum.rst:82
+msgid "Draw square"
+msgstr ""
+
+#: ../../curriculum.rst:83
+msgid "for-statement, range function."
+msgstr ""
+
+#: ../../curriculum.rst:84
+msgid "Draw five-pointed star: forward(50); right(144) (x5)"
+msgstr ""
+
+#: ../../curriculum.rst:85
+msgid "Draw six-pointed star: forward(50); left(60); forward(50); right(120) (x6)"
+msgstr ""
+
+#: ../../curriculum.rst:86
+msgid "help(...)"
+msgstr ""
+
+#: ../../curriculum.rst:87
+msgid "undo(...)"
+msgstr ""
+
+#: ../../curriculum.rst:88
+msgid "def-statement, refactor code to star function"
+msgstr ""
+
+#: ../../curriculum.rst:89
+msgid "color('green'); color('blue', 'yellow')"
+msgstr ""
+
+#: ../../curriculum.rst:90
+msgid "begin_fill(); end_fill()"
+msgstr ""
+
+#: ../../curriculum.rst:91
+msgid "width function"
+msgstr ""
+
+#: ../../curriculum.rst:92
+msgid "Write polygon(sides, length) function"
+msgstr ""
+
+#: ../../curriculum.rst:94
+msgid ":doc:`flappy`.py - Flappy Bird inspired game."
+msgstr ""
+
+#: ../../curriculum.rst:99
+msgid "Genesis 6:5-22 - God the Engineer (Noah)"
+msgstr ""
+
+#: ../../curriculum.rst:101
+msgid "Why did God regret making people?"
+msgstr ""
+
+#: ../../curriculum.rst:102
+msgid "How was Noah different?"
+msgstr ""
+
+#: ../../curriculum.rst:103
+msgid "What was God's plan?"
+msgstr ""
+
+#: ../../curriculum.rst:104
+msgid "How are we washed today?"
+msgstr ""
+
+#: ../../curriculum.rst:108
+msgid "Day 3"
+msgstr ""
+
+#: ../../curriculum.rst:110
+msgid "Activity: Simon Says"
+msgstr ""
+
+#: ../../curriculum.rst:111
+msgid "Famous Christian programmer: Fred Brooks"
+msgstr ""
+
+#: ../../curriculum.rst:112
+msgid "Functions: onscreenclick, onkey, ontimer"
+msgstr ""
+
+#: ../../curriculum.rst:117
+msgid ":doc:`bagels`.py - Digit guessing puzzle."
+msgstr ""
+
+#: ../../curriculum.rst:118
+msgid "Animation"
+msgstr ""
+
+#: ../../curriculum.rst:120
+msgid "Draw arc: circle(100, 90)"
+msgstr ""
+
+#: ../../curriculum.rst:121
+msgid "flower(...)"
+msgstr ""
+
+#: ../../curriculum.rst:122
+msgid "Draw flower and rotate"
+msgstr ""
+
+#: ../../curriculum.rst:123
+msgid "ontimer(...)"
+msgstr ""
+
+#: ../../curriculum.rst:124
+msgid "hideturtle(); tracer(False); polygon(4, 200); update()"
+msgstr ""
+
+#: ../../curriculum.rst:126
+msgid ":doc:`tictactoe`.py - Tic-tac-toe."
+msgstr ""
+
+#: ../../curriculum.rst:128
+msgid "line(...)"
+msgstr ""
+
+#: ../../curriculum.rst:129
+msgid "grid(...)"
+msgstr ""
+
+#: ../../curriculum.rst:130
+msgid "drawx(...)"
+msgstr ""
+
+#: ../../curriculum.rst:131
+msgid "drawo(...)"
+msgstr ""
+
+#: ../../curriculum.rst:132
+msgid "floor(...)"
+msgstr ""
+
+#: ../../curriculum.rst:133
+msgid "onscreenclick(goto)"
+msgstr ""
+
+#: ../../curriculum.rst:135
+msgid ":doc:`simonsays`.py - Simon Says"
+msgstr ""
+
+#: ../../curriculum.rst:136
+msgid ":doc:`cannon`.py - Hitting targets with projectiles."
+msgstr ""
+
+#: ../../curriculum.rst:141
+msgid "Mark 1:1-18 - God the Programmer (\"fishers of people\")"
+msgstr ""
+
+#: ../../curriculum.rst:143
+msgid "What did Isaiah say would happen?"
+msgstr ""
+
+#: ../../curriculum.rst:144
+msgid "What did John the Baptist say would happen?"
+msgstr ""
+
+#: ../../curriculum.rst:145
+msgid "What did God say about Jesus? When?"
+msgstr ""
+
+#: ../../curriculum.rst:146
+msgid "How did Jesus give his disciples new jobs?"
+msgstr ""
+
+#: ../../curriculum.rst:150
+msgid "Day 4"
+msgstr ""
+
+#: ../../curriculum.rst:152
+msgid "Activity: Collage of concepts."
+msgstr ""
+
+#: ../../curriculum.rst:153
+msgid "Famous Christian programmer: Larry Wall"
+msgstr ""
+
+#: ../../curriculum.rst:154
+msgid "Data types: list, dict, vector"
+msgstr ""
+
+#: ../../curriculum.rst:159
+msgid ":doc:`bounce`.py - Simple animation demo."
+msgstr ""
+
+#: ../../curriculum.rst:160
+msgid ":doc:`pong`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:161
+msgid ":doc:`ant`.py - Simple animation demo."
+msgstr ""
+
+#: ../../curriculum.rst:162
+msgid ":doc:`tron`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:163
+msgid ":doc:`tiles`.py - Puzzle game of number shuffling."
+msgstr ""
+
+#: ../../curriculum.rst:168
+msgid "John 9:1-33 - God the Debugger (Blind Man and Jesus)"
+msgstr ""
+
+#: ../../curriculum.rst:170
+msgid "What does Jesus tell the disciples?"
+msgstr ""
+
+#: ../../curriculum.rst:171
+msgid "What does the man tell the Pharisees?"
+msgstr ""
+
+#: ../../curriculum.rst:172
+msgid "What does the man believe about Jesus?"
+msgstr ""
+
+#: ../../curriculum.rst:173
+msgid "What do you believe about Jesus?"
+msgstr ""
+
+#: ../../curriculum.rst:177
+msgid "Day 5"
+msgstr ""
+
+#: ../../curriculum.rst:179
+msgid "Activity: Make or modify your own game."
+msgstr ""
+
+#: ../../curriculum.rst:180
+msgid "Famous Christian programmer: Jon Skeet"
+msgstr ""
+
+#: ../../curriculum.rst:181
+msgid "Answer: What next?"
+msgstr ""
+
+#: ../../curriculum.rst:186
+msgid ":doc:`connect`.py - Connect Four"
+msgstr ""
+
+#: ../../curriculum.rst:187
+msgid ":doc:`memory`.py - Puzzle game of number pairs."
+msgstr ""
+
+#: ../../curriculum.rst:188
+msgid ":doc:`pacman`.py - Classic arcade game."
+msgstr ""
+
+#: ../../curriculum.rst:193
+msgid "Revelation 21 - God the Restorer (New Heaven and New Earth)"
+msgstr ""
+
+#: ../../curriculum.rst:195
+msgid "What does God make? When?"
+msgstr ""
+
+#: ../../curriculum.rst:196
+msgid "Who is the Lamb and the Bride?"
+msgstr ""
+
+#: ../../curriculum.rst:197
+msgid "What is special about the city?"
+msgstr ""
+
+#: ../../curriculum.rst:198
+msgid "How can we live in the Holy City?"
+msgstr ""
