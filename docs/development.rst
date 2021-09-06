@@ -73,3 +73,13 @@ simply run::
 
 The test argument to setup.py will download a minimal testing infrastructure
 and run the tests.
+
+Translate
+----------
+
+inside the locale/ folder, a <lang> folder must be created manually, for the ::
+
+    $ make update-po 
+
+command to generate the PO files for all langauges.
+
