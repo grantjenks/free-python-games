@@ -77,9 +77,9 @@ and run the tests.
 Translate
 ----------
 
-inside the locale/ folder, a <lang> folder must be created manually, for the ::
+Translation files are available in the /locale directory, if you want to contribute a translation make changes to its content.
 
-    $ make update-po 
+if you want to translate to another language, you need to create the lang folder. To update the lang folder you need to use the command:
 
-command to generate the PO files for all langauges.
+    $ make update-po
 
