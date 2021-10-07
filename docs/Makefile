@@ -20,7 +20,7 @@ help:
 
 .PHONY: help Makefile update-po
 
-update-po: pot
+update-po: gettext
 	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" $(0)
 
 %-translated:
