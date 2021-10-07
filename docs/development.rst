@@ -77,7 +77,7 @@ and run the tests.
 Translate
 ----------
 
-Translation files are available in the /locale directory, if you want to contribute a translation make changes to its content.
+Translation files are available in the locale/ directory, if you want to contribute a translation make changes to its content.
 
 if you want to translate to another language, you need to create the lang folder. To update the lang folder you need to use the command:
 
