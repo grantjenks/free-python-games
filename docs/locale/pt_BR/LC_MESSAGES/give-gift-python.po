@@ -4,209 +4,209 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Free Python Games 2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 21:25-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-10-08 10:38-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../give-gift-python.rst:2
 msgid "Give the Gift of Python"
-msgstr ""
+msgstr "Dê a Dádiva de Python"
 
 #: ../../give-gift-python.rst:4
 msgid "*Talk given at SF Python Holiday Party on December 5, 2018.*"
-msgstr ""
+msgstr "*Palestra proferida na SF Python Holiday Party em 5 de dezembro de 2018.*"
 
 #: ../../give-gift-python.rst:7
 msgid "Who am I?"
-msgstr ""
+msgstr "Quem eu sou?"
 
 #: ../../give-gift-python.rst:9
 msgid "Python programmer."
-msgstr ""
+msgstr "Programador Python."
 
 #: ../../give-gift-python.rst:10
 msgid "Hundreds of hours of classroom instruction."
-msgstr ""
+msgstr "Muitas horas de instrução em sala de aula."
 
 #: ../../give-gift-python.rst:13
 msgid "What we need?"
-msgstr ""
+msgstr "O que nós precisamos?"
 
 #: ../../give-gift-python.rst:15
 msgid "Interest!"
-msgstr ""
+msgstr "Interesse!"
 
 #: ../../give-gift-python.rst:16
 msgid "Typing skills."
-msgstr ""
+msgstr "Saber digitar."
 
 #: ../../give-gift-python.rst:17
 msgid "Math: Arithmetic, Algebra, Geometry"
-msgstr ""
+msgstr "Matemática: aritmética, álgebra, geometria"
 
 #: ../../give-gift-python.rst:20
 msgid "Setup"
-msgstr ""
+msgstr "Configuração"
 
 #: ../../give-gift-python.rst:22
 msgid "Install Python, https://www.python.org/"
-msgstr ""
+msgstr "Instale Python, https://www.python.org/"
 
 #: ../../give-gift-python.rst:23
 msgid "Run IDLE, ``$ python -m idlelib.idle``"
-msgstr ""
+msgstr "Execute IDLE, ``$ python -m idlelib.idle``"
 
 #: ../../give-gift-python.rst:24
 msgid "Write code."
-msgstr ""
+msgstr "Escreva o código."
 
 #: ../../give-gift-python.rst:27
 msgid "Open the Turtle Window"
-msgstr ""
+msgstr "Abra a janela Turtle"
 
 #: ../../give-gift-python.rst:35
 msgid "Commands"
-msgstr ""
+msgstr "Comandos"
 
 #: ../../give-gift-python.rst:49
 msgid "Loops"
-msgstr ""
+msgstr "Repetições"
 
 #: ../../give-gift-python.rst:59
 msgid "Shapes"
-msgstr ""
+msgstr "Formas"
 
 #: ../../give-gift-python.rst:71
 msgid "Dots"
-msgstr ""
+msgstr "Pontos"
 
 #: ../../give-gift-python.rst:79
 msgid "Functions"
-msgstr ""
+msgstr "Funções"
 
 #: ../../give-gift-python.rst:93
 msgid "Colors"
-msgstr ""
+msgstr "Cores"
 
 #: ../../give-gift-python.rst:102
 msgid "Locations"
-msgstr ""
+msgstr "Localizações"
 
 #: ../../give-gift-python.rst:113
 msgid "Inputs"
-msgstr ""
+msgstr "Entradas"
 
 #: ../../give-gift-python.rst:115
 msgid "listen"
-msgstr ""
+msgstr "listen"
 
 #: ../../give-gift-python.rst:116
 msgid "onclick"
-msgstr ""
+msgstr "onclick"
 
 #: ../../give-gift-python.rst:117
 msgid "onkey"
-msgstr ""
+msgstr "onkey"
 
 #: ../../give-gift-python.rst:120
 msgid "Animation"
-msgstr ""
+msgstr "Animação"
 
 #: ../../give-gift-python.rst:122
 msgid "ontimer"
-msgstr ""
+msgstr "ontimer"
 
 #: ../../give-gift-python.rst:123
 msgid "hideturtle"
-msgstr ""
+msgstr "hideturtle"
 
 #: ../../give-gift-python.rst:124
 msgid "tracer"
-msgstr ""
+msgstr "tracer"
 
 #: ../../give-gift-python.rst:125
 msgid "clear"
-msgstr ""
+msgstr "clear"
 
 #: ../../give-gift-python.rst:126
 msgid "update"
-msgstr ""
+msgstr "update"
 
 #: ../../give-gift-python.rst:139
 msgid "Tips"
-msgstr ""
+msgstr "Dicas"
 
 #: ../../give-gift-python.rst:141
 msgid "help(...)"
-msgstr ""
+msgstr "help(...)"
 
 #: ../../give-gift-python.rst:142
 msgid "undo(...)"
-msgstr ""
+msgstr "undo(...)"
 
 #: ../../give-gift-python.rst:143
 msgid "Embrace copy/paste"
-msgstr ""
+msgstr "Abraçar copiar/colar"
 
 #: ../../give-gift-python.rst:144
 msgid "Close window/reset()"
-msgstr ""
+msgstr "Fechar aba / reinicializar()"
 
 #: ../../give-gift-python.rst:147
 msgid "Activities"
-msgstr ""
+msgstr "Atividades"
 
 #: ../../give-gift-python.rst:149
 msgid "Spell your name."
-msgstr ""
+msgstr "Soletre o seu nome."
 
 #: ../../give-gift-python.rst:150
 msgid "``python -m pip install freegames``"
-msgstr ""
+msgstr "``python -m pip install freegames``"
 
 #: ../../give-gift-python.rst:153
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: ../../give-gift-python.rst:155
 msgid "Start simple! Start easy! Start plain!"
-msgstr ""
+msgstr "Comece simples! Comece facilmente! Comece bem!"
 
 #: ../../give-gift-python.rst:156
 msgid "Focus on fun! No PEP8. No Pylint."
-msgstr ""
+msgstr "Concentre-se na diversão! Sem PEP8. Sem Pylint."
 
 #: ../../give-gift-python.rst:157
 msgid "Make it readable! Say it aloud."
-msgstr ""
+msgstr "Torne-o legível! Diga-o em voz alta."
 
 #: ../../give-gift-python.rst:158
 msgid "No special shells! No IPython."
-msgstr ""
+msgstr "Sem shells especiais! Sem IPython."
 
 #: ../../give-gift-python.rst:159
 msgid "Show them mistakes! Red is your favorite color!"
-msgstr ""
+msgstr "Mostre-lhes erros! Vermelho é a sua cor favorita!"
 
 #: ../../give-gift-python.rst:160
 msgid "No virtual environments!"
-msgstr ""
+msgstr "Sem ambientes virtuais!"
 
 #: ../../give-gift-python.rst:161
 msgid "If they're not ready, don't push them!"
-msgstr ""
+msgstr "Se eles não estiverem prontos, não os empurre!"
 
 #: ../../give-gift-python.rst:162
 msgid "No dunder methods or attributes! No __name__ or __main__."
-msgstr ""
-
+msgstr "Sem métodos ou atributos dunder! Sem __name__ or __main__."

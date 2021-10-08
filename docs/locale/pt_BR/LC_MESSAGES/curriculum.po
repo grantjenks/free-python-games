@@ -4,99 +4,104 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Free Python Games 2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 21:25-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-10-08 11:04-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../curriculum.rst:2
 msgid "Free Python Games Curriculum"
-msgstr ""
+msgstr "Currículo Free Python Games"
 
 #: ../../curriculum.rst:4
 msgid ""
-"What follows are notes for a week-long curriculum developed for Maker "
-"Camp at The River Church Community. Maker Camp was a summer day camp for "
-"Middle School students in the California Bay Area."
+"What follows are notes for a week-long curriculum developed for Maker Camp at "
+"The River Church Community. Maker Camp was a summer day camp for Middle School "
+"students in the California Bay Area."
 msgstr ""
+"O que se segue são notas para um currículo de uma semana desenvolvido para o "
+"Maker Camp na Comunidade da Igreja River. Maker Camp era um acampamento de "
+"verão para estudantes do Ensino Médio na área da baía da Califórnia."
 
 #: ../../curriculum.rst:8
 msgid "Each game has exercises at the top."
-msgstr ""
+msgstr "Cada jogo tem exercícios no topo."
 
 #: ../../curriculum.rst:9
 msgid "Visualize code with http://pythontutor.com"
-msgstr ""
+msgstr "Visualize o código com http://pythontutor.com"
 
 #: ../../curriculum.rst:10
 msgid "Extras: $ python3 -m turtledemo"
-msgstr ""
+msgstr "Extras: $ python3 -m turtledemo"
 
 #: ../../curriculum.rst:14
 msgid "Day 1"
-msgstr ""
+msgstr "Dia 1"
 
 #: ../../curriculum.rst:16
 msgid "What is a computer? Calculator + Clock."
-msgstr ""
+msgstr "O que é um computador? Calculadora + Relógio."
 
 #: ../../curriculum.rst:17
 msgid "Discuss Alan Turing and Turing Machines."
-msgstr ""
+msgstr "Discuta Alan Turing e a Máquina de Turing."
 
 #: ../../curriculum.rst:18
 msgid "Discuss John Von Neumann and Von Neumann Machines."
-msgstr ""
+msgstr "Discuta John Von Neumann e Máquinas Von Neumann."
 
 #: ../../curriculum.rst:19
 msgid "What is a program? Computer Recipe."
-msgstr ""
+msgstr "O que é um programa? Receita do Computador."
 
 #: ../../curriculum.rst:20
 msgid "Introduce Terminal, black background, give the computer commands."
-msgstr ""
+msgstr "Introduza o terminal, plano de fundo preto, dê comandos ao computador."
 
 #: ../../curriculum.rst:21
 msgid "Introduce Python Shell, white background, write Python statements."
 msgstr ""
+"Introduza o Python Shell, plano de fundo branco, escreva instruções python."
 
 #: ../../curriculum.rst:22
 msgid "Activity: connect and decorate computers."
-msgstr ""
+msgstr "Atividade: conectar e decorar computadores."
 
 #: ../../curriculum.rst:23
 msgid "Problem solving: divide and conquer."
-msgstr ""
+msgstr "Resolução de problemas: dividir e conquistar."
 
 #: ../../curriculum.rst:24
 msgid "Statements: assignment, if/elif/else, while, import"
-msgstr ""
+msgstr "Declarações: assignment, if/elif/else, while, import"
 
 #: ../../curriculum.rst:25
 msgid "Data types: int, str"
-msgstr ""
+msgstr "Tipos de dados: int, str"
 
 #: ../../curriculum.rst:26
 msgid "Functions: print, help, int"
-msgstr ""
+msgstr "Funções: print, help, int"
 
 #: ../../curriculum.rst:27
 msgid "Modules: random"
-msgstr ""
+msgstr "Módulos: random"
 
 #: ../../curriculum.rst:30 ../../curriculum.rst:70 ../../curriculum.rst:115
 #: ../../curriculum.rst:157 ../../curriculum.rst:184
 msgid "Games"
-msgstr ""
+msgstr "Jogos"
 
 #: ../../curriculum.rst:32
 msgid ":doc:`guess`.py - Guess number within range."
@@ -104,43 +109,43 @@ msgstr ""
 
 #: ../../curriculum.rst:34
 msgid "Explain: from random import randint"
-msgstr ""
+msgstr "Explique: from random import randint"
 
 #: ../../curriculum.rst:35
 msgid "randint(...)"
-msgstr ""
+msgstr "randint(...)"
 
 #: ../../curriculum.rst:36
 msgid "Variables"
-msgstr ""
+msgstr "Variáveis"
 
 #: ../../curriculum.rst:37
 msgid "Equality"
-msgstr ""
+msgstr "Igualdade"
 
 #: ../../curriculum.rst:38
 msgid "print(...)"
-msgstr ""
+msgstr "print(...)"
 
 #: ../../curriculum.rst:39
 msgid "Inequality"
-msgstr ""
+msgstr "Desigualdade"
 
 #: ../../curriculum.rst:40
 msgid "input(...)"
-msgstr ""
+msgstr "input(...)"
 
 #: ../../curriculum.rst:41
 msgid "int(...)"
-msgstr ""
+msgstr "int(...)"
 
 #: ../../curriculum.rst:42
 msgid "Increase range to 1,000 and guess the number."
-msgstr ""
+msgstr "Aumente o intervalo para 1.000 e adivinhe o número."
 
 #: ../../curriculum.rst:43
 msgid "Discuss method of guessing. That's an algorithm!"
-msgstr ""
+msgstr "Discuta o método de adivinhação. Isso é um algoritmo!"
 
 #: ../../curriculum.rst:45
 msgid ":doc:`snake`.py - Classic arcade game."
@@ -149,59 +154,59 @@ msgstr ""
 #: ../../curriculum.rst:48 ../../curriculum.rst:97 ../../curriculum.rst:139
 #: ../../curriculum.rst:166 ../../curriculum.rst:191
 msgid "Bible Story"
-msgstr ""
+msgstr "História da Bíblia"
 
 #: ../../curriculum.rst:50
 msgid "Genesis 1 - God the Creator (Creation)"
-msgstr ""
+msgstr "Gênesis 1 - Deus, o Criador (Criação)"
 
 #: ../../curriculum.rst:52
 msgid "What did God do at the beginning?"
-msgstr ""
+msgstr "O que Deus fez no início?"
 
 #: ../../curriculum.rst:53
 msgid "What did God see in creation?"
-msgstr ""
+msgstr "O que Deus viu na criação?"
 
 #: ../../curriculum.rst:54
 msgid "What is special about people?"
-msgstr ""
+msgstr "O que há de especial nas pessoas?"
 
 #: ../../curriculum.rst:55
 msgid "Why do we create things?"
-msgstr ""
+msgstr "Por que criamos coisas?"
 
 #: ../../curriculum.rst:59
 msgid "Day 2"
-msgstr ""
+msgstr "Dia 2"
 
 #: ../../curriculum.rst:61
 msgid "Activity: Blind partner obstacle course."
-msgstr ""
+msgstr "Atividade: Pista de obstáculos para parceiros cegos."
 
 #: ../../curriculum.rst:62
 msgid "Problem solving: brute-force."
-msgstr ""
+msgstr "Resolução de problemas: força bruta."
 
 #: ../../curriculum.rst:63
 msgid "Famous Christian programmer: Donald Knuth"
-msgstr ""
+msgstr "Programador cristão famoso: Donald Knuth"
 
 #: ../../curriculum.rst:64
 msgid "Statements: try/except, for, def"
-msgstr ""
+msgstr "Declarações: try/except, for, def"
 
 #: ../../curriculum.rst:65
 msgid "Data types: float, bool"
-msgstr ""
+msgstr "Tipos de dados: float, bool"
 
 #: ../../curriculum.rst:66
 msgid "Functions: type, dir, str, ord, chr"
-msgstr ""
+msgstr "Funções: type, dir, str, ord, chr"
 
 #: ../../curriculum.rst:67
 msgid "Modules: turtle"
-msgstr ""
+msgstr "Módulos: turtle"
 
 #: ../../curriculum.rst:72
 msgid ":doc:`crypto`.py - Encrypt, decrypt and decode messages."
@@ -209,19 +214,19 @@ msgstr ""
 
 #: ../../curriculum.rst:74
 msgid "ord function and chr function"
-msgstr ""
+msgstr "Função ord e função chr"
 
 #: ../../curriculum.rst:75
 msgid "modulo operator"
-msgstr ""
+msgstr "Operador de módulo"
 
 #: ../../curriculum.rst:76
 msgid "Write decode function"
-msgstr ""
+msgstr "Função de decodificação de escrita"
 
 #: ../../curriculum.rst:77
 msgid "Encrypt numbers"
-msgstr ""
+msgstr "Criptografar números"
 
 #: ../../curriculum.rst:79
 msgid ":doc:`paint`.py - Draw shapes."
@@ -229,51 +234,54 @@ msgstr ""
 
 #: ../../curriculum.rst:81
 msgid "Draw line"
-msgstr ""
+msgstr "Desenhar linha"
 
 #: ../../curriculum.rst:82
 msgid "Draw square"
-msgstr ""
+msgstr "Desenhar quadrado"
 
 #: ../../curriculum.rst:83
 msgid "for-statement, range function."
-msgstr ""
+msgstr "declaração for, função de alcance."
 
 #: ../../curriculum.rst:84
 msgid "Draw five-pointed star: forward(50); right(144) (x5)"
 msgstr ""
+"Desenhar uma estrela de cinco pontas: para a frente(50); direita(144) (x5)"
 
 #: ../../curriculum.rst:85
 msgid "Draw six-pointed star: forward(50); left(60); forward(50); right(120) (x6)"
 msgstr ""
+"Desenhar uma estrela de seis pontas: para a frente(50); esquerda(60); para a "
+"frente(50); direita(120) (x6)"
 
 #: ../../curriculum.rst:86
 msgid "help(...)"
-msgstr ""
+msgstr "help(...)"
 
 #: ../../curriculum.rst:87
 msgid "undo(...)"
-msgstr ""
+msgstr "undo(...)"
 
 #: ../../curriculum.rst:88
 msgid "def-statement, refactor code to star function"
-msgstr ""
+msgstr "declaração def, refatorar código para função estrela"
 
 #: ../../curriculum.rst:89
 msgid "color('green'); color('blue', 'yellow')"
-msgstr ""
+msgstr "cor ('verde'); cor ('azul', 'amarelo')"
 
 #: ../../curriculum.rst:90
 msgid "begin_fill(); end_fill()"
-msgstr ""
+msgstr "begin_fill(); end_fill()"
 
 #: ../../curriculum.rst:91
 msgid "width function"
-msgstr ""
+msgstr "Função de largura"
 
 #: ../../curriculum.rst:92
 msgid "Write polygon(sides, length) function"
-msgstr ""
+msgstr "Escrever função polígono(lados, comprimento)"
 
 #: ../../curriculum.rst:94
 msgid ":doc:`flappy`.py - Flappy Bird inspired game."
@@ -281,39 +289,39 @@ msgstr ""
 
 #: ../../curriculum.rst:99
 msgid "Genesis 6:5-22 - God the Engineer (Noah)"
-msgstr ""
+msgstr "Gênesis 6:5-22 - Deus, o Engenheiro (Noé)"
 
 #: ../../curriculum.rst:101
 msgid "Why did God regret making people?"
-msgstr ""
+msgstr "Por que Deus se arrependeu de ter feito as pessoas?"
 
 #: ../../curriculum.rst:102
 msgid "How was Noah different?"
-msgstr ""
+msgstr "Qual era a diferença de Noé?"
 
 #: ../../curriculum.rst:103
 msgid "What was God's plan?"
-msgstr ""
+msgstr "Qual era o plano de Deus?"
 
 #: ../../curriculum.rst:104
 msgid "How are we washed today?"
-msgstr ""
+msgstr "Como estamos lavados hoje?"
 
 #: ../../curriculum.rst:108
 msgid "Day 3"
-msgstr ""
+msgstr "Dia 3"
 
 #: ../../curriculum.rst:110
 msgid "Activity: Simon Says"
-msgstr ""
+msgstr "Atividade: Simon Says"
 
 #: ../../curriculum.rst:111
 msgid "Famous Christian programmer: Fred Brooks"
-msgstr ""
+msgstr "Programador cristão famoso: Fred Brooks"
 
 #: ../../curriculum.rst:112
 msgid "Functions: onscreenclick, onkey, ontimer"
-msgstr ""
+msgstr "Funções: onscreenclick, onkey, ontimer"
 
 #: ../../curriculum.rst:117
 msgid ":doc:`bagels`.py - Digit guessing puzzle."
@@ -321,27 +329,27 @@ msgstr ""
 
 #: ../../curriculum.rst:118
 msgid "Animation"
-msgstr ""
+msgstr "Animação"
 
 #: ../../curriculum.rst:120
 msgid "Draw arc: circle(100, 90)"
-msgstr ""
+msgstr "Desenhar um arco: círculo (100, 90)"
 
 #: ../../curriculum.rst:121
 msgid "flower(...)"
-msgstr ""
+msgstr "flor(...)"
 
 #: ../../curriculum.rst:122
 msgid "Draw flower and rotate"
-msgstr ""
+msgstr "Desenhe uma flor e gire"
 
 #: ../../curriculum.rst:123
 msgid "ontimer(...)"
-msgstr ""
+msgstr "ontimer(...)"
 
 #: ../../curriculum.rst:124
 msgid "hideturtle(); tracer(False); polygon(4, 200); update()"
-msgstr ""
+msgstr "hideturtle(); marcador(False); polígono(4, 200); atualização()"
 
 #: ../../curriculum.rst:126
 msgid ":doc:`tictactoe`.py - Tic-tac-toe."
@@ -349,27 +357,27 @@ msgstr ""
 
 #: ../../curriculum.rst:128
 msgid "line(...)"
-msgstr ""
+msgstr "linha(...)"
 
 #: ../../curriculum.rst:129
 msgid "grid(...)"
-msgstr ""
+msgstr "grade(...)"
 
 #: ../../curriculum.rst:130
 msgid "drawx(...)"
-msgstr ""
+msgstr "desenharx(...)"
 
 #: ../../curriculum.rst:131
 msgid "drawo(...)"
-msgstr ""
+msgstr "desenharo(...)"
 
 #: ../../curriculum.rst:132
 msgid "floor(...)"
-msgstr ""
+msgstr "piso(...)"
 
 #: ../../curriculum.rst:133
 msgid "onscreenclick(goto)"
-msgstr ""
+msgstr "onscreenclick(goto)"
 
 #: ../../curriculum.rst:135
 msgid ":doc:`simonsays`.py - Simon Says"
@@ -381,39 +389,39 @@ msgstr ""
 
 #: ../../curriculum.rst:141
 msgid "Mark 1:1-18 - God the Programmer (\"fishers of people\")"
-msgstr ""
+msgstr "Marcos 1:1-18 - Deus, o programador (\"pescadores de pessoas\")"
 
 #: ../../curriculum.rst:143
 msgid "What did Isaiah say would happen?"
-msgstr ""
+msgstr "O que Isaías disse que aconteceria?"
 
 #: ../../curriculum.rst:144
 msgid "What did John the Baptist say would happen?"
-msgstr ""
+msgstr "What did John the Baptist say would happen?"
 
 #: ../../curriculum.rst:145
 msgid "What did God say about Jesus? When?"
-msgstr ""
+msgstr "O que Deus disse sobre Jesus? Quando?"
 
 #: ../../curriculum.rst:146
 msgid "How did Jesus give his disciples new jobs?"
-msgstr ""
+msgstr "Como Jesus deu novos empregos a seus discípulos?"
 
 #: ../../curriculum.rst:150
 msgid "Day 4"
-msgstr ""
+msgstr "Dia 4"
 
 #: ../../curriculum.rst:152
 msgid "Activity: Collage of concepts."
-msgstr ""
+msgstr "Atividade: Colagem de conceitos."
 
 #: ../../curriculum.rst:153
 msgid "Famous Christian programmer: Larry Wall"
-msgstr ""
+msgstr "Programador cristão famoso: Larry Wall"
 
 #: ../../curriculum.rst:154
 msgid "Data types: list, dict, vector"
-msgstr ""
+msgstr "Tipos de dados: list, dict, vector"
 
 #: ../../curriculum.rst:159
 msgid ":doc:`bounce`.py - Simple animation demo."
@@ -437,39 +445,39 @@ msgstr ""
 
 #: ../../curriculum.rst:168
 msgid "John 9:1-33 - God the Debugger (Blind Man and Jesus)"
-msgstr ""
+msgstr "João 9:1-33 - Deus, o Depurador (Homem Cego e Jesus)"
 
 #: ../../curriculum.rst:170
 msgid "What does Jesus tell the disciples?"
-msgstr ""
+msgstr "O que Jesus disse aos discípulos?"
 
 #: ../../curriculum.rst:171
 msgid "What does the man tell the Pharisees?"
-msgstr ""
+msgstr "O que o homem disse aos fariseus?"
 
 #: ../../curriculum.rst:172
 msgid "What does the man believe about Jesus?"
-msgstr ""
+msgstr "O que o homem acredita sobre Jesus?"
 
 #: ../../curriculum.rst:173
 msgid "What do you believe about Jesus?"
-msgstr ""
+msgstr "O que você acredita sobre Jesus?"
 
 #: ../../curriculum.rst:177
 msgid "Day 5"
-msgstr ""
+msgstr "Dia 5"
 
 #: ../../curriculum.rst:179
 msgid "Activity: Make or modify your own game."
-msgstr ""
+msgstr "Atividade: Faça ou modifique seu próprio jogo."
 
 #: ../../curriculum.rst:180
 msgid "Famous Christian programmer: Jon Skeet"
-msgstr ""
+msgstr "Programador cristão famoso: Jon Skeet"
 
 #: ../../curriculum.rst:181
 msgid "Answer: What next?"
-msgstr ""
+msgstr "Resposta: O que vem a seguir?"
 
 #: ../../curriculum.rst:186
 msgid ":doc:`connect`.py - Connect Four"
@@ -485,21 +493,20 @@ msgstr ""
 
 #: ../../curriculum.rst:193
 msgid "Revelation 21 - God the Restorer (New Heaven and New Earth)"
-msgstr ""
+msgstr "Apocalipse 21 - Deus, o Restaurador (Novo Céu e Nova Terra)"
 
 #: ../../curriculum.rst:195
 msgid "What does God make? When?"
-msgstr ""
+msgstr "O que Deus faz? Quando?"
 
 #: ../../curriculum.rst:196
 msgid "Who is the Lamb and the Bride?"
-msgstr ""
+msgstr "Quem é o Cordeiro e a Noiva?"
 
 #: ../../curriculum.rst:197
 msgid "What is special about the city?"
-msgstr ""
+msgstr "O que há de especial na cidade?"
 
 #: ../../curriculum.rst:198
 msgid "How can we live in the Holy City?"
-msgstr ""
-
+msgstr "Como podemos viver na Cidade Santa?"
