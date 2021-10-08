@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2020, Grant Jenks
+# This file is distributed under the same license as the Free Python Games
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Free Python Games 2.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-24 21:25-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../api.rst:2
+msgid "Free Python Games API Reference"
+msgstr ""
+
+#: ../../api.rst:4
+msgid ""
+":doc:`Free Python Games <index>` includes a few helpful utilities. The "
+"best way to expose beginners to these functions is with Python's built-in"
+" help function. Learners should be able to understand and write the "
+"drawing functions themselves."
+msgstr ""
+
+#: ../../api.rst:13
+msgid "Drawing Functions"
+msgstr ""
+
+#: freegames.utils.line:1 of
+msgid "Draw line from `(a, b)` to `(x, y)`."
+msgstr ""
+
+#: freegames.utils.square:1 of
+msgid "Draw square at `(x, y)` with side length `size` and fill color `name`."
+msgstr ""
+
+#: freegames.utils.square:3 of
+msgid "The square is oriented so the bottom left corner is at (x, y)."
+msgstr ""
+
+#: ../../api.rst:20
+msgid "Helper Functions"
+msgstr ""
+
+#: freegames.utils.floor:1 of
+msgid "Floor of `value` given `size` and `offset`."
+msgstr ""
+
+#: freegames.utils.floor:3 of
+msgid "The floor function is best understood with a diagram of the number line::"
+msgstr ""
+
+#: freegames.utils.floor:8 of
+msgid ""
+"The number line shown has offset 200 denoted by the left-hand tick mark "
+"at -200 and size 100 denoted by the tick marks at -100, 0, 100, and 200. "
+"The floor of a value is the left-hand tick mark of the range where it "
+"lies. So for the points show above: ``floor(x)`` is -200, ``floor(y)`` is"
+" 0, and ``floor(z)`` is 100."
+msgstr ""
+
+#: freegames.utils.path:1 of
+msgid "Return full path to `filename` in freegames module."
+msgstr ""
+
+#: ../../api.rst:27
+msgid "Vectors"
+msgstr ""
+
+#: freegames.utils.vector:1 of
+msgid "Two-dimensional vector."
+msgstr ""
+
+#: freegames.utils.vector:3 of
+msgid "Vectors can be modified in-place."
+msgstr ""
+
+#: freegames.utils.vector.__init__:1 of
+msgid "Initialize vector with coordinates: x, y."
+msgstr ""
+
+#: freegames.utils.vector.__add__:1 of
+msgid "v.__add__(w) -> v + w"
+msgstr ""
+
+#: freegames.utils.vector.__mul__:1 of
+msgid "v.__mul__(w) -> v * w"
+msgstr ""
+
+#: freegames.utils.vector.copy:1 of
+msgid "Return copy of vector."
+msgstr ""
+
+#: freegames.utils.vector.move:1 of
+msgid "Move vector by other (in-place)."
+msgstr ""
+
+#: freegames.utils.vector.rotate:1 of
+msgid "Rotate vector counter-clockwise by angle (in-place)."
+msgstr ""
+
+#: freegames.utils.vector.scale:1 of
+msgid "Scale vector by other (in-place)."
+msgstr ""
+
+#: freegames.vector.x:1 of
+msgid "X-axis component of vector."
+msgstr ""
+
+#: freegames.vector.y:1 of
+msgid "Y-axis component of vector."
+msgstr ""
+
