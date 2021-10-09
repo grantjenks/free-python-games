@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Free Python Games 2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 21:25-0300\n"
-"PO-Revision-Date: 2021-10-09 12:12-0300\n"
+"PO-Revision-Date: 2021-10-09 20:11-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -105,7 +105,7 @@ msgstr "Jogos"
 
 #: ../../curriculum.rst:32
 msgid ":doc:`guess`.py - Guess number within range."
-msgstr ""
+msgstr ":doc:`guess`.py - Adivinhar um número dentro de um intervalo."
 
 #: ../../curriculum.rst:34
 msgid "Explain: from random import randint"
@@ -149,7 +149,7 @@ msgstr "Discuta o método de adivinhação. Isso é um algoritmo!"
 
 #: ../../curriculum.rst:45
 msgid ":doc:`snake`.py - Classic arcade game."
-msgstr ""
+msgstr ":doc:`snake`.py - Jogo clássico de arcade."
 
 #: ../../curriculum.rst:48 ../../curriculum.rst:97 ../../curriculum.rst:139
 #: ../../curriculum.rst:166 ../../curriculum.rst:191
@@ -210,7 +210,7 @@ msgstr "Módulos: turtle"
 
 #: ../../curriculum.rst:72
 msgid ":doc:`crypto`.py - Encrypt, decrypt and decode messages."
-msgstr ""
+msgstr ":doc:`crypto`.py - Criptografar, descriptografar e decodificar mensagens."
 
 #: ../../curriculum.rst:74
 msgid "ord function and chr function"
@@ -218,7 +218,7 @@ msgstr "função ord e função chr"
 
 #: ../../curriculum.rst:75
 msgid "modulo operator"
-msgstr "operador de módulo"
+msgstr "módulo operador"
 
 #: ../../curriculum.rst:76
 msgid "Write decode function"
@@ -230,7 +230,7 @@ msgstr "Criptografar números"
 
 #: ../../curriculum.rst:79
 msgid ":doc:`paint`.py - Draw shapes."
-msgstr ""
+msgstr ":doc:`paint`.py - Desenhe formas."
 
 #: ../../curriculum.rst:81
 msgid "Draw line"
@@ -285,7 +285,7 @@ msgstr "Escrever função polígono(lados, comprimento)"
 
 #: ../../curriculum.rst:94
 msgid ":doc:`flappy`.py - Flappy Bird inspired game."
-msgstr ""
+msgstr ":doc:`flappy`.py - Jogo inspirado em Flappy Bird."
 
 #: ../../curriculum.rst:99
 msgid "Genesis 6:5-22 - God the Engineer (Noah)"
@@ -325,7 +325,7 @@ msgstr "Funções: onscreenclick, onkey, ontimer"
 
 #: ../../curriculum.rst:117
 msgid ":doc:`bagels`.py - Digit guessing puzzle."
-msgstr ""
+msgstr ":doc:`bagels`.py - Quebra-cabeça de adivinhação de dígitos."
 
 #: ../../curriculum.rst:118
 msgid "Animation"
@@ -353,7 +353,7 @@ msgstr "hideturtle(); marcador(False); polígono(4, 200); atualização()"
 
 #: ../../curriculum.rst:126
 msgid ":doc:`tictactoe`.py - Tic-tac-toe."
-msgstr ""
+msgstr ":doc:`tictactoe`.py - Jogo da velha."
 
 #: ../../curriculum.rst:128
 msgid "line(...)"
@@ -381,11 +381,11 @@ msgstr "onscreenclick(goto)"
 
 #: ../../curriculum.rst:135
 msgid ":doc:`simonsays`.py - Simon Says"
-msgstr ""
+msgstr ":doc:`simonsays`.py - Simon Says"
 
 #: ../../curriculum.rst:136
 msgid ":doc:`cannon`.py - Hitting targets with projectiles."
-msgstr ""
+msgstr ":doc:`cannon`.py - Atingir alvos com projéteis."
 
 #: ../../curriculum.rst:141
 msgid "Mark 1:1-18 - God the Programmer (\"fishers of people\")"
@@ -397,7 +397,7 @@ msgstr "O que Isaías disse que aconteceria?"
 
 #: ../../curriculum.rst:144
 msgid "What did John the Baptist say would happen?"
-msgstr "What did John the Baptist say would happen?"
+msgstr "O que João Batista disse que aconteceria?"
 
 #: ../../curriculum.rst:145
 msgid "What did God say about Jesus? When?"
@@ -425,23 +425,23 @@ msgstr "Tipos de dados: list, dict, vector"
 
 #: ../../curriculum.rst:159
 msgid ":doc:`bounce`.py - Simple animation demo."
-msgstr ""
+msgstr ":doc:`bounce`.py - Demonstração de animação simples."
 
 #: ../../curriculum.rst:160
 msgid ":doc:`pong`.py - Classic arcade game."
-msgstr ""
+msgstr ":doc:`pong`.py - Jogo clássico de arcade."
 
 #: ../../curriculum.rst:161
 msgid ":doc:`ant`.py - Simple animation demo."
-msgstr ""
+msgstr ":doc:`ant`.py - Demonstração de animação simples."
 
 #: ../../curriculum.rst:162
 msgid ":doc:`tron`.py - Classic arcade game."
-msgstr ""
+msgstr ":doc:`tron`.py - Jogo clássico de arcade."
 
 #: ../../curriculum.rst:163
 msgid ":doc:`tiles`.py - Puzzle game of number shuffling."
-msgstr ""
+msgstr ":doc:`tiles`.py - Jogo de quebra-cabeça de embaralhamento de números."
 
 #: ../../curriculum.rst:168
 msgid "John 9:1-33 - God the Debugger (Blind Man and Jesus)"
@@ -481,15 +481,15 @@ msgstr "Resposta: O que vem a seguir?"
 
 #: ../../curriculum.rst:186
 msgid ":doc:`connect`.py - Connect Four"
-msgstr ""
+msgstr ":doc:`connect`.py - Conecte quatro"
 
 #: ../../curriculum.rst:187
 msgid ":doc:`memory`.py - Puzzle game of number pairs."
-msgstr ""
+msgstr ":doc:`memory`.py - Jogo de quebra-cabeça de pares de números."
 
 #: ../../curriculum.rst:188
 msgid ":doc:`pacman`.py - Classic arcade game."
-msgstr ""
+msgstr ":doc:`pacman`.py - Jogo clássico de arcade."
 
 #: ../../curriculum.rst:193
 msgid "Revelation 21 - God the Restorer (New Heaven and New Earth)"
