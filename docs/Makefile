@@ -11,8 +11,8 @@ BUILDDIR      = _build
 
 LOCALES = $(patsubst locale/%,%,$(wildcard locale/*))
 
-MV = mv 
-RM = rm -r 
+MV = mv
+RM = rm -r
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -23,11 +23,15 @@ help:
 update-po: gettext
 	$(SPHINXINTL) update -p "$(BUILDDIR)/gettext" $(0)
 
-%-translated:
+translated:
 	@for locale in $(LOCALES); do \
 	  SPHINXOPTS="-D language=$$locale"; \
 	  BUILDDIR="$(BUILDDIR)/$$locale"; \
+	  TARGETDIR="$(BUILDDIR)/$(TARGET)/$$locale"; \
 	  $(SPHINXBUILD) -M "$(TARGET)" "$(SOURCEDIR)" "$$BUILDDIR" $$SPHINXOPTS; \
+          $(MV) "$$BUILDDIR/$(TARGET)" "$$TARGETDIR"; \
+          $(RM) "$$BUILDDIR"; \
+          echo "$$locale docs was moved to $$TARGETDIR directory"; \
 	done
 
 # Catch-all target: route all unknown targets to Sphinx using the new
@@ -35,16 +39,6 @@ update-po: gettext
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-	TARGET=$@ make translated
-	
-	@for locale in $(LOCALES); do \
-	  LOCALEDIR="$(BUILDDIR)/$$locale"; \
-	  TARGETDIR="$(BUILDDIR)/$@/$$locale"; \
-	  $(MV) "$$LOCALEDIR/$@" "$$TARGETDIR"; \
-	  $(RM) "$$LOCALEDIR"; \
-	  echo "HTML pages was moved to $$TARGETDIR directory"; \
-	done
-
-
-clean:
-	$(RM) $(BUILDDIR)
+	@if [ $@ != clean -a $@ != gettext ]; then \
+	  TARGET=$@ make translated; \
+	fi
