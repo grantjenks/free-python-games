@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../../../README.rst:2
 msgid "Free Python Games"
-msgstr ""
+msgstr "Free Python Games"
 
 #: ../../../README.rst:4
 msgid ""
