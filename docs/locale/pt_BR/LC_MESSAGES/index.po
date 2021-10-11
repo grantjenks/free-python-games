@@ -29,6 +29,11 @@ msgid ""
 "Python code and designed for experimentation and changes. Simplified "
 "versions of several classic arcade games are included."
 msgstr ""
+"`Free Python Games`_  é uma coleção de jogos gratuita feita em Python "
+"destinados à educação e à diversão licenciada com Apache2. Os jogos "
+"são escritos em códigos simples de Python e projetados para experimentação "
+"e mudanças. Estão inclusas versões simplificadas de vários jogos de arcade "
+"clássicos."
 
 #: ../../../README.rst:9
 msgid ""
