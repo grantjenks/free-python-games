@@ -398,16 +398,18 @@ msgstr "Memória Free Python Game"
 
 #: ../../../README.rst:214
 msgid "Pong"
-msgstr ""
+msgstr "Pong"
 
 #: ../../../README.rst:216
 msgid ""
 "`Pong`_ -- classic arcade game. Use the keyboard to move your paddle up "
 "and down. The first player to miss the ball loses."
 msgstr ""
+"`Pong`_ -- jogo de arcade clássico. Use o teclado para mover a raquete para "
+"cima e para baixo. O primeiro jogador a perder a bola perde."
 
 msgid "Pong Free Python Game"
-msgstr ""
+msgstr "Pong Free Python Game"
 
 #: ../../../README.rst:225
 msgid "Simon Says"
