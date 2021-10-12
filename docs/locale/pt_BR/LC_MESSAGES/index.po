@@ -382,7 +382,7 @@ msgstr "Flappy Bird Free Python Game"
 
 #: ../../../README.rst:203
 msgid "Memory"
-msgstr ""
+msgstr "Memória"
 
 #: ../../../README.rst:205
 msgid ""
@@ -390,9 +390,11 @@ msgid ""
 "number. Match two numbers and the tiles will disappear to reveal an "
 "image."
 msgstr ""
+"`Memória`_ -- jogo de quebra-cabeça de pares de números. Clique em um ladrilho para "
+"revelar um número. Combine dois números e as peças desaparecerão para revelar uma imagem."
 
 msgid "Memory Free Python Game"
-msgstr ""
+msgstr "Memória Free Python Game"
 
 #: ../../../README.rst:214
 msgid "Pong"
