@@ -119,7 +119,7 @@ msgid ""
 msgstr ""
 "*\"Free Python Games inspirou e introduziu um novo passatempo para o "
 "nosso filho. Muito obrigada por apresentar ele à programação. Ele está "
-se divertindo bastante!\"*"
+"se divertindo bastante!\"*"
 
 #: ../../../README.rst:46
 msgid "-- Mary Lai, Parent"
@@ -163,55 +163,55 @@ msgstr "-- Terri Furton, Diretor da Downton College Prep"
 
 #: ../../../README.rst:65
 msgid "Features"
-msgstr ""
+msgstr "Características"
 
 #: ../../../README.rst:67
 msgid "Fun to play!"
-msgstr ""
+msgstr "Divertido de jogar"
 
 #: ../../../README.rst:68
 msgid "Simple Python code"
-msgstr ""
+msgstr "Código de Python simples"
 
 #: ../../../README.rst:69
 msgid "Easy to install"
-msgstr ""
+msgstr "Fácil de instalar"
 
 #: ../../../README.rst:70
 msgid "Designed for education"
-msgstr ""
+msgstr "Projetado para educação"
 
 #: ../../../README.rst:71
 msgid "Depends only on the Python Standard Library"
-msgstr ""
+msgstr "Depende apenas da biblioteca padrão de Python"
 
 #: ../../../README.rst:72
 msgid "Used in hundreds of hours of classroom instruction"
-msgstr ""
+msgstr "Usado em centenas de horas de instrução em sala de aula"
 
 #: ../../../README.rst:73
 msgid "Fully Documented"
-msgstr ""
+msgstr "Completamente documentado"
 
 #: ../../../README.rst:74
 msgid "100% Test Coverage"
-msgstr ""
+msgstr "100% de cobertura de teste"
 
 #: ../../../README.rst:75
 msgid "Developed on Python 3.7"
-msgstr ""
+msgstr "Desenvolvido em Python 3.7"
 
 #: ../../../README.rst:76
 msgid "Tested on CPython 2.7, 3.4, 3.5, 3.6, and 3.7"
-msgstr ""
+msgstr "Testado em CPython 2.7, 3.4, 3.5, 3.6 e 3.7"
 
 #: ../../../README.rst:77
 msgid "Tested on Windows, Mac OS X, Raspbian (Raspberry Pi), and Linux"
-msgstr ""
+msgstr "Testado em Windows, Mac OS X, Raspbian (Raspberry Pi) e Linux"
 
 #: ../../../README.rst:78
 msgid "Tested using Travis CI and AppVeyor CI"
-msgstr ""
+msgstr "Testado usando Travis CI and AppVeyor CI"
 
 #: ../../../README.rst:88
 msgid "Quickstart"
