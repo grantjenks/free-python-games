@@ -97,17 +97,19 @@ msgstr ""
 
 #: ../../../README.rst:36
 msgid "Testimonials"
-msgstr ""
+msgstr "Relatos"
 
 #: ../../../README.rst:38
 msgid ""
 "*\"I love Free Python Games because the games are fun and they're easy to"
 " understand and change. I like making my own games now.\"*"
 msgstr ""
+"*\"Eu amo Free Python Games porque os jogos são divertidos e eles são fáceis"
+" de entender e mudar. Eu gosto de fazer meus próprios jogos agora. \"*"
 
 #: ../../../README.rst:41
 msgid "-- Luke Martin, Student"
-msgstr ""
+msgstr "-- Luke Martin, estudante"
 
 #: ../../../README.rst:43
 msgid ""
@@ -115,40 +117,49 @@ msgid ""
 "Thank you so much for exposing him to coding. He is having so much "
 "fun!\"*"
 msgstr ""
+"*\"Free Python Games inspirou e introduziu um novo passatempo para o "
+"nosso filho. Muito obrigada por apresentar ele à programação. Ele está "
+se divertindo bastante!\"*"
 
 #: ../../../README.rst:46
 msgid "-- Mary Lai, Parent"
-msgstr ""
+msgstr "-- Mary Lai, mãe"
 
 #: ../../../README.rst:48
 msgid ""
 "*\"Free Python Games are great because they really engage students and "
 "let them learn at their own pace.\"*"
 msgstr ""
+"*\"Free Python Games é ótimo por envolver os alunos e permitir que "
+"aprendam em seu próprio ritmo.\"*"
 
 #: ../../../README.rst:51
 msgid "-- Rick Schertle, Teacher, Steindorf STEAM School"
-msgstr ""
+msgstr "-- Rick Schertle, professor da Steindorf STEAM School"
 
 #: ../../../README.rst:53
 msgid ""
 "*\"Free Python Games combines play and learning in a flexible environment"
 " that reduces the stress of a difficult topic like programming.\"*"
 msgstr ""
+"*\"Free Python Games combina brincadeira e aprendizagem em um ambiente flexível"
+" que reduz o estresse de um tópico difícil como a programação.\"*"
 
 #: ../../../README.rst:56
 msgid "-- Brett Bymaster, Youth Pastor, The River Church Community"
-msgstr ""
+msgstr "-- Brett Bymaster, Pastor de jovens, Comunidade da The River Church"
 
 #: ../../../README.rst:58
 msgid ""
 "*\"Free Python Games is great for students, is highly organized and "
 "flexible, and seeks to unleash inquiry and understanding.\"*"
 msgstr ""
+"*\"Free Python Games é ótimo para estudantes, é altamente organizado e "
+"flexível e procura liberar a investigação e a compreensão.\"*"
 
 #: ../../../README.rst:61
 msgid "-- Terri Furton, Principal, Downtown College Prep"
-msgstr ""
+msgstr "-- Terri Furton, Diretor da Downton College Prep"
 
 #: ../../../README.rst:65
 msgid "Features"
