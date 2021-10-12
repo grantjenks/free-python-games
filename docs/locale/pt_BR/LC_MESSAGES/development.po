@@ -4,162 +4,187 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Free Python Games 2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 21:25-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-10-12 14:17-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../development.rst:2
 msgid "Free Python Games Development"
-msgstr ""
+msgstr "Desenvolvimento de Free Python Games"
 
 #: ../../development.rst:4
 msgid ""
 ":doc:`Free Python Games <index>` development is lead by Grant Jenks "
 "<contact@grantjenks.com>."
 msgstr ""
+":doc:O desenvolvimento de `Free Python Games <index>` é liderado por Grant "
+"Jenks <contact@grantjenks.com>."
 
 #: ../../development.rst:8
 msgid "Collaborators Welcome"
-msgstr ""
+msgstr "Colaboradores são bem-vindos"
 
 #: ../../development.rst:10
 msgid "Search issues or open a new issue to start a discussion around a bug."
 msgstr ""
+"Pesquise issues ou abra uma nova issue para iniciar uma discussão sobre um "
+"bug."
 
 #: ../../development.rst:11
 msgid "Fork the `GitHub repository`_ and make your changes in a new branch."
 msgstr ""
+"Faça um fork do `repositório no GitHub`_ e faça suas alterações em um novo "
+"branch."
 
 #: ../../development.rst:12
 msgid "Write a test which shows the bug was fixed."
-msgstr ""
+msgstr "Escreva um teste que mostre que o bug foi corrigido."
 
 #: ../../development.rst:13
 msgid ""
-"Send a pull request and message the development lead until its merged and"
-" published."
+"Send a pull request and message the development lead until its merged and "
+"published."
 msgstr ""
+"Envie um pull request e uma mensagem ao líder de desenvolvimento até que "
+"seja mesclado e publicado."
 
 #: ../../development.rst:19
 msgid "Requests for Contributions"
-msgstr ""
+msgstr "Pedidos de contribuições"
 
 #: ../../development.rst:21
 msgid "Simplifications to existing games."
-msgstr ""
+msgstr "Simplificações de jogos existentes."
 
 #: ../../development.rst:22
 msgid "Refactoring to simplify games."
-msgstr ""
+msgstr "Refatoração para simplificar os jogos."
 
 #: ../../development.rst:23
 msgid "Improved documentation."
-msgstr ""
+msgstr "Melhoria da documentação."
 
 #: ../../development.rst:24
 msgid "Additional games. Requirements for new games:"
-msgstr ""
+msgstr "Jogos adicionais. Requisitos para novos jogos:"
 
 #: ../../development.rst:26
 msgid "Fun to play."
-msgstr ""
+msgstr "Divertido de jogar."
 
 #: ../../development.rst:27
 msgid "Matching code style."
-msgstr ""
+msgstr "Estilo de código correspondente."
 
 #: ../../development.rst:28
 msgid "Limited Python feature set."
-msgstr ""
+msgstr "Conjunto limitado de recursos do Python."
 
 #: ../../development.rst:29
 msgid "Short (less than 100 lines of code)."
-msgstr ""
+msgstr "Curto (menos de 100 linhas de código)."
 
 #: ../../development.rst:32
 msgid "Get the Code"
-msgstr ""
+msgstr "Obtenha o código"
 
 #: ../../development.rst:34
 msgid ""
 ":doc:`Free Python Games <index>` is actively developed in a `GitHub "
 "repository`_."
 msgstr ""
+":doc:`Free Python Games <index>` é desenvolvido ativamente em um "
+"`repositório no GitHub`_."
 
 #: ../../development.rst:37
 msgid "You can either clone the public repository::"
-msgstr ""
+msgstr "Você pode clonar o repositório público::"
 
 #: ../../development.rst:41
 msgid ""
-"Download the `tarball <https://github.com/grantjenks/free-python-"
-"games/tarball/master>`_::"
+"Download the `tarball <https://github.com/grantjenks/free-python-games/"
+"tarball/master>`_::"
 msgstr ""
+"Baixe o `tarball <https://github.com/grantjenks/free-python-games/tarball/"
+"master>`_::"
 
 #: ../../development.rst:45
 msgid ""
-"Or, download the `zipball <https://github.com/grantjenks/free-python-"
-"games/zipball/master>`_::"
+"Or, download the `zipball <https://github.com/grantjenks/free-python-games/"
+"zipball/master>`_::"
 msgstr ""
+"Ou, faça o download do `zipball <https://github.com/grantjenks/free-python-"
+"games/zipball/master>`_::"
 
 #: ../../development.rst:50
 msgid "Installing Dependencies"
-msgstr ""
+msgstr "Instalação de dependências"
 
 #: ../../development.rst:52
 msgid ""
-"Install development dependencies with `pip <http://www.pip-"
-"installer.org/>`_::"
+"Install development dependencies with `pip <http://www.pip-installer.org/"
+">`_::"
 msgstr ""
+"Instale as dependências de desenvolvimento com `pip <http://www.pip-"
+"installer.org/>`_::"
 
 #: ../../development.rst:56
 msgid ""
 "All packages for running tests and building documentation will be "
 "installed."
 msgstr ""
+"Todos os pacotes para a execução de testes e documentação de construção "
+"serão instalados."
 
 #: ../../development.rst:59
 msgid "Testing"
-msgstr ""
+msgstr "Testando"
 
 #: ../../development.rst:61
 msgid ""
-":doc:`Free Python Games <index>` currently tests against three versions "
-"of Python:"
+":doc:`Free Python Games <index>` currently tests against three versions of "
+"Python:"
 msgstr ""
+":doc:`Free Python Games <index>` é atualmente testado em três versões do "
+"Python:"
 
 #: ../../development.rst:64
 msgid "CPython 3.4"
-msgstr ""
+msgstr "CPython 3.4"
 
 #: ../../development.rst:65
 msgid "CPython 3.5"
-msgstr ""
+msgstr "CPython 3.5"
 
 #: ../../development.rst:66
 msgid "CPython 3.6"
-msgstr ""
+msgstr "CPython 3.6"
 
 #: ../../development.rst:68
 msgid ""
-"Testing uses `tox <https://pypi.python.org/pypi/tox>`_. If you don't want"
-" to install all the development requirements, then, after downloading, "
-"you can simply run::"
+"Testing uses `tox <https://pypi.python.org/pypi/tox>`_. If you don't want "
+"to install all the development requirements, then, after downloading, you "
+"can simply run::"
 msgstr ""
+"Os testes usam `tox <https://pypi.python.org/pypi/tox>`_. Se você não "
+"deseja instalar todos os requisitos de desenvolvimento, então, após o "
+"download, você pode simplesmente executar::"
 
 #: ../../development.rst:74
 msgid ""
 "The test argument to setup.py will download a minimal testing "
 "infrastructure and run the tests."
 msgstr ""
-
+"O argumento de teste para setup.py irá baixar uma infraestrutura mínima de "
+"testes e executar os testes."
