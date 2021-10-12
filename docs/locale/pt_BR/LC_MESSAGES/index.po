@@ -215,25 +215,31 @@ msgstr "Testado usando Travis CI and AppVeyor CI"
 
 #: ../../../README.rst:88
 msgid "Quickstart"
-msgstr ""
+msgstr "Começo rápido"
 
 #: ../../../README.rst:90
 msgid ""
 "Installing Free Python Games is simple with `pip "
 "<https://pypi.python.org/pypi/pip>`_::"
 msgstr ""
+"Instalar o Free Python Games é simples com `pip:"
+"<https://pypi.python.org/pypi/pip>`_::"
 
 #: ../../../README.rst:95
 msgid ""
 "Free Python Games supports a command-line interface (CLI). Help for the "
 "CLI is available using::"
 msgstr ""
+"Free Python Games oferece suporte a uma interface de linha de comandos "
+"(CLI - Command Line Interface). A ajuda para a CLI está disponível usando::"
 
 #: ../../../README.rst:100
 msgid ""
 "The CLI supports three commands: list, copy, and show. For a list of all "
 "games run::"
 msgstr ""
+"A CLI suporta três comandos: list, copy e show. Para obter uma lista "
+"de todos os jogos, execute::"
 
 #: ../../../README.rst:105
 msgid ""
@@ -241,6 +247,9 @@ msgid ""
 " the command-line. To reference the Python module, combine \"freegames\" "
 "with the name of the game. For example, to play the \"snake\" game run::"
 msgstr ""
+"Qualquer um dos jogos listados pode ser jogado executando-se o módulo"
+" Python na linha de comando. Para fazer referência ao módulo Python, "
+"combine \"freegames\" com o nome do jogo. Por exemplo, para jogar o jogo \"snake\" execute::"
 
 #: ../../../README.rst:111
 msgid ""
@@ -248,6 +257,9 @@ msgid ""
 " create a Python file in your local directory which you can edit. For "
 "example, to copy and play the \"snake\" game run::"
 msgstr ""
+"Os jogos podem ser modificados copiando-se seu código fonte. O comando copy"
+" criará um arquivo Python, em seu diretório local, que você pode editar. "
+"Por exemplo, para copiar e jogar o jogo \"snake\" execute::"
 
 #: ../../../README.rst:118
 msgid ""
@@ -255,12 +267,17 @@ msgid ""
 "Python code. To launch the editor and make changes to the \"snake\" game "
 "run::"
 msgstr ""
+"Python inclui um editor de texto integrado chamado IDLE, que também pode executar "
+"código Python. Para iniciar o editor e fazer alterações no jogo \"snake\" execute::"
 
 #: ../../../README.rst:123
 msgid ""
 "You can also access documentation in the interpreter with Python's built-"
 "in help function::"
 msgstr ""
+"Você também pode acessar a documentação no interpretador com a função "
+"embutida no Python help::"
+
 
 #: ../../../README.rst:131
 msgid "Free Games"
