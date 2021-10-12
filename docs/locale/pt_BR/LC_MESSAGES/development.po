@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Free Python Games 2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-24 21:25-0300\n"
+"POT-Creation-Date: 2021-10-12 16:44-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -161,5 +161,25 @@ msgstr ""
 msgid ""
 "The test argument to setup.py will download a minimal testing "
 "infrastructure and run the tests."
+msgstr ""
+
+#: ../../development.rst:78
+msgid "Translate"
+msgstr ""
+
+#: ../../development.rst:80
+msgid ""
+"Translation files are available in the locale/ directory, if you want to "
+"contribute a translation make changes to its content."
+msgstr ""
+
+#: ../../development.rst:82
+msgid ""
+"if you want to translate to another language, you need to create the lang"
+" folder. To update the lang folder you need to use the command:"
+msgstr ""
+
+#: ../../development.rst:84
+msgid "$ make update-po"
 msgstr ""
 
