@@ -367,16 +367,18 @@ msgstr "Connect 4 Free Python Game"
 
 #: ../../../README.rst:192
 msgid "Flappy"
-msgstr ""
+msgstr "Flappy"
 
 #: ../../../README.rst:194
 msgid ""
 "`Flappy`_ -- Flappy-bird inspired game. Click the screen to flap your "
 "wings. Watch out for black ravens as you fly across the screen."
 msgstr ""
+"`Flappy`_ -- Jogo inspirado em Flappy-bird. Clique na tela para "
+"bater suas asas. Cuidado com os corvos negros enquanto voa pela tela."
 
 msgid "Flappy Bird Free Python Game"
-msgstr ""
+msgstr "Flappy Bird Free Python Game"
 
 #: ../../../README.rst:203
 msgid "Memory"
