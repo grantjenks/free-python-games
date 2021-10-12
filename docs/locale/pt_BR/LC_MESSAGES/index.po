@@ -571,11 +571,11 @@ msgstr "`Rastreador de issues do Free Python Games`_"
 
 #: ../../../README.rst:338
 msgid "Free Python Games License"
-msgstr ""
+msgstr "Licença do Free Python Games"
 
 #: ../../../README.rst:340
 msgid "Copyright 2017-2020 Grant Jenks"
-msgstr ""
+msgstr "Direitos autorais 2017 - 2020 Grant Jenks"
 
 #: ../../../README.rst:342
 msgid ""
@@ -583,10 +583,13 @@ msgid ""
 " not use this file except in compliance with the License.  You may obtain"
 " a copy of the License at"
 msgstr ""
+"Licenciado pela licença Apache, Versão 2.0( A \"Licença\"); Você não pode usar"
+" esse documento exceto se estiver em concordância com a Licença. Pode obter a"
+" cópia da licença em"
 
 #: ../../../README.rst:346
 msgid "http://www.apache.org/licenses/LICENSE-2.0"
-msgstr ""
+msgstr "http://www.apache.org/licenses/LICENSE-2.0"
 
 #: ../../../README.rst:348
 msgid ""
@@ -596,4 +599,8 @@ msgid ""
 "  See the License for the specific language governing permissions and "
 "limitations under the License."
 msgstr ""
-
+"A menos que exigido pela lei aplicável ou acordado por escrito, o software "
+"distribuído sob a Licença é distribuído \"COMO ESTÁ\", SEM GARANTÍAS OU CONDIÇÕES DE "
+"QUALQUER TIPO, expressas ou implícitas. Consulte a licença para as permissões e" 
+"limitações que regem o idioma específico sob a Licença."
+"
