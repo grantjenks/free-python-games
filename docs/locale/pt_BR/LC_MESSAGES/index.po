@@ -492,7 +492,7 @@ msgstr "Jogo da Vida Free Python Game"
 
 #: ../../../README.rst:282
 msgid "Maze"
-msgstr ""
+msgstr "Maze"
 
 #: ../../../README.rst:284
 msgid ""
@@ -500,9 +500,11 @@ msgid ""
 "Line of Code with 10 PRINT`_. Tap the screen to trace a path from one "
 "side to another."
 msgstr ""
+"`Maze`_ -- Mover de um lado para o outro. Inspirado por `A Universe in One "
+"Line of Code with 10 PRINT`_. Toque na tela para traçar um caminho de um lado para o outro."
 
 msgid "Maze Free Python Game"
-msgstr ""
+msgstr "Maze Free Python Game"
 
 #: ../../../README.rst:295
 msgid "Fidget"
