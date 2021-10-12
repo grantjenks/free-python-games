@@ -413,7 +413,7 @@ msgstr "Pong Free Python Game"
 
 #: ../../../README.rst:225
 msgid "Simon Says"
-msgstr ""
+msgstr "Simon Says"
 
 #: ../../../README.rst:227
 msgid ""
@@ -421,9 +421,12 @@ msgid ""
 "Watch the pattern and then click the tiles in the same order. Each time "
 "you get the sequence right the pattern gets one step longer."
 msgstr ""
+"`Simon Says`_ -- jogo clássico de quebra-cabeça de memória. Clique na tela para começar."
+"Observe o padrão e clique nas peças na mesma ordem. Cada vez que você acerta a sequência, "
+"o padrão fica um passo mais longo."
 
 msgid "Simon Says Free Python Game"
-msgstr ""
+msgstr "Simon Says Free Python Game"
 
 #: ../../../README.rst:237
 msgid "Tic Tac Toe"
