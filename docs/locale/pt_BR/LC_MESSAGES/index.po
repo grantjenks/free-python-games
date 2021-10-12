@@ -462,16 +462,18 @@ msgstr "Tiles Free Python Game"
 
 #: ../../../README.rst:260
 msgid "Tron"
-msgstr ""
+msgstr "Tron"
 
 #: ../../../README.rst:262
 msgid ""
 "`Tron`_ -- classic arcade game. Use the keyboard to change the direction "
 "of your Tron player. Avoid touching the line drawn by your opponent."
 msgstr ""
+"`Tron`_ -- jogo clássico de arcade. Utilize o teclado para mudar a direção "
+"do seu jogador em Tron. Evite tocar na linha desenhada pelo seu oponente."
 
 msgid "Tron Free Python Game"
-msgstr ""
+msgstr "Tron Free Python Game"
 
 #: ../../../README.rst:271
 msgid "Life"
