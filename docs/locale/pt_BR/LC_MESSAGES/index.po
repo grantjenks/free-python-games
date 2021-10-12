@@ -547,27 +547,27 @@ msgstr "`Referência da API do Free Python Games`_"
 
 #: ../../../README.rst:315
 msgid "`Free Python Games Development`_"
-msgstr "`Desenvolvimento do Free Python Games Desenvolvimento`_"
+msgstr "`Desenvolvimento do Free Python Games`_"
 
 #: ../../../README.rst:324
 msgid "References"
-msgstr ""
+msgstr "Referências"
 
 #: ../../../README.rst:326
 msgid "`Free Python Games Documentation`_"
-msgstr ""
+msgstr "`Documentação do Free Python Games`_ "
 
 #: ../../../README.rst:327
 msgid "`Free Python Games at PyPI`_"
-msgstr ""
+msgstr "`Free Python Games no PyPI`_"
 
 #: ../../../README.rst:328
 msgid "`Free Python Games at GitHub`_"
-msgstr ""
+msgstr "`Free Python Games no GitHub`_"
 
 #: ../../../README.rst:329
 msgid "`Free Python Games Issue Tracker`_"
-msgstr ""
+msgstr "`Rastreador de issues do Free Python Games`_"
 
 #: ../../../README.rst:338
 msgid "Free Python Games License"
