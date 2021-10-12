@@ -302,7 +302,7 @@ msgstr "Paint Free Python Game"
 
 #: ../../../README.rst:146
 msgid "Snake"
-msgstr ""
+msgstr "Snake"
 
 #: ../../../README.rst:148
 msgid ""
@@ -310,9 +310,12 @@ msgid ""
 "the green food. Each time the food is consumed, the snake grows one "
 "segment longer. Avoid eating yourself or going out of bounds!"
 msgstr ""
+"`Snake`_ -- jogo de arcade clássico. Use as setas do teclado para navegar e comer "
+"a comida verde. Cada vez que o alimento é consumido, a cobra cresce um "
+"segmento a mais. Evite comer você mesmo ou bater nas bordas!"
 
 msgid "Snake Free Python Game"
-msgstr ""
+msgstr "Snake Free Python Game"
 
 #: ../../../README.rst:158
 msgid "Pacman"
