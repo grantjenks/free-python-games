@@ -523,29 +523,31 @@ msgstr "Fidget Free Python Game"
 
 #: ../../../README.rst:307
 msgid "User Guide"
-msgstr ""
+msgstr "Guia do Usuário"
 
 #: ../../../README.rst:309
 msgid ""
 "For those wanting more details, this part of the documentation describes "
 "curriculum, API, and development."
 msgstr ""
+"Para aqueles que procuram mais detalhes, essa parte da documentação descreve "
+"o currículo, API, e desenvolvimento."
 
 #: ../../../README.rst:312
 msgid "`Talk: Give the Gift of Python`_"
-msgstr ""
+msgstr "`Palestra: Dê o presente de Python`_"
 
 #: ../../../README.rst:313
 msgid "`Free Python Games Curriculum`_"
-msgstr ""
+msgstr "`Currículo Free Python Games`_"
 
 #: ../../../README.rst:314
 msgid "`Free Python Games API Reference`_"
-msgstr ""
+msgstr "`Referência da API do Free Python Games`_"
 
 #: ../../../README.rst:315
 msgid "`Free Python Games Development`_"
-msgstr ""
+msgstr "`Desenvolvimento do Free Python Games Desenvolvimento`_"
 
 #: ../../../README.rst:324
 msgid "References"
