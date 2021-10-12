@@ -334,7 +334,7 @@ msgstr "Pacman Free Python Game"
 
 #: ../../../README.rst:169
 msgid "Cannon"
-msgstr ""
+msgstr "Canhão"
 
 #: ../../../README.rst:171
 msgid ""
@@ -342,9 +342,12 @@ msgid ""
 "cannnonball. The cannonball pops blue balloons in its path. Pop all the "
 "balloons before they can cross the screen."
 msgstr ""
+"`Canhão`_ -- movimento de projétil. Clique na tela para disparar sua bala de canhão."
+"A bala de canhão estoura balões azuis em seu caminho. Estoure todos os balões "
+"antes que eles possam cruzar a tela."
 
 msgid "Cannon Free Python Game"
-msgstr ""
+msgstr "Canhão Free Python Game"
 
 #: ../../../README.rst:181
 msgid "Connect"
