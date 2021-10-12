@@ -281,7 +281,7 @@ msgstr ""
 
 #: ../../../README.rst:131
 msgid "Free Games"
-msgstr ""
+msgstr "Jogos Livres"
 
 #: ../../../README.rst:134
 msgid "Paint"
