@@ -445,7 +445,7 @@ msgstr "Jogo da Velha Free Python Game"
 
 #: ../../../README.rst:248
 msgid "Tiles"
-msgstr ""
+msgstr "Tiles"
 
 #: ../../../README.rst:250
 msgid ""
@@ -453,9 +453,12 @@ msgid ""
 "adjacent to the empty square to swap positions. Can you make the tiles "
 "count one to fifteen from left to right and bottom to top?"
 msgstr ""
+"`Tiles`_ -- jogo de quebra-cabeça de números deslizantes. Clique em um ladrilho "
+"adjacente ao quadrado vazio para trocar de posição. Você pode fazer as "
+"peças contarem de um a quinze da esquerda para a direita e de baixo para cima?"
 
 msgid "Tiles Free Python Game"
-msgstr ""
+msgstr "Tiles Free Python Game"
 
 #: ../../../README.rst:260
 msgid "Tron"
