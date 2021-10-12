@@ -477,16 +477,18 @@ msgstr "Tron Free Python Game"
 
 #: ../../../README.rst:271
 msgid "Life"
-msgstr ""
+msgstr "Jogo da vida"
 
 #: ../../../README.rst:273
 msgid ""
 "`Life`_ -- Conway's Game of Life. The classic, zero-player, cellular "
 "automation created in 1970 by John Conway."
 msgstr ""
+"`Life`_ -- Jogo da vida de Conway. A clássica automação celular, zero-player, "
+"criada em 1970 por John Conway."
 
 msgid "Game of Life Free Python Game"
-msgstr ""
+msgstr "Jogo da Vida Free Python Game"
 
 #: ../../../README.rst:282
 msgid "Maze"
