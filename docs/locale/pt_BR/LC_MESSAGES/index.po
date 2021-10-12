@@ -430,16 +430,18 @@ msgstr "Simon Says Free Python Game"
 
 #: ../../../README.rst:237
 msgid "Tic Tac Toe"
-msgstr ""
+msgstr "Jogo da Velha"
 
 #: ../../../README.rst:239
 msgid ""
 "`Tic Tac Toe`_ -- classic game. Click the screen to place an X or O. "
 "Connect three in a row and you win!"
 msgstr ""
+"`Jogo da Velha`_ -- jogo clássico. Clique na tela para colocar um X ou O. "
+"Conecte três em uma linha e você ganha!"
 
 msgid "Tic Tac Toe Free Python Game"
-msgstr ""
+msgstr "Jogo da Velha Free Python Game"
 
 #: ../../../README.rst:248
 msgid "Tiles"
