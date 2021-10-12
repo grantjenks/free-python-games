@@ -351,7 +351,7 @@ msgstr "Canhão Free Python Game"
 
 #: ../../../README.rst:181
 msgid "Connect"
-msgstr ""
+msgstr "Connect"
 
 #: ../../../README.rst:183
 msgid ""
@@ -359,9 +359,11 @@ msgid ""
 "player to connect four discs vertically, horizontally, or diagonally "
 "wins!"
 msgstr ""
+"`Connect`_ -- Jogo Ligue 4. Clique em uma linha para soltar um disco. O primeiro"
+"jogador a conectar quatro discos verticalmente, horizontalmente ou diagonalmente vence!"
 
 msgid "Connect 4 Free Python Game"
-msgstr ""
+msgstr "Connect 4 Free Python Game"
 
 #: ../../../README.rst:192
 msgid "Flappy"
