@@ -319,16 +319,18 @@ msgstr "Snake Free Python Game"
 
 #: ../../../README.rst:158
 msgid "Pacman"
-msgstr ""
+msgstr "Pacman"
 
 #: ../../../README.rst:160
 msgid ""
 "`Pacman`_ -- classic arcade game. Use the arrow keys to navigate and eat "
 "all the white food. Watch out for red ghosts that roam the maze."
 msgstr ""
+"`Pacman`_ -- jogo de arcade clássico. Use as setas do teclado para navegar e comer "
+"toda a comida branca. Cuidado com os fantasmas vermelhos que vagam pelo labirinto."
 
 msgid "Pacman Free Python Game"
-msgstr ""
+msgstr "Pacman Free Python Game"
 
 #: ../../../README.rst:169
 msgid "Cannon"
