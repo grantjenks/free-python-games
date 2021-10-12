@@ -508,16 +508,18 @@ msgstr "Maze Free Python Game"
 
 #: ../../../README.rst:295
 msgid "Fidget"
-msgstr ""
+msgstr "Fidget"
 
 #: ../../../README.rst:297
 msgid ""
 "`Fidget`_ -- fidget spinner inspired animation. Click the screen to "
 "accelerate the fidget spinner."
 msgstr ""
+"`Fidget`_ -- Animação inspirada nos brinquedos fidget spinner. Clique "
+"na tela para acelerar o fidget spinner."
 
 msgid "Fidget Spinner Free Python Game"
-msgstr ""
+msgstr "Fidget Free Python Game"
 
 #: ../../../README.rst:307
 msgid "User Guide"
