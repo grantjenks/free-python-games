@@ -285,7 +285,7 @@ msgstr "Jogos Livres"
 
 #: ../../../README.rst:134
 msgid "Paint"
-msgstr ""
+msgstr "Paint"
 
 #: ../../../README.rst:136
 msgid ""
@@ -293,9 +293,12 @@ msgid ""
 "of a shape and click again to mark its end. Different shapes and colors "
 "can be selected using the keyboard."
 msgstr ""
+"`Paint`_ -- desenhe linhas e formas na tela. Clique para marcar o início "
+"e uma forma e clique novamente para marcar o seu final. Diferentes formas "
+"e cores podem ser selecionadas usando o teclado."
 
 msgid "Paint Free Python Game"
-msgstr ""
+msgstr "Paint Free Python Game"
 
 #: ../../../README.rst:146
 msgid "Snake"
