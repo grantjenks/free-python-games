@@ -4,118 +4,130 @@
 # package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Free Python Games 2.3.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 21:25-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2021-10-11 19:47-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"X-Generator: Poedit 3.0\n"
 
 #: ../../api.rst:2
 msgid "Free Python Games API Reference"
-msgstr ""
+msgstr "Referência da API do Free Python Games"
 
 #: ../../api.rst:4
 msgid ""
-":doc:`Free Python Games <index>` includes a few helpful utilities. The "
-"best way to expose beginners to these functions is with Python's built-in"
-" help function. Learners should be able to understand and write the "
-"drawing functions themselves."
+":doc:`Free Python Games <index>` includes a few helpful utilities. The best "
+"way to expose beginners to these functions is with Python's built-in help "
+"function. Learners should be able to understand and write the drawing "
+"functions themselves."
 msgstr ""
+":doc:`Free Python Games <index>` inclui alguns utilitários úteis. A melhor "
+"maneira de expor os iniciantes a essas funções é com a função de ajuda "
+"integrada do Python. Os alunos devem ser capazes de compreender e escrever as "
+"funções de desenho por si mesmos."
 
 #: ../../api.rst:13
 msgid "Drawing Functions"
-msgstr ""
+msgstr "Funções de Desenho"
 
 #: freegames.utils.line:1 of
 msgid "Draw line from `(a, b)` to `(x, y)`."
-msgstr ""
+msgstr "Desenhe uma linha de (a, b) a (x, y)."
 
 #: freegames.utils.square:1 of
 msgid "Draw square at `(x, y)` with side length `size` and fill color `name`."
 msgstr ""
+"Desenhe um quadrado em (x, y) com o `tamanho` do comprimento lateral e "
+"preencha o `nome` da cor."
 
 #: freegames.utils.square:3 of
 msgid "The square is oriented so the bottom left corner is at (x, y)."
 msgstr ""
+"O quadrado é orientado de forma que o canto esquerdo inferior esteja em (x, y)."
 
 #: ../../api.rst:20
 msgid "Helper Functions"
-msgstr ""
+msgstr "Funções de ajuda"
 
 #: freegames.utils.floor:1 of
 msgid "Floor of `value` given `size` and `offset`."
-msgstr ""
+msgstr "Piso de `valor` dado `tamanho` e `deslocamento`."
 
 #: freegames.utils.floor:3 of
 msgid "The floor function is best understood with a diagram of the number line::"
-msgstr ""
+msgstr "A função do piso é melhor compreendida com um diagrama da reta numérica:"
 
 #: freegames.utils.floor:8 of
 msgid ""
-"The number line shown has offset 200 denoted by the left-hand tick mark "
-"at -200 and size 100 denoted by the tick marks at -100, 0, 100, and 200. "
-"The floor of a value is the left-hand tick mark of the range where it "
-"lies. So for the points show above: ``floor(x)`` is -200, ``floor(y)`` is"
-" 0, and ``floor(z)`` is 100."
+"The number line shown has offset 200 denoted by the left-hand tick mark at "
+"-200 and size 100 denoted by the tick marks at -100, 0, 100, and 200. The "
+"floor of a value is the left-hand tick mark of the range where it lies. So for "
+"the points show above: ``floor(x)`` is -200, ``floor(y)`` is 0, and "
+"``floor(z)`` is 100."
 msgstr ""
+"A linha de número mostrada tem deslocamento 200 denotado pela marca de escala "
+"à esquerda em -200 e o tamanho 100 indicado pelas marcas de escala em -100, 0, "
+"100 e 200. O piso de um valor é a marca de escala à esquerda do intervalo onde "
+"se encontra. Portanto, para os pontos mostrados acima: o ``piso(x)`` é -200, o "
+"``piso(y)`` é 0 e o ``piso(z)`` é 100."
 
 #: freegames.utils.path:1 of
 msgid "Return full path to `filename` in freegames module."
-msgstr ""
+msgstr "Retorna o caminho completo para o `nome do arquivo` no módulo freegames."
 
 #: ../../api.rst:27
 msgid "Vectors"
-msgstr ""
+msgstr "Vetores"
 
 #: freegames.utils.vector:1 of
 msgid "Two-dimensional vector."
-msgstr ""
+msgstr "Vetor bidimensional."
 
 #: freegames.utils.vector:3 of
 msgid "Vectors can be modified in-place."
-msgstr ""
+msgstr "Os vetores podem ser modificados no local."
 
 #: freegames.utils.vector.__init__:1 of
 msgid "Initialize vector with coordinates: x, y."
-msgstr ""
+msgstr "Inicialize o vetor com as coordenadas: x, y."
 
 #: freegames.utils.vector.__add__:1 of
 msgid "v.__add__(w) -> v + w"
-msgstr ""
+msgstr "v.__add__(w) -> v + w"
 
 #: freegames.utils.vector.__mul__:1 of
 msgid "v.__mul__(w) -> v * w"
-msgstr ""
+msgstr "v.__mul__(w) -> v * w"
 
 #: freegames.utils.vector.copy:1 of
 msgid "Return copy of vector."
-msgstr ""
+msgstr "Retorna a cópia do vetor."
 
 #: freegames.utils.vector.move:1 of
 msgid "Move vector by other (in-place)."
-msgstr ""
+msgstr "Move o vetor por outro (no local)."
 
 #: freegames.utils.vector.rotate:1 of
 msgid "Rotate vector counter-clockwise by angle (in-place)."
-msgstr ""
+msgstr "Gire o vetor no sentido anti-horário pelo ângulo (no local)."
 
 #: freegames.utils.vector.scale:1 of
 msgid "Scale vector by other (in-place)."
-msgstr ""
+msgstr "Escala o vetor por outro (no local)."
 
 #: freegames.vector.x:1 of
 msgid "X-axis component of vector."
-msgstr ""
+msgstr "Componente do eixo X do vetor."
 
 #: freegames.vector.y:1 of
 msgid "Y-axis component of vector."
-msgstr ""
-
+msgstr "Componente do eixo Y do vetor."
