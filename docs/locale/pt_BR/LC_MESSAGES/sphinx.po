@@ -20,19 +20,19 @@ msgstr ""
 
 #: ../../_templates/gumroad.html:1
 msgid "Donate"
-msgstr ""
+msgstr "Doações"
 
 #: ../../_templates/gumroad.html:2
 msgid "If you or your organization uses Free Games, consider donating:"
-msgstr ""
+msgstr "Se você ou sua organização usa Free Games, considere fazer uma doação:"
 
 #: ../../_templates/gumroad.html:4
 msgid "Donate to Free Python Games"
-msgstr ""
+msgstr "Doe para Free Python games"
 
 #: ../../_templates/pagetoc.html:11
 msgid "Contents"
-msgstr ""
+msgstr "Conteúdo"
 
 #: ../../_templates/search.html:14 ../../_templates/search.html:17
 msgid "Search"
