@@ -147,13 +147,12 @@ Snake
 
 `Snake`_ -- classic arcade game. Use the arrow keys to navigate and eat the
 green food. Each time the food is consumed, the snake grows one segment
-longer. Avoid eating yourself or going out of bounds! (`OO version`_)
+longer. Avoid eating yourself or going out of bounds! (`OO version <snake_oop.html>`_)
 
 .. image:: http://www.grantjenks.com/docs/freegames/_static/snake.gif
    :alt: Snake Free Python Game
 
 .. _`Snake`: http://www.grantjenks.com/docs/freegames/snake.html
-.. _`OO version`: snake_oop.html
 
 Pacman
 ......
