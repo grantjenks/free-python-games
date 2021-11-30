@@ -4,7 +4,6 @@ Exercises
 
 1. Speed up tile flash rate.
 2. Add more tiles.
-
 """
 
 from random import choice
@@ -24,7 +23,7 @@ tiles = {
 
 
 def grid():
-    "Draw grid of tiles."
+    """Draw grid of tiles."""
     square(0, 0, 200, 'dark red')
     square(0, -200, 200, 'dark blue')
     square(-200, 0, 200, 'dark green')
@@ -33,7 +32,7 @@ def grid():
 
 
 def flash(tile):
-    "Flash tile in grid."
+    """Flash tile in grid."""
     glow, dark = tiles[tile]
     square(tile.x, tile.y, 200, glow)
     update()
@@ -44,7 +43,7 @@ def flash(tile):
 
 
 def grow():
-    "Grow pattern and flash tiles."
+    """Grow pattern and flash tiles."""
     tile = choice(list(tiles))
     pattern.append(tile)
 
@@ -56,7 +55,7 @@ def grow():
 
 
 def tap(x, y):
-    "Respond to screen tap."
+    """Respond to screen tap."""
     onscreenclick(None)
     x = floor(x, 200)
     y = floor(y, 200)
@@ -76,7 +75,7 @@ def tap(x, y):
 
 
 def start(x, y):
-    "Start game."
+    """Start game."""
     grow()
     onscreenclick(tap)
 

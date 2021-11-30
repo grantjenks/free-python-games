@@ -6,7 +6,6 @@ Exercises
 2. Respond to mouse clicks.
 3. Change its acceleration.
 4. Make it go forwards and backwards.
-
 """
 
 from turtle import *
@@ -15,7 +14,7 @@ state = {'turn': 0}
 
 
 def spinner():
-    "Draw fidget spinner."
+    """Draw fidget spinner."""
     clear()
     angle = state['turn'] / 10
     right(angle)
@@ -35,7 +34,7 @@ def spinner():
 
 
 def animate():
-    "Animate fidget spinner."
+    """Animate fidget spinner."""
     if state['turn'] > 0:
         state['turn'] -= 1
 
@@ -44,7 +43,7 @@ def animate():
 
 
 def flick():
-    "Flick fidget spinner."
+    """Flick fidget spinner."""
     state['turn'] += 10
 
 

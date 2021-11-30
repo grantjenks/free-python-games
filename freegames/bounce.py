@@ -7,7 +7,6 @@ Exercises
 3. Make the ball leave a trail.
 4. Change the ball color based on position.
    Hint: colormode(255); color(0, 100, 200)
-
 """
 
 from random import *
@@ -17,7 +16,7 @@ from freegames import vector
 
 
 def value():
-    "Randomly generate value between (-5, -3) or (3, 5)."
+    """Randomly generate value between (-5, -3) or (3, 5)."""
     return (3 + random() * 2) * choice([1, -1])
 
 
@@ -26,7 +25,7 @@ aim = vector(value(), value())
 
 
 def draw():
-    "Move ball and draw game."
+    """Move ball and draw game."""
     ball.move(aim)
 
     x = ball.x

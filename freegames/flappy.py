@@ -6,7 +6,6 @@ Exercises
 2. Vary the speed.
 3. Vary the size of the balls.
 4. Allow the bird to move forward and back.
-
 """
 
 from random import *
@@ -19,18 +18,18 @@ balls = []
 
 
 def tap(x, y):
-    "Move bird up in response to screen tap."
+    """Move bird up in response to screen tap."""
     up = vector(0, 30)
     bird.move(up)
 
 
 def inside(point):
-    "Return True if point on screen."
+    """Return True if point on screen."""
     return -200 < point.x < 200 and -200 < point.y < 200
 
 
 def draw(alive):
-    "Draw screen objects."
+    """Draw screen objects."""
     clear()
 
     goto(bird.x, bird.y)
@@ -48,7 +47,7 @@ def draw(alive):
 
 
 def move():
-    "Update object positions."
+    """Update object positions."""
     bird.y -= 5
 
     for ball in balls:
