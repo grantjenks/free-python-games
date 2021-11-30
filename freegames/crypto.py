@@ -9,12 +9,11 @@ Exercises
 5. Make the encryption harder to decode.
 
 Adapted from code in https://inventwithpython.com/chapter14.html
-
 """
 
 
 def encrypt(message, key):
-    "Encrypt message with key."
+    """Encrypt message with key."""
     result = ''
 
     # Iterate letters in message and encrypt each individually.
@@ -52,17 +51,17 @@ def encrypt(message, key):
 
 
 def decrypt(message, key):
-    "Decrypt message with key."
+    """Decrypt message with key."""
     return encrypt(message, -key)
 
 
 def decode(message):
-    "Decode message without key."
+    """Decode message without key."""
     pass  # TODO
 
 
 def get_key():
-    "Get key from user."
+    """Get key from user."""
     try:
         text = input('Enter a key (1 - 25): ')
         key = int(text)

@@ -55,7 +55,6 @@ Python includes a built-in text editor named IDLE which can also execute Python
 code. To launch the editor and make changes to the "snake" game run::
 
   $ python3 -m idlelib.idle snake.py
-
 """
 
 from .utils import floor, line, path, square, vector

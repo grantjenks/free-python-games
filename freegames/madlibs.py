@@ -5,7 +5,6 @@ Exercises:
 1. How to replace the story?
 2. How load the story and from a file?
 3. How to add additional parts of speech?
-
 """
 
 # The quick brown fox jumps over the lazy dog.

@@ -6,7 +6,6 @@ Exercises
 2. What happens when someone taps a taken spot?
 3. How would you detect when someone has won?
 4. How could you create a computer player?
-
 """
 
 from turtle import *
@@ -15,7 +14,7 @@ from freegames import line
 
 
 def grid():
-    "Draw tic-tac-toe grid."
+    """Draw tic-tac-toe grid."""
     line(-67, 200, -67, -200)
     line(67, 200, 67, -200)
     line(-200, -67, 200, -67)
@@ -23,13 +22,13 @@ def grid():
 
 
 def drawx(x, y):
-    "Draw X player."
+    """Draw X player."""
     line(x, y, x + 133, y + 133)
     line(x, y + 133, x + 133, y)
 
 
 def drawo(x, y):
-    "Draw O player."
+    """Draw O player."""
     up()
     goto(x + 67, y + 5)
     down()
@@ -37,7 +36,7 @@ def drawo(x, y):
 
 
 def floor(value):
-    "Round value down to grid with square size 133."
+    """Round value down to grid with square size 133."""
     return ((value + 200) // 133) * 133 - 200
 
 
@@ -46,7 +45,7 @@ players = [drawx, drawo]
 
 
 def tap(x, y):
-    "Draw X or O in tapped square."
+    """Draw X or O in tapped square."""
     x = floor(x)
     y = floor(y)
     player = state['player']

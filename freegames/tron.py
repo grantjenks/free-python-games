@@ -6,7 +6,6 @@ Exercises
 2. Stop a tron player from running into itself.
 3. Allow the tron player to go around the edge of the screen.
 4. How would you create a computer player?
-
 """
 
 from turtle import *
@@ -23,12 +22,12 @@ p2body = set()
 
 
 def inside(head):
-    "Return True if head inside screen."
+    """Return True if head inside screen."""
     return -200 < head.x < 200 and -200 < head.y < 200
 
 
 def draw():
-    "Advance players and draw game."
+    """Advance players and draw game."""
     p1xy.move(p1aim)
     p1head = p1xy.copy()
 

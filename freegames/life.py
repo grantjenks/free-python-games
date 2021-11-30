@@ -9,7 +9,6 @@ Exercises
 2. How can you make the simulation faster? Or bigger?
 3. How would you modify the initial state?
 4. Try changing the rules of life :)
-
 """
 
 from random import choice
@@ -21,7 +20,7 @@ cells = {}
 
 
 def initialize():
-    "Randomly initialize the cells."
+    """Randomly initialize the cells."""
     for x in range(-200, 200, 10):
         for y in range(-200, 200, 10):
             cells[x, y] = False
@@ -32,7 +31,7 @@ def initialize():
 
 
 def step():
-    "Compute one step in the Game of Life."
+    """Compute one step in the Game of Life."""
     neighbors = {}
 
     for x in range(-190, 190, 10):
@@ -52,7 +51,7 @@ def step():
 
 
 def draw():
-    "Draw all the squares."
+    """Draw all the squares."""
     step()
     clear()
     for (x, y), alive in cells.items():

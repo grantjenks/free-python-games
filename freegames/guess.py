@@ -6,7 +6,6 @@ Exercises
 2. Can you still guess the number?
 3. Print the number of guesses made.
 4. Limit the number of guesses to the minimum required.
-
 """
 
 from random import randint

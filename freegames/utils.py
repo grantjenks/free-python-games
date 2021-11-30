@@ -1,5 +1,4 @@
 """Utilities
-
 """
 # pylint: disable=no-member
 
@@ -38,7 +37,7 @@ def floor(value, size, offset=200):
 
 
 def path(filename):
-    "Return full path to `filename` in freegames module."
+    """Return full path to `filename` in freegames module."""
     filepath = os.path.realpath(__file__)
     dirpath = os.path.dirname(filepath)
     fullpath = os.path.join(dirpath, filename)
@@ -46,7 +45,7 @@ def path(filename):
 
 
 def line(a, b, x, y):
-    "Draw line from `(a, b)` to `(x, y)`."
+    """Draw line from `(a, b)` to `(x, y)`."""
     import turtle
 
     turtle.up()

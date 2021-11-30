@@ -1,7 +1,6 @@
 import random
 import runpy
 import sys
-import turtle
 
 import mockturtle
 
