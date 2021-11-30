@@ -6,7 +6,6 @@ Exercises
 2. Make the ant leave a trail.
 3. Change the ant color based on position.
    Hint: colormode(255); color(0, 100, 200)
-
 """
 
 from random import *
@@ -19,12 +18,12 @@ aim = vector(2, 0)
 
 
 def wrap(value):
-    "Wrap value around -200 and 200."
+    """Wrap value around -200 and 200."""
     return value  # TODO
 
 
 def draw():
-    "Move ant and draw screen."
+    """Move ant and draw screen."""
     ant.move(aim)
     ant.x = wrap(ant.x)
     ant.y = wrap(ant.y)

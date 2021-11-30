@@ -5,7 +5,6 @@ Excercises
 1. Keep score by counting taps.
 2. Make the maze harder.
 3. Generate the same maze twice.
-
 """
 
 from random import random
@@ -15,7 +14,7 @@ from freegames import line
 
 
 def draw():
-    "Draw maze."
+    """Draw maze."""
     color('black')
     width(5)
 
@@ -30,7 +29,7 @@ def draw():
 
 
 def tap(x, y):
-    "Draw line and dot for screen tap."
+    """Draw line and dot for screen tap."""
     if abs(x) > 198 or abs(y) > 198:
         up()
     else:

@@ -9,7 +9,6 @@ Exercises
 5. Change how the ball bounces off walls.
 6. How would you add a computer player?
 6. Add a second ball.
-
 """
 
 from random import choice, random
@@ -19,7 +18,7 @@ from freegames import vector
 
 
 def value():
-    "Randomly generate value between (-5, -3) or (3, 5)."
+    """Randomly generate value between (-5, -3) or (3, 5)."""
     return (3 + random() * 2) * choice([1, -1])
 
 
@@ -29,12 +28,12 @@ state = {1: 0, 2: 0}
 
 
 def move(player, change):
-    "Move player position by change."
+    """Move player position by change."""
     state[player] += change
 
 
 def rectangle(x, y, width, height):
-    "Draw rectangle at (x, y) with given width and height."
+    """Draw rectangle at (x, y) with given width and height."""
     up()
     goto(x, y)
     down()
@@ -48,7 +47,7 @@ def rectangle(x, y, width, height):
 
 
 def draw():
-    "Draw game and move pong ball."
+    """Draw game and move pong ball."""
     clear()
     rectangle(-200, state[1], 10, 50)
     rectangle(190, state[2], 10, 50)

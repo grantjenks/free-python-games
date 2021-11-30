@@ -6,7 +6,6 @@ Exercises
 2. How can you make the snake go around the edges?
 3. How would you move the food?
 4. Change the snake to respond to mouse clicks.
-
 """
 
 from random import randrange
@@ -20,18 +19,18 @@ aim = vector(0, -10)
 
 
 def change(x, y):
-    "Change snake direction."
+    """Change snake direction."""
     aim.x = x
     aim.y = y
 
 
 def inside(head):
-    "Return True if head inside boundaries."
+    """Return True if head inside boundaries."""
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
 def move():
-    "Move snake forward one segment."
+    """Move snake forward one segment."""
     head = snake[-1].copy()
     head.move(aim)
 

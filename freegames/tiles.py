@@ -6,7 +6,6 @@ Exercises
 2. Permit diagonal squares as neighbors.
 3. Respond to arrow keys instead of mouse clicks.
 4. Make the grid bigger.
-
 """
 
 from random import *
@@ -24,7 +23,7 @@ neighbors = [
 
 
 def load():
-    "Load tiles and scramble."
+    """Load tiles and scramble."""
     count = 1
 
     for y in range(-200, 200, 100):
@@ -47,7 +46,7 @@ def load():
 
 
 def square(mark, number):
-    "Draw white square with black outline and number."
+    """Draw white square with black outline and number."""
     up()
     goto(mark.x, mark.y)
     down()
@@ -68,7 +67,7 @@ def square(mark, number):
 
 
 def tap(x, y):
-    "Swap tile and empty square."
+    """Swap tile and empty square."""
     x = floor(x, 100)
     y = floor(y, 100)
     mark = vector(x, y)
@@ -85,7 +84,7 @@ def tap(x, y):
 
 
 def draw():
-    "Draw all tiles."
+    """Draw all tiles."""
     for mark in tiles:
         square(mark, tiles[mark])
     update()

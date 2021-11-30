@@ -1,5 +1,4 @@
 """Mock turtle module.
-
 """
 
 state = {}

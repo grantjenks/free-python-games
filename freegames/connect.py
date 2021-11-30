@@ -7,7 +7,6 @@ Exercises
 3. Add logic to detect a full row.
 4. Create a random computer player.
 5. How would you detect a winner?
-
 """
 
 from turtle import *
@@ -19,7 +18,7 @@ state = {'player': 'yellow', 'rows': [0] * 8}
 
 
 def grid():
-    "Draw Connect Four grid."
+    """Draw Connect Four grid."""
     bgcolor('light blue')
 
     for x in range(-150, 200, 50):
@@ -35,7 +34,7 @@ def grid():
 
 
 def tap(x, y):
-    "Draw red or yellow circle in tapped row."
+    """Draw red or yellow circle in tapped row."""
     player = state['player']
     rows = state['rows']
 

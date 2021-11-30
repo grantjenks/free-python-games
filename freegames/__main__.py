@@ -1,5 +1,4 @@
 """Free Games CLI
-
 """
 
 import argparse
@@ -10,7 +9,7 @@ contents = os.listdir(directory)
 
 
 def game_file(name):
-    "Return True if filename represents a game."
+    """Return True if filename represents a game."""
     return (
         name.endswith('.py')
         and not name.startswith('__')

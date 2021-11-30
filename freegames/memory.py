@@ -7,7 +7,6 @@ Exercises:
 3. Detect when all tiles are revealed.
 4. Center single-digit tile.
 5. Use letters instead of tiles.
-
 """
 
 from random import *
@@ -22,7 +21,7 @@ hide = [True] * 64
 
 
 def square(x, y):
-    "Draw white square with black outline at (x, y)."
+    """Draw white square with black outline at (x, y)."""
     up()
     goto(x, y)
     down()
@@ -35,17 +34,17 @@ def square(x, y):
 
 
 def index(x, y):
-    "Convert (x, y) coordinates to tiles index."
+    """Convert (x, y) coordinates to tiles index."""
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
 
 def xy(count):
-    "Convert tiles count to (x, y) coordinates."
+    """Convert tiles count to (x, y) coordinates."""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
 
 def tap(x, y):
-    "Update mark and hidden tiles based on tap."
+    """Update mark and hidden tiles based on tap."""
     spot = index(x, y)
     mark = state['mark']
 
@@ -58,7 +57,7 @@ def tap(x, y):
 
 
 def draw():
-    "Draw image and tiles."
+    """Draw image and tiles."""
     clear()
     goto(0, 0)
     shape(car)
