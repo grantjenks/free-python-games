@@ -10,6 +10,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-24 21:25-0300\n"
 "PO-Revision-Date: 2021-10-12 14:17-0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -186,5 +188,23 @@ msgid ""
 "The test argument to setup.py will download a minimal testing "
 "infrastructure and run the tests."
 msgstr ""
+<<<<<<< HEAD
 "O argumento de teste para setup.py irá baixar uma infraestrutura mínima de "
 "testes e executar os testes."
+=======
+
+#: ../../development.rst:78
+msgid "Translate"
+msgstr ""
+
+#: ../../development.rst:80
+msgid ""
+"inside the locale/ folder, a <lang> folder must be created manually, for "
+"the ::"
+msgstr ""
+
+#: ../../development.rst:84
+msgid "command to generate the PO files for all langauges."
+msgstr ""
+
+>>>>>>> 6809c02 (Update development.po)
