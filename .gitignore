@@ -23,5 +23,4 @@
 #unnecessary files
 *.mo
 *.pot
-
-
+/freegames/oop
