@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2020, Grant Jenks
+# This file is distributed under the same license as the Free Python Games
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Free Python Games 2.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-24 21:25-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../give-gift-python.rst:2
+msgid "Give the Gift of Python"
+msgstr ""
+
+#: ../../give-gift-python.rst:4
+msgid "*Talk given at SF Python Holiday Party on December 5, 2018.*"
+msgstr ""
+
+#: ../../give-gift-python.rst:7
+msgid "Who am I?"
+msgstr ""
+
+#: ../../give-gift-python.rst:9
+msgid "Python programmer."
+msgstr ""
+
+#: ../../give-gift-python.rst:10
+msgid "Hundreds of hours of classroom instruction."
+msgstr ""
+
+#: ../../give-gift-python.rst:13
+msgid "What we need?"
+msgstr ""
+
+#: ../../give-gift-python.rst:15
+msgid "Interest!"
+msgstr ""
+
+#: ../../give-gift-python.rst:16
+msgid "Typing skills."
+msgstr ""
+
+#: ../../give-gift-python.rst:17
+msgid "Math: Arithmetic, Algebra, Geometry"
+msgstr ""
+
+#: ../../give-gift-python.rst:20
+msgid "Setup"
+msgstr ""
+
+#: ../../give-gift-python.rst:22
+msgid "Install Python, https://www.python.org/"
+msgstr ""
+
+#: ../../give-gift-python.rst:23
+msgid "Run IDLE, ``$ python -m idlelib.idle``"
+msgstr ""
+
+#: ../../give-gift-python.rst:24
+msgid "Write code."
+msgstr ""
+
+#: ../../give-gift-python.rst:27
+msgid "Open the Turtle Window"
+msgstr ""
+
+#: ../../give-gift-python.rst:35
+msgid "Commands"
+msgstr ""
+
+#: ../../give-gift-python.rst:49
+msgid "Loops"
+msgstr ""
+
+#: ../../give-gift-python.rst:59
+msgid "Shapes"
+msgstr ""
+
+#: ../../give-gift-python.rst:71
+msgid "Dots"
+msgstr ""
+
+#: ../../give-gift-python.rst:79
+msgid "Functions"
+msgstr ""
+
+#: ../../give-gift-python.rst:93
+msgid "Colors"
+msgstr ""
+
+#: ../../give-gift-python.rst:102
+msgid "Locations"
+msgstr ""
+
+#: ../../give-gift-python.rst:113
+msgid "Inputs"
+msgstr ""
+
+#: ../../give-gift-python.rst:115
+msgid "listen"
+msgstr ""
+
+#: ../../give-gift-python.rst:116
+msgid "onclick"
+msgstr ""
+
+#: ../../give-gift-python.rst:117
+msgid "onkey"
+msgstr ""
+
+#: ../../give-gift-python.rst:120
+msgid "Animation"
+msgstr ""
+
+#: ../../give-gift-python.rst:122
+msgid "ontimer"
+msgstr ""
+
+#: ../../give-gift-python.rst:123
+msgid "hideturtle"
+msgstr ""
+
+#: ../../give-gift-python.rst:124
+msgid "tracer"
+msgstr ""
+
+#: ../../give-gift-python.rst:125
+msgid "clear"
+msgstr ""
+
+#: ../../give-gift-python.rst:126
+msgid "update"
+msgstr ""
+
+#: ../../give-gift-python.rst:139
+msgid "Tips"
+msgstr ""
+
+#: ../../give-gift-python.rst:141
+msgid "help(...)"
+msgstr ""
+
+#: ../../give-gift-python.rst:142
+msgid "undo(...)"
+msgstr ""
+
+#: ../../give-gift-python.rst:143
+msgid "Embrace copy/paste"
+msgstr ""
+
+#: ../../give-gift-python.rst:144
+msgid "Close window/reset()"
+msgstr ""
+
+#: ../../give-gift-python.rst:147
+msgid "Activities"
+msgstr ""
+
+#: ../../give-gift-python.rst:149
+msgid "Spell your name."
+msgstr ""
+
+#: ../../give-gift-python.rst:150
+msgid "``python -m pip install freegames``"
+msgstr ""
+
+#: ../../give-gift-python.rst:153
+msgid "Notes"
+msgstr ""
+
+#: ../../give-gift-python.rst:155
+msgid "Start simple! Start easy! Start plain!"
+msgstr ""
+
+#: ../../give-gift-python.rst:156
+msgid "Focus on fun! No PEP8. No Pylint."
+msgstr ""
+
+#: ../../give-gift-python.rst:157
+msgid "Make it readable! Say it aloud."
+msgstr ""
+
+#: ../../give-gift-python.rst:158
+msgid "No special shells! No IPython."
+msgstr ""
+
+#: ../../give-gift-python.rst:159
+msgid "Show them mistakes! Red is your favorite color!"
+msgstr ""
+
+#: ../../give-gift-python.rst:160
+msgid "No virtual environments!"
+msgstr ""
+
+#: ../../give-gift-python.rst:161
+msgid "If they're not ready, don't push them!"
+msgstr ""
+
+#: ../../give-gift-python.rst:162
+msgid "No dunder methods or attributes! No __name__ or __main__."
+msgstr ""
+

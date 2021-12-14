@@ -1,0 +1,522 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2020, Grant Jenks
+# This file is distributed under the same license as the Free Python Games
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Free Python Games 2.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-12 16:44-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../README.rst:2
+msgid "Free Python Games"
+msgstr ""
+
+#: ../../../README.rst:4
+msgid ""
+"`Free Python Games`_ is an Apache2 licensed collection of free Python "
+"games intended for education and fun. The games are written in simple "
+"Python code and designed for experimentation and changes. Simplified "
+"versions of several classic arcade games are included."
+msgstr ""
+
+#: ../../../README.rst:9
+msgid ""
+"Python is one of the top-five most popular programming languages in the "
+"world and available for free from `Python.org "
+"<https://www.python.org/>`_. Python includes an extensive Standard "
+"Library distributed with your installation. The Standard Library has a "
+"module called Turtle which is a popular way to introduce programming to "
+"kids. Turtle was part of the original Logo programming language developed"
+" by Wally Feurzig and Seymour Papert in 1966. All of the games in `Free "
+"Python Games`_ are implemented using Python and its Turtle module."
+msgstr ""
+
+#: ../../../README.rst:17
+msgid ""
+"Starting in 2012, `Free Python Games`_ began as an after school program "
+"to teach programming to inner-city youth. The goal was to have fun as "
+"much as it was to learn. Since then the games have been improved and used"
+" in a variety of settings ranging from classrooms to summer day-camps."
+msgstr ""
+
+#: ../../../README.rst:22
+msgid ""
+"The games run anywhere Python can be installed which includes desktop "
+"computers running Windows, Mac OS, or Linux and older or low-power "
+"hardware such as the Raspberry Pi. Kids across the United States in "
+"grades 6th-12th have enjoyed learning about topics such as encryption and"
+" projectile motion through games."
+msgstr ""
+
+#: ../../../README.rst:27
+msgid ""
+"Each game is entirely independent from the others and includes comments "
+"along with a list of exercises to work through with students. Creativity "
+"and flexibility is important. There is no right or wrong way to implement"
+" a new feature or behavior! You never know which games students will "
+"engage with best."
+msgstr ""
+
+#: ../../../README.rst:36
+msgid "Testimonials"
+msgstr ""
+
+#: ../../../README.rst:38
+msgid ""
+"*\"I love Free Python Games because the games are fun and they're easy to"
+" understand and change. I like making my own games now.\"*"
+msgstr ""
+
+#: ../../../README.rst:41
+msgid "-- Luke Martin, Student"
+msgstr ""
+
+#: ../../../README.rst:43
+msgid ""
+"*\"Free Python Games inspired and introduced a new hobby to our son. "
+"Thank you so much for exposing him to coding. He is having so much "
+"fun!\"*"
+msgstr ""
+
+#: ../../../README.rst:46
+msgid "-- Mary Lai, Parent"
+msgstr ""
+
+#: ../../../README.rst:48
+msgid ""
+"*\"Free Python Games are great because they really engage students and "
+"let them learn at their own pace.\"*"
+msgstr ""
+
+#: ../../../README.rst:51
+msgid "-- Rick Schertle, Teacher, Steindorf STEAM School"
+msgstr ""
+
+#: ../../../README.rst:53
+msgid ""
+"*\"Free Python Games combines play and learning in a flexible environment"
+" that reduces the stress of a difficult topic like programming.\"*"
+msgstr ""
+
+#: ../../../README.rst:56
+msgid "-- Brett Bymaster, Youth Pastor, The River Church Community"
+msgstr ""
+
+#: ../../../README.rst:58
+msgid ""
+"*\"Free Python Games is great for students, is highly organized and "
+"flexible, and seeks to unleash inquiry and understanding.\"*"
+msgstr ""
+
+#: ../../../README.rst:61
+msgid "-- Terri Furton, Principal, Downtown College Prep"
+msgstr ""
+
+#: ../../../README.rst:65
+msgid "Features"
+msgstr ""
+
+#: ../../../README.rst:67
+msgid "Fun to play!"
+msgstr ""
+
+#: ../../../README.rst:68
+msgid "Simple Python code"
+msgstr ""
+
+#: ../../../README.rst:69
+msgid "Easy to install"
+msgstr ""
+
+#: ../../../README.rst:70
+msgid "Designed for education"
+msgstr ""
+
+#: ../../../README.rst:71
+msgid "Depends only on the Python Standard Library"
+msgstr ""
+
+#: ../../../README.rst:72
+msgid "Used in hundreds of hours of classroom instruction"
+msgstr ""
+
+#: ../../../README.rst:73
+msgid "Fully Documented"
+msgstr ""
+
+#: ../../../README.rst:74
+msgid "100% Test Coverage"
+msgstr ""
+
+#: ../../../README.rst:75
+msgid "Developed on Python 3.9"
+msgstr ""
+
+#: ../../../README.rst:76
+msgid "Tested on CPython 3.6, 3.7, 3.8, 3.9"
+msgstr ""
+
+#: ../../../README.rst:77
+msgid "Tested on Linux, Mac OS X, and Windows"
+msgstr ""
+
+#: ../../../README.rst:78
+msgid "Tested using GitHub Actions"
+msgstr ""
+
+#: ../../../README.rst:85
+msgid "Quickstart"
+msgstr ""
+
+#: ../../../README.rst:87
+msgid ""
+"Installing Free Python Games is simple with `pip "
+"<https://pypi.python.org/pypi/pip>`_::"
+msgstr ""
+
+#: ../../../README.rst:92
+msgid ""
+"Free Python Games supports a command-line interface (CLI). Help for the "
+"CLI is available using::"
+msgstr ""
+
+#: ../../../README.rst:97
+msgid ""
+"The CLI supports three commands: list, copy, and show. For a list of all "
+"games run::"
+msgstr ""
+
+#: ../../../README.rst:102
+msgid ""
+"Any of the listed games may be played by executing the Python module from"
+" the command-line. To reference the Python module, combine \"freegames\" "
+"with the name of the game. For example, to play the \"snake\" game run::"
+msgstr ""
+
+#: ../../../README.rst:108
+msgid ""
+"Games can be modified by copying their source code. The copy command will"
+" create a Python file in your local directory which you can edit. For "
+"example, to copy and play the \"snake\" game run::"
+msgstr ""
+
+#: ../../../README.rst:115
+msgid ""
+"Python includes a built-in text editor named IDLE which can also execute "
+"Python code. To launch the editor and make changes to the \"snake\" game "
+"run::"
+msgstr ""
+
+#: ../../../README.rst:120
+msgid ""
+"You can also access documentation in the interpreter with Python's built-"
+"in help function::"
+msgstr ""
+
+#: ../../../README.rst:128
+msgid "Free Games"
+msgstr ""
+
+#: ../../../README.rst:131
+msgid "Paint"
+msgstr ""
+
+#: ../../../README.rst:133
+msgid ""
+"`Paint`_ -- draw lines and shapes on the screen. Click to mark the start "
+"of a shape and click again to mark its end. Different shapes and colors "
+"can be selected using the keyboard."
+msgstr ""
+
+#: ../../../README.rst:143
+msgid "Snake"
+msgstr ""
+
+#: ../../../README.rst:145
+msgid ""
+"`Snake`_ -- classic arcade game. Use the arrow keys to navigate and eat "
+"the green food. Each time the food is consumed, the snake grows one "
+"segment longer. Avoid eating yourself or going out of bounds!"
+msgstr ""
+
+#: ../../../README.rst:155
+msgid "Pacman"
+msgstr ""
+
+#: ../../../README.rst:157
+msgid ""
+"`Pacman`_ -- classic arcade game. Use the arrow keys to navigate and eat "
+"all the white food. Watch out for red ghosts that roam the maze."
+msgstr ""
+
+#: ../../../README.rst:166
+msgid "Cannon"
+msgstr ""
+
+#: ../../../README.rst:168
+msgid ""
+"`Cannon`_ -- projectile motion. Click the screen to fire your "
+"cannnonball. The cannonball pops blue balloons in its path. Pop all the "
+"balloons before they can cross the screen."
+msgstr ""
+
+#: ../../../README.rst:178
+msgid "Connect"
+msgstr ""
+
+#: ../../../README.rst:180
+msgid ""
+"`Connect`_ -- Connect 4 game. Click a row to drop a disc. The first "
+"player to connect four discs vertically, horizontally, or diagonally "
+"wins!"
+msgstr ""
+
+#: ../../../README.rst:189
+msgid "Flappy"
+msgstr ""
+
+#: ../../../README.rst:191
+msgid ""
+"`Flappy`_ -- Flappy-bird inspired game. Click the screen to flap your "
+"wings. Watch out for black ravens as you fly across the screen."
+msgstr ""
+
+#: ../../../README.rst:200
+msgid "Memory"
+msgstr ""
+
+#: ../../../README.rst:202
+msgid ""
+"`Memory`_ -- puzzle game of number pairs. Click a tile to reveal a "
+"number. Match two numbers and the tiles will disappear to reveal an "
+"image."
+msgstr ""
+
+#: ../../../README.rst:211
+msgid "Pong"
+msgstr ""
+
+#: ../../../README.rst:213
+msgid ""
+"`Pong`_ -- classic arcade game. Use the keyboard to move your paddle up "
+"and down. The first player to miss the ball loses."
+msgstr ""
+
+#: ../../../README.rst:222
+msgid "Simon Says"
+msgstr ""
+
+#: ../../../README.rst:224
+msgid ""
+"`Simon Says`_ -- classic memory puzzle game. Click the screen to start. "
+"Watch the pattern and then click the tiles in the same order. Each time "
+"you get the sequence right the pattern gets one step longer."
+msgstr ""
+
+#: ../../../README.rst:234
+msgid "Tic Tac Toe"
+msgstr ""
+
+#: ../../../README.rst:236
+msgid ""
+"`Tic Tac Toe`_ -- classic game. Click the screen to place an X or O. "
+"Connect three in a row and you win!"
+msgstr ""
+
+#: ../../../README.rst:245
+msgid "Tiles"
+msgstr ""
+
+#: ../../../README.rst:247
+msgid ""
+"`Tiles`_ -- puzzle game of sliding numbers into place. Click a tile "
+"adjacent to the empty square to swap positions. Can you make the tiles "
+"count one to fifteen from left to right and bottom to top?"
+msgstr ""
+
+#: ../../../README.rst:257
+msgid "Tron"
+msgstr ""
+
+#: ../../../README.rst:259
+msgid ""
+"`Tron`_ -- classic arcade game. Use the keyboard to change the direction "
+"of your Tron player. Avoid touching the line drawn by your opponent."
+msgstr ""
+
+#: ../../../README.rst:268
+msgid "Life"
+msgstr ""
+
+#: ../../../README.rst:270
+msgid ""
+"`Life`_ -- Conway's Game of Life. The classic, zero-player, cellular "
+"automation created in 1970 by John Conway."
+msgstr ""
+
+#: ../../../README.rst:279
+msgid "Maze"
+msgstr ""
+
+#: ../../../README.rst:281
+msgid ""
+"`Maze`_ -- move from one side to another. Inspired by `A Universe in One "
+"Line of Code with 10 PRINT`_. Tap the screen to trace a path from one "
+"side to another."
+msgstr ""
+
+#: ../../../README.rst:292
+msgid "Fidget"
+msgstr ""
+
+#: ../../../README.rst:294
+msgid ""
+"`Fidget`_ -- fidget spinner inspired animation. Click the screen to "
+"accelerate the fidget spinner."
+msgstr ""
+
+#: ../../../README.rst:304
+msgid "User Guide"
+msgstr ""
+
+#: ../../../README.rst:306
+msgid ""
+"For those wanting more details, this part of the documentation describes "
+"curriculum, API, and development."
+msgstr ""
+
+#: ../../../README.rst:309
+msgid "`Talk: Give the Gift of Python`_"
+msgstr ""
+
+#: ../../../README.rst:310
+msgid "`Free Python Games Curriculum`_"
+msgstr ""
+
+#: ../../../README.rst:311
+msgid "`Free Python Games API Reference`_"
+msgstr ""
+
+#: ../../../README.rst:312
+msgid "`Free Python Games Development`_"
+msgstr ""
+
+#: ../../../README.rst:321
+msgid "References"
+msgstr ""
+
+#: ../../../README.rst:323
+msgid "`Free Python Games Documentation`_"
+msgstr ""
+
+#: ../../../README.rst:324
+msgid "`Free Python Games at PyPI`_"
+msgstr ""
+
+#: ../../../README.rst:325
+msgid "`Free Python Games at GitHub`_"
+msgstr ""
+
+#: ../../../README.rst:326
+msgid "`Free Python Games Issue Tracker`_"
+msgstr ""
+
+#: ../../../README.rst:335
+msgid "Free Python Games License"
+msgstr ""
+
+#: ../../../README.rst:337
+msgid "Copyright 2017-2021 Grant Jenks"
+msgstr ""
+
+#: ../../../README.rst:339
+msgid ""
+"Licensed under the Apache License, Version 2.0 (the \"License\"); you may"
+" not use this file except in compliance with the License.  You may obtain"
+" a copy of the License at"
+msgstr ""
+
+#: ../../../README.rst:343
+msgid "http://www.apache.org/licenses/LICENSE-2.0"
+msgstr ""
+
+#: ../../../README.rst:345
+msgid ""
+"Unless required by applicable law or agreed to in writing, software "
+"distributed under the License is distributed on an \"AS IS\" BASIS, "
+"WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied."
+"  See the License for the specific language governing permissions and "
+"limitations under the License."
+msgstr ""
+
+#~ msgid "Developed on Python 3.7"
+#~ msgstr ""
+
+#~ msgid "Tested on CPython 2.7, 3.4, 3.5, 3.6, and 3.7"
+#~ msgstr ""
+
+#~ msgid "Tested on Windows, Mac OS X, Raspbian (Raspberry Pi), and Linux"
+#~ msgstr ""
+
+#~ msgid "Tested using Travis CI and AppVeyor CI"
+#~ msgstr ""
+
+#~ msgid "Paint Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Snake Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Pacman Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Cannon Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Connect 4 Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Flappy Bird Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Memory Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Pong Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Simon Says Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Tic Tac Toe Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Tiles Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Tron Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Game of Life Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Maze Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Fidget Spinner Free Python Game"
+#~ msgstr ""
+
+#~ msgid "Copyright 2017-2020 Grant Jenks"
+#~ msgstr ""
+
