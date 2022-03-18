@@ -10,7 +10,7 @@ Exercises
 
 from random import randint
 
-start = 1
+start = 2
 end = 100
 value = randint(start, end)
 
