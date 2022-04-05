@@ -16,14 +16,19 @@ square_size = 25
 def draw_one_line_square(start_x, start_y):
     for i in range(0, 10):
         place_x = start_x + (i * square_size * 2)
-        square(place_x, start_y, square_size, "black")
+        square(place_x, start_y, square_size, 'black')
 
 
 def draw_all_lines():
     base_x = -200
     base_y = 150
     for i in range(0, 11):
-        line(base_x, base_y - i * square_size, base_x + 16 * square_size, base_y - i * square_size)
+        line(
+            base_x,
+            base_y - i * square_size,
+            base_x + 16 * square_size,
+            base_y - i * square_size,
+        )
 
 
 def draw_all_square():
