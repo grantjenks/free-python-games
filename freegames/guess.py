@@ -14,7 +14,7 @@ start = 1
 end = 100
 value = randint(start, end)
 
-print(value)
+# print(value)
 print("I'm thinking of a number between", start, 'and', end)
 
 guess = None
