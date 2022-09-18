@@ -42,7 +42,7 @@ def move():
     snake.append(head)
 
     if head == food:
-        print('Snake:', len(snake))
+        print('Snake:', len(snake), flush=True)
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
