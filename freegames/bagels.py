@@ -7,6 +7,7 @@ Exercises:
 3. What's the maximum number of digits we could support?
 
 Adapted from code in https://inventwithpython.com/chapter11.html
+
 """
 
 from random import sample, shuffle
