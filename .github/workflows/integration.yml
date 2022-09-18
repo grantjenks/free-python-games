@@ -15,7 +15,7 @@ jobs:
     strategy:
       max-parallel: 6
       matrix:
-        check: [bluecheck, doc8, docs, flake8, isortcheck, rstcheck]
+        check: [bluecheck, doc8, docs, flake8, isortcheck] # , rstcheck]
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
