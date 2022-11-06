@@ -1,7 +1,10 @@
 Give the Gift of Python
 =======================
 
-*Talk given at SF Python Holiday Party on December 5, 2018.*
+* `Give the Gift of Python Video`_
+* Talk given at SF Python Holiday Party on December 5, 2018.
+
+.. _`Give the Gift of Python Video`: https://www.youtube.com/watch?v=BVI78g4V4so
 
 Who am I?
 ---------
