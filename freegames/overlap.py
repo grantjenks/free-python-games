@@ -14,61 +14,77 @@ from turtle import *
 from freegames import vector
 
 rectangle = vector(0, 0)
-move = vector(0, 5)
-top = {0: vector(0, 0)}
-top_size = {0: 300, 1: 200}
+move = vector(0, 3)
+overlap = {0: vector(0, 0)}
+defualt_size = 270
+goal_size = 0
 
 
-def rectangle_top(x, y, size):
+def empty_rectangle(x, y, size):
     """Draw empty rectangle at (x, y) with given width and height."""
     up()
     goto(x, y)
     down()
-    for count in range(2):
-        forward(size)
-        left(90)
-        forward(size)
-        left(90)
+    draw_rectangle(size)
 
 
-def rectangle_move(x, y, size):
+def filled_ractangle(x, y, size):
     """Draw filled rectangle at (x, y) with given width and height."""
     up()
     goto(x, y)
     begin_fill()
+    draw_rectangle(size)
+    end_fill()
+    update()
+
+
+def draw_rectangle(size):
+    """Draw rectangle line with given size."""
     for count in range(2):
         forward(size)
         left(90)
         forward(size)
         left(90)
-    end_fill()
-    update()
 
 
-def score(x, y, text):
+def stamp(x, y, text, _color='black', font_size=10):
     """Display `text` at coordinates `x` and `y`."""
     goto(x, y)
-    color('black')
-    write(text, font=('Arial', 10, 'normal'))
+    color(_color)
+    write(text, font=('Arial', font_size, 'normal'))
+
+
+def i_size(step):
+    """Return the rectangle size of the step"""
+    return defualt_size - (step) * 30
+
+
+def end():
+    """End the game by stopping moving rectangle"""
+    move.y = 0
+    del overlap[len(overlap) - 1]
 
 
 def draw():
-    """Draw rectangles of top and a moving rectangle."""
+    """Draw rectangle frames and a moving rectangle."""
     clear()
 
-    score(-200, -200, 'Score : ' + str(len(top) - 1))
+    if i_size(len(overlap)) == goal_size:
+        stamp(-200, 100, 'Win!', _color='red', font_size=30)
 
-    size = top_size[len(top_size) - 1]
+    stamp(-200, -200, 'Score : ' + str(len(overlap) - 1))
 
-    for i in range(0, len(top)):
-        size_i = top_size[i]
-        rectangle_top(top[i].x - size_i / 2, top[i].y - size_i / 2, size_i)
+    size = i_size(len(overlap))
+
+    for i in range(0, len(overlap)):
+        size_i = i_size(i)
+        empty_rectangle(overlap[i].x - size_i / 2, overlap[i].y - size_i / 2, size_i)
 
     rectangle.move(move)
     x = rectangle.x
     y = rectangle.y
 
-    rectangle_move(x - (size / 2), y - (size / 2), size)
+    filled_ractangle(x - (size / 2), y - (size / 2), size)
 
     if y + move.y - size * 0.5 <= -210 or y + move.y + size * 0.5 >= 210:
         move.y = -move.y
@@ -78,15 +94,24 @@ def draw():
 
 def tap(x, y):
     """Respond to screen click at a moving rectangle."""
-    top[len(top)] = vector(rectangle.x, rectangle.y)
-    top_size[len(top)] = top_size[len(top) - 1] - 20
-    if top[len(top) - 1].x - top_size[len(top) - 1] / 2 < top[len(top) - 2].x - top_size[len(top) - 2] / 2 or \
-        top[len(top) - 1].y - top_size[len(top) - 1] / 2 < top[len(top) - 2].y - top_size[len(top) - 2] / 2 or \
-            top[len(top) - 1].x + top_size[len(top) - 1] / 2 > top[len(top) - 2].x + top_size[len(top) - 2] / 2 or \
-        top[len(top) - 1].y + top_size[len(top) - 1] / 2 > top[len(top) - 2].y + top_size[len(top) - 2] / 2:
+    overlap[len(overlap)] = vector(rectangle.x, rectangle.y)
+
+    curr_size = i_size(len(overlap) - 1)
+    prev_size = i_size(len(overlap) - 2)
+
+    curr_square = overlap[len(overlap) - 1]
+    prev_square = overlap[len(overlap) - 2]
+
+    if curr_square.x - curr_size / 2 < prev_square.x - prev_size / 2:
+        end()
+    elif curr_square.y - curr_size / 2 < prev_square.y - prev_size / 2:
+        end()
+    elif curr_square.x + curr_size / 2 > prev_square.x + prev_size / 2:
+        end()
+    elif curr_square.y + curr_size / 2 > prev_square.y + prev_size / 2:
+        end()
+    elif i_size(len(overlap)) == goal_size:
         move.y = 0
-        del top[len(top) - 1]
-        del top_size[len(top_size) - 1]
 
 
 setup(width=420, height=420)
@@ -94,5 +119,4 @@ hideturtle()
 tracer(False)
 onscreenclick(tap)
 draw()
-
 done()
