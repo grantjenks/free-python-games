@@ -35,7 +35,6 @@ def filled_ractangle(x, y, size):
     begin_fill()
     draw_rectangle(size)
     end_fill()
-    update()
 
 
 def draw_rectangle(size):
@@ -71,6 +70,7 @@ def draw():
 
     if i_size(len(overlap)) == goal_size:
         stamp(-200, 100, 'Win!', _color='red', font_size=30)
+        done()
 
     stamp(-200, -200, 'Score : ' + str(len(overlap) - 1))
 
@@ -103,13 +103,13 @@ def tap(x, y):
     prev_square = overlap[len(overlap) - 2]
 
     if curr_square.x - curr_size / 2 < prev_square.x - prev_size / 2:
-        end()
+        done()
     elif curr_square.y - curr_size / 2 < prev_square.y - prev_size / 2:
-        end()
+        done()
     elif curr_square.x + curr_size / 2 > prev_square.x + prev_size / 2:
-        end()
+        done()
     elif curr_square.y + curr_size / 2 > prev_square.y + prev_size / 2:
-        end()
+        done()
     elif i_size(len(overlap)) == goal_size:
         move.y = 0
 
