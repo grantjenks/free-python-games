@@ -1,15 +1,27 @@
+"""Avoid, classic arcade game.
+
+Exercises
+
+1. Check the time you've lived.
+2. Vary the person's speed & bomb's speed.
+3. Vary the size of the bombs.
+4. Vary the person's color & bomb's color.
+"""
 from random import *
 from turtle import *
 import time
 from freegames import vector
 
 person = vector(0, 0)
-balls = []
+bombs1 = []
+bombs2 = []
+bombs3 = []
+bombs4 = []
 aim = vector(0, 0)
 start = time.time()
 
 def change(x, y):
-    """Change snake direction."""
+    """Change person direction."""
     aim.x = x
     aim.y = y
 
@@ -20,16 +32,19 @@ def inside(point):
 def draw(alive):
     """Draw screen objects."""
     clear()
-
     goto(person.x, person.y)
-
     if alive:
         dot(10, 'black')
     else:
         dot(10, 'red')
-
-    for ball in balls:
-        goto(ball.x, ball.y)
+    for bomb1, bomb2, bomb3, bomb4 in zip(bombs1, bombs2, bombs3, bombs4):
+        goto(bomb1.x, bomb1.y)
+        dot(20, 'blue')
+        goto(bomb2.x, bomb2.y)
+        dot(20, 'blue')
+        goto(bomb3.x, bomb3.y)
+        dot(20, 'blue')
+        goto(bomb4.x, bomb4.y)
         dot(20, 'blue')
     present = time.time()
     print('\rtime : %.3f' %float(present-start), end='sec')
@@ -39,23 +54,39 @@ def move():
     """Update object positions."""
     person.move(aim)
 
-    for ball in balls:
-        ball.y -= 7
+    for bomb1, bomb2, bomb3, bomb4 in zip(bombs1, bombs2, bombs3, bombs4):
+        bomb1.y -= 7
+        bomb2.y += 7
+        bomb3.x -= 7
+        bomb4.x += 7
 
     if randrange(5) == 0:
         x = randrange(-199, 199)
-        ball = vector(x, 199)
-        balls.append(ball)
+        y = randrange(-199, 199)
+        bomb1 = vector(x, 199)
+        bomb2 = vector(x, -199)
+        bomb3 = vector(199, y)
+        bomb4 = vector(-199, y)
+        bombs1.append(bomb1)
+        bombs2.append(bomb2)
+        bombs3.append(bomb3)
+        bombs4.append(bomb4)
 
-    while len(balls) > 0 and not inside(balls[0]):
-        balls.pop(0)
+    while len(bombs1) > 0 and not inside(bombs1[0]):
+        bombs1.pop(0)
+    while len(bombs2) > 0 and not inside(bombs2[0]):
+        bombs2.pop(0)
+    while len(bombs3) > 0 and not inside(bombs3[0]):
+        bombs3.pop(0)
+    while len(bombs4) > 0 and not inside(bombs4[0]):
+        bombs4.pop(0)
 
     if not inside(person):
         draw(False)
         return
 
-    for ball in balls:
-        if abs(ball - person) < 15:
+    for bomb1, bomb2, bomb3, bomb4 in zip(bombs1, bombs2, bombs3, bombs4):
+        if abs(bomb1 - person) < 15 or abs(bomb2 - person) < 15 or abs(bomb3 - person) < 15 or abs(bomb4 - person) < 15 :
             draw(False)
             return
 
