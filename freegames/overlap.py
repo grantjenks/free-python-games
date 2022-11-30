@@ -103,12 +103,16 @@ def tap(x, y):
     prev_square = overlap[len(overlap) - 2]
 
     if curr_square.x - curr_size / 2 < prev_square.x - prev_size / 2:
+        end()
         done()
     elif curr_square.y - curr_size / 2 < prev_square.y - prev_size / 2:
+        end()
         done()
     elif curr_square.x + curr_size / 2 > prev_square.x + prev_size / 2:
+        end()
         done()
     elif curr_square.y + curr_size / 2 > prev_square.y + prev_size / 2:
+        end()
         done()
     elif i_size(len(overlap)) == goal_size:
         move.y = 0
