@@ -13,10 +13,8 @@ import time
 from freegames import vector
 
 person = vector(0, 0)
-bombs1 = []
-bombs2 = []
-bombs3 = []
-bombs4 = []
+bombs = []
+speeds = []
 aim = vector(0, 0)
 start = time.time()
 
@@ -34,18 +32,13 @@ def draw(alive):
     clear()
     goto(person.x, person.y)
     if alive:
-        dot(10, 'black')
+        dot(10, 'blue')
     else:
         dot(10, 'red')
-    for bomb1, bomb2, bomb3, bomb4 in zip(bombs1, bombs2, bombs3, bombs4):
-        goto(bomb1.x, bomb1.y)
-        dot(20, 'blue')
-        goto(bomb2.x, bomb2.y)
-        dot(20, 'blue')
-        goto(bomb3.x, bomb3.y)
-        dot(20, 'blue')
-        goto(bomb4.x, bomb4.y)
-        dot(20, 'blue')
+    for bomb in bombs:
+        goto(bomb.x, bomb.y)
+        dot(20, 'black')
+
     present = time.time()
     print('\rtime : %.3f' %float(present-start), end='sec')
     update()
@@ -54,39 +47,39 @@ def move():
     """Update object positions."""
     person.move(aim)
 
-    for bomb1, bomb2, bomb3, bomb4 in zip(bombs1, bombs2, bombs3, bombs4):
-        bomb1.y -= 7
-        bomb2.y += 7
-        bomb3.x -= 7
-        bomb4.x += 7
+    for bomb, speed in zip(bombs, speeds):
+        bomb.move(speed)
 
-    if randrange(5) == 0:
+    if randrange(10) == 0:
         x = randrange(-199, 199)
         y = randrange(-199, 199)
-        bomb1 = vector(x, 199)
-        bomb2 = vector(x, -199)
-        bomb3 = vector(199, y)
-        bomb4 = vector(-199, y)
-        bombs1.append(bomb1)
-        bombs2.append(bomb2)
-        bombs3.append(bomb3)
-        bombs4.append(bomb4)
+        dir = randrange(4)
+        s = randrange(3, 11)
+        if dir == 0:
+            bomb = vector(x, 199)
+            speed = vector(0, -s)
+        elif dir == 1:
+            bomb = vector(x, -199)
+            speed = vector(0, s)
+        elif dir == 2:
+            bomb = vector(199, y)
+            speed = vector(-s, 0)
+        else:
+            bomb = vector(-199, y)
+            speed = vector(s, 0)
+        bombs.append(bomb)
+        speeds.append(speed)
 
-    while len(bombs1) > 0 and not inside(bombs1[0]):
-        bombs1.pop(0)
-    while len(bombs2) > 0 and not inside(bombs2[0]):
-        bombs2.pop(0)
-    while len(bombs3) > 0 and not inside(bombs3[0]):
-        bombs3.pop(0)
-    while len(bombs4) > 0 and not inside(bombs4[0]):
-        bombs4.pop(0)
+    while len(bombs) > 0 and not inside(bombs[0]):
+        bombs.pop(0)
+        speeds.pop(0)
 
     if not inside(person):
         draw(False)
         return
 
-    for bomb1, bomb2, bomb3, bomb4 in zip(bombs1, bombs2, bombs3, bombs4):
-        if abs(bomb1 - person) < 15 or abs(bomb2 - person) < 15 or abs(bomb3 - person) < 15 or abs(bomb4 - person) < 15 :
+    for bomb in bombs:
+        if abs(bomb - person) < 15:
             draw(False)
             return
 
