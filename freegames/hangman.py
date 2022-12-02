@@ -27,28 +27,28 @@ def draw(x, y, angle, length, straight):
     left(angle)
     if straight:
         forward(length)
-    elif not straight:
+    else:
         circle(length, None, 100)
     penup()
 
-def drawHangman(step):
+def draw_Hangman(step):
     if step == 1: 
-        """draw head"""
+        # draw head
         draw(-45, 160, 270, 15, False)
     elif step == 2:
-        """draw torso"""
+        # draw torso
         draw(-45, 130, 90, 40, True)
     elif step == 3:
-        """draw left arm"""
+        # draw left arm
         draw(-45, 120, 235, 40, True)
     elif step == 4:
-        """draw right arm"""
+        # draw right arm
         draw(-45, 120, 250, 40, True)
     elif step == 5:
-        """draw left leg"""
+        # draw left leg
         draw(-45, 90, 205, 40, True)
     elif step == 6:
-        """draw right leg"""
+        # draw right leg
         draw(-45, 90, 60, 40, True)
 
 def guess(letter):
@@ -68,7 +68,7 @@ def guess(letter):
             use += letter 
             if letter not in word:
                 wrong += 1
-                drawHangman(wrong)
+                draw_Hangman(wrong)
             move_write(-200, -100, "Guesses: ")
             for i in use:
                 screen_write(i.lower() + " ")
