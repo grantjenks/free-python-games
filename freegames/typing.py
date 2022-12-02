@@ -9,6 +9,7 @@ Exercises
 """
 from random import *
 from turtle import *
+from string import ascii_lowercase
 from freegames import vector
 
 targets = []
@@ -36,7 +37,7 @@ def move():
         target = vector(x, 200)
         targets.append(target)
         while True:
-            letter = chr(ord('a') + randrange(26))
+            letter = choice(ascii_lowercase)
             if letter not in letters:
                 letters.append(letter)
                 break
@@ -46,7 +47,7 @@ def move():
     for target in targets:
         if not inside(target):
             return
-    ontimer(move, 50)
+    ontimer(move, 100)
 
 def press(c):
     """Press key."""
@@ -54,12 +55,12 @@ def press(c):
     if c in letters:
         score += 1
         k = letters.index(c)
-        targets.pop(k)
-        letters.pop(k)
-        print('\rscore:', score, end = '\t')
+        del targets[k]
+        del letters[k]
+        print('score:', score)
     else:
         score -= 1
-        print('\rscore:', score, end='\t')
+        print('score:', score)
 
 setup(420, 420, 370, 0)
 hideturtle()
