@@ -1,14 +1,14 @@
-"""hangman, letter guessing game
+"""Hangman, a letter guessing game
 
 Exercises
 1. Change Hangman's picture (position, length, etc)
-2. Make a additional dictionary, not a fruit
+2. Make an additional dictionary, not fruits
 3. Convert lowercase letters to uppercase letters
-4. Make it possible to enter not only the alphabet, but also the word to guess the answer
 """
 
 from turtle import *
 from random import choice
+import functools
 
 def screen_write(letter):
     """write text on the screen"""
@@ -25,40 +25,71 @@ def draw(x, y, angle, length, straight):
     goto(x, y)
     pendown()
     left(angle)
-    if straight == True:
+    if straight:
         forward(length)
-    elif straight == False:
+    elif not straight:
         circle(length, None, 100)
     penup()
 
-def drawHangman(num):
-    if num == 1: 
+def drawHangman(step):
+    if step == 1: 
         """draw head"""
         draw(-45, 160, 270, 15, False)
-    elif num == 2:
+    elif step == 2:
         """draw torso"""
         draw(-45, 130, 90, 40, True)
-    elif num == 3:
+    elif step == 3:
         """draw left arm"""
         draw(-45, 120, 235, 40, True)
-    elif num == 4:
+    elif step == 4:
         """draw right arm"""
         draw(-45, 120, 250, 40, True)
-    elif num == 5:
+    elif step == 5:
         """draw left leg"""
         draw(-45, 90, 205, 40, True)
-    elif num == 6:
+    elif step == 6:
         """draw right leg"""
         draw(-45, 90, 60, 40, True)
+
+def guess(letter):
+    global correct
+    global use
+    global wrong
+    global finish
+    if not finish:
+        if letter not in use:
+            goto(-100,-35)
+            for i in word:
+                if i == letter:
+                    screen_write(letter.lower() + " ")
+                    correct += letter
+                else:
+                     screen_write("_ ") 
+            use += letter 
+            if letter not in word:
+                wrong += 1
+                drawHangman(wrong)
+            move_write(-200, -100, "Guesses: ")
+            for i in use:
+                screen_write(i.lower() + " ")
+        if wrong == 6:
+            goto(-100,-35)
+            for i in word:
+                if i in correct:
+                    screen_write("_ ")
+                else:
+                    screen_write(i.lower() + " ")
+            move_write(-130, -60, "Sorry, you lose!")
+            finish = True
+        if len(correct) == len(word):
+            move_write(-130, -60, "Congratulations, you win!")
+            finish = True
 
 hideturtle()
 speed(0)
 
-fruitword = ['apple', 'avocado', 'banana', 'blueberry', 'cherry', 'citron',
-        'coconut', 'durian', 'fig', 'grape', 'grapefruit', 'kiwi', 'lemon',
-        'lime', 'mandarin', 'mango', 'melon', 'orange', 'papaya', 'peach',
-        'pear', 'persimmon', 'pineapple', 'plum', 'raspberry', 'strawberry',
-        'tomato', 'watermelon']
+fruitword = ['apple', 'banana', 'blueberry', 'cherry', 'coconut', 'durian', 'grape', 'kiwi', 'lemon',
+            'lime', 'mango', 'melon', 'orange', 'peach', 'pear', 'pineapple', 'strawberry','watermelon']
 
 """draw gallows"""
 penup()
@@ -68,40 +99,14 @@ draw(-45, 175, 90, 15, True)
 
 goto(-100,-35)
 word = choice(fruitword)
-for i in word:
-    screen_write("_ ")
 correct = []
 use = []
 wrong = 0
-while wrong < 6:
-    """Modify the code to solve Exercise 4"""
-    letter = textinput("Hangman","Guess a letter:")
-    while len(letter) != 1:
-        letter = textinput("Hangman","Guess a letter:")
-    goto(-100,-35)
-    if letter not in use:
-        for i in word:
-            if i == letter:
-                screen_write(letter.lower() + " ")
-                correct += letter
-            else:
-                screen_write("_ ") 
-        use += letter 
-        if letter not in word:
-            wrong += 1
-            drawHangman(wrong)
-        move_write(-200, -100, "You use alphbet: ")
-        for i in use:
-            screen_write(i.lower() + " ")
-    if wrong == 6:
-        goto(-100,-35)
-        for i in word:
-            if i in correct:
-                screen_write("_ ")
-            else:
-                screen_write(i.lower() + " ")
-        move_write(-130, -60, "Sorry, you lose!")
-    if len(correct) == len(word):
-        move_write(-130, -60, "Congratulations, you win!")
-        break
+finish = False
+for i in word:
+    screen_write("_ ")
+for ascii in range(ord('a'), ord('z')+1):
+    letter = chr(ascii)
+    onkey(functools.partial(guess, letter), letter)    
+listen()
 done()
