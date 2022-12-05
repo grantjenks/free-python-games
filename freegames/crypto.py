@@ -84,7 +84,7 @@ elif choice == 'decrypt':
     print('Decrypted message:', decrypt(phrase, code))
 elif choice == 'decode':
     phrase = input('Message: ')
-    print('Decoding message:')
+    print('Decoding your message:')
     decode(phrase)
 else:
     print('Error: Unrecognized Command')
