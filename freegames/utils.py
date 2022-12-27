@@ -165,6 +165,19 @@ class vector(collections.abc.Sequence):
             self._hash = hash(pair)
         return self._hash
 
+    def set(self, other):
+        """Set vector x, y to other x, y.
+
+        >>> a = vector(0, 0)
+        >>> b = vector(1, 2)
+        >>> a.set(b)
+        >>> a
+        vector(1, 2)
+
+        """
+        self.x = other.x
+        self.y = other.y
+
     def __len__(self):
         """v.__len__() -> len(v)
 

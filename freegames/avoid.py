@@ -2,98 +2,92 @@
 
 Exercises
 
-1. Check the time you've lived.
-2. Vary the person's speed & bomb's speed.
-3. Vary the size of the bombs.
-4. Vary the person's color & bomb's color.
+1. Display the duration of the game.
+2. Vary the size of the bombs.
+3. Vary the speed of the bombs.
 """
+
 from random import *
 from turtle import *
-import time
 from freegames import vector
 
-person = vector(0, 0)
+north, south = vector(0, 4), vector(0, -4)
+east, west = vector(4, 0), vector(-4, 0)
+options = north, south, east, west
+
+player = vector(0, 0)
+aim = choice(options).copy()
 bombs = []
 speeds = []
-aim = vector(0, 0)
-start = time.time()
 
-def change(x, y):
-    """Change person direction."""
-    aim.x = x
-    aim.y = y
 
 def inside(point):
     """Return True if point on screen."""
     return -200 < point.x < 200 and -200 < point.y < 200
 
+
 def draw(alive):
     """Draw screen objects."""
     clear()
-    goto(person.x, person.y)
-    if alive:
-        dot(10, 'blue')
-    else:
-        dot(10, 'red')
+    goto(player.x, player.y)
+    color = 'blue' if alive else 'red'
+    dot(10, color)
     for bomb in bombs:
         goto(bomb.x, bomb.y)
         dot(20, 'black')
-
-    present = time.time()
-    print('\rtime : %.3f' %float(present-start), end='sec')
     update()
 
+
 def move():
-    """Update object positions."""
-    person.move(aim)
+    """Update player and bomb positions."""
+    player.move(aim)
 
     for bomb, speed in zip(bombs, speeds):
         bomb.move(speed)
 
     if randrange(10) == 0:
-        x = randrange(-199, 199)
-        y = randrange(-199, 199)
-        dir = randrange(4)
-        s = randrange(3, 11)
-        if dir == 0:
-            bomb = vector(x, 199)
-            speed = vector(0, -s)
-        elif dir == 1:
-            bomb = vector(x, -199)
-            speed = vector(0, s)
-        elif dir == 2:
-            bomb = vector(199, y)
-            speed = vector(-s, 0)
-        else:
-            bomb = vector(-199, y)
-            speed = vector(s, 0)
+        speed = choice(options).copy()
+        offset = randrange(-199, 200)
+
+        if speed == north:
+            bomb = vector(offset, -199)
+        if speed == south:
+            bomb = vector(offset, 199)
+        if speed == east:
+            bomb = vector(-199, offset)
+        if speed == west:
+            bomb = vector(199, offset)
+
         bombs.append(bomb)
         speeds.append(speed)
 
-    while len(bombs) > 0 and not inside(bombs[0]):
-        bombs.pop(0)
-        speeds.pop(0)
+    for index in reversed(range(len(bombs))):
+        bomb = bombs[index]
+        if not inside(bomb):
+            del bombs[index]
+            del speeds[index]
 
-    if not inside(person):
+    if not inside(player):
         draw(False)
         return
 
     for bomb in bombs:
-        if abs(bomb - person) < 15:
+        if abs(bomb - player) < 15:
             draw(False)
             return
 
     draw(True)
     ontimer(move, 50)
 
+
 setup(420, 420, 370, 0)
 hideturtle()
 up()
 tracer(False)
 listen()
-onkey(lambda: change(5, 0), 'Right')
-onkey(lambda: change(-5, 0), 'Left')
-onkey(lambda: change(0, 5), 'Up')
-onkey(lambda: change(0, -5), 'Down')
+onkey(lambda: aim.set(north), 'Up')
+onkey(lambda: aim.set(south), 'Down')
+onkey(lambda: aim.set(east), 'Right')
+onkey(lambda: aim.set(west), 'Left')
 move()
 done()
