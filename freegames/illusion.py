@@ -1,54 +1,42 @@
-"""Illusion, just create a small illusion.
+"""Illusion
 
-Exercises :
+Exercises:
 
-1. Change the number of line.
-2. Change the size of the line or the square
+1. Change the size of the squares.
+2. Change the number of rows and lines.
 """
 
 from turtle import *
-
+from itertools import cycle
 from freegames import line, square
 
-square_size = 25
+size = 25
 
 
-def draw_one_line_square(start_x, start_y):
+def draw_row(x, y):
     for i in range(0, 10):
-        place_x = start_x + (i * square_size * 2)
-        square(place_x, start_y, square_size, 'black')
+        offset = x + (i * size * 2)
+        square(offset, y, size, 'black')
 
 
-def draw_all_lines():
-    base_x = -200
-    base_y = 150
-    for i in range(0, 11):
-        line(
-            base_x,
-            base_y - i * square_size,
-            base_x + 16 * square_size,
-            base_y - i * square_size,
-        )
+def draw_rows():
+    offsets = [-200, -190, -180, -190]
+    pairs = zip(cycle(offsets), range(150, -176, -25))
+    for offset, y in pairs:
+        draw_row(offset, y)
 
 
-def draw_all_square():
-    draw_one_line_square(-200, 150)
-    draw_one_line_square(-190, 125)
-    draw_one_line_square(-180, 100)
-    draw_one_line_square(-190, 75)
-    draw_one_line_square(-200, 50)
-    draw_one_line_square(-190, 25)
-    draw_one_line_square(-180, 0)
-    draw_one_line_square(-190, -25)
-    draw_one_line_square(-200, -50)
-    draw_one_line_square(-190, -75)
-    draw_one_line_square(-180, -100)
+def draw_lines():
+    x = -200
+    y = 150
+    for i in range(0, 14):
+        line(x, y - i * size, x + 16 * size, y - i * size)
 
 
 setup(420, 400, 30, 0)
 hideturtle()
 tracer(False)
 listen()
-draw_all_lines()
-draw_all_square()
+draw_rows()
+draw_lines()
 done()
