@@ -6,8 +6,9 @@ Exercises:
 2. Change the number of rows and lines.
 """
 
-from turtle import *
 from itertools import cycle
+from turtle import *
+
 from freegames import line, square
 
 size = 25

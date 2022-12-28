@@ -9,6 +9,7 @@ Exercises
 
 from random import *
 from turtle import *
+
 from freegames import vector
 
 north, south = vector(0, 4), vector(0, -4)

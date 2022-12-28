@@ -8,9 +8,10 @@ Exercises
 4. Make the letters more frequent as the score gets higher.
 """
 
-from turtle import *
 from random import choice, randrange
 from string import ascii_lowercase
+from turtle import *
+
 from freegames import vector
 
 targets = []
