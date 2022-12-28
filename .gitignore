@@ -16,3 +16,11 @@
 *.egg-info/
 
 .DS_Store
+
+
+.vscode/
+
+#unnecessary files
+*.mo
+*.pot
+/freegames/oop
