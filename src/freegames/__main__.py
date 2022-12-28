@@ -28,7 +28,7 @@ def main():
     subparsers = parser.add_subparsers(dest='command', help='sub-command help')
     subparsers.required = True
 
-    parser_list = subparsers.add_parser('list', help='list games')
+    subparsers.add_parser('list', help='list games')
 
     parser_play = subparsers.add_parser('play', help='play free Python games')
     parser_play.add_argument('game', choices=games, help='game name')
