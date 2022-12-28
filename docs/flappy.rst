@@ -3,4 +3,4 @@ Flappy
 
 Flappy, game inspired by Flappy Bird.
 
-.. literalinclude:: ../freegames/flappy.py
+.. literalinclude:: ../src/freegames/flappy.py

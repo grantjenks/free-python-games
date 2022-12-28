@@ -3,4 +3,4 @@ Life
 
 Game of Life simulation.
 
-.. literalinclude:: ../freegames/life.py
+.. literalinclude:: ../src/freegames/life.py

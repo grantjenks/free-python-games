@@ -3,4 +3,4 @@ Bounce
 
 Bounce, a simple animation demo.
 
-.. literalinclude:: ../freegames/bounce.py
+.. literalinclude:: ../src/freegames/bounce.py

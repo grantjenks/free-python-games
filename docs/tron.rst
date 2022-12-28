@@ -3,4 +3,4 @@ Tron
 
 Tron, classic arcade game.
 
-.. literalinclude:: ../freegames/tron.py
+.. literalinclude:: ../src/freegames/tron.py

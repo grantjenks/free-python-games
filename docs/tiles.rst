@@ -3,4 +3,4 @@ Tiles
 
 Tiles, number swapping game.
 
-.. literalinclude:: ../freegames/tiles.py
+.. literalinclude:: ../src/freegames/tiles.py

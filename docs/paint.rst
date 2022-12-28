@@ -3,4 +3,4 @@ Paint
 
 Paint, for drawing shapes.
 
-.. literalinclude:: ../freegames/paint.py
+.. literalinclude:: ../src/freegames/paint.py

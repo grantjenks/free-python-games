@@ -3,4 +3,4 @@ Bagels
 
 Bagels, a number puzzle game.
 
-.. literalinclude:: ../freegames/bagels.py
+.. literalinclude:: ../src/freegames/bagels.py

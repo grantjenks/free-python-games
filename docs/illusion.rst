@@ -3,4 +3,4 @@ Illusion
 
 An optical illusion.
 
-.. literalinclude:: ../freegames/illusion.py
+.. literalinclude:: ../src/freegames/illusion.py

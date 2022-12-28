@@ -3,4 +3,4 @@ Crypto
 
 Crypto: tool for encrypting and decrypting messages.
 
-.. literalinclude:: ../freegames/crypto.py
+.. literalinclude:: ../src/freegames/crypto.py

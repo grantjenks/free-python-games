@@ -3,4 +3,4 @@ Avoid
 
 Avoid, classic arcade game.
 
-.. literalinclude:: ../freegames/avoid.py
+.. literalinclude:: ../src/freegames/avoid.py

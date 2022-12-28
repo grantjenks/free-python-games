@@ -3,4 +3,4 @@ Ant
 
 Ant, simple animation demo.
 
-.. literalinclude:: ../freegames/ant.py
+.. literalinclude:: ../src/freegames/ant.py
