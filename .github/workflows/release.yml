@@ -1,0 +1,34 @@
+name: release
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements-dev.txt
+
+    - name: Create dist
+      run: python -m build
+
+    - name: Upload with twine
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+      run: |
+        twine upload dist/*
