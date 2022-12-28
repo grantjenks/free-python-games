@@ -10,6 +10,7 @@
    guess
    snake
    crypto
+   illusion
    paint
    maze
    flappy
@@ -22,9 +23,13 @@
    pong
    life
    tron
+   typing
    tiles
    connect
    memory
+   minesweeper
+   avoid
    pacman
    fidget
    madlibs
+   rps
