@@ -123,6 +123,12 @@ help function::
   >>> import freegames
   >>> help(freegames)
 
+Free Python Games also provides an entry-point script for compatibility with
+`pipx <https://pypa.github.io/pipx/>`_::
+
+  $ pipx install freegames
+  $ freegames play life
+
 
 Free Games
 ----------
