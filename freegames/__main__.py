@@ -22,7 +22,7 @@ games = sorted(name[:-3] for name in contents if game_file(name))
 parser = argparse.ArgumentParser(
     prog='freegames',
     description='Free Python Games',
-    epilog='Copyright 2022 Grant Jenks',
+    epilog='Copyright 2023 Grant Jenks',
 )
 subparsers = parser.add_subparsers(dest='command', help='sub-command help')
 
