@@ -1,0 +1,14 @@
+-r requirements.txt
+blue
+build
+coverage
+doc8
+flake8
+isort
+ipython
+pytest
+pytest-cov
+rstcheck
+sphinx
+tox
+twine
