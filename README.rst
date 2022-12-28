@@ -29,7 +29,7 @@ with a list of exercises to work through with students. Creativity and
 flexibility is important. There is no right or wrong way to implement a new
 feature or behavior! You never know which games students will engage with best.
 
-.. _`Free Python Games`: http://www.grantjenks.com/docs/freegames/
+.. _`Free Python Games`: https://grantjenks.com/docs/freegames/
 
 
 Testimonials
@@ -78,7 +78,7 @@ Features
 - Tested using GitHub Actions
 
 .. image:: https://github.com/grantjenks/free-python-games/workflows/integration/badge.svg
-   :target: http://www.grantjenks.com/docs/freegames/
+   :target: https://grantjenks.com/docs/freegames/
 
 
 Quickstart
@@ -134,10 +134,10 @@ Paint
 shape and click again to mark its end. Different shapes and colors can be
 selected using the keyboard.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/paint.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/paint.gif
    :alt: Paint Free Python Game
 
-.. _`Paint`: http://www.grantjenks.com/docs/freegames/paint.html
+.. _`Paint`: https://grantjenks.com/docs/freegames/paint.html
 
 Snake
 .....
@@ -146,10 +146,10 @@ Snake
 green food. Each time the food is consumed, the snake grows one segment
 longer. Avoid eating yourself or going out of bounds!
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/snake.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/snake.gif
    :alt: Snake Free Python Game
 
-.. _`Snake`: http://www.grantjenks.com/docs/freegames/snake.html
+.. _`Snake`: https://grantjenks.com/docs/freegames/snake.html
 
 Pacman
 ......
@@ -157,10 +157,10 @@ Pacman
 `Pacman`_ -- classic arcade game. Use the arrow keys to navigate and eat all
 the white food. Watch out for red ghosts that roam the maze.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/pacman.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/pacman.gif
    :alt: Pacman Free Python Game
 
-.. _`Pacman`: http://www.grantjenks.com/docs/freegames/pacman.html
+.. _`Pacman`: https://grantjenks.com/docs/freegames/pacman.html
 
 Cannon
 ......
@@ -169,10 +169,10 @@ Cannon
 cannonball pops blue balloons in its path. Pop all the balloons before they can
 cross the screen.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/cannon.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/cannon.gif
    :alt: Cannon Free Python Game
 
-.. _`Cannon`: http://www.grantjenks.com/docs/freegames/cannon.html
+.. _`Cannon`: https://grantjenks.com/docs/freegames/cannon.html
 
 Connect
 .......
@@ -180,10 +180,10 @@ Connect
 `Connect`_ -- Connect 4 game. Click a row to drop a disc. The first player to
 connect four discs vertically, horizontally, or diagonally wins!
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/connect.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/connect.gif
    :alt: Connect 4 Free Python Game
 
-.. _`Connect`: http://www.grantjenks.com/docs/freegames/connect.html
+.. _`Connect`: https://grantjenks.com/docs/freegames/connect.html
 
 Flappy
 ......
@@ -191,10 +191,10 @@ Flappy
 `Flappy`_ -- Flappy-bird inspired game. Click the screen to flap your
 wings. Watch out for black ravens as you fly across the screen.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/flappy.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/flappy.gif
    :alt: Flappy Bird Free Python Game
 
-.. _`Flappy`: http://www.grantjenks.com/docs/freegames/flappy.html
+.. _`Flappy`: https://grantjenks.com/docs/freegames/flappy.html
 
 Memory
 ......
@@ -202,10 +202,10 @@ Memory
 `Memory`_ -- puzzle game of number pairs. Click a tile to reveal a
 number. Match two numbers and the tiles will disappear to reveal an image.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/memory.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/memory.gif
    :alt: Memory Free Python Game
 
-.. _`Memory`: http://www.grantjenks.com/docs/freegames/memory.html
+.. _`Memory`: https://grantjenks.com/docs/freegames/memory.html
 
 Pong
 ....
@@ -213,10 +213,10 @@ Pong
 `Pong`_ -- classic arcade game. Use the keyboard to move your paddle up and
 down. The first player to miss the ball loses.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/pong.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/pong.gif
    :alt: Pong Free Python Game
 
-.. _`Pong`: http://www.grantjenks.com/docs/freegames/pong.html
+.. _`Pong`: https://grantjenks.com/docs/freegames/pong.html
 
 Simon Says
 ..........
@@ -225,10 +225,10 @@ Simon Says
 the pattern and then click the tiles in the same order. Each time you get the
 sequence right the pattern gets one step longer.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/simonsays.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/simonsays.gif
    :alt: Simon Says Free Python Game
 
-.. _`Simon Says`: http://www.grantjenks.com/docs/freegames/simonsays.html
+.. _`Simon Says`: https://grantjenks.com/docs/freegames/simonsays.html
 
 Tic Tac Toe
 ...........
@@ -236,10 +236,10 @@ Tic Tac Toe
 `Tic Tac Toe`_ -- classic game. Click the screen to place an X or O. Connect
 three in a row and you win!
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/tictactoe.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/tictactoe.gif
    :alt: Tic Tac Toe Free Python Game
 
-.. _`Tic Tac Toe`: http://www.grantjenks.com/docs/freegames/tictactoe.html
+.. _`Tic Tac Toe`: https://grantjenks.com/docs/freegames/tictactoe.html
 
 Tiles
 .....
@@ -248,10 +248,10 @@ Tiles
 the empty square to swap positions. Can you make the tiles count one to fifteen
 from left to right and bottom to top?
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/tiles.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/tiles.gif
    :alt: Tiles Free Python Game
 
-.. _`Tiles`: http://www.grantjenks.com/docs/freegames/tiles.html
+.. _`Tiles`: https://grantjenks.com/docs/freegames/tiles.html
 
 Tron
 ....
@@ -259,10 +259,10 @@ Tron
 `Tron`_ -- classic arcade game. Use the keyboard to change the direction of
 your Tron player. Avoid touching the line drawn by your opponent.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/tron.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/tron.gif
    :alt: Tron Free Python Game
 
-.. _`Tron`: http://www.grantjenks.com/docs/freegames/tron.html
+.. _`Tron`: https://grantjenks.com/docs/freegames/tron.html
 
 Life
 ....
@@ -270,10 +270,10 @@ Life
 `Life`_ -- Conway's Game of Life. The classic, zero-player, cellular automation
 created in 1970 by John Conway.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/life.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/life.gif
    :alt: Game of Life Free Python Game
 
-.. _`Life`: http://www.grantjenks.com/docs/freegames/life.html
+.. _`Life`: https://grantjenks.com/docs/freegames/life.html
 
 Maze
 ....
@@ -282,10 +282,10 @@ Maze
 of Code with 10 PRINT`_. Tap the screen to trace a path from one side to
 another.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/maze.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/maze.gif
    :alt: Maze Free Python Game
 
-.. _`Maze`: http://www.grantjenks.com/docs/freegames/maze.html
+.. _`Maze`: https://grantjenks.com/docs/freegames/maze.html
 .. _`A Universe in One Line of Code with 10 PRINT`: https://www.makeartwithpython.com/blog/10-print-in-python/
 
 Fidget
@@ -294,10 +294,30 @@ Fidget
 `Fidget`_ -- fidget spinner inspired animation. Click the screen to accelerate
 the fidget spinner.
 
-.. image:: http://www.grantjenks.com/docs/freegames/_static/fidget.gif
+.. image:: https://grantjenks.com/docs/freegames/_static/fidget.gif
    :alt: Fidget Spinner Free Python Game
 
-.. _`Fidget`: http://www.grantjenks.com/docs/freegames/fidget.html
+.. _`Fidget`: https://grantjenks.com/docs/freegames/fidget.html
+
+Illusion
+........
+
+`Illusion`_ -- an optical illusion.
+
+.. image:: https://grantjenks.com/docs/freegames/_static/illusion.png
+   :alt: Optical Illusion Free Python Game
+
+.. _`Illusion`: https://grantjenks.com/docs/freegames/illusion.html
+
+Typing
+......
+
+`Typing`_ -- practice typing while letters fall down the screen.
+
+.. image:: https://grantjenks.com/docs/freegames/_static/typing.png
+   :alt: Typing Free Python Game
+
+.. _`Typing`: https://grantjenks.com/docs/freegames/typing.html
 
 
 User Guide
@@ -311,10 +331,10 @@ curriculum, API, and development.
 * `Free Python Games API Reference`_
 * `Free Python Games Development`_
 
-.. _`Talk: Give the Gift of Python`: http://www.grantjenks.com/docs/freegames/give-gift-python.html
-.. _`Free Python Games Curriculum`: http://www.grantjenks.com/docs/freegames/curriculum.html
-.. _`Free Python Games API Reference`: http://www.grantjenks.com/docs/freegames/api.html
-.. _`Free Python Games Development`: http://www.grantjenks.com/docs/freegames/development.html
+.. _`Talk: Give the Gift of Python`: https://grantjenks.com/docs/freegames/give-gift-python.html
+.. _`Free Python Games Curriculum`: https://grantjenks.com/docs/freegames/curriculum.html
+.. _`Free Python Games API Reference`: https://grantjenks.com/docs/freegames/api.html
+.. _`Free Python Games Development`: https://grantjenks.com/docs/freegames/development.html
 
 
 References
@@ -325,7 +345,7 @@ References
 * `Free Python Games at GitHub`_
 * `Free Python Games Issue Tracker`_
 
-.. _`Free Python Games Documentation`: http://www.grantjenks.com/docs/freegames/
+.. _`Free Python Games Documentation`: https://grantjenks.com/docs/freegames/
 .. _`Free Python Games at PyPI`: https://pypi.python.org/pypi/freegames
 .. _`Free Python Games at GitHub`: https://github.com/grantjenks/free-python-games
 .. _`Free Python Games Issue Tracker`: https://github.com/grantjenks/free-python-games/issues
