@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "freegames"
+description = "Free Python Games"
+authors = [
+    {"name" = "Grant Jenks", "email" = "contact@grantjenks.com"},
+]
+readme = "README.rst"
+requires-python = ">=3.7"
+keywords = ["free", "games"]
+license = {"text" = "Apache 2.0"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Education",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment",
+    "Topic :: Games/Entertainment :: Arcade",
+    "Topic :: Games/Entertainment :: Board Games",
+    "Topic :: Games/Entertainment :: Puzzle Games",
+    "Topic :: Games/Entertainment :: Side-Scrolling/Arcade Games",
+    "Topic :: Games/Entertainment :: Simulation",
+    "Topic :: Games/Entertainment :: Turn Based Strategy",
+]
+dynamic = ["version"]
+
+[project.urls]
+Documentation = "https://grantjenks.com/docs/freegames/"
+Funding = "https://gum.co/freegames"
+Source = "https://github.com/grantjenks/free-python-games"
+Tracker = "https://github.com/grantjenks/django-codemirror6/issues"
+
+[tool.setuptools.dynamic]
+version = {attr = "freegames.__version__"}
+
+[tool.setuptools.package-data]
+freegames = ["*.gif"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

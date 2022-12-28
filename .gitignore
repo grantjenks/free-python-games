@@ -13,6 +13,6 @@
 /build/
 /dist/
 /docs/_build/
-/freegames.egg-info/
+*.egg-info/
 
 .DS_Store
