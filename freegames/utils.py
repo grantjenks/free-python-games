@@ -454,7 +454,7 @@ class vector(collections.abc.Sequence):
         5.0
 
         """
-        return (self.x ** 2 + self.y ** 2) ** 0.5
+        return (self.x**2 + self.y**2) ** 0.5
 
     def rotate(self, angle):
         """Rotate vector counter-clockwise by angle (in-place).
