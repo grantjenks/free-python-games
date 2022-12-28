@@ -24,7 +24,7 @@ class Turtle:
     def color(self, fill, outline=None):
         pass
 
-    def write(self, text, font=None):
+    def write(self, text, font=None, align=None):
         pass
 
     def begin_fill(self):
