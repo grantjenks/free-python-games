@@ -10,13 +10,12 @@ The game is played in a series as follows:
    c. Paper covers rock.
 
 First to score 5 points wins the series!
-
-Exercises:
-
-1. Create a strategy to rotate through 'r', 'p', and 's' in a cycle.
-2. Create a strategy to do the same as the last computer choice.
-3. Create a new strategy of your own.
 """
+# Exercises:
+#
+# 1. Create a strategy to rotate through 'r', 'p', and 's' in a cycle.
+# 2. Create a strategy to do the same as the last computer choice.
+# 3. Create a new strategy of your own.
 
 import random
 
