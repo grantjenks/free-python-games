@@ -304,7 +304,7 @@ Illusion
 
 `Illusion`_ -- an optical illusion.
 
-.. image:: https://grantjenks.com/docs/freegames/_static/illusion.png
+.. image:: https://grantjenks.com/docs/freegames/_static/illusion.gif
    :alt: Optical Illusion Free Python Game
 
 .. _`Illusion`: https://grantjenks.com/docs/freegames/illusion.html
@@ -314,7 +314,7 @@ Typing
 
 `Typing`_ -- practice typing while letters fall down the screen.
 
-.. image:: https://grantjenks.com/docs/freegames/_static/typing.png
+.. image:: https://grantjenks.com/docs/freegames/_static/typing.gif
    :alt: Typing Free Python Game
 
 .. _`Typing`: https://grantjenks.com/docs/freegames/typing.html
