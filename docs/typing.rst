@@ -1,5 +1,5 @@
 Typing
-=====
+======
 
 Typing, simple typing game.
 
