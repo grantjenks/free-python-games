@@ -30,6 +30,9 @@ classifiers = [
 ]
 dynamic = ["version"]
 
+[project.scripts]
+freegames = "freegames.__main__:main"
+
 [project.urls]
 Documentation = "https://grantjenks.com/docs/freegames/"
 Funding = "https://gum.co/freegames"
