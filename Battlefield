@@ -1,0 +1,106 @@
+import random
+
+# Define player and enemy classes
+
+class Character:
+
+    def __init__(self, name, max_health, attack):
+
+        self.name = name
+
+        self.max_health = max_health
+
+        self.current_health = max_health
+
+        self.attack = attack
+
+    def take_damage(self, damage):
+
+        self.current_health -= damage
+
+        if self.current_health < 0:
+
+            self.current_health = 0
+
+    def is_alive(self):
+
+        return self.current_health > 0
+
+    def attack_target(self, target):
+
+        damage = random.randint(1, self.attack)
+
+        target.take_damage(damage)
+
+        print(f"{self.name} attacks {target.name} for {damage} damage.")
+
+class Player(Character):
+
+    def __init__(self, name, max_health, attack, potions):
+
+        super().__init__(name, max_health, attack)
+
+        self.potions = potions
+
+    def use_potion(self):
+
+        if self.potions > 0:
+
+            self.current_health += 20
+
+            self.potions -= 1
+
+            print(f"{self.name} drinks a health potion and restores 20 health.")
+
+        else:
+
+            print("You don't have any potions left!")
+
+class Enemy(Character):
+
+    pass
+
+# Define the game loop
+
+def game_loop():
+
+    player = Player("Player", 100, 20, 3)
+
+    enemy = Enemy("Enemy", 50, 10)
+
+    print("You have encountered an enemy! Prepare to battle!")
+
+    while player.is_alive() and enemy.is_alive():
+
+        action = input("What do you want to do? (attack, potion) ")
+
+        if action == "attack":
+
+            player.attack_target(enemy)
+
+            if enemy.is_alive():
+
+                enemy.attack_target(player)
+
+        elif action == "potion":
+
+            player.use_potion()
+
+            enemy.attack_target(player)
+
+        else:
+
+            print("Invalid action! Try again.")
+
+    if player.is_alive():
+
+        print("Congratulations! You have defeated the enemy!")
+
+    else:
+
+        print("You have been defeated. Game over.")
+
+# Start the game
+
+game_loop()
+
