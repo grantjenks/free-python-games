@@ -70,5 +70,5 @@ while True:
         break
 
     if counter > guesses:
-        print('You ran out of guesses. The answer was', number)
+        print('You ran out of guesses. The answer was:', number)
         break
