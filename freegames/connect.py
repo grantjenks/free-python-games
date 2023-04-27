@@ -7,6 +7,7 @@ Exercises
 3. Add logic to detect a full row.
 4. Create a random computer player.
 5. How would you detect a winner?
+
 """
 
 from turtle import *
