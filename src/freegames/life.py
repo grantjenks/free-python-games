@@ -58,7 +58,10 @@ def draw():
         color = 'green' if alive else 'black'
         square(x, y, 10, color)
     update()
-    ontimer(draw, 100)
+    try:
+        ontimer(draw, 100)
+    except Terminator:
+        pass
 
 
 setup(420, 420, 370, 0)
