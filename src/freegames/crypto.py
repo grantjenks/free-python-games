@@ -11,68 +11,47 @@ Exercises
 Adapted from code in https://inventwithpython.com/chapter14.html
 """
 
+def shift_char(char, shift):
+    if char.isalpha():
+        is_upper = char.isupper()
+        base = ord('A') if is_upper else ord('a')
+        shifted_char = chr(((ord(char) - base + shift) % 26) + base)
+        return shifted_char
+    elif char.isdigit():
+        # Encrypt digits as well
+        return str((int(char) + shift) % 10)
+    else:
+        return char
 
 def encrypt(message, key):
     """Encrypt message with key."""
-    result = ''
-
-    # Iterate letters in message and encrypt each individually.
-
-    for letter in message:
-        if letter.isalpha():
-
-            # Letters are numbered like so:
-            # A, B, C - Z is 65, 66, 67 - 90
-            # a, b, c - z is 97, 98, 99 - 122
-
-            num = ord(letter)
-
-            if letter.isupper():
-                base = ord('A')
-            else:
-                assert letter.islower()
-                base = ord('a')
-
-            # The encryption equation:
-
-            num = (num - base + key) % 26 + base
-
-            result += chr(num)
-
-        elif letter.isdigit():
-
-            # TODO: Encrypt digits.
-            result += letter
-
-        else:
-            result += letter
-
+    result = ''.join([shift_char(char, key) for char in message])
     return result
-
 
 def decrypt(message, key):
     """Decrypt message with key."""
     return encrypt(message, -key)
 
-
 def decode(message):
     """Decode message without key."""
-    pass  # TODO
-
+    for key in range(26):
+        decrypted_message = decrypt(message, key)
+        print(f"Key {key}: {decrypted_message}")
 
 def get_key():
     """Get key from user."""
-    try:
-        text = input('Enter a key (1 - 25): ')
-        key = int(text)
-        return key
-    except:
-        print('Invalid key. Using key: 0.')
-        return 0
-
+    while True:
+        try:
+            key = int(input('Enter a key (1 - 25): '))
+            if 1 <= key <= 25:
+                return key
+            else:
+                print('Invalid key. Key must be between 1 and 25.')
+        except ValueError:
+            print('Invalid input. Please enter a valid integer.')
 
 print('Do you wish to encrypt, decrypt, or decode a message?')
-choice = input()
+choice = input().lower()
 
 if choice == 'encrypt':
     phrase = input('Message: ')
@@ -88,3 +67,4 @@ elif choice == 'decode':
     decode(phrase)
 else:
     print('Error: Unrecognized Command')
+
