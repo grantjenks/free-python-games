@@ -39,10 +39,10 @@ def draw(alive):
     update()
 
 
-def move():
-    """Update player and bomb positions."""
+def update_position():
     player.move(aim)
 
+def create_bombs():
     for bomb, speed in zip(bombs, speeds):
         bomb.move(speed)
 
@@ -62,12 +62,19 @@ def move():
         bombs.append(bomb)
         speeds.append(speed)
 
-    for index in reversed(range(len(bombs))):
-        bomb = bombs[index]
+def remove_out_bombs():
+    to_remove = []
+    for i, bomb in enumerate(bombs):
         if not inside(bomb):
-            del bombs[index]
-            del speeds[index]
+            to_remove.append(i)
+    for i in reversed(to_remove):
+        del bombs[i]
+        del speeds[i]
 
+def move():
+    update_position()
+    create_bombs()
+    remove_out_bombs()
     if not inside(player):
         draw(False)
         return
