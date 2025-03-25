@@ -16,3 +16,7 @@
 *.egg-info/
 
 .DS_Store
+
+# ignore log files
+* .log
+
