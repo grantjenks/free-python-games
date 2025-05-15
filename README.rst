@@ -129,6 +129,57 @@ Free Python Games also provides an entry-point script for compatibility with
   $ pipx install freegames
   $ freegames play life
 
+----
+
+How to Run Each Game (简化运行方法)
+=====================================
+
+To run any game from the `free-python-games` collection:
+
+1. Make sure Python 3 is installed.
+2. Open your terminal or command prompt.
+3. Use the following command to play a game::
+
+   python3 -m freegames.snake
+
+Replace ``snake`` with other game names like ``pong``, ``memory``, etc.
+
+To view a list of available games::
+
+   python3 -m freegames
+
+----
+
+Quick Start for Chinese Users（中文快速指南）
+=============================================
+
+欢迎使用 free-python-games！
+
+这是一个适合 Python 初学者的小游戏合集，包括贪吃蛇、拼图、乒乓球等经典游戏。
+
+步骤如下：
+
+1. 安装 Python 3（建议官网安装最新版）；
+2. 使用以下命令安装项目::
+
+   pip install freegames
+
+3. 运行游戏，例如::
+
+   python3 -m freegames.snake  # 贪吃蛇
+   python3 -m freegames.pong   # 乒乓球
+
+如无法运行，请尝试：
+- 检查 Python 环境变量；
+- 尝试使用 `python` 代替 `python3`；
+- 确认已正确安装模块。
+
+查看所有游戏列表::
+
+   python3 -m freegames
+
+Enjoy coding and have fun!
+
 
 Free Games
 ----------
