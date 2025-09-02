@@ -3,7 +3,7 @@
 Free Python Games is an Apache2 licensed collection of free Python games
 intended for education and fun. The games are written in simple Python code and
 designed for experimentation and changes. Simplified versions of several
-classic arcade games are included.
+classic arcade games are include d.
 
 Python is one of the top-five most popular programming languages in the world
 and available for free from www.python.org. Python includes an extensive
