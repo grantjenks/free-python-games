@@ -51,7 +51,7 @@ Installing Dependencies
 
 Install development dependencies with `pip <http://www.pip-installer.org/>`_::
 
-    $ pip install -r requirements.txt
+    $ pip install -r requirements-dev.txt
 
 All packages for running tests and building documentation will be installed.
 
