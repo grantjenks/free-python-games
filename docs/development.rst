@@ -51,7 +51,7 @@ Installing Dependencies
 
 Install development dependencies with `pip <http://www.pip-installer.org/>`_::
 
-    $ pip install -r requirements.txt
+    $ pip install -r requirements-dev.txt
 
 All packages for running tests and building documentation will be installed.
 
@@ -65,11 +65,10 @@ Python:
 * CPython 3.5
 * CPython 3.6
 
-Testing uses `tox <https://pypi.python.org/pypi/tox>`_. If you don't want to
-install all the development requirements, then, after downloading, you can
+Testing uses `tox <https://pypi.python.org/pypi/tox>`_. You can
 simply run::
 
-    $ python setup.py test
+    $ tox run
 
-The test argument to setup.py will download a minimal testing infrastructure
-and run the tests.
+Besides run the tests, it will perform other tasks, such as runs linters and
+formatters against the source-code, and build the docs.
