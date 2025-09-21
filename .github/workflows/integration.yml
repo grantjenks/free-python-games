@@ -17,10 +17,10 @@ jobs:
       matrix:
         check: [bluecheck, doc8, docs, flake8, isortcheck, rstcheck]
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v4
+    - uses: actions/checkout@v5
+    - uses: actions/setup-python@v6
       with:
-        python-version: '3.10'
+        python-version: 3.x
     - name: Setup tox
       run: |
         pip install --upgrade pip
@@ -36,12 +36,13 @@ jobs:
       max-parallel: 5
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.7, 3.8, 3.9, '3.10', 3.11]
+        python-version: ['3.10', 3.11, 3.12, 3.13, 3.14]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
       - name: Setup tox
         run: |
           pip install --upgrade pip
