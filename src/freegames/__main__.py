@@ -5,7 +5,6 @@ import argparse
 import os
 import runpy
 
-
 def game_file(name):
     """Return True if filename represents a game."""
     return (

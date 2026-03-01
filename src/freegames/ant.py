@@ -21,7 +21,6 @@ def wrap(value):
     """Wrap value around -200 and 200."""
     return value  # TODO
 
-
 def draw():
     """Move ant and draw screen."""
     ant.move(aim)
