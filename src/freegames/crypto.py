@@ -66,7 +66,7 @@ def get_key():
         text = input('Enter a key (1 - 25): ')
         key = int(text)
         return key
-    except:
+    except Exception:
         print('Invalid key. Using key: 0.')
         return 0
 
