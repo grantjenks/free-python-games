@@ -44,6 +44,18 @@ def test_main_show():
         __main__.main()
 
 
+def test_main_version():
+    with mock.patch('sys.argv', ['__main__.py', '--version']):
+        with mock.patch('sys.stdout', new_callable=io.StringIO) as stdout:
+            try:
+                __main__.main()
+            except SystemExit as exc:
+                assert exc.code == 0
+            else:
+                raise AssertionError('Expected SystemExit')
+            assert 'freegames 2.5.3' in stdout.getvalue()
+
+
 def test_main_play():
     random.seed(0)
     mock_input = mock.Mock()

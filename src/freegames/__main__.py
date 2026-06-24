@@ -5,6 +5,8 @@ import argparse
 import os
 import runpy
 
+from freegames import __version__
+
 
 def game_file(name):
     """Return True if filename represents a game."""
@@ -24,6 +26,11 @@ def main():
         prog='freegames',
         description='Free Python Games',
         epilog='Copyright 2023 Grant Jenks',
+    )
+    parser.add_argument(
+        '--version',
+        action='version',
+        version=f'%(prog)s {__version__}',
     )
     subparsers = parser.add_subparsers(dest='command', help='sub-command help')
     subparsers.required = True
