@@ -1,6 +1,7 @@
 import io
 import os
 import random
+import runpy
 import unittest.mock as mock
 
 from freegames import __main__
