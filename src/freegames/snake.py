@@ -29,6 +29,14 @@ def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 
 
+def game_over():
+    """Show a message when the snake crashes."""
+    up()
+    goto(0, 0)
+    color('red')
+    write('Game Over', align='center', font=('Consolas', 20, 'normal'))
+
+
 def move():
     """Move snake forward one segment."""
     head = snake[-1].copy()
@@ -36,6 +44,7 @@ def move():
 
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
+        game_over()
         update()
         return
 

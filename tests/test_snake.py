@@ -8,6 +8,12 @@ sys.modules['turtle'] = sys.modules['mockturtle']
 
 
 def test_snake():
+    messages = []
+
+    def record(text, font=None, align=None):
+        messages.append(text)
+
+    mockturtle.write = record
     random.seed(0)
     mockturtle.events.clear()
     mockturtle.events += [
@@ -26,3 +32,4 @@ def test_snake():
     ]
     mockturtle.events += [('timer', True)] * 300
     runpy.run_module('freegames.snake')
+    assert 'Game Over' in messages
